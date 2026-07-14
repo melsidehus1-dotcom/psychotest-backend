@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/submit.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/submit",
+      "dest": "api/submit.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    }
+  ]
+}

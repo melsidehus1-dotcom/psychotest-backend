@@ -1,0 +1,218 @@
+[
+    {
+        "no_soal": 1,
+        "statements": [
+            {"text": "Easy-going, agreeable", "most": "S", "least": "S"},
+            {"text": "Trusting, believing in others", "most": "I", "least": "I"},
+            {"text": "Adventurous, risk taker", "most": "*", "least": "D"},
+            {"text": "Tolerant, Respectful", "most": "C", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 2,
+        "statements": [
+            {"text": "Soft spoke, reserved", "most": "C", "least": "*"},
+            {"text": "Optimistic, visionary", "most": "D", "least": "D"},
+            {"text": "Centre of attention, sociable", "most": "*", "least": "I"},
+            {"text": "Peacemaker, bring harmony", "most": "S", "least": "S"}
+        ]
+    },
+    {
+        "no_soal": 3,
+        "statements": [
+            {"text": "Encourage others", "most": "I", "least": "I"},
+            {"text": "Strive for perfection", "most": "*", "least": "C"},
+            {"text": "Be part of the team", "most": "*", "least": "S"},
+            {"text": "Want to establish goals", "most": "D", "least": "*"}
+        ]
+    },
+    {
+        "no_soal": 4,
+        "statements": [
+            {"text": "Become frustrated", "most": "C", "least": "C"},
+            {"text": "Keep my feelings inside", "most": "S", "least": "S"},
+            {"text": "Tell my side of the story", "most": "*", "least": "I"},
+            {"text": "Stand up to opposition", "most": "D", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 5,
+        "statements": [
+            {"text": "Lively, talkative", "most": "I", "least": "*"},
+            {"text": "Faced paced, determined", "most": "D", "least": "D"},
+            {"text": "Try to maintain balance", "most": "S", "least": "S"},
+            {"text": "Try to follow the rules", "most": "*", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 6,
+        "statements": [
+            {"text": "Manage time efficiently", "most": "C", "least": "*"},
+            {"text": "Often rushed, feel pressured", "most": "D", "least": "D"},
+            {"text": "Social things are important", "most": "I", "least": "I"},
+            {"text": "Like to finish what I start", "most": "S", "least": "S"}
+        ]
+    },
+    {
+        "no_soal": 7,
+        "statements": [
+            {"text": "Resist sudden change", "most": "S", "least": "*"},
+            {"text": "Tend to over promise", "most": "I", "least": "I"},
+            {"text": "Withdraw under pressure", "most": "*", "least": "C"},
+            {"text": "Not afraid to fight", "most": "*", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 8,
+        "statements": [
+            {"text": "A good encourager", "most": "I", "least": "I"},
+            {"text": "A good listener", "most": "S", "least": "S"},
+            {"text": "A good analyser", "most": "C", "least": "C"},
+            {"text": "A good delegator", "most": "D", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 9,
+        "statements": [
+            {"text": "Results are what matter", "most": "D", "least": "D"},
+            {"text": "Do it right, accuracy counts", "most": "C", "least": "C"},
+            {"text": "Make it enjoyable", "most": "*", "least": "I"},
+            {"text": "Let's do it together", "most": "*", "least": "S"}
+        ]
+    },
+    {
+        "no_soal": 10,
+        "statements": [
+            {"text": "Will do without, self controlled", "most": "*", "least": "C"},
+            {"text": "Will buy on impulse", "most": "D", "least": "D"},
+            {"text": "Will wait, no pressure", "most": "S", "least": "S"},
+            {"text": "Will spend on what I want", "most": "I", "least": "*"}
+        ]
+    },
+    {
+        "no_soal": 11,
+        "statements": [
+            {"text": "Friendly, easy to be with", "most": "S", "least": "*"},
+            {"text": "Unique, bored by routine", "most": "*", "least": "I"},
+            {"text": "Actively change things", "most": "D", "least": "D"},
+            {"text": "Want things exact", "most": "C", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 12,
+        "statements": [
+            {"text": "Non confrontational, giving in", "most": "*", "least": "S"},
+            {"text": "Overloaded with details", "most": "C", "least": "*"},
+            {"text": "Changes at the last minute", "most": "I", "least": "I"},
+            {"text": "Demanding, abrupt", "most": "D", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 13,
+        "statements": [
+            {"text": "Want advancement", "most": "D", "least": "D"},
+            {"text": "Satisfied with things, content", "most": "S", "least": "*"},
+            {"text": "Openly displays feelings", "most": "I", "least": "I"},
+            {"text": "Humble, modest", "most": "*", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 14,
+        "statements": [
+            {"text": "Cool, reserved", "most": "C", "least": "C"},
+            {"text": "Happy, carefree", "most": "I", "least": "I"},
+            {"text": "Pleasing, kind", "most": "S", "least": "*"},
+            {"text": "Bold, daring", "most": "D", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 15,
+        "statements": [
+            {"text": "Spend quality time with others", "most": "S", "least": "S"},
+            {"text": "Plan for the future, be prepared", "most": "C", "least": "*"},
+            {"text": "Travel to new adventures", "most": "I", "least": "I"},
+            {"text": "Receive rewards for goals met", "most": "D", "least": "D"}
+        ]
+    },
+    {
+        "no_soal": 16,
+        "statements": [
+            {"text": "Rules need to challenged", "most": "*", "least": "D"},
+            {"text": "Rules make it fair", "most": "C", "least": "*"},
+            {"text": "Rules make it boring", "most": "I", "least": "I"},
+            {"text": "Rules make it safe", "most": "S", "least": "S"}
+        ]
+    },
+    {
+        "no_soal": 17,
+        "statements": [
+            {"text": "Education, culture", "most": "*", "least": "C"},
+            {"text": "Achievements, awards", "most": "D", "least": "D"},
+            {"text": "Safety, security", "most": "S", "least": "S"},
+            {"text": "Social, group gatherings", "most": "I", "least": "*"}
+        ]
+    },
+    {
+        "no_soal": 18,
+        "statements": [
+            {"text": "Take charge, direct approach", "most": "D", "least": "D"},
+            {"text": "Outgoing, enthusiastic", "most": "*", "least": "I"},
+            {"text": "Predictable, consistent", "most": "*", "least": "S"},
+            {"text": "Cautious, careful", "most": "C", "least": "*"}
+        ]
+    },
+    {
+        "no_soal": 19,
+        "statements": [
+            {"text": "Not easily defeated", "most": "D", "least": "D"},
+            {"text": "Will do as told, follows leader", "most": "S", "least": "*"},
+            {"text": "Excitable, cheerful", "most": "I", "least": "I"},
+            {"text": "Want things orderly, neat", "most": "*", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 20,
+        "statements": [
+            {"text": "I will lead them", "most": "D", "least": "*"},
+            {"text": "I will follow through", "most": "S", "least": "S"},
+            {"text": "I will persuade them", "most": "I", "least": "I"},
+            {"text": "I will get the facts", "most": "C", "least": "*"}
+        ]
+    },
+    {
+        "no_soal": 21,
+        "statements": [
+            {"text": "Think of others first", "most": "S", "least": "S"},
+            {"text": "Competitive, like a challenge", "most": "D", "least": "D"},
+            {"text": "Optimistic, positive", "most": "I", "least": "*"},
+            {"text": "Logical thinker, systematic", "most": "*", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 22,
+        "statements": [
+            {"text": "Please others, agreeable", "most": "S", "least": "S"},
+            {"text": "Laugh out loud, animated", "most": "*", "least": "I"},
+            {"text": "Courageous, bold", "most": "D", "least": "D"},
+            {"text": "Quiet, reserved", "most": "C", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 23,
+        "statements": [
+            {"text": "Want more authority", "most": "*", "least": "D"},
+            {"text": "Want new opportunities", "most": "I", "least": "*"},
+            {"text": "Avoid any conflict", "most": "S", "least": "S"},
+            {"text": "Want clear directions", "most": "*", "least": "C"}
+        ]
+    },
+    {
+        "no_soal": 24,
+        "statements": [
+            {"text": "Reliable, dependable", "most": "*", "least": "S"},
+            {"text": "Creative, unique", "most": "I", "least": "*"},
+            {"text": "Bottom line, results oriented", "most": "D", "least": "*"},
+            {"text": "Hold high standards, accurate", "most": "C", "least": "*"}
+        ]
+    }
+]

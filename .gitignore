@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.local
+.vercel/
+
+# Excel files and source media
+*.xlsx
+*.pdf
+*.jpg
+*.csv
+
+# Temporary files
+*.log
+.DS_Store

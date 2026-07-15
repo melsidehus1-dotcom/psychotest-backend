@@ -296,7 +296,7 @@
         if (state.currentQ === idx && !isLast) {
           next();
         }
-      }, 700);
+      }, 300);
     }
   }
 

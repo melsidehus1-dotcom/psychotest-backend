@@ -7,7 +7,8 @@
     { "src": "style.css",           "use": "@vercel/static" },
     { "src": "app.js",              "use": "@vercel/static" },
     { "src": "dashboard.js",        "use": "@vercel/static" },
-    { "src": "disc_questions.json", "use": "@vercel/static" }
+    { "src": "disc_questions.json", "use": "@vercel/static" },
+    { "src": "home-icon.png",        "use": "@vercel/static" }
   ],
   "routes": [
     {
@@ -23,6 +24,7 @@
     { "src": "/app.js",              "dest": "app.js" },
     { "src": "/dashboard.js",        "dest": "dashboard.js" },
     { "src": "/disc_questions.json", "dest": "disc_questions.json" },
+    { "src": "/home-icon.png",        "dest": "home-icon.png" },
     { "src": "/dashboard",           "dest": "dashboard.html" },
     { "src": "/dashboard.html",      "dest": "dashboard.html" },
     { "src": "/(.*)",                "dest": "index.html" }

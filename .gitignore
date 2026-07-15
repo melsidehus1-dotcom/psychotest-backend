@@ -12,3 +12,6 @@ node_modules/
 # Temporary files
 *.log
 .DS_Store
+apps_script_update.js
+progress_report.txt
+

@@ -83,9 +83,15 @@
           <h1 id="tabTitle">Overview</h1>
           <p id="lastRefresh">Last refreshed: —</p>
         </div>
-        <button class="btn btn-ghost" id="btnRefresh" title="Refresh data">
-          ↻ Refresh
-        </button>
+        <div style="display:flex;align-items:center;gap:var(--space-md)">
+          <button class="btn btn-ghost" id="btnRefresh" title="Refresh data">
+            ↻ Refresh
+          </button>
+          <button class="theme-toggle" id="themeToggleDash" aria-label="Toggle light/dark theme" style="position:static;margin:0;width:40px;height:40px;box-shadow:none">
+            <span class="icon-sun" aria-hidden="true">☀️</span>
+            <span class="icon-moon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
       </div>
 
       <!-- ── OVERVIEW TAB ── -->

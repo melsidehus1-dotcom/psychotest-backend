@@ -35,6 +35,7 @@
 
   const D = {
     themeToggle:     qs('themeToggle'),
+    themeToggleDash: qs('themeToggleDash'),
     gateView:        qs('gateView'),
     dashView:        qs('dashView'),
     gateForm:        qs('gateForm'),
@@ -111,6 +112,7 @@
     sessionStorage.setItem('hr_dash_unlocked', 'true');
     D.gateView.classList.add('hidden');
     D.dashView.classList.remove('hidden');
+    if (D.themeToggle) D.themeToggle.classList.add('hidden');
     loadData();
   }
 
@@ -119,6 +121,7 @@
     sessionStorage.removeItem('hr_dash_unlocked');
     D.dashView.classList.add('hidden');
     D.gateView.classList.remove('hidden');
+    if (D.themeToggle) D.themeToggle.classList.remove('hidden');
     D.passcodeInput.value = '';
     state.allRows = [];
     state.filtered = [];
@@ -548,14 +551,15 @@
   });
 
   // Theme toggle listener
-  if (D.themeToggle) {
-    D.themeToggle.addEventListener('click', () => {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      const next = isLight ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('disc-theme', next);
-    });
-  }
+  const toggleTheme = () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const next = isLight ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('disc-theme', next);
+  };
+
+  if (D.themeToggle) D.themeToggle.addEventListener('click', toggleTheme);
+  if (D.themeToggleDash) D.themeToggleDash.addEventListener('click', toggleTheme);
 
   /* ══════════════════════════════════════════════
      AUTO-UNLOCK SESSION CHECK

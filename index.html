@@ -217,71 +217,71 @@
       <div class="glass-card">
 
         <div class="section-header">
-          <p class="section-eyebrow">Step 2 of 3</p>
-          <h2>How It Works</h2>
-          <p>The DISC model measures four behavioral dimensions — Dominance, Influence, Steadiness, and Conscientiousness.</p>
+          <p class="section-eyebrow">Langkah 2 dari 3</p>
+          <h2>Cara Pengerjaan</h2>
+          <p>Tes DISC mengukur empat dimensi perilaku kepribadian — Dominance (Dominasi), Influence (Pengaruh), Steadiness (Ketekunan), dan Conscientiousness (Ketelitian).</p>
         </div>
 
         <div class="instruction-steps">
           <div class="instruction-step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>Read Each Group</h4>
-              <p>You will see 24 groups, each containing 4 personality statements.</p>
+              <h4>Baca Setiap Kelompok Soal</h4>
+              <p>Anda akan melihat 24 kelompok soal, masing-masing berisi 4 pernyataan perilaku.</p>
             </div>
           </div>
           <div class="instruction-step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h4>Select "Most Like You"</h4>
-              <p>Choose the one statement that describes you the <strong>most</strong>.</p>
+              <h4>Pilih "Paling Sesuai" (MOST)</h4>
+              <p>Pilih 1 pernyataan yang <strong>paling</strong> menggambarkan kepribadian alami Anda.</p>
             </div>
           </div>
           <div class="instruction-step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>Select "Least Like You"</h4>
-              <p>Choose the one statement that describes you the <strong>least</strong>.</p>
+              <h4>Pilih "Kurang Sesuai" (LEAST)</h4>
+              <p>Pilih 1 pernyataan yang <strong>paling tidak / kurang</strong> menggambarkan diri Anda.</p>
             </div>
           </div>
           <div class="instruction-step">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>Be Honest &amp; Instinctive</h4>
-              <p>There are no right or wrong answers. Follow your first instinct.</p>
+              <h4>Jujur &amp; Spontan (Versi Profesional)</h4>
+              <p>Tidak ada jawaban benar atau salah. Jawablah secara jujur dan spontan mengikuti insting pertama Anda.</p>
             </div>
           </div>
         </div>
 
         <!-- Example preview -->
         <div class="disc-example">
-          <div class="example-label">📖 Example Question</div>
+          <div class="example-label">📖 Contoh Soal (Example Question)</div>
           <table class="example-table">
             <thead>
               <tr>
-                <th>Statement</th>
-                <th>Most</th>
-                <th>Least</th>
+                <th>Pernyataan</th>
+                <th>MOST</th>
+                <th>LEAST</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Careful and precise</td>
+                <td>Hati-hati dan teliti</td>
                 <td><span class="ex-radio"></span></td>
                 <td><span class="ex-radio"></span></td>
               </tr>
               <tr>
-                <td>Enthusiastic and lively</td>
+                <td>Antusias dan bersemangat</td>
                 <td><span class="ex-radio most-sel"></span></td>
                 <td><span class="ex-radio"></span></td>
               </tr>
               <tr>
-                <td>Patient and relaxed</td>
+                <td>Sabar dan santai</td>
                 <td><span class="ex-radio"></span></td>
                 <td><span class="ex-radio least-sel"></span></td>
               </tr>
               <tr>
-                <td>Direct and decisive</td>
+                <td>Langsung dan tegas</td>
                 <td><span class="ex-radio"></span></td>
                 <td><span class="ex-radio"></span></td>
               </tr>
@@ -291,10 +291,10 @@
 
         <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xl);">
           <button type="button" class="btn btn-ghost" id="btnBackToBiodata" style="flex: 1;">
-            ← Back
+            ← Kembali
           </button>
           <button class="btn btn-primary" id="btnStartTest" style="flex: 2;">
-            I Understand — Start Test →
+            Saya Mengerti — Mulai Tes →
           </button>
         </div>
 
@@ -310,7 +310,7 @@
       <div class="test-chrome">
         <div class="progress-row">
           <div class="q-counter">
-            Q&nbsp;<strong id="qNum">1</strong>&nbsp;/&nbsp;<span id="qTotal">24</span>
+            No.&nbsp;<strong id="qNum">1</strong>&nbsp;/&nbsp;<span id="qTotal">24</span>
           </div>
           <div class="progress-track">
             <div class="progress-fill" id="progressFill" style="width:4.17%"></div>
@@ -323,16 +323,16 @@
       <div class="glass-card question-card" id="questionCard">
 
         <p class="q-instruction">
-          Select the statement <span class="col-badge most">✦ Most like you</span>
-          and <span class="col-badge least">◆ Least like you</span>
+          Pilih pernyataan <span class="col-badge most">✦ Paling Sesuai (MOST)</span>
+          dan <span class="col-badge least">◆ Kurang Sesuai (LEAST)</span>
         </p>
 
         <table class="stmt-table" id="stmtTable" role="radiogroup">
           <thead>
             <tr>
-              <th>Statement</th>
-              <th><span class="col-badge most">Most</span></th>
-              <th><span class="col-badge least">Least</span></th>
+              <th>Pernyataan</th>
+              <th><span class="col-badge most">MOST</span></th>
+              <th><span class="col-badge least">LEAST</span></th>
             </tr>
           </thead>
           <tbody id="stmtBody">
@@ -345,13 +345,13 @@
       <!-- Navigation -->
       <div class="test-nav">
         <button class="btn btn-ghost" id="btnPrev" disabled aria-label="Previous question">
-          ← Prev
+          ← Sebelumnya
         </button>
         <div class="nav-status" id="navStatus" aria-live="polite">
-          Select both Most and Least to continue
+          Pilih jawaban MOST dan LEAST untuk melanjutkan
         </div>
         <button class="btn btn-primary" id="btnNext" disabled aria-label="Next question">
-          Next →
+          Selanjutnya →
         </button>
       </div>
 

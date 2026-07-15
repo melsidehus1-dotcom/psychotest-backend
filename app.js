@@ -243,9 +243,9 @@
                 ${isMostSel ? 'checked' : ''}
                 ${mostDis   ? 'disabled' : ''}
                 data-q="${idx}" data-t="most"
-                aria-label="Most like me: ${escHtml(stmt.text)}">
+                aria-label="Paling Sesuai: ${escHtml(stmt.text)}">
               <span class="radio-dot"></span>
-              <span class="mob-label">Most</span>
+              <span class="mob-label">MOST</span>
             </label>
           </td>
           <td>
@@ -254,9 +254,9 @@
                 ${isLeastSel ? 'checked' : ''}
                 ${leastDis   ? 'disabled' : ''}
                 data-q="${idx}" data-t="least"
-                aria-label="Least like me: ${escHtml(stmt.text)}">
+                aria-label="Kurang Sesuai: ${escHtml(stmt.text)}">
               <span class="radio-dot"></span>
-              <span class="mob-label">Least</span>
+              <span class="mob-label">LEAST</span>
             </label>
           </td>
         </tr>`;
@@ -319,21 +319,21 @@
     D.btnNext.disabled = !complete;
 
     if (isLast && complete) {
-      D.btnNext.textContent = 'Submit ✓';
+      D.btnNext.textContent = 'Kirim ✓';
     } else {
-      D.btnNext.textContent = 'Next →';
+      D.btnNext.textContent = 'Selanjutnya →';
     }
 
     // Status text
     if (complete) {
       const done = state.most.filter(v => v !== null).length;
-      D.navStatus.textContent = `${done} of ${state.questions.length} answered`;
+      D.navStatus.textContent = `${done} dari ${state.questions.length} terjawab`;
       D.navStatus.className = 'nav-status complete';
     } else {
       const missing = [];
-      if (!hasMost)  missing.push('"Most"');
-      if (!hasLeast) missing.push('"Least"');
-      D.navStatus.textContent = `Select ${missing.join(' & ')} to continue`;
+      if (!hasMost)  missing.push('"MOST"');
+      if (!hasLeast) missing.push('"LEAST"');
+      D.navStatus.textContent = `Pilih jawaban ${missing.join(' & ')} untuk melanjutkan`;
       D.navStatus.className = 'nav-status';
     }
   }

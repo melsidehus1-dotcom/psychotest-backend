@@ -163,15 +163,117 @@
 }
 [data-theme="light"] .input-group input::placeholder { color: transparent; }
 
-/* ---------- Light mode statement table ---------- */
+/* ---------- Light mode Welcome Screen (Profile360) ---------- */
+[data-theme="light"] .p360-logo-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 4px 25px rgba(168, 85, 247, 0.25);
+}
+[data-theme="light"] .p360-title {
+  color: var(--text-primary);
+}
+[data-theme="light"] .p360-tagline-1 {
+  color: var(--text-primary);
+}
+[data-theme="light"] .p360-desc {
+  color: var(--text-secondary);
+}
+[data-theme="light"] .p360-pill {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .p360-card {
+  background: #FFFFFF;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+[data-theme="light"] .p360-card-header,
+[data-theme="light"] .p360-col h3,
+[data-theme="light"] .p360-returning-text h4 {
+  color: var(--text-primary);
+}
+[data-theme="light"] .p360-col p,
+[data-theme="light"] .p360-returning-text p,
+[data-theme="light"] .p360-time-note,
+[data-theme="light"] .p360-confidential,
+[data-theme="light"] .p360-footer {
+  color: var(--text-secondary);
+}
+[data-theme="light"] .p360-col-border {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .p360-divider-line {
+  background: rgba(0, 0, 0, 0.1);
+}
+[data-theme="light"] .p360-divider-text {
+  color: var(--text-secondary);
+}
+[data-theme="light"] .p360-icon-circle-sm {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+[data-theme="light"] .p360-btn-outline {
+  border-color: #A855F7;
+  color: #7C3AED;
+}
+[data-theme="light"] .p360-btn-outline:hover {
+  background: rgba(168, 85, 247, 0.1);
+}
+[data-theme="light"] .p360-search-box {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Light mode statement table & radio buttons ---------- */
 [data-theme="light"] .stmt-table {
-  border-color: rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.08);
+}
+[data-theme="light"] .stmt-row td {
+  border-bottom-color: rgba(0,0,0,0.06);
 }
 [data-theme="light"] .stmt-row:hover td {
-  background: rgba(139,92,246,0.04);
+  background: rgba(139,92,246,0.05);
 }
-[data-theme="light"] .stmt-row.row-most-selected  { background: rgba(139,92,246,0.06); }
-[data-theme="light"] .stmt-row.row-least-selected { background: rgba(168,85,247,0.06); }
+[data-theme="light"] .stmt-row.row-most-selected  { background: rgba(139,92,246,0.08); }
+[data-theme="light"] .stmt-row.row-least-selected { background: rgba(168,85,247,0.08); }
+
+/* Ensure radio buttons (dots & circles) are clearly visible on light theme */
+[data-theme="light"] .radio-dot {
+  border: 2px solid rgba(0, 0, 0, 0.38) !important;
+  background: #FFFFFF !important;
+}
+[data-theme="light"] .c-radio:not(.is-disabled):hover .radio-dot {
+  border-color: rgba(0, 0, 0, 0.65) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+[data-theme="light"] .c-radio.is-disabled .radio-dot {
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  background: rgba(0, 0, 0, 0.03) !important;
+  opacity: 0.35 !important;
+}
+[data-theme="light"] .c-radio.type-most input:checked ~ .radio-dot {
+  border-color: var(--accent) !important;
+  background: rgba(139, 92, 246, 0.12) !important;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18), 0 0 12px rgba(139, 92, 246, 0.35) !important;
+}
+[data-theme="light"] .c-radio.type-least input:checked ~ .radio-dot {
+  border-color: var(--accent-secondary) !important;
+  background: rgba(168, 85, 247, 0.12) !important;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.18), 0 0 12px rgba(168, 85, 247, 0.35) !important;
+}
+[data-theme="light"] .ex-radio {
+  border: 2px solid rgba(0, 0, 0, 0.38) !important;
+  background: #FFFFFF !important;
+}
+[data-theme="light"] .ex-radio.most-sel {
+  border-color: var(--accent) !important;
+  background: transparent !important;
+}
+[data-theme="light"] .ex-radio.least-sel {
+  border-color: var(--accent-secondary) !important;
+  background: transparent !important;
+}
 
 /* ---------- Light mode toast ---------- */
 [data-theme="light"] .toast {

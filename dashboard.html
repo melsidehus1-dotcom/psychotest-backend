@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HR Admin Dashboard — DISC Assessment Results">
+  <title>HR Dashboard — DISC Assessment</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       PASSCODE GATE (shown until unlocked)
+       ══════════════════════════════════════════ -->
+  <div id="gateView" class="passcode-gate">
+    <div class="passcode-card glass-card">
+      <div class="passcode-icon">🔐</div>
+      <h2>HR Dashboard</h2>
+      <p>Enter the admin passcode to access candidate results.</p>
+
+      <form id="gateForm" novalidate>
+        <div class="input-group" style="margin-bottom: var(--space-md)">
+          <input type="password" id="passcodeInput" placeholder=" " required autocomplete="current-password">
+          <label for="passcodeInput">Admin Passcode</label>
+          <div class="field-error" id="gateError" role="alert">Incorrect passcode. Please try again.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="btnUnlock">Unlock Dashboard →</button>
+      </form>
+
+      <p style="margin-top:var(--space-lg);font-size:0.75rem;color:var(--text-muted);">
+        Unauthorised access is prohibited. All access attempts are logged.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       DASHBOARD (shown after unlock)
+       ══════════════════════════════════════════ -->
+  <div id="dashView" class="dash-layout hidden">
+
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <div class="sidebar-logo">
+        <h2>📊 HR Dashboard</h2>
+        <p>DISC Assessment Results</p>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#overview" class="active" data-tab="overview">
+            <span class="nav-icon">🏠</span> Overview
+          </a>
+        </li>
+        <li>
+          <a href="#candidates" data-tab="candidates">
+            <span class="nav-icon">👥</span> Candidates
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <p>DISC Assessment Platform</p>
+        <p style="margin-top:4px">© 2026 HR Division</p>
+        <button class="btn btn-ghost" id="btnLogout" style="margin-top:var(--space-md);width:100%;font-size:0.8rem;padding:8px">
+          🔓 Lock Dashboard
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="dash-main">
+
+      <!-- Top bar -->
+      <div class="dash-topbar">
+        <div>
+          <h1 id="tabTitle">Overview</h1>
+          <p id="lastRefresh">Last refreshed: —</p>
+        </div>
+        <button class="btn btn-ghost" id="btnRefresh" title="Refresh data">
+          ↻ Refresh
+        </button>
+      </div>
+
+      <!-- ── OVERVIEW TAB ── -->
+      <div id="tab-overview" class="tab-pane">
+
+        <!-- Stat cards -->
+        <div class="stat-grid" id="statGrid">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-label">Total Candidates</div>
+            <div class="stat-value" id="statTotal">—</div>
+            <div class="stat-sub">All submissions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🕐</div>
+            <div class="stat-label">Pending Review</div>
+            <div class="stat-value" id="statPending">—</div>
+            <div class="stat-sub">Awaiting evaluation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">💻</div>
+            <div class="stat-label">Web Developer</div>
+            <div class="stat-value" id="statDev">—</div>
+            <div class="stat-sub">Position applicants</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎨</div>
+            <div class="stat-label">Web Designer</div>
+            <div class="stat-value" id="statDes">—</div>
+            <div class="stat-sub">Position applicants</div>
+          </div>
+        </div>
+
+        <!-- Top profiles -->
+        <div class="section-heading">
+          <h3>Most Common Profiles (Public Self)</h3>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table" id="profileTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>DISC Profile</th>
+                <th>Count</th>
+                <th>Share</th>
+              </tr>
+            </thead>
+            <tbody id="profileTbody">
+              <tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- ── CANDIDATES TAB ── -->
+      <div id="tab-candidates" class="tab-pane hidden">
+
+        <!-- Filters -->
+        <div class="filter-bar">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Search by name or email…">
+          </div>
+          <select class="filter-select" id="filterPosition">
+            <option value="">All Positions</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Web Designer">Web Designer</option>
+          </select>
+          <select class="filter-select" id="filterStatus">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Reviewed">Reviewed</option>
+            <option value="Hired">Hired</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="data-table" id="candidatesTable">
+            <thead>
+              <tr>
+                <th>Candidate ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Public Self</th>
+                <th>Private Self</th>
+                <th>Core Self</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="candidatesTbody">
+              <tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
+            </tbody>
+          </table>
+
+          <div class="pagination" id="pagination"></div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/dashboard.js"></script>
+</body>
+</html>

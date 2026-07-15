@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DISC Personality Assessment — Discover your behavioral profile through a professional evaluation.">
+  <title>DISC Personality Assessment</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+
+  <!-- Toast Stack -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <!-- Loading Veil -->
+  <div class="loading-veil" id="loadingVeil" role="status" aria-label="Submitting assessment">
+    <div class="load-ring"></div>
+    <div class="load-text">Submitting your assessment…</div>
+  </div>
+
+  <div id="app">
+
+    <!-- ══════════════════════════════════════════
+         VIEW 1 — WELCOME
+         ══════════════════════════════════════════ -->
+    <section id="view-welcome" class="view active" aria-label="Welcome">
+      <div class="glass-card">
+        <div class="welcome-wrap">
+
+          <div class="logo-mark" aria-hidden="true">🧠</div>
+
+          <p class="welcome-eyebrow">HR Assessment Platform</p>
+          <h1>DISC Personality<br>Assessment</h1>
+          <p class="welcome-subtitle">
+            Discover your behavioral profile through our professional personality evaluation — designed to help you and your team thrive.
+          </p>
+
+          <div class="feature-pills">
+            <span class="pill"><span class="pill-icon">📋</span>24 Question Groups</span>
+            <span class="pill"><span class="pill-icon">⏱️</span>~15 Minutes</span>
+            <span class="pill"><span class="pill-icon">🎯</span>4 Dimensions</span>
+            <span class="pill"><span class="pill-icon">🔒</span>Confidential</span>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="btnStart">
+            Begin Assessment →
+          </button>
+
+          <p class="welcome-disclaimer mt-md">
+            By proceeding, you consent to your responses being processed for recruitment evaluation purposes.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VIEW 2 — BIODATA FORM
+         ══════════════════════════════════════════ -->
+    <section id="view-biodata" class="view" aria-label="Candidate profile form">
+      <div class="glass-card">
+
+        <div class="section-header">
+          <p class="section-eyebrow">Step 1 of 3</p>
+          <h2>Candidate Profile</h2>
+          <p>Fill in your details before starting the assessment.</p>
+        </div>
+
+        <form id="biodataForm" novalidate>
+
+          <div class="input-group">
+            <input type="text" id="inputName" placeholder=" " required autocomplete="name">
+            <label for="inputName">Full Name</label>
+            <div class="field-error" role="alert">Please enter your full name.</div>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="inputEmail" placeholder=" " required autocomplete="email">
+            <label for="inputEmail">Email Address</label>
+            <div class="field-error" role="alert">Please enter a valid email address.</div>
+          </div>
+
+          <div class="input-group select-wrap">
+            <select id="inputPosition" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Web Developer">Web Developer</option>
+              <option value="Web Designer">Web Designer</option>
+            </select>
+            <label for="inputPosition">Position Applied</label>
+            <div class="field-error" role="alert">Please select a position.</div>
+          </div>
+
+          <div class="input-group">
+            <input type="url" id="inputCV" placeholder=" " autocomplete="off">
+            <label for="inputCV">CV / Resume Link <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+            <div class="field-hint">Google Drive, Dropbox, or any public link</div>
+          </div>
+
+          <div class="input-group">
+            <input type="url" id="inputPortfolio" placeholder=" " autocomplete="off">
+            <label for="inputPortfolio">Portfolio Link <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+            <div class="field-hint">Website, Behance, Dribbble, or GitHub</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block mt-lg" id="btnContinue">
+            Continue to Instructions →
+          </button>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VIEW 3 — INSTRUCTIONS
+         ══════════════════════════════════════════ -->
+    <section id="view-instructions" class="view" aria-label="Test instructions">
+      <div class="glass-card">
+
+        <div class="section-header">
+          <p class="section-eyebrow">Step 2 of 3</p>
+          <h2>How It Works</h2>
+          <p>The DISC model measures four behavioral dimensions — Dominance, Influence, Steadiness, and Conscientiousness.</p>
+        </div>
+
+        <div class="instruction-steps">
+          <div class="instruction-step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Read Each Group</h4>
+              <p>You will see 24 groups, each containing 4 personality statements.</p>
+            </div>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Select "Most Like You"</h4>
+              <p>Choose the one statement that describes you the <strong>most</strong>.</p>
+            </div>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Select "Least Like You"</h4>
+              <p>Choose the one statement that describes you the <strong>least</strong>.</p>
+            </div>
+          </div>
+          <div class="instruction-step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Be Honest &amp; Instinctive</h4>
+              <p>There are no right or wrong answers. Follow your first instinct.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example preview -->
+        <div class="disc-example">
+          <div class="example-label">📖 Example Question</div>
+          <table class="example-table">
+            <thead>
+              <tr>
+                <th>Statement</th>
+                <th>Most</th>
+                <th>Least</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Careful and precise</td>
+                <td><span class="ex-radio"></span></td>
+                <td><span class="ex-radio"></span></td>
+              </tr>
+              <tr>
+                <td>Enthusiastic and lively</td>
+                <td><span class="ex-radio most-sel"></span></td>
+                <td><span class="ex-radio"></span></td>
+              </tr>
+              <tr>
+                <td>Patient and relaxed</td>
+                <td><span class="ex-radio"></span></td>
+                <td><span class="ex-radio least-sel"></span></td>
+              </tr>
+              <tr>
+                <td>Direct and decisive</td>
+                <td><span class="ex-radio"></span></td>
+                <td><span class="ex-radio"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button class="btn btn-primary btn-block mt-xl" id="btnStartTest">
+          I Understand — Start Test →
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VIEW 4 — DISC TEST
+         ══════════════════════════════════════════ -->
+    <section id="view-disc-test" class="view" aria-label="DISC test questions">
+
+      <!-- Progress chrome (outside card) -->
+      <div class="test-chrome">
+        <div class="progress-row">
+          <div class="q-counter">
+            Q&nbsp;<strong id="qNum">1</strong>&nbsp;/&nbsp;<span id="qTotal">24</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width:4.17%"></div>
+          </div>
+          <div class="q-percent" id="qPercent">4%</div>
+        </div>
+      </div>
+
+      <!-- Question card -->
+      <div class="glass-card question-card" id="questionCard">
+
+        <p class="q-instruction">
+          Select the statement <span class="col-badge most">✦ Most like you</span>
+          and <span class="col-badge least">◆ Least like you</span>
+        </p>
+
+        <table class="stmt-table" id="stmtTable" role="radiogroup">
+          <thead>
+            <tr>
+              <th>Statement</th>
+              <th><span class="col-badge most">Most</span></th>
+              <th><span class="col-badge least">Least</span></th>
+            </tr>
+          </thead>
+          <tbody id="stmtBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- Navigation -->
+      <div class="test-nav">
+        <button class="btn btn-ghost" id="btnPrev" disabled aria-label="Previous question">
+          ← Prev
+        </button>
+        <div class="nav-status" id="navStatus" aria-live="polite">
+          Select both Most and Least to continue
+        </div>
+        <button class="btn btn-primary" id="btnNext" disabled aria-label="Next question">
+          Next →
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         VIEW 5 — RESULT
+         ══════════════════════════════════════════ -->
+    <section id="view-result" class="view" aria-label="Assessment results">
+      <div class="glass-card">
+        <div class="result-wrap">
+
+          <!-- Animated success ring -->
+          <div class="success-ring" aria-hidden="true">
+            <svg class="success-ring-svg" viewBox="0 0 96 96">
+              <circle cx="48" cy="48" r="43" transform="rotate(-90 48 48)"/>
+            </svg>
+            <div class="success-icon">✅</div>
+          </div>
+
+          <h2>Assessment Complete!</h2>
+          <p class="result-subtitle">
+            Thank you for completing the DISC personality assessment.<br>
+            Your results have been submitted successfully.
+          </p>
+
+          <div class="cand-id-chip">
+            🪪 <span id="resultId">CAND-XXXXXXXX-XXXX</span>
+          </div>
+
+          <div class="profile-grid">
+            <div class="profile-tile">
+              <div class="tile-label">Public Self</div>
+              <div class="tile-name" id="profilePublic">—</div>
+            </div>
+            <div class="profile-tile">
+              <div class="tile-label">Private Self</div>
+              <div class="tile-name" id="profilePrivate">—</div>
+            </div>
+            <div class="profile-tile">
+              <div class="tile-label">Core Self</div>
+              <div class="tile-name" id="profileCore">—</div>
+            </div>
+          </div>
+
+          <p class="result-note">
+            The HR team will review your results and contact you within 3–5 business days.
+            Please keep this Candidate ID for your reference.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#app -->
+
+  <script src="/app.js"></script>
+</body>
+</html>

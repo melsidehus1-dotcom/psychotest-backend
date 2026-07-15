@@ -1,10 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "api/submit.js",
-      "use": "@vercel/node"
-    }
+    { "src": "api/submit.js",       "use": "@vercel/node" },
+    { "src": "index.html",          "use": "@vercel/static" },
+    { "src": "dashboard.html",      "use": "@vercel/static" },
+    { "src": "style.css",           "use": "@vercel/static" },
+    { "src": "app.js",              "use": "@vercel/static" },
+    { "src": "dashboard.js",        "use": "@vercel/static" },
+    { "src": "disc_questions.json", "use": "@vercel/static" }
   ],
   "routes": [
     {
@@ -15,6 +18,13 @@
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type"
       }
-    }
+    },
+    { "src": "/style.css",           "dest": "style.css" },
+    { "src": "/app.js",              "dest": "app.js" },
+    { "src": "/dashboard.js",        "dest": "dashboard.js" },
+    { "src": "/disc_questions.json", "dest": "disc_questions.json" },
+    { "src": "/dashboard",           "dest": "dashboard.html" },
+    { "src": "/dashboard.html",      "dest": "dashboard.html" },
+    { "src": "/(.*)",                "dest": "index.html" }
   ]
 }

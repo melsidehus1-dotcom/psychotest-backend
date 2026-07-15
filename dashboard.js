@@ -11,12 +11,8 @@
   // Passcode stored only in memory — change this to your desired password
   const PASSCODE = 'hrdisc2026';
 
-  // Google Sheets published CSV URL
-  // To enable: File → Share → Publish to web → Sheet "Candidates" → CSV
-  // Replace the SHEET_ID below with your actual sheet ID
-  const SHEET_ID  = '1PkGzTrjL8yjOJMJFILx6x8fBfA4nffAjp8Oc_fTCrbo';
-  const SHEET_GID = '0'; // Candidates tab gid (usually 0 for first sheet)
-  const CSV_URL   = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+  // Google Sheets — published CSV URL (already configured)
+  const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS_zTTPZ3F8r3NkuzIcKPQS9oycZ2mt9BOlzKkGoop-NvyXl6E52TBEhRg73TsbSk0HHZuLzDGiix7r/pub?gid=922544061&single=true&output=csv';
 
   /* ── State ─────────────────────────────────── */
   const state = {

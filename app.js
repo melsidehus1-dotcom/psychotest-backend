@@ -42,8 +42,10 @@
     inputCV:         qs('inputCV'),
     inputPortfolio:  qs('inputPortfolio'),
     btnContinue:     qs('btnContinue'),
+    btnBackToWelcome:qs('btnBackToWelcome'),
     // Instructions
     btnStartTest:    qs('btnStartTest'),
+    btnBackToBiodata:qs('btnBackToBiodata'),
     // Test
     qNum:            qs('qNum'),
     qTotal:          qs('qTotal'),
@@ -539,6 +541,12 @@
      ══════════════════════════════════════════════ */
   function bindEvents() {
     D.btnStart.addEventListener('click', () => goTo('view-biodata'));
+    if (D.btnBackToWelcome) {
+      D.btnBackToWelcome.addEventListener('click', () => goTo('view-welcome'));
+    }
+    if (D.btnBackToBiodata) {
+      D.btnBackToBiodata.addEventListener('click', () => goTo('view-biodata'));
+    }
 
     D.form.addEventListener('submit', e => {
       e.preventDefault();

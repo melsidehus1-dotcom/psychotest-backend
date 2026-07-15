@@ -123,9 +123,14 @@
             <div class="field-hint">Website, Behance, Dribbble, or GitHub</div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block mt-lg" id="btnContinue">
-            Continue to Instructions →
-          </button>
+          <div style="display: flex; gap: var(--space-md); margin-top: var(--space-lg);">
+            <button type="button" class="btn btn-ghost" id="btnBackToWelcome" style="flex: 1;">
+              ← Back
+            </button>
+            <button type="submit" class="btn btn-primary" id="btnContinue" style="flex: 2;">
+              Continue to Instructions →
+            </button>
+          </div>
 
         </form>
       </div>
@@ -210,9 +215,14 @@
           </table>
         </div>
 
-        <button class="btn btn-primary btn-block mt-xl" id="btnStartTest">
-          I Understand — Start Test →
-        </button>
+        <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xl);">
+          <button type="button" class="btn btn-ghost" id="btnBackToBiodata" style="flex: 1;">
+            ← Back
+          </button>
+          <button class="btn btn-primary" id="btnStartTest" style="flex: 2;">
+            I Understand — Start Test →
+          </button>
+        </div>
 
       </div>
     </section>

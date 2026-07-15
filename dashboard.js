@@ -43,8 +43,6 @@
     // stats
     statTotal:       qs('statTotal'),
     statPending:     qs('statPending'),
-    statDev:         qs('statDev'),
-    statDes:         qs('statDes'),
     // overview
     profileTbody:    qs('profileTbody'),
     // candidates tab
@@ -53,6 +51,33 @@
     filterStatus:    qs('filterStatus'),
     candidatesTbody: qs('candidatesTbody'),
     pagination:      qs('pagination'),
+    // drawer elements
+    drawerBackdrop:  qs('drawerBackdrop'),
+    detailDrawer:    qs('detailDrawer'),
+    btnDrawerClose:  qs('btnDrawerClose'),
+    drawerId:        qs('drawerId'),
+    drawerName:      qs('drawerName'),
+    drawerEmail:     qs('drawerEmail'),
+    drawerPosition:  qs('drawerPosition'),
+    drawerDate:      qs('drawerDate'),
+    drawerStatus:    qs('drawerStatus'),
+    drawerCvLink:    qs('drawerCvLink'),
+    drawerPortLink:  qs('drawerPortLink'),
+    drawerPubSelf:   qs('drawerPubSelf'),
+    drawerPrivSelf:  qs('drawerPrivSelf'),
+    drawerCoreSelf:  qs('drawerCoreSelf'),
+    scoreDMost:      qs('scoreDMost'),
+    scoreIMost:      qs('scoreIMost'),
+    scoreSMost:      qs('scoreSMost'),
+    scoreCMost:      qs('scoreCMost'),
+    scoreDLeast:     qs('scoreDLeast'),
+    scoreILeast:     qs('scoreILeast'),
+    scoreSLeast:     qs('scoreSLeast'),
+    scoreCLeast:     qs('scoreCLeast'),
+    scoreDChange:    qs('scoreDChange'),
+    scoreIChange:    qs('scoreIChange'),
+    scoreSChange:    qs('scoreSChange'),
+    scoreCChange:    qs('scoreCChange'),
   };
 
   /* ══════════════════════════════════════════════
@@ -78,6 +103,7 @@
 
   function unlock() {
     state.unlocked = true;
+    sessionStorage.setItem('hr_dash_unlocked', 'true');
     D.gateView.classList.add('hidden');
     D.dashView.classList.remove('hidden');
     loadData();
@@ -85,11 +111,13 @@
 
   D.btnLogout.addEventListener('click', () => {
     state.unlocked = false;
+    sessionStorage.removeItem('hr_dash_unlocked');
     D.dashView.classList.add('hidden');
     D.gateView.classList.remove('hidden');
     D.passcodeInput.value = '';
     state.allRows = [];
     state.filtered = [];
+    closeDrawer();
   });
 
   /* ══════════════════════════════════════════════
@@ -179,6 +207,18 @@
     priv:     'Profile_Graph_2',
     core:     'Profile_Graph_3',
     status:   'Status_Evaluasi',
+    dMost:    'D_Most',
+    iMost:    'I_Most',
+    sMost:    'S_Most',
+    cMost:    'C_Most',
+    dLeast:   'D_Least',
+    iLeast:   'I_Least',
+    sLeast:   'S_Least',
+    cLeast:   'C_Least',
+    dChange:  'D_Change',
+    iChange:  'I_Change',
+    sChange:  'S_Change',
+    cChange:  'C_Change',
   };
 
   /* ══════════════════════════════════════════════
@@ -214,13 +254,9 @@
     const rows    = state.allRows;
     const total   = rows.length;
     const pending = rows.filter(r => (r[COL.status] ?? 'Pending') === 'Pending').length;
-    const dev     = rows.filter(r => r[COL.position] === 'Web Developer').length;
-    const des     = rows.filter(r => r[COL.position] === 'Web Designer').length;
 
     animCount(D.statTotal,   total);
     animCount(D.statPending, pending);
-    animCount(D.statDev,     dev);
-    animCount(D.statDes,     des);
   }
 
   function animCount(el, target) {
@@ -283,7 +319,7 @@
         ? 'No candidates match the current filters.'
         : 'No candidate data found.';
       D.candidatesTbody.innerHTML = `
-        <tr><td colspan="9">
+        <tr><td colspan="10">
           <div class="empty-state">
             <div class="empty-icon">🔍</div>
             <h4>${msg}</h4>
@@ -304,12 +340,27 @@
 
       const date = r[COL.time] ? new Date(r[COL.time]).toLocaleDateString() : '—';
 
+      const cvLink = r[COL.cv];
+      const portLink = r[COL.port];
+      let filesHtml = '<div class="file-badge-wrap">';
+      if (cvLink && cvLink.startsWith('http')) {
+        filesHtml += `<a href="${escHtml(cvLink)}" target="_blank" class="file-badge cv-badge" title="View CV" data-stop-propagation="true">📄 CV</a>`;
+      }
+      if (portLink && portLink.startsWith('http')) {
+        filesHtml += `<a href="${escHtml(portLink)}" target="_blank" class="file-badge port-badge" title="View Portfolio" data-stop-propagation="true">💼 Port</a>`;
+      }
+      if (filesHtml === '<div class="file-badge-wrap">') {
+        filesHtml += '<span style="color:var(--text-muted)">—</span>';
+      }
+      filesHtml += '</div>';
+
       return `
-        <tr>
+        <tr data-cand-id="${escHtml(r[COL.id] ?? '')}">
           <td style="font-family:monospace;font-size:0.78rem;color:var(--accent-light)">${escHtml(r[COL.id] ?? '—')}</td>
           <td class="name-cell">${escHtml(r[COL.name] ?? '—')}</td>
           <td>${escHtml(r[COL.email] ?? '—')}</td>
           <td>${escHtml(r[COL.position] ?? '—')}</td>
+          <td>${filesHtml}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.pub]  ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.priv] ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.core] ?? '—')}</td>
@@ -381,7 +432,7 @@
   }
 
   function setTableLoading() {
-    const msg = '<tr><td colspan="9" style="text-align:center;padding:2.5rem;color:var(--text-muted)">⏳ Loading data…</td></tr>';
+    const msg = '<tr><td colspan="10" style="text-align:center;padding:2.5rem;color:var(--text-muted)">⏳ Loading data…</td></tr>';
     D.candidatesTbody.innerHTML = msg;
     D.profileTbody.innerHTML    = '<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--text-muted)">⏳ Loading…</td></tr>';
   }
@@ -392,6 +443,110 @@
     el.innerHTML = `⚠️ ${msg}`;
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 8000);
+  }
+
+  /* ══════════════════════════════════════════════
+     DETAIL DRAWER LOGIC
+     ══════════════════════════════════════════════ */
+  D.candidatesTbody.addEventListener('click', e => {
+    // Stop drawer opening when clicking badges directly
+    if (e.target.closest('a') || e.target.closest('[data-stop-propagation="true"]')) {
+      return;
+    }
+
+    const tr = e.target.closest('tr');
+    if (!tr) return;
+
+    const candId = tr.dataset.candId;
+    if (!candId) return;
+
+    const candidate = state.filtered.find(c => c[COL.id] === candId);
+    if (candidate) {
+      openDrawer(candidate);
+    }
+  });
+
+  function openDrawer(r) {
+    D.drawerId.textContent       = r[COL.id] ?? '—';
+    D.drawerName.textContent     = r[COL.name] ?? '—';
+    D.drawerEmail.textContent    = r[COL.email] ?? '—';
+    D.drawerPosition.textContent = r[COL.position] ?? '—';
+    D.drawerDate.textContent     = r[COL.time] ? new Date(r[COL.time]).toLocaleString() : '—';
+    
+    // Status Badge
+    const status = r[COL.status] ?? 'Pending';
+    D.drawerStatus.textContent   = status;
+    D.drawerStatus.className     = 'badge ' + ({
+      'Pending':  'badge-pending',
+      'Reviewed': 'badge-reviewed',
+      'Hired':    'badge-hired',
+      'Rejected': 'badge-rejected',
+    }[status] ?? 'badge-pending');
+
+    // CV & Portfolio buttons
+    const cv = r[COL.cv];
+    if (cv && cv.startsWith('http')) {
+      D.drawerCvLink.href = cv;
+      D.drawerCvLink.classList.remove('disabled');
+    } else {
+      D.drawerCvLink.removeAttribute('href');
+      D.drawerCvLink.classList.add('disabled');
+    }
+
+    const port = r[COL.port];
+    if (port && port.startsWith('http')) {
+      D.drawerPortLink.href = port;
+      D.drawerPortLink.classList.remove('disabled');
+    } else {
+      D.drawerPortLink.removeAttribute('href');
+      D.drawerPortLink.classList.add('disabled');
+    }
+
+    // DISC profiles
+    D.drawerPubSelf.textContent  = r[COL.pub] ?? '—';
+    D.drawerPrivSelf.textContent = r[COL.priv] ?? '—';
+    D.drawerCoreSelf.textContent = r[COL.core] ?? '—';
+
+    // Detailed scores (D, I, S, C)
+    D.scoreDMost.textContent   = r[COL.dMost] ?? '0';
+    D.scoreIMost.textContent   = r[COL.iMost] ?? '0';
+    D.scoreSMost.textContent   = r[COL.sMost] ?? '0';
+    D.scoreCMost.textContent   = r[COL.cMost] ?? '0';
+
+    D.scoreDLeast.textContent  = r[COL.dLeast] ?? '0';
+    D.scoreILeast.textContent  = r[COL.iLeast] ?? '0';
+    D.scoreSLeast.textContent  = r[COL.sLeast] ?? '0';
+    D.scoreCLeast.textContent  = r[COL.cLeast] ?? '0';
+
+    D.scoreDChange.textContent = r[COL.dChange] ?? '0';
+    D.scoreIChange.textContent = r[COL.iChange] ?? '0';
+    D.scoreSChange.textContent = r[COL.sChange] ?? '0';
+    D.scoreCChange.textContent = r[COL.cChange] ?? '0';
+
+    // Open animations
+    D.drawerBackdrop.classList.remove('hidden');
+    D.detailDrawer.classList.remove('hidden');
+  }
+
+  function closeDrawer() {
+    D.drawerBackdrop.classList.add('hidden');
+    D.detailDrawer.classList.add('hidden');
+  }
+
+  D.btnDrawerClose.addEventListener('click', closeDrawer);
+  D.drawerBackdrop.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeDrawer();
+    }
+  });
+
+  /* ══════════════════════════════════════════════
+     AUTO-UNLOCK SESSION CHECK
+     ══════════════════════════════════════════════ */
+  if (sessionStorage.getItem('hr_dash_unlocked') === 'true') {
+    unlock();
   }
 
 })();

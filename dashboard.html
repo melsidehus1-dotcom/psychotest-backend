@@ -99,18 +99,6 @@
             <div class="stat-value" id="statPending">—</div>
             <div class="stat-sub">Awaiting evaluation</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-icon">💻</div>
-            <div class="stat-label">Web Developer</div>
-            <div class="stat-value" id="statDev">—</div>
-            <div class="stat-sub">Position applicants</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-icon">🎨</div>
-            <div class="stat-label">Web Designer</div>
-            <div class="stat-value" id="statDes">—</div>
-            <div class="stat-sub">Position applicants</div>
-          </div>
         </div>
 
         <!-- Top profiles -->
@@ -166,6 +154,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Position</th>
+                <th>Files</th>
                 <th>Public Self</th>
                 <th>Private Self</th>
                 <th>Core Self</th>
@@ -174,7 +163,7 @@
               </tr>
             </thead>
             <tbody id="candidatesTbody">
-              <tr><td colspan="9" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
+              <tr><td colspan="10" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
             </tbody>
           </table>
 
@@ -184,6 +173,121 @@
       </div>
 
     </main>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       CANDIDATE DETAIL DRAWER & BACKDROP
+       ══════════════════════════════════════════ -->
+  <div id="drawerBackdrop" class="drawer-backdrop hidden"></div>
+  <div id="detailDrawer" class="detail-drawer hidden">
+    <div class="drawer-header">
+      <button id="btnDrawerClose" class="btn-drawer-close" aria-label="Close panel">✕</button>
+      <h2 id="drawerTitle">Candidate Details</h2>
+      <p id="drawerSubtitle">DISC Profile Evaluation</p>
+    </div>
+    <div class="drawer-body">
+      <!-- Candidate Basic Info Card -->
+      <div class="drawer-info-card glass-card">
+        <div class="info-row">
+          <div class="info-label">Candidate ID</div>
+          <div class="info-value" id="drawerId" style="font-family:monospace;color:var(--accent-light)">—</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Name</div>
+          <div class="info-value" id="drawerName" style="font-weight:600">—</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Email</div>
+          <div class="info-value" id="drawerEmail">—</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Position</div>
+          <div class="info-value" id="drawerPosition">—</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Date Submitted</div>
+          <div class="info-value" id="drawerDate">—</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Evaluation Status</div>
+          <div class="info-value"><span id="drawerStatus" class="badge">Pending</span></div>
+        </div>
+      </div>
+
+      <!-- Links/Files Section -->
+      <div class="drawer-section">
+        <h3>📄 Documents</h3>
+        <div class="drawer-links-row">
+          <a id="drawerCvLink" href="#" target="_blank" class="btn btn-ghost file-btn">
+            <span class="btn-icon">📄</span> View CV
+          </a>
+          <a id="drawerPortLink" href="#" target="_blank" class="btn btn-ghost file-btn">
+            <span class="btn-icon">💼</span> View Portfolio
+          </a>
+        </div>
+      </div>
+
+      <!-- DISC Profiles Summary -->
+      <div class="drawer-section">
+        <h3>📊 DISC Profiles</h3>
+        <div class="drawer-profiles-grid">
+          <div class="drawer-profile-box">
+            <span class="box-label">Public Self (Graph 1)</span>
+            <span class="box-value" id="drawerPubSelf">—</span>
+          </div>
+          <div class="drawer-profile-box">
+            <span class="box-label">Private Self (Graph 2)</span>
+            <span class="box-value" id="drawerPrivSelf">—</span>
+          </div>
+          <div class="drawer-profile-box">
+            <span class="box-label">Core Self (Graph 3)</span>
+            <span class="box-value" id="drawerCoreSelf">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Score Grid -->
+      <div class="drawer-section">
+        <h3>🔢 DISC Score Breakdown</h3>
+        <div class="drawer-scores-table-wrap">
+          <table class="drawer-scores-table">
+            <thead>
+              <tr>
+                <th>Profile Graph</th>
+                <th>D</th>
+                <th>I</th>
+                <th>S</th>
+                <th>C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Graph 1 (Most)</td>
+                <td id="scoreDMost">—</td>
+                <td id="scoreIMost">—</td>
+                <td id="scoreSMost">—</td>
+                <td id="scoreCMost">—</td>
+              </tr>
+              <tr>
+                <td>Graph 2 (Least)</td>
+                <td id="scoreDLeast">—</td>
+                <td id="scoreILeast">—</td>
+                <td id="scoreSLeast">—</td>
+                <td id="scoreCLeast">—</td>
+              </tr>
+              <tr>
+                <td>Graph 3 (Change)</td>
+                <td id="scoreDChange">—</td>
+                <td id="scoreIChange">—</td>
+                <td id="scoreSChange">—</td>
+                <td id="scoreCChange">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <script src="/dashboard.js"></script>

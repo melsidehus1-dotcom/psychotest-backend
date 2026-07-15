@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
   try {
     const { id } = req.query;
     if (!id) {
-      res.status(400).json({ status: 'error', message: 'Missing Candidate ID' });
+      res.status(400).json({ status: 'error', message: 'Missing User ID' });
       return;
     }
 
@@ -56,15 +56,15 @@ module.exports = async (req, res) => {
 
     const rows = response.data.values;
     if (!rows || rows.length < 2) {
-      res.status(404).json({ status: 'error', message: 'No candidates found' });
+      res.status(404).json({ status: 'error', message: 'No records found' });
       return;
     }
 
-    // Find candidate by ID (Column A, index 0)
+    // Find user by ID (Column A, index 0)
     const matchRow = rows.find(row => row[0] && row[0].trim().toUpperCase() === id.trim().toUpperCase());
 
     if (!matchRow) {
-      res.status(404).json({ status: 'error', message: 'Candidate ID not found' });
+      res.status(404).json({ status: 'error', message: 'User ID not found' });
       return;
     }
 

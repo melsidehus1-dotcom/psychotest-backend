@@ -601,7 +601,7 @@
       D.btnDoSearch.addEventListener('click', async () => {
         const queryId = D.inputSearchId.value.trim();
         if (!queryId) {
-          toast('Please enter a Candidate ID.', 'warning');
+          toast('Please enter a User ID.', 'warning');
           return;
         }
 
@@ -611,7 +611,7 @@
           const data = res.ok ? await res.json() : null;
 
           if (!res.ok || !data || data.status !== 'success') {
-            const msg = (data && data.message) ? data.message : `Candidate ID not found.`;
+            const msg = (data && data.message) ? data.message : `User ID not found.`;
             throw new Error(msg);
           }
 
@@ -620,7 +620,7 @@
 
         } catch (err) {
           console.error('Search failed:', err);
-          toast(err.message || 'Retrieval failed — please verify Candidate ID.', 'error', 5000);
+          toast(err.message || 'Retrieval failed — please verify User ID.', 'error', 5000);
         } finally {
           setLoading(false);
         }

@@ -202,7 +202,7 @@ module.exports = async (req, res) => {
     const scoring = scoreDISC(disc_most, disc_least);
 
     // 2. Format database row
-    const candidateId = `CAND-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.floor(1000 + Math.random() * 9000)}`;
+    const candidateId = `USER-${new Date().toISOString().slice(0, 10).replace(/-/g, '')}-${Math.floor(1000 + Math.random() * 9000)}`;
     const timestamp = new Date().toISOString();
 
     const rowData = [

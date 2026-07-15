@@ -31,51 +31,125 @@
          VIEW 1 — WELCOME
          ══════════════════════════════════════════ -->
     <section id="view-welcome" class="view active" aria-label="Welcome">
-      <div class="glass-card">
-        <div class="welcome-wrap">
-
-          <div class="logo-mark" aria-hidden="true">
-            <img src="home-icon.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: inherit;">
+      <div class="p360-container">
+        <!-- Header Branding -->
+        <div class="p360-header">
+          <div class="p360-logo-wrapper">
+            <img src="home-icon2.png" alt="Profile360 Logo" class="p360-logo-img">
           </div>
-
-          <p class="welcome-eyebrow">HR Assessment Platform</p>
-          <h1>DISC<br>Personality Assessment</h1>
-          <p class="welcome-subtitle">
-            Discover your behavioral profile through our professional personality evaluation — designed to help you and your team thrive.
+          <h1 class="p360-title">Profile<span class="p360-title-highlight">360</span></h1>
+          <p class="p360-tagline-1">Know yourself better.</p>
+          <p class="p360-tagline-2">Work together smarter.</p>
+          <p class="p360-desc">
+            Discover your natural behavioral style and gain insights into how you communicate, make decisions, and collaborate with others.
           </p>
 
-          <div class="feature-pills">
-            <span class="pill"><span class="pill-icon">📋</span>24 Question Groups</span>
-            <span class="pill"><span class="pill-icon">⏱️</span>~10 Minutes</span>
-            <span class="pill"><span class="pill-icon">🎯</span>4 Dimensions</span>
-            <span class="pill"><span class="pill-icon">🔒</span>Confidential</span>
+          <!-- Feature Pills -->
+          <div class="p360-pills">
+            <span class="p360-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              24 Questions
+            </span>
+            <span class="p360-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              ~8–10 Minutes
+            </span>
+            <span class="p360-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path><circle cx="12" cy="12" r="2"></circle></svg>
+              4 Dimensions
+            </span>
+            <span class="p360-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Confidential
+            </span>
           </div>
+        </div>
 
-          <button class="btn btn-primary btn-block" id="btnStart">
-            Begin Assessment →
+        <!-- Getting Accurate Results Card -->
+        <div class="p360-card p360-accurate-card">
+          <div class="p360-card-header">
+            <span class="p360-sparkle">✨</span> Getting Accurate Results
+          </div>
+          <div class="p360-columns">
+            <div class="p360-col">
+              <div class="p360-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <h3>Be Yourself</h3>
+              <p>Answer based on who you naturally are.</p>
+            </div>
+            <div class="p360-col p360-col-border">
+              <div class="p360-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              </div>
+              <h3>No Right or Wrong</h3>
+              <p>Every personality style has unique strengths.</p>
+            </div>
+            <div class="p360-col p360-col-border">
+              <div class="p360-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <h3>Trust Your First Instinct</h3>
+              <p>Choose the answer that feels most natural without overthinking.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary CTA & Estimated Time -->
+        <div class="p360-cta-section">
+          <button class="p360-btn-primary" id="btnStart">
+            Start My Assessment <span class="p360-arrow">→</span>
           </button>
+          <div class="p360-time-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A1A1AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Most people complete this assessment in about <strong class="p360-time-hl">8–10 minutes.</strong></span>
+          </div>
+        </div>
 
-          <div class="search-trigger-wrap mt-md">
-            <button class="btn btn-ghost btn-block" id="btnShowSearch">
-              🔍 View Existing Results
+        <!-- OR Divider -->
+        <div class="p360-divider">
+          <div class="p360-divider-line"></div>
+          <span class="p360-divider-text">OR</span>
+          <div class="p360-divider-line"></div>
+        </div>
+
+        <!-- Returning User Card -->
+        <div class="p360-card p360-returning-card">
+          <div class="p360-returning-row">
+            <div class="p360-returning-left">
+              <div class="p360-icon-circle-sm">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A855F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="11.5" cy="14.5" r="2.5"></circle><path d="M13.25 16.25 15 18"></path></svg>
+              </div>
+              <div class="p360-returning-text">
+                <h4>Returning User?</h4>
+                <p>Search or view your previous results anytime.</p>
+              </div>
+            </div>
+            <button class="p360-btn-outline" id="btnShowSearch">
+              View My Profile <span class="p360-arrow">→</span>
             </button>
           </div>
 
-          <div class="search-box-welcome hidden mt-md" id="searchBoxWelcome">
+          <!-- Collapsible Search Box -->
+          <div class="search-box-welcome hidden p360-search-box" id="searchBoxWelcome">
             <div class="input-group" style="margin-bottom:0;">
               <input type="text" id="inputSearchId" placeholder=" " autocomplete="off">
               <label for="inputSearchId">Candidate ID (e.g. CAND-XXXXXXXX-XXXX)</label>
             </div>
-            <button class="btn btn-primary btn-block mt-sm" id="btnDoSearch">
+            <button class="p360-btn-primary p360-btn-search" id="btnDoSearch">
               Search Results →
             </button>
           </div>
-
-          <p class="welcome-disclaimer mt-md">
-            By proceeding, you consent to your responses being processed for recruitment evaluation purposes.
-          </p>
-
         </div>
+
+        <!-- Bottom Confidential Note & Footer -->
+        <div class="p360-confidential">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Your responses are confidential and will only be used for the purpose of this assessment.
+        </div>
+        <footer class="p360-footer">
+          <span class="p360-heart">♡</span> Know yourself better. <span class="p360-footer-hl">Work together smarter.</span>
+        </footer>
       </div>
     </section>
 

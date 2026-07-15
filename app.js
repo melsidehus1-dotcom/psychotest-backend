@@ -587,11 +587,11 @@
         const isHidden = D.searchBoxWelcome.classList.contains('hidden');
         if (isHidden) {
           D.searchBoxWelcome.classList.remove('hidden');
-          D.btnShowSearch.textContent = '▲ Hide Search';
+          D.btnShowSearch.innerHTML = '▲ Hide Search';
           D.inputSearchId.focus();
         } else {
           D.searchBoxWelcome.classList.add('hidden');
-          D.btnShowSearch.textContent = '🔍 View Existing Results';
+          D.btnShowSearch.innerHTML = 'View My Profile <span class="p360-arrow">→</span>';
         }
       });
     }

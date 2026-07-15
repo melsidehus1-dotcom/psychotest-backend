@@ -55,6 +55,15 @@
     profilePublic:   qs('profilePublic'),
     profilePrivate:  qs('profilePrivate'),
     profileCore:     qs('profileCore'),
+    // Result DISC scores
+    discTypeCode:    qs('discTypeCode'),
+    discTypeName:    qs('discTypeName'),
+    discTypeDesc:    qs('discTypeDesc'),
+    pctD: qs('pctD'), pctI: qs('pctI'), pctS: qs('pctS'), pctC: qs('pctC'),
+    barD: qs('barD'), barI: qs('barI'), barS: qs('barS'), barC: qs('barC'),
+    barPctD: qs('barPctD'), barPctI: qs('barPctI'), barPctS: qs('barPctS'), barPctC: qs('barPctC'),
+    scoreD: qs('scoreD'), scoreI: qs('scoreI'), scoreS: qs('scoreS'), scoreC: qs('scoreC'),
+    discWheel:       qs('discWheel'),
     // UI
     toastStack:      qs('toastStack'),
     loadingVeil:     qs('loadingVeil'),
@@ -136,12 +145,7 @@
     [D.inputName, D.inputEmail, D.inputPosition, D.inputCV, D.inputPortfolio].forEach(el => {
       if (!el) return;
       el.addEventListener('input',  () => clearError(el));
-      el.addEventListener('change', () => {
-        clearError(el);
-        if (el.tagName === 'SELECT' && el.value) {
-          el.closest('.input-group').classList.add('has-value');
-        }
-      });
+      el.addEventListener('change', () => clearError(el));
     });
   }
 
@@ -264,7 +268,9 @@
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  /* ── Radio change handler ──────────────────── */
+  /* ── Radio change handler ──────────── */
+  let autoAdvanceTimer = null;
+
   function onRadioChange(e) {
     const r   = e.target;
     const idx = parseInt(r.dataset.q, 10);
@@ -277,6 +283,21 @@
     const q = state.questions[idx];
     buildRows(q, idx, state.most[idx], state.least[idx]);
     updateNav();
+
+    // Auto-advance when both most and least are chosen
+    const hasMost  = state.most[idx]  !== null;
+    const hasLeast = state.least[idx] !== null;
+    const isLast   = idx === state.questions.length - 1;
+
+    if (hasMost && hasLeast && !isLast) {
+      clearTimeout(autoAdvanceTimer);
+      autoAdvanceTimer = setTimeout(() => {
+        // Only advance if still on the same question
+        if (state.currentQ === idx && !isLast) {
+          next();
+        }
+      }, 700);
+    }
   }
 
   /* ── Update nav buttons & status ──────────── */
@@ -396,7 +417,108 @@
     D.profilePublic.textContent  = data.disc_profile?.public_self  ?? '—';
     D.profilePrivate.textContent = data.disc_profile?.private_self ?? '—';
     D.profileCore.textContent    = data.disc_profile?.core_self    ?? '—';
+
+    // Populate DISC scores if available
+    const scores = data.disc_scores;
+    if (scores) {
+      const total = scores.D + scores.I + scores.S + scores.C;
+      const pct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
+      const dP = pct(scores.D), iP = pct(scores.I), sP = pct(scores.S), cP = pct(scores.C);
+
+      // Highlight the dominant type cell
+      const max = Math.max(dP, iP, sP, cP);
+      const dominant = dP === max ? 'D' : iP === max ? 'I' : sP === max ? 'S' : 'C';
+
+      // Set score grid
+      D.pctD.textContent = `${dP}%`;
+      D.pctI.textContent = `${iP}%`;
+      D.pctS.textContent = `${sP}%`;
+      D.pctC.textContent = `${cP}%`;
+      if (D.scoreD) D.scoreD.classList.toggle('is-dominant', dominant === 'D');
+      if (D.scoreI) D.scoreI.classList.toggle('is-dominant', dominant === 'I');
+      if (D.scoreS) D.scoreS.classList.toggle('is-dominant', dominant === 'S');
+      if (D.scoreC) D.scoreC.classList.toggle('is-dominant', dominant === 'C');
+
+      // Animate bars with a staggered delay
+      const bars = [
+        { el: D.barD, pct: D.barPctD, val: dP },
+        { el: D.barI, pct: D.barPctI, val: iP },
+        { el: D.barS, pct: D.barPctS, val: sP },
+        { el: D.barC, pct: D.barPctC, val: cP },
+      ];
+      bars.forEach(({ el, pct, val }, i) => {
+        setTimeout(() => {
+          if (el) el.style.width = `${val}%`;
+          if (pct) pct.textContent = `${val}%`;
+        }, 400 + i * 120);
+      });
+
+      // Populate DISC type card
+      const typeMap = { D: 'Dominant', I: 'Influential', S: 'Steady', C: 'Conscientious' };
+      const descMap = {
+        D: 'You are results-driven and decisive. You thrive on challenges, take charge in high-pressure situations, and are motivated by achieving tangible results.',
+        I: 'You are enthusiastic and optimistic. You excel at building relationships, inspiring others, and creating an energetic atmosphere in the workplace.',
+        S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
+        C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
+      };
+      if (D.discTypeCode) D.discTypeCode.textContent = dominant;
+      if (D.discTypeName) D.discTypeName.textContent = typeMap[dominant];
+      if (D.discTypeDesc) D.discTypeDesc.textContent = descMap[dominant];
+
+      // Draw wheel
+      drawDiscWheel(dP, iP, sP, cP, dominant);
+    }
+
     goTo('view-result');
+  }
+
+  /* ── Draw DISC Wheel (canvas) ──────── */
+  function drawDiscWheel(d, i, s, c, dominant) {
+    const canvas = D.discWheel;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const cx = 70, cy = 70, r = 58, innerR = 24;
+    const segments = [
+      { val: d, color: '#ef4444', label: 'D' },  // red
+      { val: i, color: '#f59e0b', label: 'I' },  // amber
+      { val: s, color: '#22c55e', label: 'S' },  // green
+      { val: c, color: '#3b82f6', label: 'C' },  // blue
+    ];
+    const total = d + i + s + c || 1;
+    let startAngle = -Math.PI / 2;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    segments.forEach(seg => {
+      const slice = (seg.val / total) * 2 * Math.PI;
+      const isDom = seg.label === dominant;
+      const outerR = isDom ? r + 8 : r;
+
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, outerR, startAngle, startAngle + slice);
+      ctx.closePath();
+      ctx.fillStyle = isDom ? seg.color : seg.color + '66';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(15,15,30,0.6)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      startAngle += slice;
+    });
+
+    // Draw inner circle (donut hole)
+    ctx.beginPath();
+    ctx.arc(cx, cy, innerR, 0, 2 * Math.PI);
+    ctx.fillStyle = 'hsl(228,28%,8%)';
+    ctx.fill();
+
+    // Draw dominant letter
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 16px Outfit, Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(dominant, cx, cy);
   }
 
   /* ══════════════════════════════════════════════

@@ -81,14 +81,10 @@
             <div class="field-error" role="alert">Please enter a valid email address.</div>
           </div>
 
-          <div class="input-group select-wrap">
-            <select id="inputPosition" required>
-              <option value="" disabled selected hidden></option>
-              <option value="Web Developer">Web Developer</option>
-              <option value="Web Designer">Web Designer</option>
-            </select>
-            <label for="inputPosition">Position Applied</label>
-            <div class="field-error" role="alert">Please select a position.</div>
+          <div class="input-group">
+            <input type="text" id="inputPosition" placeholder=" " required autocomplete="organization-title">
+            <label for="inputPosition">Position</label>
+            <div class="field-error" role="alert">Please enter the position you are applying for.</div>
           </div>
 
           <div class="input-group">
@@ -257,49 +253,116 @@
          VIEW 5 — RESULT
          ══════════════════════════════════════════ -->
     <section id="view-result" class="view" aria-label="Assessment results">
-      <div class="glass-card">
-        <div class="result-wrap">
 
-          <!-- Animated success ring -->
+      <!-- Success banner -->
+      <div class="glass-card result-banner">
+        <div class="result-banner-inner">
           <div class="success-ring" aria-hidden="true">
             <svg class="success-ring-svg" viewBox="0 0 96 96">
               <circle cx="48" cy="48" r="43" transform="rotate(-90 48 48)"/>
             </svg>
             <div class="success-icon">✅</div>
           </div>
-
-          <h2>Assessment Complete!</h2>
-          <p class="result-subtitle">
-            Thank you for completing the DISC personality assessment.<br>
-            Your results have been submitted successfully.
-          </p>
-
-          <div class="cand-id-chip">
-            🪪 <span id="resultId">CAND-XXXXXXXX-XXXX</span>
-          </div>
-
-          <div class="profile-grid">
-            <div class="profile-tile">
-              <div class="tile-label">Public Self</div>
-              <div class="tile-name" id="profilePublic">—</div>
-            </div>
-            <div class="profile-tile">
-              <div class="tile-label">Private Self</div>
-              <div class="tile-name" id="profilePrivate">—</div>
-            </div>
-            <div class="profile-tile">
-              <div class="tile-label">Core Self</div>
-              <div class="tile-name" id="profileCore">—</div>
+          <div class="result-banner-text">
+            <h2>Assessment Complete!</h2>
+            <p class="result-subtitle">
+              Thank you for completing the DISC personality assessment.<br>
+              Your results have been submitted successfully.
+            </p>
+            <div class="cand-id-chip">
+              🪪 <span id="resultId">CAND-XXXXXXXX-XXXX</span>
             </div>
           </div>
-
-          <p class="result-note">
-            The HR team will review your results and contact you within 3–5 business days.
-            Please keep this Candidate ID for your reference.
-          </p>
-
         </div>
       </div>
+
+      <!-- DISC Type card -->
+      <div class="glass-card disc-type-card" id="discTypeCard">
+        <div class="disc-type-header">
+          <div class="disc-type-left">
+            <p class="disc-type-eyebrow">YOUR DISC TYPE</p>
+            <div class="disc-type-code" id="discTypeCode">—</div>
+            <div class="disc-type-name" id="discTypeName">—</div>
+            <p class="disc-type-desc" id="discTypeDesc">Your behavioral profile has been calculated based on your responses.</p>
+          </div>
+          <div class="disc-wheel-wrap" aria-hidden="true">
+            <canvas id="discWheel" width="140" height="140"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISC Scores card -->
+      <div class="glass-card disc-scores-card">
+        <h3 class="disc-scores-title">Your DISC Scores</h3>
+
+        <!-- Score grid -->
+        <div class="disc-score-grid">
+          <div class="disc-score-cell disc-d" id="scoreD">
+            <div class="disc-score-cell-label">D: DOMINANT</div>
+            <div class="disc-score-cell-pct" id="pctD">0%</div>
+          </div>
+          <div class="disc-score-cell disc-i" id="scoreI">
+            <div class="disc-score-cell-label">I: INFLUENTIAL</div>
+            <div class="disc-score-cell-pct" id="pctI">0%</div>
+          </div>
+          <div class="disc-score-cell disc-s" id="scoreS">
+            <div class="disc-score-cell-label">S: STEADY</div>
+            <div class="disc-score-cell-pct" id="pctS">0%</div>
+          </div>
+          <div class="disc-score-cell disc-c" id="scoreC">
+            <div class="disc-score-cell-label">C: CONSCIENTIOUS</div>
+            <div class="disc-score-cell-pct" id="pctC">0%</div>
+          </div>
+        </div>
+
+        <!-- Score bars -->
+        <div class="disc-bar-list">
+          <div class="disc-bar-row">
+            <span class="disc-bar-label disc-d-text">D: Dominant</span>
+            <div class="disc-bar-track"><div class="disc-bar-fill disc-d-fill" id="barD" style="width:0%"></div></div>
+            <span class="disc-bar-pct" id="barPctD">0%</span>
+          </div>
+          <div class="disc-bar-row">
+            <span class="disc-bar-label disc-i-text">I: Influential</span>
+            <div class="disc-bar-track"><div class="disc-bar-fill disc-i-fill" id="barI" style="width:0%"></div></div>
+            <span class="disc-bar-pct" id="barPctI">0%</span>
+          </div>
+          <div class="disc-bar-row">
+            <span class="disc-bar-label disc-s-text">S: Steady</span>
+            <div class="disc-bar-track"><div class="disc-bar-fill disc-s-fill" id="barS" style="width:0%"></div></div>
+            <span class="disc-bar-pct" id="barPctS">0%</span>
+          </div>
+          <div class="disc-bar-row">
+            <span class="disc-bar-label disc-c-text">C: Conscientious</span>
+            <div class="disc-bar-track"><div class="disc-bar-fill disc-c-fill" id="barC" style="width:0%"></div></div>
+            <span class="disc-bar-pct" id="barPctC">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile grid -->
+      <div class="glass-card profiles-card">
+        <h3 class="disc-scores-title">Behavioral Profiles</h3>
+        <div class="profile-grid">
+          <div class="profile-tile">
+            <div class="tile-label">Public Self</div>
+            <div class="tile-name" id="profilePublic">—</div>
+          </div>
+          <div class="profile-tile">
+            <div class="tile-label">Private Self</div>
+            <div class="tile-name" id="profilePrivate">—</div>
+          </div>
+          <div class="profile-tile">
+            <div class="tile-label">Core Self</div>
+            <div class="tile-name" id="profileCore">—</div>
+          </div>
+        </div>
+        <p class="result-note">
+          The HR team will review your results and contact you within 3–5 business days.
+          Please keep this Candidate ID for your reference.
+        </p>
+      </div>
+
     </section>
 
   </div><!-- /#app -->

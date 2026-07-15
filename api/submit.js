@@ -298,6 +298,12 @@ module.exports = async (req, res) => {
         public_self: scoring.profiles.graph1,
         private_self: scoring.profiles.graph2,
         core_self: scoring.profiles.graph3
+      },
+      disc_scores: {
+        D: scoring.raw.most.D,
+        I: scoring.raw.most.I,
+        S: scoring.raw.most.S,
+        C: scoring.raw.most.C
       }
     });
 

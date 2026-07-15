@@ -7,6 +7,10 @@
 (function () {
   'use strict';
 
+  // Apply saved theme immediately (before render) to avoid flash
+  const savedTheme = localStorage.getItem('disc-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
   /* ── Config ────────────────────────────────── */
   // Passcode stored only in memory — change this to your desired password
   const PASSCODE = 'hrdisc2026';
@@ -30,6 +34,7 @@
   const qs = id => document.getElementById(id);
 
   const D = {
+    themeToggle:     qs('themeToggle'),
     gateView:        qs('gateView'),
     dashView:        qs('dashView'),
     gateForm:        qs('gateForm'),
@@ -541,6 +546,16 @@
       closeDrawer();
     }
   });
+
+  // Theme toggle listener
+  if (D.themeToggle) {
+    D.themeToggle.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      const next = isLight ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('disc-theme', next);
+    });
+  }
 
   /* ══════════════════════════════════════════════
      AUTO-UNLOCK SESSION CHECK

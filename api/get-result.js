@@ -1,0 +1,117 @@
+const { google } = require('googleapis');
+
+// Helper to format private key for Google APIs
+function getPrivateKey() {
+  const rawKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+  if (!rawKey) return null;
+  return rawKey.replace(/\\n/g, '\n');
+}
+
+module.exports = async (req, res) => {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  if (req.method !== 'GET') {
+    res.status(405).json({ status: 'error', message: 'Method Not Allowed' });
+    return;
+  }
+
+  try {
+    const { id } = req.query;
+    if (!id) {
+      res.status(400).json({ status: 'error', message: 'Missing Candidate ID' });
+      return;
+    }
+
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        private_key: getPrivateKey(),
+      },
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+    const sheetId = process.env.GOOGLE_SHEET_ID;
+
+    if (!sheetId) {
+      throw new Error('GOOGLE_SHEET_ID environment variable is missing');
+    }
+
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: sheetId,
+      range: 'Candidates!A:AO',
+    });
+
+    const rows = response.data.values;
+    if (!rows || rows.length < 2) {
+      res.status(404).json({ status: 'error', message: 'No candidates found' });
+      return;
+    }
+
+    // Find candidate by ID (Column A, index 0)
+    const matchRow = rows.find(row => row[0] && row[0].trim().toUpperCase() === id.trim().toUpperCase());
+
+    if (!matchRow) {
+      res.status(404).json({ status: 'error', message: 'Candidate ID not found' });
+      return;
+    }
+
+    // Reconstruct scoring response
+    // Columns mapping:
+    // row[0]: Candidate ID
+    // row[2]: Name
+    // row[4]: Position
+    // row[11]: Raw MOST D
+    // row[12]: Raw MOST I
+    // row[13]: Raw MOST S
+    // row[14]: Raw MOST C
+    // row[37]: Public Profile (graph1)
+    // row[38]: Private Profile (graph2)
+    // row[39]: Core Profile (graph3)
+
+    const candidateId = matchRow[0];
+    const name = matchRow[2];
+    const position = matchRow[4];
+    const dVal = Number(matchRow[11] || 0);
+    const iVal = Number(matchRow[12] || 0);
+    const sVal = Number(matchRow[13] || 0);
+    const cVal = Number(matchRow[14] || 0);
+    const publicSelf = matchRow[37] || '—';
+    const privateSelf = matchRow[38] || '—';
+    const coreSelf = matchRow[39] || '—';
+
+    res.status(200).json({
+      status: 'success',
+      candidate_id: candidateId,
+      name,
+      position,
+      disc_profile: {
+        public_self: publicSelf,
+        private_self: privateSelf,
+        core_self: coreSelf
+      },
+      disc_scores: {
+        D: dVal,
+        I: iVal,
+        S: sVal,
+        C: cVal
+      }
+    });
+
+  } catch (error) {
+    console.error('API Error:', error);
+    res.status(500).json({ status: 'error', message: error.message || 'Internal Server Error' });
+  }
+};

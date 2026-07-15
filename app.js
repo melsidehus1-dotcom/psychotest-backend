@@ -30,6 +30,10 @@
   const D = {
     // Welcome
     btnStart:        qs('btnStart'),
+    btnShowSearch:   qs('btnShowSearch'),
+    searchBoxWelcome:qs('searchBoxWelcome'),
+    inputSearchId:   qs('inputSearchId'),
+    btnDoSearch:     qs('btnDoSearch'),
     // Biodata
     form:            qs('biodataForm'),
     inputName:       qs('inputName'),
@@ -566,6 +570,52 @@
         const next = isLight ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', next);
         localStorage.setItem('disc-theme', next);
+      });
+    }
+
+    // Search toggle
+    if (D.btnShowSearch && D.searchBoxWelcome) {
+      D.btnShowSearch.addEventListener('click', () => {
+        const isHidden = D.searchBoxWelcome.classList.contains('hidden');
+        if (isHidden) {
+          D.searchBoxWelcome.classList.remove('hidden');
+          D.btnShowSearch.textContent = '▲ Hide Search';
+          D.inputSearchId.focus();
+        } else {
+          D.searchBoxWelcome.classList.add('hidden');
+          D.btnShowSearch.textContent = '🔍 View Existing Results';
+        }
+      });
+    }
+
+    // Do search lookup
+    if (D.btnDoSearch) {
+      D.btnDoSearch.addEventListener('click', async () => {
+        const queryId = D.inputSearchId.value.trim();
+        if (!queryId) {
+          toast('Please enter a Candidate ID.', 'warning');
+          return;
+        }
+
+        setLoading(true);
+        try {
+          const res = await fetch(`/api/get-result?id=${encodeURIComponent(queryId)}`);
+          const data = res.ok ? await res.json() : null;
+
+          if (!res.ok || !data || data.status !== 'success') {
+            const msg = (data && data.message) ? data.message : `Candidate ID not found.`;
+            throw new Error(msg);
+          }
+
+          toast('Results retrieved successfully!', 'success', 3000);
+          showResult(data);
+
+        } catch (err) {
+          console.error('Search failed:', err);
+          toast(err.message || 'Retrieval failed — please verify Candidate ID.', 'error', 5000);
+        } finally {
+          setLoading(false);
+        }
       });
     }
   }

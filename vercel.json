@@ -2,6 +2,7 @@
   "version": 2,
   "builds": [
     { "src": "api/submit.js",       "use": "@vercel/node" },
+    { "src": "api/get-result.js",   "use": "@vercel/node" },
     { "src": "index.html",          "use": "@vercel/static" },
     { "src": "dashboard.html",      "use": "@vercel/static" },
     { "src": "style.css",           "use": "@vercel/static" },
@@ -17,6 +18,15 @@
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    },
+    {
+      "src": "/api/get-result",
+      "dest": "api/get-result.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type"
       }
     },

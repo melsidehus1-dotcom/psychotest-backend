@@ -557,12 +557,27 @@
 
     D.btnNext.addEventListener('click', next);
     D.btnPrev.addEventListener('click', prev);
+
+    // Theme toggle
+    const themeBtn = qs('themeToggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const next = isLight ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('disc-theme', next);
+      });
+    }
   }
 
   /* ══════════════════════════════════════════════
      INIT
      ══════════════════════════════════════════════ */
   async function init() {
+    // Apply saved theme immediately (before render) to avoid flash
+    const savedTheme = localStorage.getItem('disc-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
     setupFormListeners();
     bindEvents();
     await loadQuestions();   // pre-fetch questions in background

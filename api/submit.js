@@ -59,7 +59,7 @@ function getMatchIndex(D, I, S, C) {
 }
 
 function getProfileInfo(idx) {
-  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
+  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
   const profile = discProfiles.find(p => p.id === idx);
   return profile ? {
     name: profile.name,
@@ -70,8 +70,13 @@ function getProfileInfo(idx) {
     strengths: profile.strengths || [],
     watch_outs: profile.watch_outs || [],
     what_this_means: profile.what_this_means || '',
-    at_a_glance: profile.at_a_glance || ''
-  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
+    at_a_glance: profile.at_a_glance || '',
+    job_suitability: profile.job_suitability || '',
+    decision_making: profile.decision_making || '',
+    communication: profile.communication || '',
+    relationships: profile.relationships || '',
+    preferred_environment: profile.preferred_environment || ''
+  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
 }
 
 /**

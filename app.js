@@ -644,16 +644,22 @@
       D.discAtAGlanceText.textContent = rawAtGlance;
     }
 
+    const toArray = (val) => {
+      if (Array.isArray(val)) return val;
+      if (typeof val === 'string' && val.trim()) return val.split(';').map(s => s.trim()).filter(Boolean);
+      return [];
+    };
+
     if (D.discHowYouWorkText) {
       D.discHowYouWorkText.textContent = prof.core_self_about || prof.about_you || "You prefer clear guidelines, well-organized processes, and a steady environment where quality is prioritized.";
     }
     if (D.discWhatToWatchText) {
-      const wList = prof.core_self_watch_outs && prof.core_self_watch_outs.length > 0 ? prof.core_self_watch_outs : prof.watch_outs;
-      D.discWhatToWatchText.textContent = wList && wList[0] ? wList[0] : "You may overanalyze details or strive for perfection. Try to stay flexible, delegate more, and be open to different perspectives.";
+      const wList = toArray(prof.core_self_watch_outs || prof.watch_outs);
+      D.discWhatToWatchText.textContent = wList.length > 0 ? wList[0] : "You may overanalyze details or strive for perfection. Try to stay flexible, delegate more, and be open to different perspectives.";
     }
     if (D.discYourStrengthText) {
-      const sList = prof.core_self_strengths && prof.core_self_strengths.length > 0 ? prof.core_self_strengths : prof.strengths;
-      D.discYourStrengthText.textContent = sList && sList[0] ? sList[0] : "You are systematic, reliable, and quality-focused. You pay attention to detail and consistently deliver thorough and dependable results.";
+      const sList = toArray(prof.core_self_strengths || prof.strengths);
+      D.discYourStrengthText.textContent = sList.length > 0 ? sList[0] : "You are systematic, reliable, and quality-focused. You pay attention to detail and consistently deliver thorough and dependable results.";
     }
     if (D.discBestInText) {
       let rawBestIn = prof.core_self_job_suitability || prof.job_suitability || "Roles that require accuracy, planning, problem-solving, analytical thinking, and maintaining high standards.";
@@ -672,14 +678,13 @@
 
     // 5. Strengths Section
     if (D.strengthsContainer) {
-      const strengths = prof.core_self_strengths && prof.core_self_strengths.length > 0
-        ? prof.core_self_strengths
-        : [
-            'Reliable and dependable team contributor who follows through on commitments.',
-            'Systematic and structured approach to problem-solving and task execution.',
-            'Empathetic listener who fosters collaboration and workplace harmony.'
-          ];
-      D.strengthsContainer.innerHTML = strengths.map(s => `
+      const strengths = toArray(prof.core_self_strengths || prof.strengths);
+      const finalStrengths = strengths.length > 0 ? strengths : [
+        'Reliable and dependable team contributor who follows through on commitments.',
+        'Systematic and structured approach to problem-solving and task execution.',
+        'Empathetic listener who fosters collaboration and workplace harmony.'
+      ];
+      D.strengthsContainer.innerHTML = finalStrengths.map(s => `
         <div class="insight-chip strength-chip">
           <span class="strength-chip-icon">✔</span>
           <span>${s}</span>
@@ -689,13 +694,12 @@
 
     // 6. Watch Outs Section
     if (D.watchOutsContainer) {
-      const watchOuts = prof.core_self_watch_outs && prof.core_self_watch_outs.length > 0
-        ? prof.core_self_watch_outs
-        : [
-            'May occasionally hesitate or feel stressed when adapting to sudden, unexpected changes.',
-            'Can overanalyze details or seek consensus before making rapid, high-stakes decisions.'
-          ];
-      D.watchOutsContainer.innerHTML = watchOuts.map(w => `
+      const watchOuts = toArray(prof.core_self_watch_outs || prof.watch_outs);
+      const finalWatchOuts = watchOuts.length > 0 ? watchOuts : [
+        'May occasionally hesitate or feel stressed when adapting to sudden, unexpected changes.',
+        'Can overanalyze details or seek consensus before making rapid, high-stakes decisions.'
+      ];
+      D.watchOutsContainer.innerHTML = finalWatchOuts.map(w => `
         <div class="insight-chip watch-chip">
           <span class="watch-chip-icon">⚡</span>
           <span>${w}</span>

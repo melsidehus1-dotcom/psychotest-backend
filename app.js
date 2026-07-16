@@ -485,6 +485,7 @@
 
     // 2. Behavioral Profiles (The 3 Dimensions)
     function populateTile(codeEl, nameEl, descEl, charsEl, code, name, desc, chars) {
+      if (name && name.trim().toUpperCase() === 'PENGAMBIL KEPUTUSAN') name = 'DECISION MAKER';
       if (codeEl) codeEl.textContent = code || '—';
       if (nameEl) nameEl.textContent = name || '—';
       if (descEl) descEl.textContent = desc || 'No description available.';

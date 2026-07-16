@@ -95,9 +95,12 @@ module.exports = async (req, res) => {
     const coreSelf = matchRow[39] || '—';
 
     function findProfileByName(profName) {
-      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
-      const found = discProfiles.find(p => p.name.trim().toUpperCase() === profName.trim().toUpperCase());
+      if (!profName || profName === '—') return { name: '—', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
+      let cleanName = profName.trim().toUpperCase();
+      if (cleanName === 'PENGAMBIL KEPUTUSAN') cleanName = 'DECISION MAKER';
+      const found = discProfiles.find(p => p.name.trim().toUpperCase() === cleanName || (p.profile_name && p.profile_name.trim().toUpperCase() === cleanName) || p.code.trim().toUpperCase() === cleanName);
       return found ? {
+        name: found.name,
         code: found.code,
         description: found.description || '',
         characteristics: found.characteristics || [],
@@ -111,7 +114,7 @@ module.exports = async (req, res) => {
         communication: found.communication || '',
         relationships: found.relationships || '',
         preferred_environment: found.preferred_environment || ''
-      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
+      } : { name: profName, code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
     }
 
     const pubInfo = findProfileByName(publicSelf);
@@ -125,9 +128,9 @@ module.exports = async (req, res) => {
       position,
       duration_seconds: durationSeconds,
       disc_profile: {
-        public_self: publicSelf,
-        private_self: privateSelf,
-        core_self: coreSelf,
+        public_self: pubInfo.name || publicSelf,
+        private_self: privInfo.name || privateSelf,
+        core_self: coreInfo.name || coreSelf,
         public_self_code: pubInfo.code,
         private_self_code: privInfo.code,
         core_self_code: coreInfo.code,

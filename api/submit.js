@@ -58,10 +58,15 @@ function getMatchIndex(D, I, S, C) {
   return 0;
 }
 
-function getProfileName(idx) {
-  if (idx <= 0) return 'UNKNOWN';
+function getProfileInfo(idx) {
+  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [] };
   const profile = discProfiles.find(p => p.id === idx);
-  return profile ? profile.name : 'UNKNOWN';
+  return profile ? {
+    name: profile.name,
+    code: profile.code,
+    description: profile.description || '',
+    characteristics: profile.characteristics || []
+  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [] };
 }
 
 /**
@@ -143,15 +148,22 @@ function scoreDISC(mostAnswers, leastAnswers) {
   const idx2 = getMatchIndex(normLeast.D, normLeast.I, normLeast.S, normLeast.C);
   const idx3 = getMatchIndex(normChange.D, normChange.I, normChange.S, normChange.C);
 
-  const profile1 = getProfileName(idx1);
-  const profile2 = getProfileName(idx2);
-  const profile3 = getProfileName(idx3);
+  const profile1 = getProfileInfo(idx1);
+  const profile2 = getProfileInfo(idx2);
+  const profile3 = getProfileInfo(idx3);
 
   return {
     raw: { most: rawMost, least: rawLeast },
     change: change,
     norm: { most: normMost, least: normLeast, change: normChange },
-    profiles: { graph1: profile1, graph2: profile2, graph3: profile3 }
+    profiles: {
+      graph1: profile1.name,
+      graph2: profile2.name,
+      graph3: profile3.name,
+      graph1_info: profile1,
+      graph2_info: profile2,
+      graph3_info: profile3
+    }
   };
 }
 
@@ -297,7 +309,16 @@ module.exports = async (req, res) => {
       disc_profile: {
         public_self: scoring.profiles.graph1,
         private_self: scoring.profiles.graph2,
-        core_self: scoring.profiles.graph3
+        core_self: scoring.profiles.graph3,
+        public_self_code: scoring.profiles.graph1_info.code,
+        private_self_code: scoring.profiles.graph2_info.code,
+        core_self_code: scoring.profiles.graph3_info.code,
+        public_self_desc: scoring.profiles.graph1_info.description,
+        private_self_desc: scoring.profiles.graph2_info.description,
+        core_self_desc: scoring.profiles.graph3_info.description,
+        public_self_chars: scoring.profiles.graph1_info.characteristics,
+        private_self_chars: scoring.profiles.graph2_info.characteristics,
+        core_self_chars: scoring.profiles.graph3_info.characteristics
       },
       disc_scores: {
         D: scoring.raw.most.D,

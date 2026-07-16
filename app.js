@@ -467,9 +467,28 @@
         S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
         C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
       };
-      if (D.discTypeCode) D.discTypeCode.textContent = dominant;
-      if (D.discTypeName) D.discTypeName.textContent = typeMap[dominant];
-      if (D.discTypeDesc) D.discTypeDesc.textContent = descMap[dominant];
+
+      const prof = data.disc_profile;
+      if (prof && prof.core_self && prof.core_self !== 'UNKNOWN' && prof.core_self !== '—') {
+        const code = prof.core_self_code && prof.core_self_code !== '—' ? prof.core_self_code : dominant;
+        const name = prof.core_self;
+        const desc = prof.core_self_desc || '';
+        const chars = prof.core_self_chars || [];
+
+        if (D.discTypeCode) D.discTypeCode.textContent = code;
+        if (D.discTypeName) D.discTypeName.textContent = name;
+        if (D.discTypeDesc) {
+          let descText = desc ? `${desc}` : '';
+          if (chars && chars.length > 0) {
+            descText += descText ? ` • Karakteristik: ${chars.join(', ')}.` : `Karakteristik: ${chars.join(', ')}.`;
+          }
+          D.discTypeDesc.textContent = descText || descMap[dominant];
+        }
+      } else {
+        if (D.discTypeCode) D.discTypeCode.textContent = dominant;
+        if (D.discTypeName) D.discTypeName.textContent = typeMap[dominant];
+        if (D.discTypeDesc) D.discTypeDesc.textContent = descMap[dominant];
+      }
 
       // Draw wheel
       drawDiscWheel(dP, iP, sP, cP, dominant);

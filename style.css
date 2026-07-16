@@ -1572,11 +1572,12 @@ body::after {
 
 .disc-type-code {
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
   color: var(--success);
-  line-height: 1;
-  margin-bottom: 4px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  word-break: break-word;
   background: linear-gradient(135deg, var(--success) 0%, var(--success-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1585,7 +1586,7 @@ body::after {
 
 .disc-type-name {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--space-md);

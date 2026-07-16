@@ -1,4 +1,5 @@
 const { google } = require('googleapis');
+const discProfiles = require('../disc_profiles.json');
 
 // Helper to format private key for Google APIs
 function getPrivateKey() {
@@ -92,6 +93,20 @@ module.exports = async (req, res) => {
     const privateSelf = matchRow[38] || '—';
     const coreSelf = matchRow[39] || '—';
 
+    function findProfileByName(profName) {
+      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [] };
+      const found = discProfiles.find(p => p.name.trim().toUpperCase() === profName.trim().toUpperCase());
+      return found ? {
+        code: found.code,
+        description: found.description || '',
+        characteristics: found.characteristics || []
+      } : { code: '—', description: '', characteristics: [] };
+    }
+
+    const pubInfo = findProfileByName(publicSelf);
+    const privInfo = findProfileByName(privateSelf);
+    const coreInfo = findProfileByName(coreSelf);
+
     res.status(200).json({
       status: 'success',
       candidate_id: candidateId,
@@ -100,7 +115,16 @@ module.exports = async (req, res) => {
       disc_profile: {
         public_self: publicSelf,
         private_self: privateSelf,
-        core_self: coreSelf
+        core_self: coreSelf,
+        public_self_code: pubInfo.code,
+        private_self_code: privInfo.code,
+        core_self_code: coreInfo.code,
+        public_self_desc: pubInfo.description,
+        private_self_desc: privInfo.description,
+        core_self_desc: coreInfo.description,
+        public_self_chars: pubInfo.characteristics,
+        private_self_chars: privInfo.characteristics,
+        core_self_chars: coreInfo.characteristics
       },
       disc_scores: {
         D: dVal,

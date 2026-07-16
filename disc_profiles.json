@@ -1,561 +1,561 @@
-﻿[
+[
     {
-        "id":  1,
-        "code":  "C",
-        "name":  "LOGICAL THINKER",
-        "description":  "Pendiam",
-        "characteristics":  [
-                                "Anti Kritik",
-                                "Perfeksionis",
-                                "Cenderung Santai",
-                                "Detail",
-                                "Empati"
-                            ],
-        "job_suitability":  "Planner (any function), Engineer (Installation, Technical), Technical/Research (Chemist Technician), Academic, Statistician, Government Worker, IT Management, Prison Officer, Quality Controller."
+        "id": 1,
+        "code": "C",
+        "name": "LOGICAL THINKER",
+        "description": "Quiet & Reserved",
+        "characteristics": [
+            "Sensitive to Criticism",
+            "Perfectionistic",
+            "Easygoing & Relaxed",
+            "Detail-Oriented",
+            "Empathetic"
+        ],
+        "job_suitability": "Planner (any function), Engineer (Installation, Technical), Technical/Research (Chemist Technician), Academic, Statistician, Government Worker, IT Management, Prison Officer, Quality Controller."
     },
     {
-        "id":  2,
-        "code":  "D",
-        "name":  "ESTABLISHER",
-        "description":  "Individualis",
-        "characteristics":  [
-                                "Ego Tinggi, Kurang Sensitif",
-                                "Kurang Pertimbangan",
-                                "Efektif",
-                                "High Motivation",
-                                "Bersemangat Tinggi"
-                            ],
-        "job_suitability":  "Attorney, Researcher, Sales Representative, Planning Consultant, Transport Personnel, Production (Director, Manager, Supervisor), Technologist, Strategic Planning, Trouble Shooting, Marketing Services, Consultant, Engineering (Director, Manager, Supervisor) and Self-Employment."
+        "id": 2,
+        "code": "D",
+        "name": "ESTABLISHER",
+        "description": "Individualistic & Independent",
+        "characteristics": [
+            "Strong-Willed, Less Empathetic",
+            "Quick to Act, Less Deliberate",
+            "Highly Effective",
+            "Highly Motivated",
+            "Energetic & Enthusiastic"
+        ],
+        "job_suitability": "Attorney, Researcher, Sales Representative, Planning Consultant, Transport Personnel, Production (Director, Manager, Supervisor), Technologist, Strategic Planning, Trouble Shooting, Marketing Services, Consultant, Engineering (Director, Manager, Supervisor) and Self-Employment."
     },
     {
-        "id":  3,
-        "code":  "D / C-D",
-        "name":  "DESIGNER",
-        "description":  "Sensitif",
-        "characteristics":  [
-                                "Kurang Cepat",
-                                "Anti Tekanan ",
-                                "Terlalu Mandiri",
-                                "Kurang Percaya Orang Lain",
-                                "Anti Kritik"
-                            ],
-        "job_suitability":  "Engineering (Management, Research, Design), Research (R\u0026D), Planning, Chemist, Accountancy, Specialist, Finance, Technician, Quality Control, Production Planning/Management, Design Engineer, Bookkeeper, Chemist Technician, Safety Officer, Librarian."
+        "id": 3,
+        "code": "D / C-D",
+        "name": "DESIGNER",
+        "description": "Sensitive & Intuitive",
+        "characteristics": [
+            "Methodical & Deliberate",
+            "Averse to High Pressure",
+            "Fiercely Independent",
+            "Skeptical & Cautious with Others",
+            "Sensitive to Criticism"
+        ],
+        "job_suitability": "Engineering (Management, Research, Design), Research (R&D), Planning, Chemist, Accountancy, Specialist, Finance, Technician, Quality Control, Production Planning/Management, Design Engineer, Bookkeeper, Chemist Technician, Safety Officer, Librarian."
     },
     {
-        "id":  4,
-        "code":  "D / I-D",
-        "name":  "NEGOTIATOR",
-        "description":  "Suka Bergaul",
-        "characteristics":  [
-                                "Anti Rutin",
-                                "Aktif",
-                                "Terlalu Percaya Diri",
-                                "Agresif",
-                                "Optimis"
-                            ],
-        "job_suitability":  "Sales and Marketing (Directing, Manager, Person), Public Relations, Recruitment Consultant, Politician, Director, Self-Employed, Hotelier, Travel Agent, Trainer, Hospitality, Lawyer, Solicitor, Motivators, Team Leader, Politician, Trainer, Lecturer, Theatrical Agent, General Management and Leading People, Attorney."
+        "id": 4,
+        "code": "D / I-D",
+        "name": "NEGOTIATOR",
+        "description": "Sociable & Outgoing",
+        "characteristics": [
+            "Averse to Monotony",
+            "Highly Active",
+            "Highly Self-Confident",
+            "Assertive & Direct",
+            "Optimistic"
+        ],
+        "job_suitability": "Sales and Marketing (Directing, Manager, Person), Public Relations, Recruitment Consultant, Politician, Director, Self-Employed, Hotelier, Travel Agent, Trainer, Hospitality, Lawyer, Solicitor, Motivators, Team Leader, Politician, Trainer, Lecturer, Theatrical Agent, General Management and Leading People, Attorney."
     },
     {
-        "id":  5,
-        "code":  "D / I-D-C",
-        "name":  "CONFIDENT \u0026 DETERMINED",
-        "description":  "Pandai Memilih Orang",
-        "characteristics":  [
-                                "Leader",
-                                "Good Interpersonal Skill",
-                                "Dominan",
-                                "Agresif",
-                                "Perfeksionis"
-                            ],
-        "job_suitability":  "Specialist/Technical Selling (Computer, Finance, Engineer and others, Chef, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Computer Hardware Sales, Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Insurance, Mortgage and Finance Sales, Teacher, Travel Agent, Personnel and Marketing Services."
+        "id": 5,
+        "code": "D / I-D-C",
+        "name": "CONFIDENT & DETERMINED",
+        "description": "Astute Judge of Character",
+        "characteristics": [
+            "Natural Leader",
+            "Strong Interpersonal Skills",
+            "Dominant & Commanding",
+            "Assertive & Direct",
+            "Perfectionistic"
+        ],
+        "job_suitability": "Specialist/Technical Selling (Computer, Finance, Engineer and others, Chef, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Computer Hardware Sales, Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Insurance, Mortgage and Finance Sales, Teacher, Travel Agent, Personnel and Marketing Services."
     },
     {
-        "id":  6,
-        "code":  "D / I-D-S",
-        "name":  "REFORMER",
-        "description":  "Mudah Bergaul",
-        "characteristics":  [
-                                "Leader",
-                                "Sadar Diri",
-                                "Butuh Pujian \u0026 Penghargaan",
-                                "Cepat Percaya Orang",
-                                "Mudah Simpati \u0026 Empati"
-                            ],
-        "job_suitability":  "Hotelier, Customer Service, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Computer Software Sales, Lecturer, Engineering and Production (Manager/Supervisor)."
+        "id": 6,
+        "code": "D / I-D-S",
+        "name": "REFORMER",
+        "description": "Personable & Approachable",
+        "characteristics": [
+            "Natural Leader",
+            "Self-Aware",
+            "Thrives on Recognition & Praise",
+            "Quick to Trust Others",
+            "Quick to Sympathize & Empathize"
+        ],
+        "job_suitability": "Hotelier, Customer Service, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Computer Software Sales, Lecturer, Engineering and Production (Manager/Supervisor)."
     },
     {
-        "id":  7,
-        "code":  "D / I-S-D",
-        "name":  "MOTIVATOR",
-        "description":  "Leader (Kelompok Kecil)",
-        "characteristics":  [
-                                "Supporter",
-                                "Sosialisasi Baik",
-                                "Butuh Ketegasan",
-                                "Butuh Pujian \u0026 Penghargaan",
-                                "Kurang Detail"
-                            ],
-        "job_suitability":  "Hotelier, Community Counseling, Customer Service, Complaints Manager, Community Work, Recruitment Consultant, Hospitality, Teacher, Telemarketing, Production Manager, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Call Centre Manager, Lecturer, Engineering and Production (Manager/Supervisor)."
+        "id": 7,
+        "code": "D / I-S-D",
+        "name": "MOTIVATOR",
+        "description": "Small Group Leader",
+        "characteristics": [
+            "Supportive Team Player",
+            "Strong Socialization Skills",
+            "Requires Clear Direction",
+            "Thrives on Recognition & Praise",
+            "Broader Picture over Detail"
+        ],
+        "job_suitability": "Hotelier, Community Counseling, Customer Service, Complaints Manager, Community Work, Recruitment Consultant, Hospitality, Teacher, Telemarketing, Production Manager, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Call Centre Manager, Lecturer, Engineering and Production (Manager/Supervisor)."
     },
     {
-        "id":  8,
-        "code":  "D / S-D-C / S-C-D",
-        "name":  "INQUIRER",
-        "description":  "Full Self Control",
-        "characteristics":  [
-                                "Sabar",
-                                "Penuh Pertimbangan",
-                                "Good Interpersonal",
-                                "Selektif",
-                                "Lambat Adaptasi"
-                            ],
-        "job_suitability":  "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Research Manager, Scientific Work, Accountant, Administration, Project Engineer, Draughtsman, Designer, Analyst, Finance, Chemist, Technical Service Support, Flight Attendant, Technician, Service Engineer, Service Manager, Security Specialist."
+        "id": 8,
+        "code": "D / S-D-C / S-C-D",
+        "name": "INQUIRER",
+        "description": "High Self-Control",
+        "characteristics": [
+            "Patient & Composed",
+            "Deliberate & Considerate",
+            "Strong Interpersonal Skills",
+            "Selective & Discerning",
+            "Slow to Adapt to Sudden Change"
+        ],
+        "job_suitability": "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Research Manager, Scientific Work, Accountant, Administration, Project Engineer, Draughtsman, Designer, Analyst, Finance, Chemist, Technical Service Support, Flight Attendant, Technician, Service Engineer, Service Manager, Security Specialist."
     },
     {
-        "id":  9,
-        "code":  "D-I",
-        "name":  "PENGAMBIL KEPUTUSAN",
-        "description":  "Pekerja Keras",
-        "characteristics":  [
-                                "Leader",
-                                "Banyak Minat",
-                                "Dingin / Task Oriented",
-                                "Kurang Pergaulan",
-                                "Kontrol Emosi Kurang"
-                            ],
-        "job_suitability":  "General Management (Directing/Managing/Supervising, Public Relations, Business Management, Conflict Resolution, Industrial Relations, Business Consultant, Trouble Shooting, Sales and Sales Management, Marketing, Promoting, Production (Director, Manager, Supervisor), Consultancy, Publishing, Sales Executive, Promotional Work, Brokers, Self-Employment, Advertising, Lecturing, Dealing/Broking."
+        "id": 9,
+        "code": "D-I",
+        "name": "PENGAMBIL KEPUTUSAN",
+        "description": "Diligent & Driven",
+        "characteristics": [
+            "Natural Leader",
+            "Wide Range of Interests",
+            "Task-Oriented & Reserved",
+            "Introverted Socially",
+            "Expressive & Impulsive Emotionally"
+        ],
+        "job_suitability": "General Management (Directing/Managing/Supervising, Public Relations, Business Management, Conflict Resolution, Industrial Relations, Business Consultant, Trouble Shooting, Sales and Sales Management, Marketing, Promoting, Production (Director, Manager, Supervisor), Consultancy, Publishing, Sales Executive, Promotional Work, Brokers, Self-Employment, Advertising, Lecturing, Dealing/Broking."
     },
     {
-        "id":  10,
-        "code":  "D-I-S",
-        "name":  "DIRECTOR",
-        "description":  "Pengelola",
-        "characteristics":  [
-                                "Enerjik",
-                                "Kurang Detail",
-                                "Mudah Bosan",
-                                "Agresif",
-                                "Arogan"
-                            ],
-        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Office Management, Account Manager, Customer Service, Retail Manager, IT, Lecturer, Logistics, Manager-General, National Accounts Manager, Teacher, Projects Manager."
+        "id": 10,
+        "code": "D-I-S",
+        "name": "DIRECTOR",
+        "description": "Strategic Organizer",
+        "characteristics": [
+            "Energetic",
+            "Broader Picture over Detail",
+            "Easily Bored with Routine",
+            "Assertive & Direct",
+            "Strong-Minded & Self-Assured"
+        ],
+        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Office Management, Account Manager, Customer Service, Retail Manager, IT, Lecturer, Logistics, Manager-General, National Accounts Manager, Teacher, Projects Manager."
     },
     {
-        "id":  11,
-        "code":  "D-S ",
-        "name":  "SELF-MOTIVATED",
-        "description":  "Objektif \u0026 Analitis",
-        "characteristics":  [
-                                "Mandiri",
-                                "Good Planner",
-                                "Komitmen thd Target",
-                                "Menghindari Konflik"
-                            ],
-        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Project Management, Researcher, Chemist (R\u0026D), Planner, Engineering (R\u0026D), Systems Analyst, Commercial Planner, Computer Engineer, Programmer, IT, Other computer-related disciplines, Technical Trouble Shooting and Directing, Lawyer, Solicitor, Development Engineer, Work Study, Barrister, Attorney."
+        "id": 11,
+        "code": "D-S ",
+        "name": "SELF-MOTIVATED",
+        "description": "Objective & Analytical",
+        "characteristics": [
+            "Independent",
+            "Skilled Planner",
+            "Committed to Targets",
+            "Conflict-Averse"
+        ],
+        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Project Management, Researcher, Chemist (R&D), Planner, Engineering (R&D), Systems Analyst, Commercial Planner, Computer Engineer, Programmer, IT, Other computer-related disciplines, Technical Trouble Shooting and Directing, Lawyer, Solicitor, Development Engineer, Work Study, Barrister, Attorney."
     },
     {
-        "id":  12,
-        "code":  "I / C-I-S",
-        "name":  "MEDIATOR",
-        "description":  "Loyal",
-        "characteristics":  [
-                                "Tight Scheduled",
-                                "Curious",
-                                "Sensitif",
-                                "Good Communication Skill",
-                                "Good Analitical Think"
-                            ],
-        "job_suitability":  "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist, Lab. Technician), Trainer, Finance (Supervisor, Accountant, Advisor), Public Relations, Administration, Office Administrator, Market Analyst, System Analyst, Programmer, Selling (Technical/Service)."
+        "id": 12,
+        "code": "I / C-I-S",
+        "name": "MEDIATOR",
+        "description": "Loyal & Dedicated",
+        "characteristics": [
+            "Strictly Scheduled",
+            "Inquisitive & Curious",
+            "Sensitive",
+            "Excellent Communication Skills",
+            "Strong Analytical Thinking"
+        ],
+        "job_suitability": "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist, Lab. Technician), Trainer, Finance (Supervisor, Accountant, Advisor), Public Relations, Administration, Office Administrator, Market Analyst, System Analyst, Programmer, Selling (Technical/Service)."
     },
     {
-        "id":  13,
-        "code":  "I / C-S-I",
-        "name":  "PRACTITIONER",
-        "description":  "Perfeksionis",
-        "characteristics":  [
-                                "Quality Oriented",
-                                "Scheduled",
-                                "Anti Kejutan",
-                                "Good Interpersonal Skill",
-                                "Terlalu Detail"
-                            ],
-        "job_suitability":  "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist), Trainer, Finance (Manager, Supervisor, Accountant, Advisor), Public Relations-Administration, Purchasing, Chemist Research, Office Administrator, Computer Programmer, Market Analyst, System Analyst, Programmer, Research and Development Supervisor, Laboratory Technician, Legal, Selling (Technical/Service)."
+        "id": 13,
+        "code": "I / C-S-I",
+        "name": "PRACTITIONER",
+        "description": "Perfectionistic & Quality-Driven",
+        "characteristics": [
+            "Quality-Oriented",
+            "Structured & Scheduled",
+            "Dislikes Sudden Surprises",
+            "Strong Interpersonal Skills",
+            "Highly Exacting & Meticulous"
+        ],
+        "job_suitability": "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist), Trainer, Finance (Manager, Supervisor, Accountant, Advisor), Public Relations-Administration, Purchasing, Chemist Research, Office Administrator, Computer Programmer, Market Analyst, System Analyst, Programmer, Research and Development Supervisor, Laboratory Technician, Legal, Selling (Technical/Service)."
     },
     {
-        "id":  14,
-        "code":  "I-S-C / I-C-S",
-        "name":  "RESPONSIVE \u0026 THOUGHTFUL",
-        "description":  "High Energy",
-        "characteristics":  [
-                                "Good Communication Skill",
-                                "To The Point",
-                                "Sensitif",
-                                "Banyak Bicara",
-                                "Need Recognation"
-                            ],
-        "job_suitability":  "Actors, Chef, Personnel, Welfare, Broadcasting, Training, Attorney, Teaching, Accounting, Technical Instructor, Accounting-General, Accounts Supervisor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Florist/Floral Designer, Engineering (Sales, Service, Project, Draughtsman, Designer), Graphic Designer, Specialist (Soft/Services), Selling, Purchasing, Singers, Technical Instructor, Personnel Management, Politician, Supervising (Engineering, Production, Accounts), Administration Work, Sales Engineer, Secretarial, Industrial Relations Specialist."
+        "id": 14,
+        "code": "I-S-C / I-C-S",
+        "name": "RESPONSIVE & THOUGHTFUL",
+        "description": "High Energy & Dynamic",
+        "characteristics": [
+            "Excellent Communication Skills",
+            "Direct & To The Point",
+            "Sensitive",
+            "Talkative & Expressive",
+            "Thrives on Recognition"
+        ],
+        "job_suitability": "Actors, Chef, Personnel, Welfare, Broadcasting, Training, Attorney, Teaching, Accounting, Technical Instructor, Accounting-General, Accounts Supervisor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Florist/Floral Designer, Engineering (Sales, Service, Project, Draughtsman, Designer), Graphic Designer, Specialist (Soft/Services), Selling, Purchasing, Singers, Technical Instructor, Personnel Management, Politician, Supervising (Engineering, Production, Accounts), Administration Work, Sales Engineer, Secretarial, Industrial Relations Specialist."
     },
     {
-        "id":  15,
-        "code":  "S",
-        "name":  "SPECIALIST",
-        "description":  "Stabil \u0026 Konsisten",
-        "characteristics":  [
-                                "Terkendali",
-                                "Nyaman di Belakang Layar",
-                                "Sabar",
-                                "Loyal",
-                                "Sulit Adaptasi"
-                            ],
-        "job_suitability":  "Administrative Work, Engineering and Production areas (Sales, Services, Project, Painter, Plumber, Draughtsman, Designer, Operative), Chef, Accounting, Telemarketing/Tele-Sales, Research and Development, Administrator, Florist/Floral Designer, Retail-General, Sales-General, Accounting-General, Service-General, Landscape Gardener."
+        "id": 15,
+        "code": "S",
+        "name": "SPECIALIST",
+        "description": "Stable & Consistent",
+        "characteristics": [
+            "Self-Controlled & Composed",
+            "Comfortable Behind the Scenes",
+            "Patient & Composed",
+            "Loyal & Reliable",
+            "Slow to Adapt to Sudden Change"
+        ],
+        "job_suitability": "Administrative Work, Engineering and Production areas (Sales, Services, Project, Painter, Plumber, Draughtsman, Designer, Operative), Chef, Accounting, Telemarketing/Tele-Sales, Research and Development, Administrator, Florist/Floral Designer, Retail-General, Sales-General, Accounting-General, Service-General, Landscape Gardener."
     },
     {
-        "id":  16,
-        "code":  "S / C-S",
-        "name":  "PERFECTIONIST",
-        "description":  "Detail \u0026 Teliti",
-        "characteristics":  [
-                                "Butuh Situasi Stabil",
-                                "Sistematik \u0026 Prosedural",
-                                "Menghindari Konflik",
-                                "Anti Kritik",
-                                "Lambat Memutuskan"
-                            ],
-        "job_suitability":  "Researcher (Technician, Chemist, Quality Control), Engineer (Project, Draughtsman, Armed Forces, Designer), Statistician, Surveyor, Optician, Medical Specialist, Health Care, IT Management, Planner, Technical Writing, Production, Dentist, Quality Control, Planning, Dental Technician, Accounting, Computer Programmer, Psychologist, Surgeon, Architect, Medical Specialist."
+        "id": 16,
+        "code": "S / C-S",
+        "name": "PERFECTIONIST",
+        "description": "Detailed & Meticulous",
+        "characteristics": [
+            "Requires a Stable Environment",
+            "Systematic & Procedural",
+            "Conflict-Averse",
+            "Sensitive to Criticism",
+            "Deliberate Decision-Maker"
+        ],
+        "job_suitability": "Researcher (Technician, Chemist, Quality Control), Engineer (Project, Draughtsman, Armed Forces, Designer), Statistician, Surveyor, Optician, Medical Specialist, Health Care, IT Management, Planner, Technical Writing, Production, Dentist, Quality Control, Planning, Dental Technician, Accounting, Computer Programmer, Psychologist, Surgeon, Architect, Medical Specialist."
     },
     {
-        "id":  17,
-        "code":  "S-C",
-        "name":  "PEACEMAKER, RESPECTFULL \u0026 ACCURATE",
-        "description":  "Sulit Beradaptasi",
-        "characteristics":  [
-                                "Anti Kritik",
-                                "Pendendam",
-                                "Sukar Berubah",
-                                "Detail",
-                                "Empati"
-                            ],
-        "job_suitability":  "Office (Manager, Supervisor, Person), Chief Clerk, General Administrator, Production Supervisor, Planner, Accountant, Research and Development, Flight Attendant, Engineering (Project Manager, Supervisor, Technician), Computer Programmer, Draughtsman, Soft/Service Selling, Doctor, Cashier, Receptionist, Data Entry, Planner, Word Processing, Property Manager, Database Administrator, Health Care, Statistician, Nursing-Administration, Company Secretary, System Analyst, Programmer, Statistician, Accounting-General, Security Specialist."
+        "id": 17,
+        "code": "S-C",
+        "name": "PEACEMAKER, RESPECTFULL & ACCURATE",
+        "description": "Reluctant to Adapt",
+        "characteristics": [
+            "Sensitive to Criticism",
+            "Remembers Past Grievances",
+            "Resistant to Sudden Change",
+            "Detail-Oriented",
+            "Empathetic"
+        ],
+        "job_suitability": "Office (Manager, Supervisor, Person), Chief Clerk, General Administrator, Production Supervisor, Planner, Accountant, Research and Development, Flight Attendant, Engineering (Project Manager, Supervisor, Technician), Computer Programmer, Draughtsman, Soft/Service Selling, Doctor, Cashier, Receptionist, Data Entry, Planner, Word Processing, Property Manager, Database Administrator, Health Care, Statistician, Nursing-Administration, Company Secretary, System Analyst, Programmer, Statistician, Accounting-General, Security Specialist."
     },
     {
-        "id":  18,
-        "code":  "D-C",
-        "name":  "CHALLENGER",
-        "description":  "Seorang yang tekun",
-        "characteristics":  [
-                                "Sensitif terhadap permasalahan",
-                                "Mempunyai keputusan yang kuat",
-                                "Kreatif  dalam memecahkan masalah",
-                                "Memiliki reaksi yang cepat",
-                                "Mampu mencari solusi permasalahan"
-                            ],
-        "job_suitability":  "Engineering (Management, Research, Design), Actuaries, Research (R\u0026D), Planning, Chemist, Hospital Supervisor, Industrial Marketing, Investment Banking, Medical Administrator, Mortgage Brokers, Accountancy, Fund Management, Specialist Finance, Quality Control and Specialist work in any area where knowledge and experience is available, Production, Financial Services, Technical Management, Project Leader, Matron, Strategic Planning, Industrial Marketing."
+        "id": 18,
+        "code": "D-C",
+        "name": "CHALLENGER",
+        "description": "Persistent & Tenacious",
+        "characteristics": [
+            "Sensitive to Emerging Problems",
+            "Firm & Decisive in Judgment",
+            "Creative Problem Solver",
+            "Quick-Reacting & Alert",
+            "Skilled Solution Finder"
+        ],
+        "job_suitability": "Engineering (Management, Research, Design), Actuaries, Research (R&D), Planning, Chemist, Hospital Supervisor, Industrial Marketing, Investment Banking, Medical Administrator, Mortgage Brokers, Accountancy, Fund Management, Specialist Finance, Quality Control and Specialist work in any area where knowledge and experience is available, Production, Financial Services, Technical Management, Project Leader, Matron, Strategic Planning, Industrial Marketing."
     },
     {
-        "id":  19,
-        "code":  "D-I-C",
-        "name":  "CHANCELLOR",
-        "description":  "Seorang yang ramah secara alami",
-        "characteristics":  [
-                                "Menggabungkan kesenangan dengan pekerjaan",
-                                "Menyukai hubungan dengan sesama",
-                                "Menikmati interaksi dengan sesama",
-                                "Dapat mengerjakan hal-hal detil",
-                                "Ingin melakukan segala sesuatu dengan tepat"
-                            ],
-        "job_suitability":  "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Fund Management, Computer Hardware/Software Sales, IT, Business Consultant, Banking, Logistics, Lecturing, Work Study, Film Director, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager."
+        "id": 19,
+        "code": "D-I-C",
+        "name": "CHANCELLOR",
+        "description": "Naturally Warm & Affable",
+        "characteristics": [
+            "Combines Enjoyment with Work",
+            "Enjoys Interpersonal Connections",
+            "Thrives on Social Interaction",
+            "Capable of Handling Detailed Tasks",
+            "Strives for Accuracy and Precision"
+        ],
+        "job_suitability": "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Fund Management, Computer Hardware/Software Sales, IT, Business Consultant, Banking, Logistics, Lecturing, Work Study, Film Director, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager."
     },
     {
-        "id":  20,
-        "code":  "D-S-I",
-        "name":  "DIRECTOR",
-        "description":  "Seorang yang obyektif dan analitis",
-        "characteristics":  [
-                                "Ingin terlibat dalam situasi",
-                                "Ingin memberikan bantuan dan dukungan",
-                                "Termotivasi oleh target pribadi",
-                                "Berorientasi terhadap pekerjaannya",
-                                "Menyukai hubungan dengan sesama"
-                            ],
-        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator."
+        "id": 20,
+        "code": "D-S-I",
+        "name": "DIRECTOR",
+        "description": "Objective & Analytical Thinker",
+        "characteristics": [
+            "Eager to be Involved",
+            "Eager to Provide Support & Help",
+            "Motivated by Personal Targets",
+            "Dedicated & Work-Oriented",
+            "Enjoys Interpersonal Connections"
+        ],
+        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator."
     },
     {
-        "id":  21,
-        "code":  "D-S-C",
-        "name":  "Director",
-        "description":  "Seorang yang obyektif dan analitis",
-        "characteristics":  [
-                                "Ingin terlibat dalam situasi",
-                                "Ingin memberikan bantuan dan dukungan",
-                                "Termotivasi oleh target pribadi",
-                                "Berorientasi terhadap pekerjaannya",
-                                "Menyukai hubungan dengan sesama"
-                            ],
-        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator."
+        "id": 21,
+        "code": "D-S-C",
+        "name": "Director",
+        "description": "Objective & Analytical Thinker",
+        "characteristics": [
+            "Eager to be Involved",
+            "Eager to Provide Support & Help",
+            "Motivated by Personal Targets",
+            "Dedicated & Work-Oriented",
+            "Enjoys Interpersonal Connections"
+        ],
+        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator."
     },
     {
-        "id":  22,
-        "code":  "D-C-I",
-        "name":  "CHALLENGER",
-        "description":  "Seorang yang tekun",
-        "characteristics":  [
-                                "Sensitif terhadap permasalahan",
-                                "Mempunyai keputusan yang kuat",
-                                "Kreatif  dalam memecahkan masalah",
-                                "Memiliki reaksi yang cepat",
-                                "Mampu mencari solusi permasalahan"
-                            ],
-        "job_suitability":  "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Lecturing, Work Study, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager."
+        "id": 22,
+        "code": "D-C-I",
+        "name": "CHALLENGER",
+        "description": "Persistent & Tenacious",
+        "characteristics": [
+            "Sensitive to Emerging Problems",
+            "Firm & Decisive in Judgment",
+            "Creative Problem Solver",
+            "Quick-Reacting & Alert",
+            "Skilled Solution Finder"
+        ],
+        "job_suitability": "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Lecturing, Work Study, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager."
     },
     {
-        "id":  23,
-        "code":  "D-C-S",
-        "name":  "CHALLENGER",
-        "description":  "Seorang yang tekun",
-        "characteristics":  [
-                                "Sensitif terhadap permasalahan",
-                                "Mempunyai keputusan yang kuat",
-                                "Kreatif  dalam memecahkan masalah",
-                                "Memiliki reaksi yang cepat",
-                                "Mampu mencari solusi permasalahan"
-                            ],
-        "job_suitability":  "Engineering, Production and Finance (Directing, Administrating, Managing and Managing Specialist Work), Scientific, Research Planning, Personnel, Trouble Shooting, Credit Control, Chief Accountant, Accountant, Chief Engineer, Work Study, Consultancy, Designer, Draughtsman, Project Work, Security Specialist, Doctor, Attorney."
+        "id": 23,
+        "code": "D-C-S",
+        "name": "CHALLENGER",
+        "description": "Persistent & Tenacious",
+        "characteristics": [
+            "Sensitive to Emerging Problems",
+            "Firm & Decisive in Judgment",
+            "Creative Problem Solver",
+            "Quick-Reacting & Alert",
+            "Skilled Solution Finder"
+        ],
+        "job_suitability": "Engineering, Production and Finance (Directing, Administrating, Managing and Managing Specialist Work), Scientific, Research Planning, Personnel, Trouble Shooting, Credit Control, Chief Accountant, Accountant, Chief Engineer, Work Study, Consultancy, Designer, Draughtsman, Project Work, Security Specialist, Doctor, Attorney."
     },
     {
-        "id":  24,
-        "code":  "I",
-        "name":  "COMMUNICATOR",
-        "description":  "Antusias",
-        "characteristics":  [
-                                "Percaya",
-                                "Optimis",
-                                "Persuasif",
-                                "Bicara aktif",
-                                "Impulsif"
-                            ],
-        "job_suitability":  "Promoting, Demonstrating, Canvassing, Marketing Services, Public Relations, Lecturing, Advertising, Publican, Publishing, Hospitality, Retail-General, Human Resources, Journalist, Singers, Technical Writing, Tour Guide, Promotional Work, Hotelier, Dancers, Host, Actors, Travel Agent, Politician, and very soft selling."
+        "id": 24,
+        "code": "I",
+        "name": "COMMUNICATOR",
+        "description": "Enthusiastic & Spirited",
+        "characteristics": [
+            "Trusting & Open",
+            "Optimistic",
+            "Persuasive & Engaging",
+            "Active & Articulate Speaker",
+            "Spontaneous & Impulsive"
+        ],
+        "job_suitability": "Promoting, Demonstrating, Canvassing, Marketing Services, Public Relations, Lecturing, Advertising, Publican, Publishing, Hospitality, Retail-General, Human Resources, Journalist, Singers, Technical Writing, Tour Guide, Promotional Work, Hotelier, Dancers, Host, Actors, Travel Agent, Politician, and very soft selling."
     },
     {
-        "id":  25,
-        "code":  "I-S",
-        "name":  "ADVISOR",
-        "description":  "Hangat",
-        "characteristics":  [
-                                "Simpati",
-                                "Tenang dalam situasi sosial",
-                                "Pendengar yang baik",
-                                "Demonstratif",
-                                "Tidak memaksakan idenya pada orang lain"
-                            ],
-        "job_suitability":  "Personnel, Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Upmarket/Speciality Sales, Soft/Service Selling, Beauty Therapist, Psychologist, Nursing, Human Resources, Retail-Specialist, Veterinarian, Social Work, Personal Assistant, Personnel-HR, Coach, Mentor."
+        "id": 25,
+        "code": "I-S",
+        "name": "ADVISOR",
+        "description": "Warm & Empathetic",
+        "characteristics": [
+            "Sympathetic & Understanding",
+            "Poised & Calm in Social Settings",
+            "Attentive Listener",
+            "Demonstrative & Expressive",
+            "Respectful of Others' Opinions"
+        ],
+        "job_suitability": "Personnel, Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Upmarket/Speciality Sales, Soft/Service Selling, Beauty Therapist, Psychologist, Nursing, Human Resources, Retail-Specialist, Veterinarian, Social Work, Personal Assistant, Personnel-HR, Coach, Mentor."
     },
     {
-        "id":  26,
-        "code":  "I-C",
-        "name":  "ASSESSOR",
-        "description":  "Ramah",
-        "characteristics":  [
-                                "Suka berteman",
-                                "Nyaman walapun dengan orang asing",
-                                "Mudah mengembangkan hubungan baru",
-                                "Dapat mengendalikan diri",
-                                "Sangat sosial"
-                            ],
-        "job_suitability":  "Teaching, Training, Inventing, Specialist Selling (Engineering, Finance or any area involving capital equipment), Project Engineer, Finance, Service Engineer or Supervising within a Technical/Specialist Area, Public Relations, Environmentalist, Marketing, Conference Organiser, Estate Agent."
+        "id": 26,
+        "code": "I-C",
+        "name": "ASSESSOR",
+        "description": "Friendly & Cordial",
+        "characteristics": [
+            "Friendly & Sociable",
+            "At Ease with Strangers",
+            "Quick to Build New Relationships",
+            "Exhibits Strong Self-Control",
+            "Highly Social"
+        ],
+        "job_suitability": "Teaching, Training, Inventing, Specialist Selling (Engineering, Finance or any area involving capital equipment), Project Engineer, Finance, Service Engineer or Supervising within a Technical/Specialist Area, Public Relations, Environmentalist, Marketing, Conference Organiser, Estate Agent."
     },
     {
-        "id":  27,
-        "code":  "I-C-D",
-        "name":  "ASSESSOR",
-        "description":  "Analitis",
-        "characteristics":  [
-                                "Berwatak hati-hati",
-                                "Ramah pada saat merasa nyaman",
-                                "Sangat biasa dengan orang asing",
-                                "Mudah mengembangkan hubungan baru",
-                                "Dapat mengendalikan diri"
-                            ],
-        "job_suitability":  "Specialist/Technical Selling (Computer, Finance, Engineer and others, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Travel Agent, Personnel and Marketing Services."
+        "id": 27,
+        "code": "I-C-D",
+        "name": "ASSESSOR",
+        "description": "Analytical & Discerning",
+        "characteristics": [
+            "Cautious & Prudent",
+            "Cordial When Comfortable",
+            "At Ease with Strangers",
+            "Quick to Build New Relationships",
+            "Exhibits Strong Self-Control"
+        ],
+        "job_suitability": "Specialist/Technical Selling (Computer, Finance, Engineer and others, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Travel Agent, Personnel and Marketing Services."
     },
     {
-        "id":  28,
-        "code":  "I-C-S",
-        "name":  "RESPONSIVE \u0026 THOUGHTFUL",
-        "description":  "High Energy",
-        "characteristics":  [
-                                "Good Communication Skill",
-                                "To The Point",
-                                "Sensitif",
-                                "Banyak Bicara",
-                                "Need Recognation"
-                            ],
-        "job_suitability":  "Personnel, Welfare, Training, Attorney, Teaching, Accounting, Technical Instructor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Engineering (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Services), Selling, Purchasing, Supervising (Engineering, Production, Accounts), Administration Work, Secretarial, Industrial Relations Specialist."
+        "id": 28,
+        "code": "I-C-S",
+        "name": "RESPONSIVE & THOUGHTFUL",
+        "description": "High Energy & Dynamic",
+        "characteristics": [
+            "Excellent Communication Skills",
+            "Direct & To The Point",
+            "Sensitive",
+            "Talkative & Expressive",
+            "Thrives on Recognition"
+        ],
+        "job_suitability": "Personnel, Welfare, Training, Attorney, Teaching, Accounting, Technical Instructor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Engineering (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Services), Selling, Purchasing, Supervising (Engineering, Production, Accounts), Administration Work, Secretarial, Industrial Relations Specialist."
     },
     {
-        "id":  29,
-        "code":  "S-D",
-        "name":  "SELF-MOTIVATED",
-        "description":  "Objektif \u0026 Analitis",
-        "characteristics":  [
-                                "Mandiri",
-                                "Good planner",
-                                "Komitmen terhadap target",
-                                "Menghindari konflik",
-                                "Ingin terlibat dalam situasi"
-                            ],
-        "job_suitability":  "Investigator, Researcher, Accountant, Engineering, Production/Engineering Supervisor, Computer Specialist, Architect, Transport/Warehouse Supervisor, Credit Controller, DP Supervisor, Computer Specialist, Research and Development, Private Investigator, Quality Controller, Engineering (Designer, Draughtsman, Project Engineer), Sales and Service Engineer, Property Manager, Attorney, Administration Manager"
+        "id": 29,
+        "code": "S-D",
+        "name": "SELF-MOTIVATED",
+        "description": "Objective & Analytical",
+        "characteristics": [
+            "Independent",
+            "Skilled Planner",
+            "Committed to Targets",
+            "Conflict-Averse",
+            "Eager to be Involved"
+        ],
+        "job_suitability": "Investigator, Researcher, Accountant, Engineering, Production/Engineering Supervisor, Computer Specialist, Architect, Transport/Warehouse Supervisor, Credit Controller, DP Supervisor, Computer Specialist, Research and Development, Private Investigator, Quality Controller, Engineering (Designer, Draughtsman, Project Engineer), Sales and Service Engineer, Property Manager, Attorney, Administration Manager"
     },
     {
-        "id":  30,
-        "code":  "S-I",
-        "name":  "ADVISOR",
-        "description":  "Hangat",
-        "characteristics":  [
-                                "Simpati dan Pengertian",
-                                "Tenang dalam situasi sosial",
-                                "Pendengar yang baik",
-                                "Demonstratif",
-                                "Tidak memaksakan idenya pada orang lain"
-                            ],
-        "job_suitability":  "Personnel Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Child Care, Charitable Organizations, Soft or Service Selling, Psychologist, Therapist, Nurse, Personal Assistant, Hospitality Manager, Social Work, Student Services, Upmarket/Speciality Sales."
+        "id": 30,
+        "code": "S-I",
+        "name": "ADVISOR",
+        "description": "Warm & Empathetic",
+        "characteristics": [
+            "Sympathetic & Understanding",
+            "Poised & Calm in Social Settings",
+            "Attentive Listener",
+            "Demonstrative & Expressive",
+            "Respectful of Others' Opinions"
+        ],
+        "job_suitability": "Personnel Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Child Care, Charitable Organizations, Soft or Service Selling, Psychologist, Therapist, Nurse, Personal Assistant, Hospitality Manager, Social Work, Student Services, Upmarket/Speciality Sales."
     },
     {
-        "id":  31,
-        "code":  "S-D-I",
-        "name":  "DIRECTOR",
-        "description":  "Seorang yang obyektif dan analitis",
-        "characteristics":  [
-                                "Ingin terlibat dalam situasi",
-                                "Ingin memberikan bantuan dan dukungan",
-                                "Termotivasi oleh target pribadi",
-                                "Berorientasi terhadap pekerjaannya",
-                                "Menyukai hubungan dengan sesama"
-                            ],
-        "job_suitability":  "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision/Manager, Office Management, Customer Service, System Analyst, Radio Announcer, Technical Writing, Telemarketing, TV Presenter, Project Engineer, Film Producer, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer."
+        "id": 31,
+        "code": "S-D-I",
+        "name": "DIRECTOR",
+        "description": "Objective & Analytical Thinker",
+        "characteristics": [
+            "Eager to be Involved",
+            "Eager to Provide Support & Help",
+            "Motivated by Personal Targets",
+            "Dedicated & Work-Oriented",
+            "Enjoys Interpersonal Connections"
+        ],
+        "job_suitability": "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision/Manager, Office Management, Customer Service, System Analyst, Radio Announcer, Technical Writing, Telemarketing, TV Presenter, Project Engineer, Film Producer, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer."
     },
     {
-        "id":  32,
-        "code":  "S-I-D",
-        "name":  "ADVISOR",
-        "description":  "Hangat",
-        "characteristics":  [
-                                "Simpati dan Pengertian",
-                                "Tenang dalam situasi sosial",
-                                "Pendengar yang baik",
-                                "Demonstratif",
-                                "Tidak memaksakan idenya pada orang lain"
-                            ],
-        "job_suitability":  "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision, Office Management, Customer Service, System Analyst, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer."
+        "id": 32,
+        "code": "S-I-D",
+        "name": "ADVISOR",
+        "description": "Warm & Empathetic",
+        "characteristics": [
+            "Sympathetic & Understanding",
+            "Poised & Calm in Social Settings",
+            "Attentive Listener",
+            "Demonstrative & Expressive",
+            "Respectful of Others' Opinions"
+        ],
+        "job_suitability": "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision, Office Management, Customer Service, System Analyst, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer."
     },
     {
-        "id":  33,
-        "code":  "S-I-C",
-        "name":  "ADVOCATE",
-        "description":  "Stabil",
-        "characteristics":  [
-                                "Ramah",
-                                "Detail ketika situasi membutuhkan",
-                                "Cenderung individualis",
-                                "Teguh pendirian",
-                                "Menyukai hubungan dengan orang"
-                            ],
-        "job_suitability":  "Personnel Welfare, Training, Teaching, Attorney, Accounting, Technical Instructor, Customer Service, Public Relations, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Supervising (Engineering, Production, Accounts) Administrative Work, Secretarial."
+        "id": 33,
+        "code": "S-I-C",
+        "name": "ADVOCATE",
+        "description": "Steadfast & Reliable",
+        "characteristics": [
+            "Friendly & Approachable",
+            "Detailed When Required",
+            "Tendency Towards Individualism",
+            "Firm & Steadfast in Beliefs",
+            "Enjoys Interpersonal Connections"
+        ],
+        "job_suitability": "Personnel Welfare, Training, Teaching, Attorney, Accounting, Technical Instructor, Customer Service, Public Relations, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Supervising (Engineering, Production, Accounts) Administrative Work, Secretarial."
     },
     {
-        "id":  34,
-        "code":  "S-C-D",
-        "name":  "INQUIRER",
-        "description":  "Seorang yang baik",
-        "characteristics":  [
-                                "Sangat berorientasi pada detil",
-                                "Sangat teliti dalam penyelesaian tugas",
-                                "Sangat berhati-hati",
-                                "Penuh pertimbangan",
-                                "Lambat adaptasi"
-                            ],
-        "job_suitability":  "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Accountant, Project Engineer, Draughtsman, Designer, Analyst, Chemist, Technician, Service Engineer, Manager, Security Specialist."
+        "id": 34,
+        "code": "S-C-D",
+        "name": "INQUIRER",
+        "description": "Kind & Considerate",
+        "characteristics": [
+            "Highly Detail-Oriented",
+            "Thorough in Task Completion",
+            "Highly Cautious & Vigilant",
+            "Deliberate & Considerate",
+            "Slow to Adapt to Sudden Change"
+        ],
+        "job_suitability": "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Accountant, Project Engineer, Draughtsman, Designer, Analyst, Chemist, Technician, Service Engineer, Manager, Security Specialist."
     },
     {
-        "id":  35,
-        "code":  "S-C-I",
-        "name":  "ADVOCATE",
-        "description":  "Stabil",
-        "characteristics":  [
-                                "Ramah",
-                                "Detail ketika situasi membutuhkan",
-                                "Cenderung individualis",
-                                "Teguh pendirian",
-                                "Menyukai hubungan dengan orang"
-                            ],
-        "job_suitability":  "Personnel Welfare, Administrator, Advisers, Training, Teaching, Attorney, Accounting, Counseling, Technical Instructor, Customer Service, Accounting-General, Public Relations, Accounts Supervisor, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Sales Engineer, Legal, Negotiator, Student Service, Photographer, Physiotherapist, Project Engineer, Vocational Education, Supervising (Engineering, Production, Accounts) Administrative Work, Demonstrator, Secretarial, Hospitality Manager."
+        "id": 35,
+        "code": "S-C-I",
+        "name": "ADVOCATE",
+        "description": "Steadfast & Reliable",
+        "characteristics": [
+            "Friendly & Approachable",
+            "Detailed When Required",
+            "Tendency Towards Individualism",
+            "Firm & Steadfast in Beliefs",
+            "Enjoys Interpersonal Connections"
+        ],
+        "job_suitability": "Personnel Welfare, Administrator, Advisers, Training, Teaching, Attorney, Accounting, Counseling, Technical Instructor, Customer Service, Accounting-General, Public Relations, Accounts Supervisor, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Sales Engineer, Legal, Negotiator, Student Service, Photographer, Physiotherapist, Project Engineer, Vocational Education, Supervising (Engineering, Production, Accounts) Administrative Work, Demonstrator, Secretarial, Hospitality Manager."
     },
     {
-        "id":  36,
-        "code":  "C-I",
-        "name":  "ASSESSOR",
-        "description":  "Analitis",
-        "characteristics":  [
-                                "Berwatak hati-hati",
-                                "Ramah pada saat merasa nyaman",
-                                "Sangat biasa dengan orang asing",
-                                "Mudah mengembangkan hubungan baru",
-                                "Dapat mengendalikan diri"
-                            ],
-        "job_suitability":  "Sales (Technical/Specialist), Public Relations, Lecturer, Academic, Personnel Administration, Purchasing, Travel Agent, Training, Teaching, Real Estate Agent, Hospitality Administration, Sales-Technical, Hotelier, Project Engineer, Service Engineer."
+        "id": 36,
+        "code": "C-I",
+        "name": "ASSESSOR",
+        "description": "Analytical & Discerning",
+        "characteristics": [
+            "Cautious & Prudent",
+            "Cordial When Comfortable",
+            "At Ease with Strangers",
+            "Quick to Build New Relationships",
+            "Exhibits Strong Self-Control"
+        ],
+        "job_suitability": "Sales (Technical/Specialist), Public Relations, Lecturer, Academic, Personnel Administration, Purchasing, Travel Agent, Training, Teaching, Real Estate Agent, Hospitality Administration, Sales-Technical, Hotelier, Project Engineer, Service Engineer."
     },
     {
-        "id":  37,
-        "code":  "C-D-I",
-        "name":  "CHALLENGER",
-        "description":  "Sangat berorientasi pada tugas",
-        "characteristics":  [
-                                "Sensitif terhadap permasalahan",
-                                "Lebih mempedulikan tugas daripada orang",
-                                "Kukuh/keras",
-                                "Dingin",
-                                "Tidak berperasaan"
-                            ],
-        "job_suitability":  "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/ Specialist), Logistic Support, Systems Analyst, Lecturer, Company Secretary, Negotiator and Purchasing."
+        "id": 37,
+        "code": "C-D-I",
+        "name": "CHALLENGER",
+        "description": "Highly Task-Oriented",
+        "characteristics": [
+            "Sensitive to Emerging Problems",
+            "Prioritizes Tasks Over Social Formalities",
+            "Resolute & Firm",
+            "Reserved & Matter-of-Fact",
+            "Strictly Logical & Unemotional"
+        ],
+        "job_suitability": "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/ Specialist), Logistic Support, Systems Analyst, Lecturer, Company Secretary, Negotiator and Purchasing."
     },
     {
-        "id":  38,
-        "code":  "C-D-S",
-        "name":  "CONTEMPLATOR",
-        "description":  "Berorientasi pada hal-hal detil",
-        "characteristics":  [
-                                "Mempunyai standar tinggi untuk dirinya",
-                                "Logis dan analitis",
-                                "Ingin berbuat yang terbaik",
-                                "Selalu berpikir ada ruang untuk kemajuan",
-                                "Kompetitif"
-                            ],
-        "job_suitability":  "Engineering, Research, Production and Finance (Director, Manager atau Supervisor), Work Study, Accountant, Administrator, Quality Controller, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Security Manager, Loss Control."
+        "id": 38,
+        "code": "C-D-S",
+        "name": "CONTEMPLATOR",
+        "description": "Detail & Accuracy Oriented",
+        "characteristics": [
+            "Maintains High Personal Standards",
+            "Logical & Analytical",
+            "Strives for Excellence",
+            "Continuous Improvement Mindset",
+            "Competitive & Driven"
+        ],
+        "job_suitability": "Engineering, Research, Production and Finance (Director, Manager atau Supervisor), Work Study, Accountant, Administrator, Quality Controller, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Security Manager, Loss Control."
     },
     {
-        "id":  39,
-        "code":  "C-I-D",
-        "name":  "ASSESSOR",
-        "description":  "Analitis",
-        "characteristics":  [
-                                "Berwatak hati-hati",
-                                "Ramah pada saat merasa nyaman",
-                                "Sangat biasa dengan orang asing",
-                                "Mudah mengembangkan hubungan baru",
-                                "Dapat mengendalikan diri"
-                            ],
-        "job_suitability":  "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/Specialist), Lecturer, Company Secretary, Negotiator and Purchasing."
+        "id": 39,
+        "code": "C-I-D",
+        "name": "ASSESSOR",
+        "description": "Analytical & Discerning",
+        "characteristics": [
+            "Cautious & Prudent",
+            "Cordial When Comfortable",
+            "At Ease with Strangers",
+            "Quick to Build New Relationships",
+            "Exhibits Strong Self-Control"
+        ],
+        "job_suitability": "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/Specialist), Lecturer, Company Secretary, Negotiator and Purchasing."
     },
     {
-        "id":  40,
-        "code":  "C-S-D",
-        "name":  "PRECISIONIST",
-        "description":  "Sistematis dan Prosedural",
-        "characteristics":  [
-                                "Teratur \u0026 memiliki perencanaan yang baik",
-                                "Teliti",
-                                "Fokus pada detil",
-                                "Bijaksana",
-                                "Diplomatis"
-                            ],
-        "job_suitability":  "Engineering, Research Director, Production and Finance (Director, Manager, Supervisor), Work Study, Accountant, Administrator, Quality Controller, Financial Services Manager, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Electrician, Security Manager, Financial Researcher, Planner, Printer, Production Controller, Production Manager, Personnel Management, Loss Control."
+        "id": 40,
+        "code": "C-S-D",
+        "name": "PRECISIONIST",
+        "description": "Systematic & Procedural",
+        "characteristics": [
+            "Organized & Well-Planned",
+            "Meticulous & Exacting",
+            "Focuses Heavily on Details",
+            "Tactful & Wise",
+            "Diplomatic & Considerate"
+        ],
+        "job_suitability": "Engineering, Research Director, Production and Finance (Director, Manager, Supervisor), Work Study, Accountant, Administrator, Quality Controller, Financial Services Manager, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Electrician, Security Manager, Financial Researcher, Planner, Printer, Production Controller, Production Manager, Personnel Management, Loss Control."
     }
 ]

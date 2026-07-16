@@ -1444,6 +1444,121 @@ body::after {
 }
 
 /* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+.toast-stack {
+  position: fixed;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  pointer-events: none;
+  max-width: 360px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--bg-tertiary);
+  backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  pointer-events: auto;
+  animation: toastIn 0.32s ease forwards;
+}
+
+.toast.toast-out { animation: toastOut 0.28s ease forwards; }
+
+.toast-icon { font-size: 1rem; flex-shrink: 0; }
+.toast.t-success { border-left: 3px solid var(--success); }
+.toast.t-error   { border-left: 3px solid var(--error); }
+.toast.t-warning { border-left: 3px solid var(--warning); }
+.toast.t-info    { border-left: 3px solid var(--info); }
+
+@keyframes toastIn  { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toastOut { to   { opacity: 0; transform: translateX(32px); } }
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+.loading-veil {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 8, 18, 0.72);
+  backdrop-filter: blur(8px);
+  z-index: 8000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.loading-veil.active { display: flex; }
+
+.load-ring {
+  width: 52px; height: 52px;
+  border: 3px solid rgba(255,255,255,0.08);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+.load-text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============================================
+   GENERAL RESPONSIVE & UTILITIES
+   ============================================ */
+@media (max-width: 680px) {
+  #app { padding: var(--space-md); align-items: flex-start; padding-top: var(--space-xl); }
+  .glass-card { padding: var(--space-lg); }
+  .question-card { padding: var(--space-lg); }
+  .stmt-table thead { display: none; }
+  .stmt-table, .stmt-table tbody, .stmt-table tr, .stmt-table td { display: block; }
+  .stmt-row { padding: var(--space-md) 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .stmt-row:last-child { border-bottom: none; }
+  .stmt-row td { border: none; padding: var(--space-xs) 0; }
+  .stmt-row td:first-child { padding-left: 0; padding-bottom: var(--space-sm); font-weight: 500; }
+  .stmt-row td:not(:first-child) { display: inline-flex; align-items: center; gap: 8px; width: auto; padding-right: var(--space-lg); }
+  .mob-label { display: inline; }
+  .test-nav { flex-wrap: wrap; }
+  .nav-status { order: -1; width: 100%; margin-bottom: var(--space-sm); }
+  .toast-stack { left: var(--space-md); right: var(--space-md); max-width: unset; }
+}
+
+@media (max-width: 400px) {
+  html { font-size: 14px; }
+  .glass-card { padding: var(--space-md); border-radius: var(--radius-lg); }
+}
+
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mb-lg { margin-bottom: var(--space-lg); }
+
+.search-box-welcome {
+  animation: slideInDown 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
    5. RESULT SCREEN — multi-card layout
    ============================================ */
 

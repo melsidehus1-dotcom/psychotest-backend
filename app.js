@@ -618,13 +618,20 @@
     // Populate At a Glance & 4-Card Info Grid
     const rawAtGlance = prof.core_self_at_a_glance || prof.at_a_glance || descMap[dominant];
     if (D.discAtAGlanceList && typeof rawAtGlance === 'string') {
-      const parts = rawAtGlance.split(/(?=[🧭💪⚠️🎯📌🚀💡🔥⭐🛡️👥])/u).map(s => s.trim()).filter(Boolean);
+      let parts;
+      if (rawAtGlance.includes('\n')) {
+        parts = rawAtGlance.split(/\r?\n+/).map(s => s.trim()).filter(Boolean);
+      } else {
+        parts = rawAtGlance.split(/(?=(?:🧭|💪|⚠️|⚠|🎯|📌|🚀|💡|🔥|⭐|🛡️|🛡|👥))/u).map(s => s.trim()).filter(Boolean);
+      }
+
       if (parts.length > 1) {
         D.discAtAGlanceList.innerHTML = parts.map(part => {
-          const match = part.match(/^([🧭💪⚠️🎯📌🚀💡🔥⭐🛡️👥])\s*(.*)$/u);
+          part = part.replace(/^\uFE0F+/, '').trim();
+          const match = part.match(/^(?:(?:🧭|💪|⚠️|⚠|🎯|📌|🚀|💡|🔥|⭐|🛡️|🛡|👥)\s*)+/u);
           if (match) {
-            const icon = match[1];
-            let content = match[2];
+            const icon = match[0].trim();
+            let content = part.substring(match[0].length).trim();
             content = content.replace(/^([^:—\-]+[:—\-])/, '<strong>$1</strong>');
             return `<div class="glance-item"><span class="glance-item-icon">${icon}</span><div class="glance-item-text">${content}</div></div>`;
           }

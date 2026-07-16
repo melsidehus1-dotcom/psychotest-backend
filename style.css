@@ -1567,14 +1567,22 @@ body::after {
    VIEW 5 — RESULT (SaaS Premium UX Redesign)
    ══════════════════════════════════════════════════════════════ */
 
+#app:has(#view-result.active) {
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding-top: 36px !important;
+  padding-bottom: 96px !important;
+  width: 100% !important;
+}
+
 #view-result {
   display: none;
   flex-direction: column;
-  gap: 56px;
-  max-width: 1080px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 40px 24px 80px;
+  gap: 52px;
+  max-width: 1240px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 24px 64px !important;
 }
 
 #view-result.active {

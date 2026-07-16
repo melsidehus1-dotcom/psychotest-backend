@@ -362,225 +362,458 @@
        ══════════════════════════════════════════ -->
   <section id="view-result" class="view" aria-label="Assessment results">
 
-    <!-- 1. Sleek Top Status Bar (Integrated & subtle so Hero is #1 focus) -->
-    <div class="result-status-bar">
-      <div class="status-bar-left">
-        <span class="status-dot"></span>
-        <span class="status-text">Assessment Complete • Official Behavioral Evaluation</span>
+    <!-- 1. Top Banner Card: Assessment Complete -->
+    <div class="result-top-banner">
+      <div class="banner-left-content">
+        <div class="banner-success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="banner-text-group">
+          <h2 class="banner-title">Assessment Complete!</h2>
+          <p class="banner-subtitle">Thank you for completing your DISC personality assessment. Your personalized results are ready.</p>
+        </div>
       </div>
-      <div class="status-bar-right">
-        <span class="cand-id-pill">🪪 <span id="resultId">USER-XXXXXXXX</span></span>
+      <div class="banner-right-content">
+        <div class="cand-id-card">
+          <span class="cand-id-label">User ID:</span>
+          <strong class="cand-id-val" id="resultId">CAND-XXXXXXXX</strong>
+          <button class="btn-copy-id" id="btnCopyId" title="Copy User ID" aria-label="Copy User ID">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
         <span id="resultDuration" style="display:none;"></span>
       </div>
     </div>
 
-    <!-- 2. YOUR DISC TYPE Card (Primary Hero Section) -->
-    <div class="hero-card disc-hero-card" id="discTypeCard">
-      <!-- Candidate Metadata Top Bar -->
-      <div class="hero-meta-bar">
-        <div class="hero-meta-item">
-          <span class="meta-label">CANDIDATE NAME</span>
-          <span class="meta-val" id="resultName">—</span>
+    <!-- 2. User Profile Info Bar -->
+    <div class="result-user-info-bar">
+      <div class="user-info-item">
+        <div class="user-info-icon icon-purple">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </div>
-        <div class="hero-divider"></div>
-        <div class="hero-meta-item">
-          <span class="meta-label">POSITION / ROLE</span>
-          <span class="meta-val" id="resultPos">—</span>
-        </div>
-        <div class="hero-divider"></div>
-        <div class="hero-meta-item">
-          <span class="meta-label">ASSESSMENT DATE</span>
-          <span class="meta-val" id="resultDate">—</span>
+        <div class="user-info-text">
+          <span class="info-label">USER NAME</span>
+          <span class="info-value" id="resultName">—</span>
         </div>
       </div>
-
-      <div class="hero-main-content">
-        <div class="hero-left-col">
-          <div class="hero-eyebrow">YOUR PRIMARY DISC ARCHETYPE</div>
-          <div class="hero-identity-row">
-            <span class="hero-code" id="discTypeCode">—</span>
-            <span class="hero-name" id="discTypeName">—</span>
-          </div>
-          <p class="hero-about" id="discTypeAbout">Your behavioral profile has been calculated based on your responses.</p>
+      <div class="user-info-divider"></div>
+      <div class="user-info-item">
+        <div class="user-info-icon icon-purple">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
         </div>
-        <div class="hero-right-col" aria-hidden="true">
-          <div class="disc-wheel-pedestal">
-            <canvas id="discWheel" width="200" height="200"></canvas>
-          </div>
+        <div class="user-info-text">
+          <span class="info-label">POSITION / ROLE</span>
+          <span class="info-value" id="resultPos">—</span>
+        </div>
+      </div>
+      <div class="user-info-divider"></div>
+      <div class="user-info-item">
+        <div class="user-info-icon icon-purple">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        </div>
+        <div class="user-info-text">
+          <span class="info-label">ASSESSMENT DATE</span>
+          <span class="info-value" id="resultDate">—</span>
         </div>
       </div>
     </div>
 
-    <!-- 3. Behavioral Profiles Section (The 3 Dimensions) -->
-    <div class="report-section profiles-section">
-      <div class="report-section-header">
-        <h3 class="section-title">Behavioral Profiles (The 3 Dimensions)</h3>
-        <p class="section-subtitle">
-          Explore how you adapt in public environments (Graph I), how you naturally act under stress (Graph II), and your synthesized core identity (Graph III).
-        </p>
+    <!-- 3. YOUR DISC PROFILE Card (Main Hero) -->
+    <div class="hero-card disc-mockup-hero" id="discTypeCard">
+      <div class="mockup-hero-grid">
+        
+        <!-- Left Column: Code, Archetype Name, Badges & Keywords -->
+        <div class="mockup-hero-left">
+          <div class="hero-eyebrow">YOUR DISC PROFILE</div>
+          <div class="hero-identity-row">
+            <span class="hero-code" id="discTypeCode">—</span>
+            <h1 class="hero-name" id="discTypeName">—</h1>
+          </div>
+          <p class="hero-about" id="discTypeAbout">Your behavioral profile has been calculated based on your responses.</p>
+          <span id="discTypeDesc" style="display:none;"></span>
+
+          <div class="hero-badges-row" id="discHeroBadges">
+            <div class="disc-style-badge badge-primary" id="badgeHeroPrimary">
+              <span class="badge-letter letter-s" id="heroPrimaryLetter">S</span>
+              <div class="badge-text">
+                <span class="badge-label">Primary Style</span>
+                <strong class="badge-title" id="heroPrimaryName">Steady (S)</strong>
+              </div>
+            </div>
+            <div class="disc-style-badge badge-secondary" id="badgeHeroSecondary">
+              <span class="badge-letter letter-c" id="heroSecondaryLetter">C</span>
+              <div class="badge-text">
+                <span class="badge-label">Secondary Style</span>
+                <strong class="badge-title" id="heroSecondaryName">Conscientious (C)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-keywords-row" id="discHeroKeywords"></div>
+        </div>
+
+        <!-- Center Column: Donut Chart -->
+        <div class="mockup-hero-center">
+          <div class="disc-wheel-pedestal">
+            <canvas id="discWheel" width="240" height="240"></canvas>
+            <div class="wheel-center-badge" id="wheelCenterBadge">C</div>
+          </div>
+        </div>
+
+        <!-- Right Column: At a Glance Box & 2x2 Info Grid -->
+        <div class="mockup-hero-right">
+          <div class="at-a-glance-box">
+            <div class="glance-header">
+              <span class="glance-icon">👁️</span>
+              <span class="glance-title">At a Glance</span>
+            </div>
+            <p class="glance-text" id="discAtAGlanceText">You are a dependable and thoughtful individual who values structure, consistency, and high-quality work.</p>
+          </div>
+
+          <div class="hero-info-grid">
+            <div class="hero-info-item">
+              <div class="info-item-header">
+                <span class="info-item-icon icon-emerald">🎯</span>
+                <strong class="info-item-title">How You Work</strong>
+              </div>
+              <p class="info-item-text" id="discHowYouWorkText">You prefer clear guidelines, well-organized processes, and a steady environment.</p>
+            </div>
+
+            <div class="hero-info-item">
+              <div class="info-item-header">
+                <span class="info-item-icon icon-blue">🛡️</span>
+                <strong class="info-item-title">What To Watch</strong>
+              </div>
+              <p class="info-item-text" id="discWhatToWatchText">You may overanalyze or strive for perfection. Try to stay flexible, delegate more, and be open.</p>
+            </div>
+
+            <div class="hero-info-item">
+              <div class="info-item-header">
+                <span class="info-item-icon icon-amber">⭐</span>
+                <strong class="info-item-title">Your Strength</strong>
+              </div>
+              <p class="info-item-text" id="discYourStrengthText">You are systematic, reliable, and quality-focused. You pay attention to detail consistently.</p>
+            </div>
+
+            <div class="hero-info-item">
+              <div class="info-item-header">
+                <span class="info-item-icon icon-purple">👥</span>
+                <strong class="info-item-title">Best In</strong>
+              </div>
+              <p class="info-item-text" id="discBestInText">Roles that require accuracy, planning, problem-solving, and maintaining high standards.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <div class="profile-grid">
+    </div>
+
+    <!-- 4. Your Behavioral Dimensions (3 Dimensions Cards) -->
+    <div class="report-section dimensions-section">
+      <div class="report-section-header">
+        <h3 class="section-title">Your Behavioral Dimensions</h3>
+        <p class="section-subtitle">Understand the different aspects of your behavior across various situations.</p>
+      </div>
+      <div class="profile-grid modern-3col-grid">
+        
+        <!-- Public Self / Graph I -->
         <div class="profile-card profile-card-public">
-          <div class="profile-card-accent accent-blue"></div>
+          <div class="profile-card-top-accent accent-blue"></div>
           <div class="profile-card-body">
-            <div class="profile-card-label">GRAPH I • PUBLIC SELF</div>
-            <div class="profile-card-code" id="profilePublicCode">—</div>
+            <div class="dimension-card-header">
+              <div class="dimension-icon icon-blue">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h4 class="dimension-card-title">How You Show Yourself in Public</h4>
+            </div>
+            <p class="dimension-card-subtitle">How others typically see you in everyday interactions and professional settings.</p>
+            
+            <div class="dimension-code-row">
+              <span class="profile-card-label">GRAPH I • PUBLIC SELF</span>
+              <span class="profile-card-code" id="profilePublicCode">—</span>
+            </div>
             <div class="profile-card-name" id="profilePublic">—</div>
-            <p class="profile-card-desc" id="profilePublicDesc">—</p>
+            <p class="profile-card-desc" id="profilePublicDesc" style="display:none;">—</p>
+            
             <div class="profile-card-chars" id="profilePublicChars"></div>
           </div>
         </div>
+
+        <!-- Private Self / Graph II -->
         <div class="profile-card profile-card-private">
-          <div class="profile-card-accent accent-amber"></div>
+          <div class="profile-card-top-accent accent-amber"></div>
           <div class="profile-card-body">
-            <div class="profile-card-label">GRAPH II • PRIVATE SELF</div>
-            <div class="profile-card-code" id="profilePrivateCode">—</div>
+            <div class="dimension-card-header">
+              <div class="dimension-icon icon-amber">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+              <h4 class="dimension-card-title">How You Respond Under Pressure</h4>
+            </div>
+            <p class="dimension-card-subtitle">How you naturally behave when facing challenges, stress, or high demands.</p>
+            
+            <div class="dimension-code-row">
+              <span class="profile-card-label">GRAPH II • PRIVATE SELF</span>
+              <span class="profile-card-code" id="profilePrivateCode">—</span>
+            </div>
             <div class="profile-card-name" id="profilePrivate">—</div>
-            <p class="profile-card-desc" id="profilePrivateDesc">—</p>
+            <p class="profile-card-desc" id="profilePrivateDesc" style="display:none;">—</p>
+            
             <div class="profile-card-chars" id="profilePrivateChars"></div>
           </div>
         </div>
+
+        <!-- Core Self / Graph III -->
         <div class="profile-card profile-card-core">
-          <div class="profile-card-accent accent-emerald"></div>
+          <div class="profile-card-top-accent accent-emerald"></div>
           <div class="profile-card-body">
-            <div class="profile-card-label">GRAPH III • CORE SELF</div>
-            <div class="profile-card-code" id="profileCoreCode">—</div>
+            <div class="dimension-card-header">
+              <div class="dimension-icon icon-emerald">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              </div>
+              <h4 class="dimension-card-title">Your Natural Inclinations</h4>
+            </div>
+            <p class="dimension-card-subtitle">Your instinctive tendencies and core motivations when you are at ease.</p>
+            
+            <div class="dimension-code-row">
+              <span class="profile-card-label">GRAPH III • CORE SELF</span>
+              <span class="profile-card-code" id="profileCoreCode">—</span>
+            </div>
             <div class="profile-card-name" id="profileCore">—</div>
-            <p class="profile-card-desc" id="profileCoreDesc">—</p>
+            <p class="profile-card-desc" id="profileCoreDesc" style="display:none;">—</p>
+            
             <div class="profile-card-chars" id="profileCoreChars"></div>
           </div>
         </div>
+
       </div>
     </div>
 
-    <!-- 4. Your DISC Scores (Progress Meters Focused) -->
-    <div class="report-section scores-section">
+    <!-- 5. Behavioral Intensity & Your DISC Summary (2-Col Layout) -->
+    <div class="report-section intensity-summary-section">
+      <div class="intensity-summary-grid">
+        
+        <!-- Left: Behavioral Intensity Progress Bars -->
+        <div class="intensity-card">
+          <div class="report-section-header no-margin-top">
+            <h3 class="section-title">Behavioral Intensity</h3>
+            <p class="section-subtitle">Your behavioral intensity across each DISC dimension.</p>
+          </div>
+
+          <div class="scores-meter-container">
+            <!-- D -->
+            <div class="meter-row" id="scoreD">
+              <div class="meter-top-bar">
+                <div class="meter-label-group">
+                  <span class="meter-dot dot-d"></span>
+                  <span class="meter-title">D - Dominance</span>
+                </div>
+                <div class="meter-stats-group">
+                  <span class="meter-pct" id="pctD">0%</span>
+                  <span class="spectrum-pill" id="spectrumD">—</span>
+                </div>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill fill-d" id="barD" style="width:0%"></div>
+              </div>
+              <span id="barPctD" style="display:none;">0%</span>
+            </div>
+
+            <!-- I -->
+            <div class="meter-row" id="scoreI">
+              <div class="meter-top-bar">
+                <div class="meter-label-group">
+                  <span class="meter-dot dot-i"></span>
+                  <span class="meter-title">I - Influence</span>
+                </div>
+                <div class="meter-stats-group">
+                  <span class="meter-pct" id="pctI">0%</span>
+                  <span class="spectrum-pill" id="spectrumI">—</span>
+                </div>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill fill-i" id="barI" style="width:0%"></div>
+              </div>
+              <span id="barPctI" style="display:none;">0%</span>
+            </div>
+
+            <!-- S -->
+            <div class="meter-row" id="scoreS">
+              <div class="meter-top-bar">
+                <div class="meter-label-group">
+                  <span class="meter-dot dot-s"></span>
+                  <span class="meter-title">S - Steadiness</span>
+                </div>
+                <div class="meter-stats-group">
+                  <span class="meter-pct" id="pctS">0%</span>
+                  <span class="spectrum-pill" id="spectrumS">—</span>
+                </div>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill fill-s" id="barS" style="width:0%"></div>
+              </div>
+              <span id="barPctS" style="display:none;">0%</span>
+            </div>
+
+            <!-- C -->
+            <div class="meter-row" id="scoreC">
+              <div class="meter-top-bar">
+                <div class="meter-label-group">
+                  <span class="meter-dot dot-c"></span>
+                  <span class="meter-title">C - Conscientiousness</span>
+                </div>
+                <div class="meter-stats-group">
+                  <span class="meter-pct" id="pctC">0%</span>
+                  <span class="spectrum-pill" id="spectrumC">—</span>
+                </div>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill fill-c" id="barC" style="width:0%"></div>
+              </div>
+              <span id="barPctC" style="display:none;">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Your DISC Summary Card -->
+        <div class="summary-card-container">
+          <div class="disc-summary-card">
+            <h3 class="summary-card-title">Your DISC Summary</h3>
+            <div class="summary-badges-list">
+              <div class="summary-badge-item badge-primary">
+                <div class="summary-badge-icon icon-emerald">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="summary-badge-text">
+                  <span class="summary-badge-label">Primary Style</span>
+                  <strong class="summary-badge-val" id="summaryPrimaryName">Steady (S)</strong>
+                </div>
+              </div>
+
+              <div class="summary-badge-item badge-secondary">
+                <div class="summary-badge-icon icon-blue">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="summary-badge-text">
+                  <span class="summary-badge-label">Secondary Style</span>
+                  <strong class="summary-badge-val" id="summarySecondaryName">Conscientious (C)</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. Natural Strengths & Growth Opportunities (2-Col Side-by-Side) -->
+    <div class="report-section strengths-growth-section">
+      <div class="strengths-growth-grid">
+        
+        <!-- Strengths Card -->
+        <div class="insights-card strengths-card">
+          <div class="insights-card-header">
+            <div class="insights-card-icon icon-emerald">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <div class="insights-card-text">
+              <h3 class="insights-card-title">Your Natural Strengths</h3>
+              <p class="insights-card-subtitle">The qualities you naturally bring to different areas of life.</p>
+            </div>
+          </div>
+          <div class="modern-chips-grid strengths-grid" id="strengthsContainer"></div>
+        </div>
+
+        <!-- Growth Opportunities Card -->
+        <div class="insights-card growth-card">
+          <div class="insights-card-header">
+            <div class="insights-card-icon icon-amber">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path><circle cx="8" cy="12" r="2"></circle></svg>
+            </div>
+            <div class="insights-card-text">
+              <h3 class="insights-card-title">Growth Opportunities</h3>
+              <p class="insights-card-subtitle">Areas that can help you grow and achieve even more.</p>
+            </div>
+          </div>
+          <div class="modern-chips-grid watch-outs-grid" id="watchOutsContainer"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 7. How This Influences Your Life & Work (4 Cards Grid + DB Hook / Fallback) -->
+    <div class="report-section influences-section">
       <div class="report-section-header">
-        <h3 class="section-title">Your DISC Scores & Intensity Spectrum</h3>
-        <p class="section-subtitle">
-          Breakdown of your behavioral intensity across the four primary quadrants.
-        </p>
+        <h3 class="section-title">How This Influences Your Life & Work</h3>
+        <p class="section-subtitle">How your DISC profile can show up in different aspects of your life — not just at work.</p>
       </div>
 
-      <div class="scores-meter-container">
-        <!-- Dominance Row -->
-        <div class="meter-row" id="scoreD">
-          <div class="meter-top-bar">
-            <div class="meter-label-group">
-              <span class="meter-dot dot-d"></span>
-              <span class="meter-title">D: Dominance</span>
-            </div>
-            <div class="meter-stats-group">
-              <span class="spectrum-pill" id="spectrumD">—</span>
-              <span class="meter-pct" id="pctD">0%</span>
-            </div>
+      <!-- Hidden container to preserve legacy binding -->
+      <div id="whatThisMeansText" style="display:none;"></div>
+
+      <div class="influences-grid modern-4card-grid">
+        <!-- Card 1: Decision Making -->
+        <div class="influence-card card-decision">
+          <div class="influence-card-header">
+            <span class="influence-icon icon-purple">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+            </span>
+            <h4 class="influence-title">Decision Making</h4>
           </div>
-          <div class="meter-track">
-            <div class="meter-fill fill-d" id="barD" style="width:0%"></div>
-          </div>
-          <span id="barPctD" style="display:none;">0%</span>
+          <p class="influence-desc" id="discDomainDecision">You prefer to make thoughtful, well-researched decisions. You evaluate all details before committing to a choice.</p>
         </div>
 
-        <!-- Influence Row -->
-        <div class="meter-row" id="scoreI">
-          <div class="meter-top-bar">
-            <div class="meter-label-group">
-              <span class="meter-dot dot-i"></span>
-              <span class="meter-title">I: Influence</span>
-            </div>
-            <div class="meter-stats-group">
-              <span class="spectrum-pill" id="spectrumI">—</span>
-              <span class="meter-pct" id="pctI">0%</span>
-            </div>
+        <!-- Card 2: Communication -->
+        <div class="influence-card card-communication">
+          <div class="influence-card-header">
+            <span class="influence-icon icon-purple">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </span>
+            <h4 class="influence-title">Communication</h4>
           </div>
-          <div class="meter-track">
-            <div class="meter-fill fill-i" id="barI" style="width:0%"></div>
-          </div>
-          <span id="barPctI" style="display:none;">0%</span>
+          <p class="influence-desc" id="discDomainCommunication">You communicate clearly, respectfully, and in a calm manner. You listen carefully and choose your words with consideration.</p>
         </div>
 
-        <!-- Steadiness Row -->
-        <div class="meter-row" id="scoreS">
-          <div class="meter-top-bar">
-            <div class="meter-label-group">
-              <span class="meter-dot dot-s"></span>
-              <span class="meter-title">S: Steadiness</span>
-            </div>
-            <div class="meter-stats-group">
-              <span class="spectrum-pill" id="spectrumS">—</span>
-              <span class="meter-pct" id="pctS">0%</span>
-            </div>
+        <!-- Card 3: Relationships -->
+        <div class="influence-card card-relationships">
+          <div class="influence-card-header">
+            <span class="influence-icon icon-purple">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <h4 class="influence-title">Relationships</h4>
           </div>
-          <div class="meter-track">
-            <div class="meter-fill fill-s" id="barS" style="width:0%"></div>
-          </div>
-          <span id="barPctS" style="display:none;">0%</span>
+          <p class="influence-desc" id="discDomainRelationships">You are supportive, loyal, and dependable. People trust you because you are consistent and always follow through.</p>
         </div>
 
-        <!-- Conscientiousness Row -->
-        <div class="meter-row" id="scoreC">
-          <div class="meter-top-bar">
-            <div class="meter-label-group">
-              <span class="meter-dot dot-c"></span>
-              <span class="meter-title">C: Conscientiousness</span>
-            </div>
-            <div class="meter-stats-group">
-              <span class="spectrum-pill" id="spectrumC">—</span>
-              <span class="meter-pct" id="pctC">0%</span>
-            </div>
+        <!-- Card 4: Preferred Environment -->
+        <div class="influence-card card-environment">
+          <div class="influence-card-header">
+            <span class="influence-icon icon-purple">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </span>
+            <h4 class="influence-title">Preferred Environment</h4>
           </div>
-          <div class="meter-track">
-            <div class="meter-fill fill-c" id="barC" style="width:0%"></div>
-          </div>
-          <span id="barPctC" style="display:none;">0%</span>
+          <p class="influence-desc" id="discDomainEnvironment">You thrive in structured, well-organized environments with clear expectations, stable processes, and quality standards.</p>
         </div>
       </div>
     </div>
 
-    <!-- 5. Strengths Section -->
-    <div class="report-section insights-section">
-      <div class="report-section-header with-icon">
-        <div class="section-header-icon icon-emerald">✨</div>
-        <div class="section-header-text">
-          <h3 class="section-title">Natural Strengths & Key Values</h3>
-          <p class="section-subtitle">Core positive traits and workplace assets you naturally bring to any project or team.</p>
-        </div>
+    <!-- 8. Footer Disclaimer & Actions -->
+    <div class="report-footer-bar">
+      <div class="disclaimer-pill-box">
+        <span class="disclaimer-icon">ⓘ</span>
+        <p class="disclaimer-text">This report reflects your natural behavioral tendencies. It can be used for personal growth, relationship building, team collaboration, career development, and many other areas of life.</p>
       </div>
-      <div class="modern-chips-grid strengths-grid" id="strengthsContainer"></div>
-    </div>
-
-    <!-- 6. Watch Outs Section -->
-    <div class="report-section insights-section">
-      <div class="report-section-header with-icon">
-        <div class="section-header-icon icon-amber">⚡</div>
-        <div class="section-header-text">
-          <h3 class="section-title">Areas for Growth & Watch Outs</h3>
-          <p class="section-subtitle">Potential behavioral blind spots or stress reactions to be mindful of under tight pressure.</p>
-        </div>
+      
+      <div class="footer-actions-row">
+        <button class="btn btn-primary btn-print-mockup" id="btnPrintReport">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>Print / Download PDF Report</span>
+        </button>
+        <button class="btn btn-ghost btn-finish-mockup" id="btnFinishTest">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Done & Back to Start</span>
+        </button>
       </div>
-      <div class="modern-chips-grid watch-outs-grid" id="watchOutsContainer"></div>
-    </div>
-
-    <!-- 7. What This Means Section -->
-    <div class="report-section interpretation-section">
-      <div class="report-section-header with-icon">
-        <div class="section-header-icon icon-purple">💡</div>
-        <div class="section-header-text">
-          <h3 class="section-title">Workplace Behavioral Interpretation</h3>
-          <p class="section-subtitle">Comprehensive analysis of what your core profile means for decision-making, communication, and leadership.</p>
-        </div>
-      </div>
-      <div class="editorial-reading-box" id="whatThisMeansText"></div>
-    </div>
-
-    <!-- 8. Footer Actions -->
-    <div class="report-footer-actions">
-      <button class="btn btn-primary btn-print" id="btnPrintReport">
-        <span>🪪 Print / Download PDF Report</span>
-      </button>
-      <button class="btn btn-ghost btn-finish" id="btnFinishTest">
-        <span>🏠 Done & Back to Start</span>
-      </button>
     </div>
 
   </section>

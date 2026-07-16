@@ -95,7 +95,7 @@ module.exports = async (req, res) => {
     const coreSelf = matchRow[39] || '—';
 
     function findProfileByName(profName) {
-      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
+      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
       const found = discProfiles.find(p => p.name.trim().toUpperCase() === profName.trim().toUpperCase());
       return found ? {
         code: found.code,
@@ -105,8 +105,13 @@ module.exports = async (req, res) => {
         strengths: found.strengths || [],
         watch_outs: found.watch_outs || [],
         what_this_means: found.what_this_means || '',
-        at_a_glance: found.at_a_glance || ''
-      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
+        at_a_glance: found.at_a_glance || '',
+        job_suitability: found.job_suitability || '',
+        decision_making: found.decision_making || '',
+        communication: found.communication || '',
+        relationships: found.relationships || '',
+        preferred_environment: found.preferred_environment || ''
+      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '', job_suitability: '', decision_making: '', communication: '', relationships: '', preferred_environment: '' };
     }
 
     const pubInfo = findProfileByName(publicSelf);
@@ -136,7 +141,17 @@ module.exports = async (req, res) => {
         core_self_strengths: coreInfo.strengths || [],
         core_self_watch_outs: coreInfo.watch_outs || [],
         core_self_what_this_means: coreInfo.what_this_means || '',
-        core_self_at_a_glance: coreInfo.at_a_glance || ''
+        core_self_at_a_glance: coreInfo.at_a_glance || '',
+        core_self_job_suitability: coreInfo.job_suitability || '',
+        core_self_decision_making: coreInfo.decision_making || '',
+        core_self_communication: coreInfo.communication || '',
+        core_self_relationships: coreInfo.relationships || '',
+        core_self_preferred_environment: coreInfo.preferred_environment || '',
+        decision_making: coreInfo.decision_making || '',
+        communication: coreInfo.communication || '',
+        relationships: coreInfo.relationships || '',
+        preferred_environment: coreInfo.preferred_environment || '',
+        job_suitability: coreInfo.job_suitability || ''
       },
       disc_scores: {
         D: dVal,

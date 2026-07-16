@@ -331,7 +331,17 @@ module.exports = async (req, res) => {
         core_self_strengths: scoring.profiles.graph3_info.strengths || [],
         core_self_watch_outs: scoring.profiles.graph3_info.watch_outs || [],
         core_self_what_this_means: scoring.profiles.graph3_info.what_this_means || '',
-        core_self_at_a_glance: scoring.profiles.graph3_info.at_a_glance || ''
+        core_self_at_a_glance: scoring.profiles.graph3_info.at_a_glance || '',
+        core_self_job_suitability: scoring.profiles.graph3_info.job_suitability || '',
+        core_self_decision_making: scoring.profiles.graph3_info.decision_making || '',
+        core_self_communication: scoring.profiles.graph3_info.communication || '',
+        core_self_relationships: scoring.profiles.graph3_info.relationships || '',
+        core_self_preferred_environment: scoring.profiles.graph3_info.preferred_environment || '',
+        decision_making: scoring.profiles.graph3_info.decision_making || '',
+        communication: scoring.profiles.graph3_info.communication || '',
+        relationships: scoring.profiles.graph3_info.relationships || '',
+        preferred_environment: scoring.profiles.graph3_info.preferred_environment || '',
+        job_suitability: scoring.profiles.graph3_info.job_suitability || ''
       },
       disc_scores: {
         D: scoring.raw.most.D,

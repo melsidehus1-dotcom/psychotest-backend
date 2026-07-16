@@ -85,6 +85,30 @@
     scoreD: qs('scoreD'), scoreI: qs('scoreI'), scoreS: qs('scoreS'), scoreC: qs('scoreC'),
     spectrumD: qs('spectrumD'), spectrumI: qs('spectrumI'), spectrumS: qs('spectrumS'), spectrumC: qs('spectrumC'),
     discWheel:       qs('discWheel'),
+    wheelCenterBadge: qs('wheelCenterBadge'),
+    // Hero Badges & Keywords
+    badgeHeroPrimary: qs('badgeHeroPrimary'),
+    heroPrimaryLetter: qs('heroPrimaryLetter'),
+    heroPrimaryName: qs('heroPrimaryName'),
+    badgeHeroSecondary: qs('badgeHeroSecondary'),
+    heroSecondaryLetter: qs('heroSecondaryLetter'),
+    heroSecondaryName: qs('heroSecondaryName'),
+    discHeroKeywords: qs('discHeroKeywords'),
+    // At a Glance & 2x2 Info Grid
+    discAtAGlanceText: qs('discAtAGlanceText'),
+    discHowYouWorkText: qs('discHowYouWorkText'),
+    discWhatToWatchText: qs('discWhatToWatchText'),
+    discYourStrengthText: qs('discYourStrengthText'),
+    discBestInText: qs('discBestInText'),
+    // Summary Badges
+    summaryPrimaryName: qs('summaryPrimaryName'),
+    summarySecondaryName: qs('summarySecondaryName'),
+    // 4 Domains Grid
+    discDomainDecision: qs('discDomainDecision'),
+    discDomainCommunication: qs('discDomainCommunication'),
+    discDomainRelationships: qs('discDomainRelationships'),
+    discDomainEnvironment: qs('discDomainEnvironment'),
+    btnCopyId: qs('btnCopyId'),
     // Enrichment containers & actions
     strengthsContainer: qs('strengthsContainer'),
     watchOutsContainer: qs('watchOutsContainer'),
@@ -529,14 +553,24 @@
       }, 400 + i * 120);
     });
 
-    // 4. YOUR DISC TYPE Card (Hero)
-    const typeMap = { D: 'Dominant', I: 'Influential', S: 'Steady', C: 'Conscientious' };
+    // 4. YOUR DISC TYPE Card (Hero) & Primary/Secondary Badges
+    const typeMap = { D: 'Dominant (D)', I: 'Influencing (I)', S: 'Steady (S)', C: 'Conscientious (C)' };
     const descMap = {
       D: 'You are results-driven and decisive. You thrive on challenges, take charge in high-pressure situations, and are motivated by achieving tangible results.',
       I: 'You are enthusiastic and optimistic. You excel at building relationships, inspiring others, and creating an energetic atmosphere in the workplace.',
       S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
       C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
     };
+
+    // Find secondary style
+    const scorePairs = [
+      { key: 'D', val: dP },
+      { key: 'I', val: iP },
+      { key: 'S', val: sP },
+      { key: 'C', val: cP }
+    ].sort((a, b) => b.val - a.val);
+    const primaryKey = scorePairs[0].key;
+    const secondaryKey = scorePairs[1] && scorePairs[1].val > 0 ? scorePairs[1].key : primaryKey;
 
     if (prof && prof.core_self && prof.core_self !== 'UNKNOWN' && prof.core_self !== '—') {
       const code = prof.core_self_code && prof.core_self_code !== '—' ? prof.core_self_code : dominant;
@@ -552,8 +586,56 @@
       if (D.discTypeAbout) D.discTypeAbout.textContent = descMap[dominant];
     }
 
+    // Populate Hero Badges & Summary Badges
+    if (D.heroPrimaryLetter) D.heroPrimaryLetter.textContent = primaryKey;
+    if (D.heroPrimaryName) D.heroPrimaryName.textContent = typeMap[primaryKey] || primaryKey;
+    if (D.summaryPrimaryName) D.summaryPrimaryName.textContent = typeMap[primaryKey] || primaryKey;
+
+    if (D.heroSecondaryLetter) D.heroSecondaryLetter.textContent = secondaryKey;
+    if (D.heroSecondaryName) D.heroSecondaryName.textContent = typeMap[secondaryKey] || secondaryKey;
+    if (D.summarySecondaryName) D.summarySecondaryName.textContent = typeMap[secondaryKey] || secondaryKey;
+
+    // Set primary/secondary badge classes
+    ['badgeHeroPrimary', 'badgeHeroSecondary'].forEach((id, idx) => {
+      const el = D[id];
+      if (!el) return;
+      const key = idx === 0 ? primaryKey : secondaryKey;
+      el.className = `disc-style-badge badge-${idx === 0 ? 'primary' : 'secondary'} style-${key.toLowerCase()}`;
+    });
+
+    // Populate Keywords under Hero Code
+    if (D.discHeroKeywords) {
+      const chars = prof.core_self_chars && prof.core_self_chars.length > 0 ? prof.core_self_chars : (prof.characteristics || ['Reliable', 'Systematic', 'Quality-Focused']);
+      D.discHeroKeywords.innerHTML = chars.slice(0, 5).map(c => `
+        <span class="hero-keyword-pill">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>${c}</span>
+        </span>
+      `).join('');
+    }
+
+    // Populate At a Glance & 2x2 Hero Info Grid
+    if (D.discAtAGlanceText) {
+      D.discAtAGlanceText.textContent = prof.core_self_at_a_glance || prof.at_a_glance || descMap[dominant];
+    }
+    if (D.discHowYouWorkText) {
+      D.discHowYouWorkText.textContent = prof.core_self_about || prof.about_you || "You prefer clear guidelines, well-organized processes, and a steady environment where quality is prioritized.";
+    }
+    if (D.discWhatToWatchText) {
+      const wList = prof.core_self_watch_outs && prof.core_self_watch_outs.length > 0 ? prof.core_self_watch_outs : prof.watch_outs;
+      D.discWhatToWatchText.textContent = wList && wList[0] ? wList[0] : "You may overanalyze details or strive for perfection. Try to stay flexible, delegate more, and be open to different perspectives.";
+    }
+    if (D.discYourStrengthText) {
+      const sList = prof.core_self_strengths && prof.core_self_strengths.length > 0 ? prof.core_self_strengths : prof.strengths;
+      D.discYourStrengthText.textContent = sList && sList[0] ? sList[0] : "You are systematic, reliable, and quality-focused. You pay attention to detail and consistently deliver thorough and dependable results.";
+    }
+    if (D.discBestInText) {
+      D.discBestInText.textContent = prof.core_self_job_suitability || prof.job_suitability || "Roles that require accuracy, planning, problem-solving, analytical thinking, and maintaining high standards.";
+    }
+
     // Draw wheel
     drawDiscWheel(dP, iP, sP, cP, dominant);
+    if (D.wheelCenterBadge) D.wheelCenterBadge.textContent = dominant;
 
     // 5. Strengths Section
     if (D.strengthsContainer) {
@@ -588,15 +670,68 @@
       `).join('');
     }
 
-    // 7. What This Means Section
+    // 7. How This Influences Your Life & Work (Database Hook with Smart Fallback)
+    function getDefaultDomainText(domainType, domKey) {
+      const defaults = {
+        decision: {
+          D: "You make decisions quickly, decisively, and independently. You focus on bottom-line results and are comfortable taking bold risks when necessary.",
+          I: "You make decisions intuitively and collaboratively. You value team input and consider how choices will impact team morale and relationship dynamics.",
+          S: "You prefer to make thoughtful, well-considered decisions. You evaluate all details, seek stability, and ensure everyone is aligned before committing.",
+          C: "You make logical, analytical, and highly structured decisions. You carefully examine empirical evidence, weigh all risks, and verify accuracy first."
+        },
+        communication: {
+          D: "You communicate directly, concisely, and to the point. You appreciate brevity and clear action items rather than prolonged background details.",
+          I: "You communicate enthusiastically, persuasively, and warmly. You excel at engaging listeners, sharing stories, and building rapport effortlessly.",
+          S: "You communicate calmly, respectfully, and patiently. You listen deeply, choose your words with consideration, and foster constructive dialogue.",
+          C: "You communicate precisely, objectively, and thoroughly. You provide clear explanations supported by facts, data, and well-organized structure."
+        },
+        relationships: {
+          D: "In relationships, you value competence, autonomy, and direct honesty. You respect colleagues who stand their ground and deliver on promises.",
+          I: "In relationships, you are friendly, encouraging, and highly social. You build extensive networks and naturally bring positive energy to any group.",
+          S: "In relationships, you are loyal, supportive, and dependable. People trust you deeply because you are consistent and always follow through.",
+          C: "In relationships, you value reliability, professionalism, and mutual respect. You build lasting trust through high integrity and consistent follow-up."
+        },
+        environment: {
+          D: "You thrive in fast-paced, challenging environments with high autonomy, clear goals, and opportunities to lead initiatives toward tangible outcomes.",
+          I: "You thrive in dynamic, collaborative, and energetic environments where creativity, social interaction, and team recognition are actively celebrated.",
+          S: "You thrive in structured, well-organized environments with clear expectations, harmonious teamwork, and stable, consistent operating procedures.",
+          C: "You thrive in systematic, quiet, and quality-driven environments where accuracy is rewarded and you have ample time to do thorough, precise work."
+        }
+      };
+      return (defaults[domainType] && defaults[domainType][domKey]) || defaults[domainType].S;
+    }
+
+    if (D.discDomainDecision) {
+      D.discDomainDecision.textContent = prof.core_self_decision_making || prof.decision_making || getDefaultDomainText('decision', primaryKey);
+    }
+    if (D.discDomainCommunication) {
+      D.discDomainCommunication.textContent = prof.core_self_communication || prof.communication || getDefaultDomainText('communication', primaryKey);
+    }
+    if (D.discDomainRelationships) {
+      D.discDomainRelationships.textContent = prof.core_self_relationships || prof.relationships || getDefaultDomainText('relationships', primaryKey);
+    }
+    if (D.discDomainEnvironment) {
+      D.discDomainEnvironment.textContent = prof.core_self_preferred_environment || prof.preferred_environment || getDefaultDomainText('environment', primaryKey);
+    }
+
     if (D.whatThisMeansText) {
-      const meaning = prof.core_self_what_this_means || prof.core_self_about ||
-        'Your behavioral profile indicates a valuable blend of traits suited for collaborative team dynamics, structured workflow execution, and thoughtful decision-making. By leveraging your natural strengths while staying mindful of potential stress triggers during rapid changes, you can consistently deliver high-impact results while maintaining positive professional relationships.';
+      const meaning = prof.core_self_what_this_means || prof.core_self_about || '';
       D.whatThisMeansText.innerHTML = meaning
         .split('\n')
         .filter(p => p.trim().length > 0)
         .map(p => `<p>${p.trim()}</p>`)
         .join('');
+    }
+
+    // Copy ID Button action
+    if (D.btnCopyId) {
+      D.btnCopyId.onclick = () => {
+        const idText = D.resultId ? D.resultId.textContent : '';
+        if (idText && idText !== '—') {
+          navigator.clipboard.writeText(idText);
+          toast('User ID copied to clipboard!', 'success', 2500);
+        }
+      };
     }
 
     // 8. Footer Actions
@@ -617,7 +752,9 @@
     const canvas = D.discWheel;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const cx = 70, cy = 70, r = 58, innerR = 24;
+    const cx = canvas.width / 2, cy = canvas.height / 2;
+    const r = (canvas.width / 2) - 18;
+    const innerR = r * 0.42;
     const segments = [
       { val: d, color: '#ef4444', label: 'D' },  // red
       { val: i, color: '#f59e0b', label: 'I' },  // amber
@@ -632,16 +769,16 @@
     segments.forEach(seg => {
       const slice = (seg.val / total) * 2 * Math.PI;
       const isDom = seg.label === dominant;
-      const outerR = isDom ? r + 8 : r;
+      const outerR = isDom ? r + 10 : r;
 
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.arc(cx, cy, outerR, startAngle, startAngle + slice);
       ctx.closePath();
-      ctx.fillStyle = isDom ? seg.color : seg.color + '66';
+      ctx.fillStyle = isDom ? seg.color : seg.color + '55';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(15,15,30,0.6)';
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'rgba(15,15,30,0.8)';
+      ctx.lineWidth = 3;
       ctx.stroke();
 
       startAngle += slice;
@@ -650,12 +787,15 @@
     // Draw inner circle (donut hole)
     ctx.beginPath();
     ctx.arc(cx, cy, innerR, 0, 2 * Math.PI);
-    ctx.fillStyle = 'hsl(228,28%,8%)';
+    ctx.fillStyle = 'hsl(226, 32%, 12%)';
     ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
 
-    // Draw dominant letter
+    // Draw dominant letter inside hole
     ctx.fillStyle = '#fff';
-    ctx.font = 'bold 16px Outfit, Inter, sans-serif';
+    ctx.font = 'bold 28px Outfit, Inter, sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(dominant, cx, cy);

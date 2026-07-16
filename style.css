@@ -2711,7 +2711,288 @@ body::after {
   transition: background var(--transition-fast);
 }
 
-.data-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.02) !important;
+/* ══════════════════════════════════════════════════════════════
+   REDESIGNED DISC RESULT PAGE (PREMIUM & INSIGHTFUL REPORT)
+   ══════════════════════════════════════════════════════════════ */
+
+/* Candidate Metadata Bar inside Hero Card */
+.disc-type-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+  justify-content: space-between;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.meta-val {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.disc-type-about {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: var(--space-sm);
+  max-width: 680px;
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Section Headings & Subtitles */
+.disc-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+}
+
+.disc-section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: var(--space-xl);
+}
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.emerald-icon {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+}
+
+.amber-icon {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.purple-icon {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+/* 3x Behavioral Profiles Tiles Enrichment */
+.profile-tile-public { border-top: 3px solid #60a5fa !important; }
+.profile-tile-private { border-top: 3px solid #f59e0b !important; }
+.profile-tile-core { border-top: 3px solid #22c55e !important; }
+
+.tile-code {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-light);
+  margin: 6px 0 2px 0;
+}
+
+.profile-tile-public .tile-code { color: #60a5fa; }
+.profile-tile-private .tile-code { color: #fbbf24; }
+.profile-tile-core .tile-code { color: #4ade80; }
+
+.tile-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 8px 0 14px 0;
+}
+
+.tile-chars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.trait-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Spectrum Badge in Score Cells */
+.disc-spectrum-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.spectrum-high { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
+.spectrum-mid  { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+.spectrum-low  { background: rgba(148, 163, 184, 0.12); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.25); }
+
+/* Strengths & Watch Outs Chips Grid */
+.strengths-card, .watch-outs-card, .what-this-means-card, .result-actions-card {
+  padding: var(--space-xl) var(--space-2xl);
+}
+
+.chips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.insight-chip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: all var(--transition-base);
+}
+
+.insight-chip:hover {
+  transform: translateY(-2px);
+}
+
+.strength-chip {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.08) 0%, rgba(34, 197, 94, 0.02) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #e2e8f0;
+}
+
+.strength-chip-icon {
+  color: #4ade80;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.watch-chip {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(245, 158, 11, 0.02) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #e2e8f0;
+}
+
+.watch-chip-icon {
+  color: #fbbf24;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* What This Means Narrative Panel */
+.what-this-means-content {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.what-this-means-content p {
+  margin: 0 0 16px 0;
+}
+
+.what-this-means-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer Actions Section */
+.result-actions-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.btn-lg {
+  padding: 1rem 2.2rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-lg);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PRINT MEDIA STYLES (PDF REPORT GENERATION)
+   ══════════════════════════════════════════════════════════════ */
+@media print {
+  body, html {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    font-size: 12pt !important;
+  }
+  .theme-toggle, .toast-stack, .loading-veil, .result-actions-card {
+    display: none !important;
+  }
+  #view-result {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    box-shadow: none !important;
+    margin-bottom: 15px !important;
+    padding: 15px 20px !important;
+    page-break-inside: avoid !important;
+  }
+  .disc-type-code {
+    background: none !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+    color: #1a1a1a !important;
+  }
+  .disc-score-cell, .profile-tile, .insight-chip, .what-this-means-content {
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    color: #1f2937 !important;
+  }
+  .tile-code, .disc-score-cell-pct, .meta-val, .disc-type-name, h2, h3 {
+    color: #111827 !important;
+  }
+  .tile-desc, .disc-type-about, .meta-label, .disc-section-subtitle {
+    color: #4b5563 !important;
+  }
 }
 

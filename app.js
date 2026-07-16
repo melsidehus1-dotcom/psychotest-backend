@@ -58,18 +58,38 @@
     navStatus:       qs('navStatus'),
     // Result
     resultId:        qs('resultId'),
+    resultName:      qs('resultName'),
+    resultPos:       qs('resultPos'),
+    resultDuration:  qs('resultDuration'),
     profilePublic:   qs('profilePublic'),
+    profilePublicCode: qs('profilePublicCode'),
+    profilePublicDesc: qs('profilePublicDesc'),
+    profilePublicChars: qs('profilePublicChars'),
     profilePrivate:  qs('profilePrivate'),
+    profilePrivateCode: qs('profilePrivateCode'),
+    profilePrivateDesc: qs('profilePrivateDesc'),
+    profilePrivateChars: qs('profilePrivateChars'),
     profileCore:     qs('profileCore'),
+    profileCoreCode: qs('profileCoreCode'),
+    profileCoreDesc: qs('profileCoreDesc'),
+    profileCoreChars: qs('profileCoreChars'),
     // Result DISC scores
     discTypeCode:    qs('discTypeCode'),
     discTypeName:    qs('discTypeName'),
     discTypeDesc:    qs('discTypeDesc'),
+    discTypeAbout:   qs('discTypeAbout'),
     pctD: qs('pctD'), pctI: qs('pctI'), pctS: qs('pctS'), pctC: qs('pctC'),
     barD: qs('barD'), barI: qs('barI'), barS: qs('barS'), barC: qs('barC'),
     barPctD: qs('barPctD'), barPctI: qs('barPctI'), barPctS: qs('barPctS'), barPctC: qs('barPctC'),
     scoreD: qs('scoreD'), scoreI: qs('scoreI'), scoreS: qs('scoreS'), scoreC: qs('scoreC'),
+    spectrumD: qs('spectrumD'), spectrumI: qs('spectrumI'), spectrumS: qs('spectrumS'), spectrumC: qs('spectrumC'),
     discWheel:       qs('discWheel'),
+    // Enrichment containers & actions
+    strengthsContainer: qs('strengthsContainer'),
+    watchOutsContainer: qs('watchOutsContainer'),
+    whatThisMeansText:  qs('whatThisMeansText'),
+    btnPrintReport:     qs('btnPrintReport'),
+    btnFinishTest:      qs('btnFinishTest'),
     // UI
     toastStack:      qs('toastStack'),
     loadingVeil:     qs('loadingVeil'),
@@ -419,79 +439,169 @@
 
   /* ── Render result screen ──────────────────── */
   function showResult(data) {
-    D.resultId.textContent       = data.candidate_id         ?? '—';
-    D.profilePublic.textContent  = data.disc_profile?.public_self  ?? '—';
-    D.profilePrivate.textContent = data.disc_profile?.private_self ?? '—';
-    D.profileCore.textContent    = data.disc_profile?.core_self    ?? '—';
+    const prof = data.disc_profile || {};
+    const scores = data.disc_scores || { D: 0, I: 0, S: 0, C: 0 };
 
-    // Populate DISC scores if available
-    const scores = data.disc_scores;
-    if (scores) {
-      const total = scores.D + scores.I + scores.S + scores.C;
-      const pct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
-      const dP = pct(scores.D), iP = pct(scores.I), sP = pct(scores.S), cP = pct(scores.C);
+    // 1. Candidate Metadata & ID
+    if (D.resultId) D.resultId.textContent = data.candidate_id ?? '—';
+    if (D.resultName) D.resultName.textContent = data.name || state.candidateName || 'Candidate';
+    if (D.resultPos) D.resultPos.textContent = data.position || state.candidatePos || 'General Applicant';
+    if (D.resultDuration) {
+      const ds = data.duration_seconds || state.durationSeconds || 0;
+      const mins = Math.floor(ds / 60);
+      const secs = ds % 60;
+      D.resultDuration.textContent = ds > 0 ? `${mins}m ${secs}s` : '—';
+    }
 
-      // Highlight the dominant type cell
-      const max = Math.max(dP, iP, sP, cP);
-      const dominant = dP === max ? 'D' : iP === max ? 'I' : sP === max ? 'S' : 'C';
-
-      // Set score grid
-      D.pctD.textContent = `${dP}%`;
-      D.pctI.textContent = `${iP}%`;
-      D.pctS.textContent = `${sP}%`;
-      D.pctC.textContent = `${cP}%`;
-      if (D.scoreD) D.scoreD.classList.toggle('is-dominant', dominant === 'D');
-      if (D.scoreI) D.scoreI.classList.toggle('is-dominant', dominant === 'I');
-      if (D.scoreS) D.scoreS.classList.toggle('is-dominant', dominant === 'S');
-      if (D.scoreC) D.scoreC.classList.toggle('is-dominant', dominant === 'C');
-
-      // Animate bars with a staggered delay
-      const bars = [
-        { el: D.barD, pct: D.barPctD, val: dP },
-        { el: D.barI, pct: D.barPctI, val: iP },
-        { el: D.barS, pct: D.barPctS, val: sP },
-        { el: D.barC, pct: D.barPctC, val: cP },
-      ];
-      bars.forEach(({ el, pct, val }, i) => {
-        setTimeout(() => {
-          if (el) el.style.width = `${val}%`;
-          if (pct) pct.textContent = `${val}%`;
-        }, 400 + i * 120);
-      });
-
-      // Populate DISC type card
-      const typeMap = { D: 'Dominant', I: 'Influential', S: 'Steady', C: 'Conscientious' };
-      const descMap = {
-        D: 'You are results-driven and decisive. You thrive on challenges, take charge in high-pressure situations, and are motivated by achieving tangible results.',
-        I: 'You are enthusiastic and optimistic. You excel at building relationships, inspiring others, and creating an energetic atmosphere in the workplace.',
-        S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
-        C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
-      };
-
-      const prof = data.disc_profile;
-      if (prof && prof.core_self && prof.core_self !== 'UNKNOWN' && prof.core_self !== '—') {
-        const code = prof.core_self_code && prof.core_self_code !== '—' ? prof.core_self_code : dominant;
-        const name = prof.core_self;
-        const desc = prof.core_self_desc || '';
-        const chars = prof.core_self_chars || [];
-
-        if (D.discTypeCode) D.discTypeCode.textContent = code;
-        if (D.discTypeName) D.discTypeName.textContent = name;
-        if (D.discTypeDesc) {
-          let descText = desc ? `${desc}` : '';
-          if (chars && chars.length > 0) {
-            descText += descText ? ` • Karakteristik: ${chars.join(', ')}.` : `Karakteristik: ${chars.join(', ')}.`;
-          }
-          D.discTypeDesc.textContent = descText || descMap[dominant];
+    // 2. Behavioral Profiles (The 3 Dimensions)
+    function populateTile(codeEl, nameEl, descEl, charsEl, code, name, desc, chars) {
+      if (codeEl) codeEl.textContent = code || '—';
+      if (nameEl) nameEl.textContent = name || '—';
+      if (descEl) descEl.textContent = desc || 'No description available.';
+      if (charsEl) {
+        if (chars && chars.length > 0) {
+          charsEl.innerHTML = chars.map(c => `<span class="trait-chip">${c}</span>`).join('');
+        } else {
+          charsEl.innerHTML = '<span class="trait-chip">—</span>';
         }
-      } else {
-        if (D.discTypeCode) D.discTypeCode.textContent = dominant;
-        if (D.discTypeName) D.discTypeName.textContent = typeMap[dominant];
-        if (D.discTypeDesc) D.discTypeDesc.textContent = descMap[dominant];
       }
+    }
 
-      // Draw wheel
-      drawDiscWheel(dP, iP, sP, cP, dominant);
+    populateTile(D.profilePublicCode, D.profilePublic, D.profilePublicDesc, D.profilePublicChars,
+      prof.public_self_code, prof.public_self, prof.public_self_desc, prof.public_self_chars);
+    populateTile(D.profilePrivateCode, D.profilePrivate, D.profilePrivateDesc, D.profilePrivateChars,
+      prof.private_self_code, prof.private_self, prof.private_self_desc, prof.private_self_chars);
+    populateTile(D.profileCoreCode, D.profileCore, D.profileCoreDesc, D.profileCoreChars,
+      prof.core_self_code, prof.core_self, prof.core_self_desc, prof.core_self_chars);
+
+    // 3. Calculate Scores & Intensity Spectrum
+    const total = (scores.D || 0) + (scores.I || 0) + (scores.S || 0) + (scores.C || 0);
+    const pct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
+    const dP = pct(scores.D), iP = pct(scores.I), sP = pct(scores.S), cP = pct(scores.C);
+
+    const max = Math.max(dP, iP, sP, cP);
+    const dominant = dP === max ? 'D' : iP === max ? 'I' : sP === max ? 'S' : 'C';
+
+    if (D.pctD) D.pctD.textContent = `${dP}%`;
+    if (D.pctI) D.pctI.textContent = `${iP}%`;
+    if (D.pctS) D.pctS.textContent = `${sP}%`;
+    if (D.pctC) D.pctC.textContent = `${cP}%`;
+
+    if (D.scoreD) D.scoreD.classList.toggle('is-dominant', dominant === 'D');
+    if (D.scoreI) D.scoreI.classList.toggle('is-dominant', dominant === 'I');
+    if (D.scoreS) D.scoreS.classList.toggle('is-dominant', dominant === 'S');
+    if (D.scoreC) D.scoreC.classList.toggle('is-dominant', dominant === 'C');
+
+    function setSpectrum(el, val) {
+      if (!el) return;
+      if (val >= 35) {
+        el.className = 'disc-spectrum-badge spectrum-high';
+        el.textContent = 'High Intensity';
+      } else if (val >= 20) {
+        el.className = 'disc-spectrum-badge spectrum-mid';
+        el.textContent = 'Moderate';
+      } else {
+        el.className = 'disc-spectrum-badge spectrum-low';
+        el.textContent = 'Low Intensity';
+      }
+    }
+    setSpectrum(D.spectrumD, dP);
+    setSpectrum(D.spectrumI, iP);
+    setSpectrum(D.spectrumS, sP);
+    setSpectrum(D.spectrumC, cP);
+
+    // Animate bars with staggered delay
+    const bars = [
+      { el: D.barD, pct: D.barPctD, val: dP },
+      { el: D.barI, pct: D.barPctI, val: iP },
+      { el: D.barS, pct: D.barPctS, val: sP },
+      { el: D.barC, pct: D.barPctC, val: cP },
+    ];
+    bars.forEach(({ el, pct, val }, i) => {
+      setTimeout(() => {
+        if (el) el.style.width = `${val}%`;
+        if (pct) pct.textContent = `${val}%`;
+      }, 400 + i * 120);
+    });
+
+    // 4. YOUR DISC TYPE Card (Hero)
+    const typeMap = { D: 'Dominant', I: 'Influential', S: 'Steady', C: 'Conscientious' };
+    const descMap = {
+      D: 'You are results-driven and decisive. You thrive on challenges, take charge in high-pressure situations, and are motivated by achieving tangible results.',
+      I: 'You are enthusiastic and optimistic. You excel at building relationships, inspiring others, and creating an energetic atmosphere in the workplace.',
+      S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
+      C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
+    };
+
+    if (prof && prof.core_self && prof.core_self !== 'UNKNOWN' && prof.core_self !== '—') {
+      const code = prof.core_self_code && prof.core_self_code !== '—' ? prof.core_self_code : dominant;
+      const name = prof.core_self;
+      const about = prof.core_self_about || prof.core_self_desc || descMap[dominant];
+
+      if (D.discTypeCode) D.discTypeCode.textContent = code;
+      if (D.discTypeName) D.discTypeName.textContent = name;
+      if (D.discTypeAbout) D.discTypeAbout.textContent = about;
+    } else {
+      if (D.discTypeCode) D.discTypeCode.textContent = dominant;
+      if (D.discTypeName) D.discTypeName.textContent = typeMap[dominant];
+      if (D.discTypeAbout) D.discTypeAbout.textContent = descMap[dominant];
+    }
+
+    // Draw wheel
+    drawDiscWheel(dP, iP, sP, cP, dominant);
+
+    // 5. Strengths Section
+    if (D.strengthsContainer) {
+      const strengths = prof.core_self_strengths && prof.core_self_strengths.length > 0
+        ? prof.core_self_strengths
+        : [
+            'Reliable and dependable team contributor who follows through on commitments.',
+            'Systematic and structured approach to problem-solving and task execution.',
+            'Empathetic listener who fosters collaboration and workplace harmony.'
+          ];
+      D.strengthsContainer.innerHTML = strengths.map(s => `
+        <div class="insight-chip strength-chip">
+          <span class="strength-chip-icon">✔</span>
+          <span>${s}</span>
+        </div>
+      `).join('');
+    }
+
+    // 6. Watch Outs Section
+    if (D.watchOutsContainer) {
+      const watchOuts = prof.core_self_watch_outs && prof.core_self_watch_outs.length > 0
+        ? prof.core_self_watch_outs
+        : [
+            'May occasionally hesitate or feel stressed when adapting to sudden, unexpected changes.',
+            'Can overanalyze details or seek consensus before making rapid, high-stakes decisions.'
+          ];
+      D.watchOutsContainer.innerHTML = watchOuts.map(w => `
+        <div class="insight-chip watch-chip">
+          <span class="watch-chip-icon">⚡</span>
+          <span>${w}</span>
+        </div>
+      `).join('');
+    }
+
+    // 7. What This Means Section
+    if (D.whatThisMeansText) {
+      const meaning = prof.core_self_what_this_means || prof.core_self_about ||
+        'Your behavioral profile indicates a valuable blend of traits suited for collaborative team dynamics, structured workflow execution, and thoughtful decision-making. By leveraging your natural strengths while staying mindful of potential stress triggers during rapid changes, you can consistently deliver high-impact results while maintaining positive professional relationships.';
+      D.whatThisMeansText.innerHTML = meaning
+        .split('\n')
+        .filter(p => p.trim().length > 0)
+        .map(p => `<p>${p.trim()}</p>`)
+        .join('');
+    }
+
+    // 8. Footer Actions
+    if (D.btnPrintReport) {
+      D.btnPrintReport.onclick = () => window.print();
+    }
+    if (D.btnFinishTest) {
+      D.btnFinishTest.onclick = () => {
+        goTo('view-welcome');
+      };
     }
 
     goTo('view-result');

@@ -85,6 +85,7 @@ module.exports = async (req, res) => {
     const candidateId = matchRow[0];
     const name = matchRow[2];
     const position = matchRow[4];
+    const durationSeconds = Number(matchRow[8] || 0);
     const dVal = Number(matchRow[11] || 0);
     const iVal = Number(matchRow[12] || 0);
     const sVal = Number(matchRow[13] || 0);
@@ -94,13 +95,17 @@ module.exports = async (req, res) => {
     const coreSelf = matchRow[39] || '—';
 
     function findProfileByName(profName) {
-      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [] };
+      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
       const found = discProfiles.find(p => p.name.trim().toUpperCase() === profName.trim().toUpperCase());
       return found ? {
         code: found.code,
         description: found.description || '',
-        characteristics: found.characteristics || []
-      } : { code: '—', description: '', characteristics: [] };
+        characteristics: found.characteristics || [],
+        about_you: found.about_you || '',
+        strengths: found.strengths || [],
+        watch_outs: found.watch_outs || [],
+        what_this_means: found.what_this_means || ''
+      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
     }
 
     const pubInfo = findProfileByName(publicSelf);
@@ -112,6 +117,7 @@ module.exports = async (req, res) => {
       candidate_id: candidateId,
       name,
       position,
+      duration_seconds: durationSeconds,
       disc_profile: {
         public_self: publicSelf,
         private_self: privateSelf,
@@ -124,7 +130,11 @@ module.exports = async (req, res) => {
         core_self_desc: coreInfo.description,
         public_self_chars: pubInfo.characteristics,
         private_self_chars: privInfo.characteristics,
-        core_self_chars: coreInfo.characteristics
+        core_self_chars: coreInfo.characteristics,
+        core_self_about: coreInfo.about_you || '',
+        core_self_strengths: coreInfo.strengths || [],
+        core_self_watch_outs: coreInfo.watch_outs || [],
+        core_self_what_this_means: coreInfo.what_this_means || ''
       },
       disc_scores: {
         D: dVal,

@@ -59,14 +59,18 @@ function getMatchIndex(D, I, S, C) {
 }
 
 function getProfileInfo(idx) {
-  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [] };
+  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
   const profile = discProfiles.find(p => p.id === idx);
   return profile ? {
     name: profile.name,
     code: profile.code,
     description: profile.description || '',
-    characteristics: profile.characteristics || []
-  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [] };
+    characteristics: profile.characteristics || [],
+    about_you: profile.about_you || '',
+    strengths: profile.strengths || [],
+    watch_outs: profile.watch_outs || [],
+    what_this_means: profile.what_this_means || ''
+  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
 }
 
 /**
@@ -305,6 +309,9 @@ module.exports = async (req, res) => {
     res.status(200).json({
       status: 'success',
       candidate_id: candidateId,
+      name,
+      position,
+      duration_seconds: cognitive_duration_seconds,
       cognitive_score,
       disc_profile: {
         public_self: scoring.profiles.graph1,
@@ -318,7 +325,11 @@ module.exports = async (req, res) => {
         core_self_desc: scoring.profiles.graph3_info.description,
         public_self_chars: scoring.profiles.graph1_info.characteristics,
         private_self_chars: scoring.profiles.graph2_info.characteristics,
-        core_self_chars: scoring.profiles.graph3_info.characteristics
+        core_self_chars: scoring.profiles.graph3_info.characteristics,
+        core_self_about: scoring.profiles.graph3_info.about_you || '',
+        core_self_strengths: scoring.profiles.graph3_info.strengths || [],
+        core_self_watch_outs: scoring.profiles.graph3_info.watch_outs || [],
+        core_self_what_this_means: scoring.profiles.graph3_info.what_this_means || ''
       },
       disc_scores: {
         D: scoring.raw.most.D,

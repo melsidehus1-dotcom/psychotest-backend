@@ -362,7 +362,7 @@
          ══════════════════════════════════════════ -->
     <section id="view-result" class="view" aria-label="Assessment results">
 
-      <!-- Success banner -->
+      <!-- 1. Success banner -->
       <div class="glass-card result-banner">
         <div class="result-banner-inner">
           <div class="success-ring" aria-hidden="true">
@@ -375,7 +375,7 @@
             <h2>Assessment Complete!</h2>
             <p class="result-subtitle">
               Thank you for completing the DISC personality assessment.<br>
-              Your results have been submitted successfully.
+              Your behavioral evaluation report has been generated successfully.
             </p>
             <div class="cand-id-chip">
               🪪 <span id="resultId">USER-XXXXXXXX-XXXX</span>
@@ -384,14 +384,30 @@
         </div>
       </div>
 
-      <!-- DISC Type card -->
+      <!-- 2. YOUR DISC TYPE Card (Hero) -->
       <div class="glass-card disc-type-card" id="discTypeCard">
+        <!-- Candidate Metadata Header inside card -->
+        <div class="disc-type-meta-bar">
+          <div class="meta-item">
+            <span class="meta-label">Candidate Name</span>
+            <span class="meta-val" id="resultName">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Position / Role</span>
+            <span class="meta-val" id="resultPos">—</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Completion Time</span>
+            <span class="meta-val" id="resultDuration">—</span>
+          </div>
+        </div>
+
         <div class="disc-type-header">
           <div class="disc-type-left">
-            <p class="disc-type-eyebrow">YOUR DISC TYPE</p>
+            <p class="disc-type-eyebrow">YOUR DISC TYPE & PRIMARY PROFILE</p>
             <div class="disc-type-code" id="discTypeCode">—</div>
             <div class="disc-type-name" id="discTypeName">—</div>
-            <p class="disc-type-desc" id="discTypeDesc">Your behavioral profile has been calculated based on your responses.</p>
+            <p class="disc-type-about" id="discTypeAbout">Your behavioral profile has been calculated based on your responses.</p>
           </div>
           <div class="disc-wheel-wrap" aria-hidden="true">
             <canvas id="discWheel" width="140" height="140"></canvas>
@@ -399,75 +415,142 @@
         </div>
       </div>
 
-      <!-- DISC Scores card -->
+      <!-- 3. Behavioral Profiles Card (Public, Private, Core) -->
+      <div class="glass-card profiles-card">
+        <h3 class="disc-section-title">Behavioral Profiles (The 3 Dimensions)</h3>
+        <p class="disc-section-subtitle">
+          Explore how you adapt in public environments (Graph I), how you naturally act under stress (Graph II), and your synthesized core identity (Graph III).
+        </p>
+        <div class="profile-grid">
+          <div class="profile-tile profile-tile-public">
+            <div class="tile-label">Graph I • Public Self</div>
+            <div class="tile-code" id="profilePublicCode">—</div>
+            <div class="tile-name" id="profilePublic">—</div>
+            <p class="tile-desc" id="profilePublicDesc">—</p>
+            <div class="tile-chars" id="profilePublicChars"></div>
+          </div>
+          <div class="profile-tile profile-tile-private">
+            <div class="tile-label">Graph II • Private Self</div>
+            <div class="tile-code" id="profilePrivateCode">—</div>
+            <div class="tile-name" id="profilePrivate">—</div>
+            <p class="tile-desc" id="profilePrivateDesc">—</p>
+            <div class="tile-chars" id="profilePrivateChars"></div>
+          </div>
+          <div class="profile-tile profile-tile-core">
+            <div class="tile-label">Graph III • Core Self</div>
+            <div class="tile-code" id="profileCoreCode">—</div>
+            <div class="tile-name" id="profileCore">—</div>
+            <p class="tile-desc" id="profileCoreDesc">—</p>
+            <div class="tile-chars" id="profileCoreChars"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Your DISC Scores (Percentage Meters) -->
       <div class="glass-card disc-scores-card">
-        <h3 class="disc-scores-title">Your DISC Scores</h3>
+        <h3 class="disc-section-title">Your DISC Scores & Intensity Spectrum</h3>
+        <p class="disc-section-subtitle">
+          Breakdown of your behavioral intensity across the four primary quadrants.
+        </p>
 
         <!-- Score grid -->
         <div class="disc-score-grid">
           <div class="disc-score-cell disc-d" id="scoreD">
-            <div class="disc-score-cell-label">D: DOMINANT</div>
+            <div class="disc-score-cell-label">D: DOMINANCE</div>
             <div class="disc-score-cell-pct" id="pctD">0%</div>
+            <div class="disc-spectrum-badge" id="spectrumD">—</div>
           </div>
           <div class="disc-score-cell disc-i" id="scoreI">
-            <div class="disc-score-cell-label">I: INFLUENTIAL</div>
+            <div class="disc-score-cell-label">I: INFLUENCE</div>
             <div class="disc-score-cell-pct" id="pctI">0%</div>
+            <div class="disc-spectrum-badge" id="spectrumI">—</div>
           </div>
           <div class="disc-score-cell disc-s" id="scoreS">
-            <div class="disc-score-cell-label">S: STEADY</div>
+            <div class="disc-score-cell-label">S: STEADINESS</div>
             <div class="disc-score-cell-pct" id="pctS">0%</div>
+            <div class="disc-spectrum-badge" id="spectrumS">—</div>
           </div>
           <div class="disc-score-cell disc-c" id="scoreC">
-            <div class="disc-score-cell-label">C: CONSCIENTIOUS</div>
+            <div class="disc-score-cell-label">C: CONSCIENTIOUSNESS</div>
             <div class="disc-score-cell-pct" id="pctC">0%</div>
+            <div class="disc-spectrum-badge" id="spectrumC">—</div>
           </div>
         </div>
 
         <!-- Score bars -->
         <div class="disc-bar-list">
           <div class="disc-bar-row">
-            <span class="disc-bar-label disc-d-text">D: Dominant</span>
+            <span class="disc-bar-label disc-d-text">D: Dominance</span>
             <div class="disc-bar-track"><div class="disc-bar-fill disc-d-fill" id="barD" style="width:0%"></div></div>
             <span class="disc-bar-pct" id="barPctD">0%</span>
           </div>
           <div class="disc-bar-row">
-            <span class="disc-bar-label disc-i-text">I: Influential</span>
+            <span class="disc-bar-label disc-i-text">I: Influence</span>
             <div class="disc-bar-track"><div class="disc-bar-fill disc-i-fill" id="barI" style="width:0%"></div></div>
             <span class="disc-bar-pct" id="barPctI">0%</span>
           </div>
           <div class="disc-bar-row">
-            <span class="disc-bar-label disc-s-text">S: Steady</span>
+            <span class="disc-bar-label disc-s-text">S: Steadiness</span>
             <div class="disc-bar-track"><div class="disc-bar-fill disc-s-fill" id="barS" style="width:0%"></div></div>
             <span class="disc-bar-pct" id="barPctS">0%</span>
           </div>
           <div class="disc-bar-row">
-            <span class="disc-bar-label disc-c-text">C: Conscientious</span>
+            <span class="disc-bar-label disc-c-text">C: Conscientiousness</span>
             <div class="disc-bar-track"><div class="disc-bar-fill disc-c-fill" id="barC" style="width:0%"></div></div>
             <span class="disc-bar-pct" id="barPctC">0%</span>
           </div>
         </div>
       </div>
 
-      <!-- Profile grid -->
-      <div class="glass-card profiles-card">
-        <h3 class="disc-scores-title">Behavioral Profiles</h3>
-        <div class="profile-grid">
-          <div class="profile-tile">
-            <div class="tile-label">Public Self</div>
-            <div class="tile-name" id="profilePublic">—</div>
-          </div>
-          <div class="profile-tile">
-            <div class="tile-label">Private Self</div>
-            <div class="tile-name" id="profilePrivate">—</div>
-          </div>
-          <div class="profile-tile">
-            <div class="tile-label">Core Self</div>
-            <div class="tile-name" id="profileCore">—</div>
+      <!-- 5. Strengths Card -->
+      <div class="glass-card strengths-card">
+        <div class="section-header-row">
+          <span class="section-icon emerald-icon">✨</span>
+          <div>
+            <h3 class="disc-section-title">Natural Strengths & Key Values</h3>
+            <p class="disc-section-subtitle">Core positive traits and workplace assets you naturally bring to any project or team.</p>
           </div>
         </div>
+        <div class="chips-container strengths-grid" id="strengthsContainer"></div>
+      </div>
+
+      <!-- 6. Watch Outs Card -->
+      <div class="glass-card watch-outs-card">
+        <div class="section-header-row">
+          <span class="section-icon amber-icon">⚡</span>
+          <div>
+            <h3 class="disc-section-title">Areas for Growth & Watch Outs</h3>
+            <p class="disc-section-subtitle">Potential behavioral blind spots or stress reactions to be mindful of under tight pressure.</p>
+          </div>
+        </div>
+        <div class="chips-container watch-outs-grid" id="watchOutsContainer"></div>
+      </div>
+
+      <!-- 7. What This Means Card -->
+      <div class="glass-card what-this-means-card">
+        <div class="section-header-row">
+          <span class="section-icon purple-icon">💡</span>
+          <div>
+            <h3 class="disc-section-title">Workplace Behavioral Interpretation</h3>
+            <p class="disc-section-subtitle">Comprehensive analysis of what your core profile means for decision-making, communication, and leadership.</p>
+          </div>
+        </div>
+        <div class="what-this-means-content" id="whatThisMeansText"></div>
+      </div>
+
+      <!-- 8. Footer Actions -->
+      <div class="glass-card result-actions-card">
+        <div class="result-actions-flex">
+          <button class="btn btn-primary btn-lg" id="btnPrintReport">
+            🪪 Print / Download PDF Report
+          </button>
+          <button class="btn btn-ghost btn-lg" id="btnFinishTest">
+            🏠 Done & Back to Start
+          </button>
+        </div>
         <p class="result-note">
-          The HR team will review your results and contact you within 3–5 business days.
-          Please keep this User ID for your reference.
+          The HR team will review your assessment results and contact you within 3–5 business days.
+          Please save or print this official report for your records.
         </p>
       </div>
 

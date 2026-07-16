@@ -2726,6 +2726,7 @@ body::after {
 [data-theme="light"] #view-result .section-title,
 [data-theme="light"] #view-result .dimension-card-title,
 [data-theme="light"] #view-result .profile-card-code,
+[data-theme="light"] #view-result .profile-card-name,
 [data-theme="light"] #view-result .meter-title,
 [data-theme="light"] #view-result .meter-pct,
 [data-theme="light"] #view-result .summary-card-title,
@@ -2745,6 +2746,7 @@ body::after {
 [data-theme="light"] #view-result .info-item-text,
 [data-theme="light"] #view-result .section-subtitle,
 [data-theme="light"] #view-result .dimension-card-subtitle,
+[data-theme="light"] #view-result .profile-card-label,
 [data-theme="light"] #view-result .profile-card-desc,
 [data-theme="light"] #view-result .insights-card-subtitle,
 [data-theme="light"] #view-result .influence-desc,
@@ -2795,11 +2797,17 @@ body::after {
 
 [data-theme="light"] #view-result .cand-id-card,
 [data-theme="light"] #view-result .hero-info-item,
-[data-theme="light"] #view-result .summary-badge-item,
+[data-theme="light"] #view-result .summary-badge-item {
+  background: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+  color: #1f2937 !important;
+}
+
 [data-theme="light"] #view-result .trait-chip {
-  background: #f3f4f6;
-  border-color: #e5e7eb;
-  color: #1f2937;
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 650 !important;
 }
 
 [data-theme="light"] #view-result .meter-track {

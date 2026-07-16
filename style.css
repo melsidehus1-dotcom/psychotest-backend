@@ -2715,7 +2715,9 @@ body::after {
 [data-theme="light"] #view-result .dimension-card-title,
 [data-theme="light"] #view-result .profile-card-code,
 [data-theme="light"] #view-result .meter-title,
+[data-theme="light"] #view-result .meter-pct,
 [data-theme="light"] #view-result .summary-card-title,
+[data-theme="light"] #view-result .summary-badge-val,
 [data-theme="light"] #view-result .insights-card-title,
 [data-theme="light"] #view-result .influence-title {
   color: #111827 !important;
@@ -2793,6 +2795,54 @@ body::after {
   border-color: #e5e7eb;
 }
 
+[data-theme="light"] #view-result .spectrum-high {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+[data-theme="light"] #view-result .spectrum-mid {
+  background: #fef3c7 !important;
+  color: #b45309 !important;
+  border: 1px solid #fcd34d !important;
+}
+
+[data-theme="light"] #view-result .spectrum-low {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+[data-theme="light"] #view-result .strengths-grid .insight-chip {
+  background: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #065f46 !important;
+}
+
+[data-theme="light"] #view-result .watch-outs-grid .insight-chip,
+[data-theme="light"] #view-result .growth-card .insight-chip,
+[data-theme="light"] #view-result .watch-chip {
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #92400e !important;
+}
+
+[data-theme="light"] #view-result .report-footer-bar {
+  background: #ffffff !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme="light"] #view-result .disclaimer-pill-box {
+  background: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+[data-theme="light"] #view-result .disclaimer-icon {
+  background: #e5e7eb !important;
+  color: #374151 !important;
+}
+
 [data-theme="light"] #view-result .btn-finish-mockup {
   background: #ffffff;
   color: #374151;
@@ -2814,7 +2864,7 @@ body::after {
     font-size: 11pt !important;
   }
 
-  .top-nav, .theme-toggle, .report-footer-actions, .result-status-bar {
+  .top-nav, .theme-toggle, .report-footer-actions, .report-footer-bar, .result-status-bar {
     display: none !important;
   }
 

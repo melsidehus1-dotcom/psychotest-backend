@@ -1998,9 +1998,9 @@ body::after {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.hero-info-grid.modern-4card-grid {
+.hero-info-grid.modern-3card-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: stretch;
 }
@@ -2619,7 +2619,7 @@ body::after {
     grid-template-columns: 1fr;
   }
 
-  .hero-info-grid.modern-4card-grid,
+  .hero-info-grid.modern-3card-grid,
   .influences-grid.modern-4card-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2666,7 +2666,7 @@ body::after {
     grid-template-columns: 1fr;
   }
 
-  .hero-info-grid.modern-4card-grid,
+  .hero-info-grid.modern-3card-grid,
   .influences-grid.modern-4card-grid {
     grid-template-columns: 1fr;
   }
@@ -2708,6 +2708,8 @@ body::after {
 [data-theme="light"] #view-result .cand-id-val,
 [data-theme="light"] #view-result .info-value,
 [data-theme="light"] #view-result .hero-name,
+[data-theme="light"] #view-result .badge-title,
+[data-theme="light"] #view-result .info-item-title,
 [data-theme="light"] #view-result .glance-item-text strong,
 [data-theme="light"] #view-result .section-title,
 [data-theme="light"] #view-result .dimension-card-title,
@@ -2723,6 +2725,7 @@ body::after {
 [data-theme="light"] #view-result .cand-id-label,
 [data-theme="light"] #view-result .info-label,
 [data-theme="light"] #view-result .hero-about,
+[data-theme="light"] #view-result .badge-label,
 [data-theme="light"] #view-result .glance-text,
 [data-theme="light"] #view-result .glance-item,
 [data-theme="light"] #view-result .info-item-text,
@@ -2735,8 +2738,45 @@ body::after {
   color: #4b5563 !important;
 }
 
+[data-theme="light"] #view-result .hero-eyebrow {
+  color: #7e22ce !important;
+}
+
+[data-theme="light"] #view-result .hero-code.badge-code-pill {
+  background: #f3e8ff !important;
+  border-color: #c084fc !important;
+  color: #581c87 !important;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15) !important;
+}
+
 [data-theme="light"] #view-result .hero-identity-separator {
   color: #d1d5db !important;
+}
+
+[data-theme="light"] #view-result .disc-style-badge {
+  background: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+}
+
+[data-theme="light"] #view-result .hero-keyword-pill {
+  background: #f3e8ff !important;
+  border-color: #d8b4fe !important;
+  color: #6b21a8 !important;
+}
+
+[data-theme="light"] #view-result .at-a-glance-box {
+  background: #faf5ff !important;
+  border-color: #e9d5ff !important;
+}
+
+[data-theme="light"] #view-result .glance-header {
+  color: #6b21a8 !important;
+}
+
+[data-theme="light"] #view-result .disc-wheel-pedestal {
+  background: radial-gradient(circle, #ffffff 0%, #f3f4f6 100%) !important;
+  border-color: #e5e7eb !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05) !important;
 }
 
 [data-theme="light"] #view-result .cand-id-card,

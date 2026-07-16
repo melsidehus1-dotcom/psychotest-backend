@@ -60,6 +60,7 @@
     resultId:        qs('resultId'),
     resultName:      qs('resultName'),
     resultPos:       qs('resultPos'),
+    resultDate:      qs('resultDate'),
     resultDuration:  qs('resultDuration'),
     profilePublic:   qs('profilePublic'),
     profilePublicCode: qs('profilePublicCode'),
@@ -446,6 +447,10 @@
     if (D.resultId) D.resultId.textContent = data.candidate_id ?? '—';
     if (D.resultName) D.resultName.textContent = data.name || state.candidateName || 'Candidate';
     if (D.resultPos) D.resultPos.textContent = data.position || state.candidatePos || 'General Applicant';
+    if (D.resultDate) {
+      const dateStr = data.timestamp ? new Date(data.timestamp).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      D.resultDate.textContent = dateStr;
+    }
     if (D.resultDuration) {
       const ds = data.duration_seconds || state.durationSeconds || 0;
       const mins = Math.floor(ds / 60);

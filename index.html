@@ -326,235 +326,458 @@
           Pilih pernyataan <span class="col-badge most">✦ Paling Sesuai (MOST)</span>
           dan <span class="col-badge least">◆ Kurang Sesuai (LEAST)</span>
         </p>
+          <div class="input-group">
+            <input type="text" id="inputSearchId" placeholder=" " autocomplete="off">
+            <label for="inputSearchId">User ID (e.g. USER-XXXXXXXX-XXXX)</label>
+          </div>
+          <button class="p360-btn-primary p360-btn-search" id="btnDoSearch">
+            Search Results →
+          </button>
+        </div>
+      </div>
 
-        <table class="stmt-table" id="stmtTable" role="radiogroup">
+      <!-- Bottom Confidential Note & Footer -->
+      <div class="p360-confidential">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Your responses are confidential and will only be used for the purpose of this assessment.
+      </div>
+      <footer class="p360-footer">
+        <span class="p360-heart">♡</span> Know yourself better. <span class="p360-footer-hl">Work together smarter.</span>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VIEW 2 — BIODATA FORM
+       ══════════════════════════════════════════ -->
+  <section id="view-biodata" class="view" aria-label="User profile form">
+    <div class="glass-card">
+
+      <div class="section-header">
+        <p class="section-eyebrow">Step 1 of 3</p>
+        <h2>User Profile</h2>
+        <p>Fill in your details before starting the assessment.</p>
+      </div>
+
+      <form id="biodataForm" novalidate>
+
+        <div class="input-group">
+          <input type="text" id="inputName" placeholder=" " required autocomplete="name">
+          <label for="inputName">Full Name</label>
+          <div class="field-error" role="alert">Please enter your full name.</div>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="inputEmail" placeholder=" " required autocomplete="email">
+          <label for="inputEmail">Email Address</label>
+          <div class="field-error" role="alert">Please enter a valid email address.</div>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="inputPosition" placeholder=" " required autocomplete="organization-title">
+          <label for="inputPosition">Position</label>
+          <div class="field-error" role="alert">Please enter the position you are applying for.</div>
+        </div>
+
+        <div class="input-group">
+          <input type="url" id="inputCV" placeholder=" " autocomplete="off">
+          <label for="inputCV">CV / Resume Link <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+          <div class="field-hint">Google Drive, Dropbox, or any public link</div>
+        </div>
+
+        <div class="input-group">
+          <input type="url" id="inputPortfolio" placeholder=" " autocomplete="off">
+          <label for="inputPortfolio">Portfolio Link <span style="color:var(--text-muted);font-weight:400">(optional)</span></label>
+          <div class="field-hint">Website, Behance, Dribbble, or GitHub</div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-md); margin-top: var(--space-lg);">
+          <button type="button" class="btn btn-ghost" id="btnBackToWelcome" style="flex: 1;">
+            ← Back
+          </button>
+          <button type="submit" class="btn btn-primary" id="btnContinue" style="flex: 2;">
+            Continue to Instructions →
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VIEW 3 — INSTRUCTIONS
+       ══════════════════════════════════════════ -->
+  <section id="view-instructions" class="view" aria-label="Test instructions">
+    <div class="glass-card">
+
+      <div class="section-header">
+        <p class="section-eyebrow">Langkah 2 dari 3</p>
+        <h2>Cara Pengerjaan</h2>
+        <p>Tes DISC mengukur empat dimensi perilaku kepribadian — Dominance (Dominasi), Influence (Pengaruh), Steadiness (Ketekunan), dan Conscientiousness (Ketelitian).</p>
+      </div>
+
+      <div class="instruction-steps">
+        <div class="instruction-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Baca Setiap Kelompok Soal</h4>
+            <p>Anda akan melihat 24 kelompok soal, masing-masing berisi 4 pernyataan perilaku.</p>
+          </div>
+        </div>
+        <div class="instruction-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Pilih "Paling Sesuai" (MOST)</h4>
+            <p>Pilih 1 pernyataan yang <strong>paling</strong> menggambarkan kepribadian alami Anda.</p>
+          </div>
+        </div>
+        <div class="instruction-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Pilih "Kurang Sesuai" (LEAST)</h4>
+            <p>Pilih 1 pernyataan yang <strong>paling tidak / kurang</strong> menggambarkan diri Anda.</p>
+          </div>
+        </div>
+        <div class="instruction-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Jujur &amp; Spontan (Versi Profesional)</h4>
+            <p>Tidak ada jawaban benar atau salah. Jawablah secara jujur dan spontan mengikuti insting pertama Anda.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example preview -->
+      <div class="disc-example">
+        <div class="example-label">📖 Contoh Soal (Example Question)</div>
+        <table class="example-table">
           <thead>
             <tr>
               <th>Pernyataan</th>
-              <th><span class="col-badge most">MOST</span></th>
-              <th><span class="col-badge least">LEAST</span></th>
+              <th>MOST</th>
+              <th>LEAST</th>
             </tr>
           </thead>
-          <tbody id="stmtBody">
-            <!-- Populated by JS -->
+          <tbody>
+            <tr>
+              <td>Hati-hati dan teliti</td>
+              <td><span class="ex-radio"></span></td>
+              <td><span class="ex-radio"></span></td>
+            </tr>
+            <tr>
+              <td>Antusias dan bersemangat</td>
+              <td><span class="ex-radio most-sel"></span></td>
+              <td><span class="ex-radio"></span></td>
+            </tr>
+            <tr>
+              <td>Sabar dan santai</td>
+              <td><span class="ex-radio"></span></td>
+              <td><span class="ex-radio least-sel"></span></td>
+            </tr>
+            <tr>
+              <td>Langsung dan tegas</td>
+              <td><span class="ex-radio"></span></td>
+              <td><span class="ex-radio"></span></td>
+            </tr>
           </tbody>
         </table>
-
       </div>
 
-      <!-- Navigation -->
-      <div class="test-nav">
-        <button class="btn btn-ghost" id="btnPrev" disabled aria-label="Previous question">
-          ← Sebelumnya
+      <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xl);">
+        <button type="button" class="btn btn-ghost" id="btnBackToBiodata" style="flex: 1;">
+          ← Kembali
         </button>
-        <div class="nav-status" id="navStatus" aria-live="polite">
-          Pilih jawaban MOST dan LEAST untuk melanjutkan
-        </div>
-        <button class="btn btn-primary" id="btnNext" disabled aria-label="Next question">
-          Selanjutnya →
+        <button class="btn btn-primary" id="btnStartTest" style="flex: 2;">
+          Saya Mengerti — Mulai Tes →
         </button>
       </div>
 
-    </section>
+    </div>
+  </section>
 
-    <!-- ══════════════════════════════════════════
-         VIEW 5 — RESULT
-         ══════════════════════════════════════════ -->
-    <section id="view-result" class="view" aria-label="Assessment results">
+  <!-- ══════════════════════════════════════════
+       VIEW 4 — DISC TEST
+       ══════════════════════════════════════════ -->
+  <section id="view-disc-test" class="view" aria-label="DISC test questions">
 
-      <!-- 1. Success banner -->
-      <div class="glass-card result-banner">
-        <div class="result-banner-inner">
-          <div class="success-ring" aria-hidden="true">
-            <svg class="success-ring-svg" viewBox="0 0 96 96">
-              <circle cx="48" cy="48" r="43" transform="rotate(-90 48 48)"/>
-            </svg>
-            <div class="success-icon">✅</div>
-          </div>
-          <div class="result-banner-text">
-            <h2>Assessment Complete!</h2>
-            <p class="result-subtitle">
-              Thank you for completing the DISC personality assessment.<br>
-              Your behavioral evaluation report has been generated successfully.
-            </p>
-            <div class="cand-id-chip">
-              🪪 <span id="resultId">USER-XXXXXXXX-XXXX</span>
-            </div>
-          </div>
+    <!-- Progress chrome (outside card) -->
+    <div class="test-chrome">
+      <div class="progress-row">
+        <div class="q-counter">
+          No.&nbsp;<strong id="qNum">1</strong>&nbsp;/&nbsp;<span id="qTotal">24</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width:4.17%"></div>
+        </div>
+        <div class="q-percent" id="qPercent">4%</div>
+      </div>
+    </div>
+
+    <!-- Question card -->
+    <div class="glass-card question-card" id="questionCard">
+
+      <p class="q-instruction">
+        Pilih pernyataan <span class="col-badge most">✦ Paling Sesuai (MOST)</span>
+        dan <span class="col-badge least">◆ Kurang Sesuai (LEAST)</span>
+      </p>
+
+      <table class="stmt-table" id="stmtTable" role="radiogroup">
+        <thead>
+          <tr>
+            <th>Pernyataan</th>
+            <th><span class="col-badge most">MOST</span></th>
+            <th><span class="col-badge least">LEAST</span></th>
+          </tr>
+        </thead>
+        <tbody id="stmtBody">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+
+    </div>
+
+    <!-- Navigation -->
+    <div class="test-nav">
+      <button class="btn btn-ghost" id="btnPrev" disabled aria-label="Previous question">
+        ← Sebelumnya
+      </button>
+      <div class="nav-status" id="navStatus" aria-live="polite">
+        Pilih jawaban MOST dan LEAST untuk melanjutkan
+      </div>
+      <button class="btn btn-primary" id="btnNext" disabled aria-label="Next question">
+        Selanjutnya →
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       VIEW 5 — RESULT (SaaS Premium Redesign)
+       ══════════════════════════════════════════ -->
+  <section id="view-result" class="view" aria-label="Assessment results">
+
+    <!-- 1. Sleek Top Status Bar (Integrated & subtle so Hero is #1 focus) -->
+    <div class="result-status-bar">
+      <div class="status-bar-left">
+        <span class="status-dot"></span>
+        <span class="status-text">Assessment Complete • Official Behavioral Evaluation</span>
+      </div>
+      <div class="status-bar-right">
+        <span class="cand-id-pill">🪪 <span id="resultId">USER-XXXXXXXX</span></span>
+        <span id="resultDuration" style="display:none;"></span>
+      </div>
+    </div>
+
+    <!-- 2. YOUR DISC TYPE Card (Primary Hero Section) -->
+    <div class="hero-card disc-hero-card" id="discTypeCard">
+      <!-- Candidate Metadata Top Bar -->
+      <div class="hero-meta-bar">
+        <div class="hero-meta-item">
+          <span class="meta-label">CANDIDATE NAME</span>
+          <span class="meta-val" id="resultName">—</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-label">POSITION / ROLE</span>
+          <span class="meta-val" id="resultPos">—</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-label">ASSESSMENT DATE</span>
+          <span class="meta-val" id="resultDate">—</span>
         </div>
       </div>
 
-      <!-- 2. YOUR DISC TYPE Card (Hero) -->
-      <div class="glass-card disc-type-card" id="discTypeCard">
-        <!-- Candidate Metadata Header inside card -->
-        <div class="disc-type-meta-bar">
-          <div class="meta-item">
-            <span class="meta-label">Candidate Name</span>
-            <span class="meta-val" id="resultName">—</span>
+      <div class="hero-main-content">
+        <div class="hero-left-col">
+          <div class="hero-eyebrow">YOUR PRIMARY DISC ARCHETYPE</div>
+          <div class="hero-identity-row">
+            <span class="hero-code" id="discTypeCode">—</span>
+            <span class="hero-name" id="discTypeName">—</span>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">Position / Role</span>
-            <span class="meta-val" id="resultPos">—</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Completion Time</span>
-            <span class="meta-val" id="resultDuration">—</span>
-          </div>
+          <p class="hero-about" id="discTypeAbout">Your behavioral profile has been calculated based on your responses.</p>
         </div>
-
-        <div class="disc-type-header">
-          <div class="disc-type-left">
-            <p class="disc-type-eyebrow">YOUR DISC TYPE & PRIMARY PROFILE</p>
-            <div class="disc-type-code" id="discTypeCode">—</div>
-            <div class="disc-type-name" id="discTypeName">—</div>
-            <p class="disc-type-about" id="discTypeAbout">Your behavioral profile has been calculated based on your responses.</p>
-          </div>
-          <div class="disc-wheel-wrap" aria-hidden="true">
-            <canvas id="discWheel" width="140" height="140"></canvas>
+        <div class="hero-right-col" aria-hidden="true">
+          <div class="disc-wheel-pedestal">
+            <canvas id="discWheel" width="200" height="200"></canvas>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- 3. Behavioral Profiles Card (Public, Private, Core) -->
-      <div class="glass-card profiles-card">
-        <h3 class="disc-section-title">Behavioral Profiles (The 3 Dimensions)</h3>
-        <p class="disc-section-subtitle">
+    <!-- 3. Behavioral Profiles Section (The 3 Dimensions) -->
+    <div class="report-section profiles-section">
+      <div class="report-section-header">
+        <h3 class="section-title">Behavioral Profiles (The 3 Dimensions)</h3>
+        <p class="section-subtitle">
           Explore how you adapt in public environments (Graph I), how you naturally act under stress (Graph II), and your synthesized core identity (Graph III).
         </p>
-        <div class="profile-grid">
-          <div class="profile-tile profile-tile-public">
-            <div class="tile-label">Graph I • Public Self</div>
-            <div class="tile-code" id="profilePublicCode">—</div>
-            <div class="tile-name" id="profilePublic">—</div>
-            <p class="tile-desc" id="profilePublicDesc">—</p>
-            <div class="tile-chars" id="profilePublicChars"></div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-card profile-card-public">
+          <div class="profile-card-accent accent-blue"></div>
+          <div class="profile-card-body">
+            <div class="profile-card-label">GRAPH I • PUBLIC SELF</div>
+            <div class="profile-card-code" id="profilePublicCode">—</div>
+            <div class="profile-card-name" id="profilePublic">—</div>
+            <p class="profile-card-desc" id="profilePublicDesc">—</p>
+            <div class="profile-card-chars" id="profilePublicChars"></div>
           </div>
-          <div class="profile-tile profile-tile-private">
-            <div class="tile-label">Graph II • Private Self</div>
-            <div class="tile-code" id="profilePrivateCode">—</div>
-            <div class="tile-name" id="profilePrivate">—</div>
-            <p class="tile-desc" id="profilePrivateDesc">—</p>
-            <div class="tile-chars" id="profilePrivateChars"></div>
+        </div>
+        <div class="profile-card profile-card-private">
+          <div class="profile-card-accent accent-amber"></div>
+          <div class="profile-card-body">
+            <div class="profile-card-label">GRAPH II • PRIVATE SELF</div>
+            <div class="profile-card-code" id="profilePrivateCode">—</div>
+            <div class="profile-card-name" id="profilePrivate">—</div>
+            <p class="profile-card-desc" id="profilePrivateDesc">—</p>
+            <div class="profile-card-chars" id="profilePrivateChars"></div>
           </div>
-          <div class="profile-tile profile-tile-core">
-            <div class="tile-label">Graph III • Core Self</div>
-            <div class="tile-code" id="profileCoreCode">—</div>
-            <div class="tile-name" id="profileCore">—</div>
-            <p class="tile-desc" id="profileCoreDesc">—</p>
-            <div class="tile-chars" id="profileCoreChars"></div>
+        </div>
+        <div class="profile-card profile-card-core">
+          <div class="profile-card-accent accent-emerald"></div>
+          <div class="profile-card-body">
+            <div class="profile-card-label">GRAPH III • CORE SELF</div>
+            <div class="profile-card-code" id="profileCoreCode">—</div>
+            <div class="profile-card-name" id="profileCore">—</div>
+            <p class="profile-card-desc" id="profileCoreDesc">—</p>
+            <div class="profile-card-chars" id="profileCoreChars"></div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- 4. Your DISC Scores (Percentage Meters) -->
-      <div class="glass-card disc-scores-card">
-        <h3 class="disc-section-title">Your DISC Scores & Intensity Spectrum</h3>
-        <p class="disc-section-subtitle">
+    <!-- 4. Your DISC Scores (Progress Meters Focused) -->
+    <div class="report-section scores-section">
+      <div class="report-section-header">
+        <h3 class="section-title">Your DISC Scores & Intensity Spectrum</h3>
+        <p class="section-subtitle">
           Breakdown of your behavioral intensity across the four primary quadrants.
         </p>
-
-        <!-- Score grid -->
-        <div class="disc-score-grid">
-          <div class="disc-score-cell disc-d" id="scoreD">
-            <div class="disc-score-cell-label">D: DOMINANCE</div>
-            <div class="disc-score-cell-pct" id="pctD">0%</div>
-            <div class="disc-spectrum-badge" id="spectrumD">—</div>
-          </div>
-          <div class="disc-score-cell disc-i" id="scoreI">
-            <div class="disc-score-cell-label">I: INFLUENCE</div>
-            <div class="disc-score-cell-pct" id="pctI">0%</div>
-            <div class="disc-spectrum-badge" id="spectrumI">—</div>
-          </div>
-          <div class="disc-score-cell disc-s" id="scoreS">
-            <div class="disc-score-cell-label">S: STEADINESS</div>
-            <div class="disc-score-cell-pct" id="pctS">0%</div>
-            <div class="disc-spectrum-badge" id="spectrumS">—</div>
-          </div>
-          <div class="disc-score-cell disc-c" id="scoreC">
-            <div class="disc-score-cell-label">C: CONSCIENTIOUSNESS</div>
-            <div class="disc-score-cell-pct" id="pctC">0%</div>
-            <div class="disc-spectrum-badge" id="spectrumC">—</div>
-          </div>
-        </div>
-
-        <!-- Score bars -->
-        <div class="disc-bar-list">
-          <div class="disc-bar-row">
-            <span class="disc-bar-label disc-d-text">D: Dominance</span>
-            <div class="disc-bar-track"><div class="disc-bar-fill disc-d-fill" id="barD" style="width:0%"></div></div>
-            <span class="disc-bar-pct" id="barPctD">0%</span>
-          </div>
-          <div class="disc-bar-row">
-            <span class="disc-bar-label disc-i-text">I: Influence</span>
-            <div class="disc-bar-track"><div class="disc-bar-fill disc-i-fill" id="barI" style="width:0%"></div></div>
-            <span class="disc-bar-pct" id="barPctI">0%</span>
-          </div>
-          <div class="disc-bar-row">
-            <span class="disc-bar-label disc-s-text">S: Steadiness</span>
-            <div class="disc-bar-track"><div class="disc-bar-fill disc-s-fill" id="barS" style="width:0%"></div></div>
-            <span class="disc-bar-pct" id="barPctS">0%</span>
-          </div>
-          <div class="disc-bar-row">
-            <span class="disc-bar-label disc-c-text">C: Conscientiousness</span>
-            <div class="disc-bar-track"><div class="disc-bar-fill disc-c-fill" id="barC" style="width:0%"></div></div>
-            <span class="disc-bar-pct" id="barPctC">0%</span>
-          </div>
-        </div>
       </div>
 
-      <!-- 5. Strengths Card -->
-      <div class="glass-card strengths-card">
-        <div class="section-header-row">
-          <span class="section-icon emerald-icon">✨</span>
-          <div>
-            <h3 class="disc-section-title">Natural Strengths & Key Values</h3>
-            <p class="disc-section-subtitle">Core positive traits and workplace assets you naturally bring to any project or team.</p>
+      <div class="scores-meter-container">
+        <!-- Dominance Row -->
+        <div class="meter-row" id="scoreD">
+          <div class="meter-top-bar">
+            <div class="meter-label-group">
+              <span class="meter-dot dot-d"></span>
+              <span class="meter-title">D: Dominance</span>
+            </div>
+            <div class="meter-stats-group">
+              <span class="spectrum-pill" id="spectrumD">—</span>
+              <span class="meter-pct" id="pctD">0%</span>
+            </div>
           </div>
-        </div>
-        <div class="chips-container strengths-grid" id="strengthsContainer"></div>
-      </div>
-
-      <!-- 6. Watch Outs Card -->
-      <div class="glass-card watch-outs-card">
-        <div class="section-header-row">
-          <span class="section-icon amber-icon">⚡</span>
-          <div>
-            <h3 class="disc-section-title">Areas for Growth & Watch Outs</h3>
-            <p class="disc-section-subtitle">Potential behavioral blind spots or stress reactions to be mindful of under tight pressure.</p>
+          <div class="meter-track">
+            <div class="meter-fill fill-d" id="barD" style="width:0%"></div>
           </div>
+          <span id="barPctD" style="display:none;">0%</span>
         </div>
-        <div class="chips-container watch-outs-grid" id="watchOutsContainer"></div>
-      </div>
 
-      <!-- 7. What This Means Card -->
-      <div class="glass-card what-this-means-card">
-        <div class="section-header-row">
-          <span class="section-icon purple-icon">💡</span>
-          <div>
-            <h3 class="disc-section-title">Workplace Behavioral Interpretation</h3>
-            <p class="disc-section-subtitle">Comprehensive analysis of what your core profile means for decision-making, communication, and leadership.</p>
+        <!-- Influence Row -->
+        <div class="meter-row" id="scoreI">
+          <div class="meter-top-bar">
+            <div class="meter-label-group">
+              <span class="meter-dot dot-i"></span>
+              <span class="meter-title">I: Influence</span>
+            </div>
+            <div class="meter-stats-group">
+              <span class="spectrum-pill" id="spectrumI">—</span>
+              <span class="meter-pct" id="pctI">0%</span>
+            </div>
           </div>
+          <div class="meter-track">
+            <div class="meter-fill fill-i" id="barI" style="width:0%"></div>
+          </div>
+          <span id="barPctI" style="display:none;">0%</span>
         </div>
-        <div class="what-this-means-content" id="whatThisMeansText"></div>
-      </div>
 
-      <!-- 8. Footer Actions -->
-      <div class="glass-card result-actions-card">
-        <div class="result-actions-flex">
-          <button class="btn btn-primary btn-lg" id="btnPrintReport">
-            🪪 Print / Download PDF Report
-          </button>
-          <button class="btn btn-ghost btn-lg" id="btnFinishTest">
-            🏠 Done & Back to Start
-          </button>
+        <!-- Steadiness Row -->
+        <div class="meter-row" id="scoreS">
+          <div class="meter-top-bar">
+            <div class="meter-label-group">
+              <span class="meter-dot dot-s"></span>
+              <span class="meter-title">S: Steadiness</span>
+            </div>
+            <div class="meter-stats-group">
+              <span class="spectrum-pill" id="spectrumS">—</span>
+              <span class="meter-pct" id="pctS">0%</span>
+            </div>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill fill-s" id="barS" style="width:0%"></div>
+          </div>
+          <span id="barPctS" style="display:none;">0%</span>
         </div>
-        <p class="result-note">
-          The HR team will review your assessment results and contact you within 3–5 business days.
-          Please save or print this official report for your records.
-        </p>
-      </div>
 
-    </section>
+        <!-- Conscientiousness Row -->
+        <div class="meter-row" id="scoreC">
+          <div class="meter-top-bar">
+            <div class="meter-label-group">
+              <span class="meter-dot dot-c"></span>
+              <span class="meter-title">C: Conscientiousness</span>
+            </div>
+            <div class="meter-stats-group">
+              <span class="spectrum-pill" id="spectrumC">—</span>
+              <span class="meter-pct" id="pctC">0%</span>
+            </div>
+          </div>
+          <div class="meter-track">
+            <div class="meter-fill fill-c" id="barC" style="width:0%"></div>
+          </div>
+          <span id="barPctC" style="display:none;">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Strengths Section -->
+    <div class="report-section insights-section">
+      <div class="report-section-header with-icon">
+        <div class="section-header-icon icon-emerald">✨</div>
+        <div class="section-header-text">
+          <h3 class="section-title">Natural Strengths & Key Values</h3>
+          <p class="section-subtitle">Core positive traits and workplace assets you naturally bring to any project or team.</p>
+        </div>
+      </div>
+      <div class="modern-chips-grid strengths-grid" id="strengthsContainer"></div>
+    </div>
+
+    <!-- 6. Watch Outs Section -->
+    <div class="report-section insights-section">
+      <div class="report-section-header with-icon">
+        <div class="section-header-icon icon-amber">⚡</div>
+        <div class="section-header-text">
+          <h3 class="section-title">Areas for Growth & Watch Outs</h3>
+          <p class="section-subtitle">Potential behavioral blind spots or stress reactions to be mindful of under tight pressure.</p>
+        </div>
+      </div>
+      <div class="modern-chips-grid watch-outs-grid" id="watchOutsContainer"></div>
+    </div>
+
+    <!-- 7. What This Means Section -->
+    <div class="report-section interpretation-section">
+      <div class="report-section-header with-icon">
+        <div class="section-header-icon icon-purple">💡</div>
+        <div class="section-header-text">
+          <h3 class="section-title">Workplace Behavioral Interpretation</h3>
+          <p class="section-subtitle">Comprehensive analysis of what your core profile means for decision-making, communication, and leadership.</p>
+        </div>
+      </div>
+      <div class="editorial-reading-box" id="whatThisMeansText"></div>
+    </div>
+
+    <!-- 8. Footer Actions -->
+    <div class="report-footer-actions">
+      <button class="btn btn-primary btn-print" id="btnPrintReport">
+        <span>🪪 Print / Download PDF Report</span>
+      </button>
+      <button class="btn btn-ghost btn-finish" id="btnFinishTest">
+        <span>🏠 Done & Back to Start</span>
+      </button>
+    </div>
+
+  </section>
 
   </div><!-- /#app -->
 

@@ -96,6 +96,7 @@
     discHeroKeywords: qs('discHeroKeywords'),
     // At a Glance & 2x2 Info Grid
     discAtAGlanceText: qs('discAtAGlanceText'),
+    discAtAGlanceList: qs('discAtAGlanceList'),
     discHowYouWorkText: qs('discHowYouWorkText'),
     discWhatToWatchText: qs('discWhatToWatchText'),
     discYourStrengthText: qs('discYourStrengthText'),
@@ -614,10 +615,28 @@
       `).join('');
     }
 
-    // Populate At a Glance & 2x2 Hero Info Grid
-    if (D.discAtAGlanceText) {
-      D.discAtAGlanceText.textContent = prof.core_self_at_a_glance || prof.at_a_glance || descMap[dominant];
+    // Populate At a Glance & 4-Card Info Grid
+    const rawAtGlance = prof.core_self_at_a_glance || prof.at_a_glance || descMap[dominant];
+    if (D.discAtAGlanceList && typeof rawAtGlance === 'string') {
+      const parts = rawAtGlance.split(/(?=[🧭💪⚠️🎯📌🚀💡🔥⭐🛡️👥])/u).map(s => s.trim()).filter(Boolean);
+      if (parts.length > 1) {
+        D.discAtAGlanceList.innerHTML = parts.map(part => {
+          const match = part.match(/^([🧭💪⚠️🎯📌🚀💡🔥⭐🛡️👥])\s*(.*)$/u);
+          if (match) {
+            const icon = match[1];
+            let content = match[2];
+            content = content.replace(/^([^:—\-]+[:—\-])/, '<strong>$1</strong>');
+            return `<div class="glance-item"><span class="glance-item-icon">${icon}</span><div class="glance-item-text">${content}</div></div>`;
+          }
+          return `<div class="glance-item"><span class="glance-item-icon">📌</span><div class="glance-item-text">${part}</div></div>`;
+        }).join('');
+      } else {
+        D.discAtAGlanceList.innerHTML = `<div class="glance-item"><span class="glance-item-icon">👁️</span><div class="glance-item-text">${rawAtGlance}</div></div>`;
+      }
+    } else if (D.discAtAGlanceText) {
+      D.discAtAGlanceText.textContent = rawAtGlance;
     }
+
     if (D.discHowYouWorkText) {
       D.discHowYouWorkText.textContent = prof.core_self_about || prof.about_you || "You prefer clear guidelines, well-organized processes, and a steady environment where quality is prioritized.";
     }
@@ -630,7 +649,14 @@
       D.discYourStrengthText.textContent = sList && sList[0] ? sList[0] : "You are systematic, reliable, and quality-focused. You pay attention to detail and consistently deliver thorough and dependable results.";
     }
     if (D.discBestInText) {
-      D.discBestInText.textContent = prof.core_self_job_suitability || prof.job_suitability || "Roles that require accuracy, planning, problem-solving, analytical thinking, and maintaining high standards.";
+      let rawBestIn = prof.core_self_job_suitability || prof.job_suitability || "Roles that require accuracy, planning, problem-solving, analytical thinking, and maintaining high standards.";
+      if (typeof rawBestIn === 'string' && rawBestIn.includes(',')) {
+        const jobs = rawBestIn.split(',').map(j => j.trim()).filter(Boolean);
+        if (jobs.length > 7) {
+          rawBestIn = jobs.slice(0, 7).join(', ') + ', and related specialty roles.';
+        }
+      }
+      D.discBestInText.textContent = rawBestIn;
     }
 
     // Draw wheel

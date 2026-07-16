@@ -2269,21 +2269,26 @@ body::after {
 .meter-stats-group {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .spectrum-pill {
-  padding: 4px 14px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 650;
+  padding: 6px 18px !important;
+  border-radius: 999px !important;
+  font-size: 0.78rem !important;
+  font-weight: 750 !important;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
 }
 
-.spectrum-high { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
-.spectrum-mid  { background: rgba(245, 158, 11, 0.15); color: #fcd34d; }
-.spectrum-low  { background: rgba(113, 113, 122, 0.2); color: #d4d4d8; }
+.spectrum-high { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1.5px solid rgba(239, 68, 68, 0.35); border-radius: 999px !important; }
+.spectrum-mid  { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1.5px solid rgba(245, 158, 11, 0.35); border-radius: 999px !important; }
+.spectrum-low  { background: rgba(113, 113, 122, 0.2); color: #d4d4d8; border: 1.5px solid rgba(161, 161, 170, 0.35); border-radius: 999px !important; }
 
 .meter-pct {
   font-size: 1.2rem;
@@ -2798,19 +2803,25 @@ body::after {
 [data-theme="light"] #view-result .spectrum-high {
   background: #fee2e2 !important;
   color: #b91c1c !important;
-  border: 1px solid #fca5a5 !important;
+  border: 1.5px solid #f87171 !important;
+  border-radius: 999px !important;
+  padding: 6px 18px !important;
 }
 
 [data-theme="light"] #view-result .spectrum-mid {
   background: #fef3c7 !important;
   color: #b45309 !important;
-  border: 1px solid #fcd34d !important;
+  border: 1.5px solid #fbbf24 !important;
+  border-radius: 999px !important;
+  padding: 6px 18px !important;
 }
 
 [data-theme="light"] #view-result .spectrum-low {
   background: #f3f4f6 !important;
   color: #374151 !important;
-  border: 1px solid #d1d5db !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 999px !important;
+  padding: 6px 18px !important;
 }
 
 [data-theme="light"] #view-result .strengths-grid .insight-chip {

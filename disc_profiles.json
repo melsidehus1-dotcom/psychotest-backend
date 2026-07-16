@@ -1,1241 +1,1082 @@
 [
     {
-        "id": 1,
-        "code": "C",
-        "name": "LOGICAL THINKER",
-        "description": "Quiet & Reserved",
-        "characteristics": [
-            "Sensitive to Criticism",
-            "Perfectionistic",
-            "Easygoing & Relaxed",
-            "Detail-Oriented",
-            "Empathetic"
-        ],
-        "job_suitability": "Planner (any function), Engineer (Installation, Technical), Technical/Research (Chemist Technician), Academic, Statistician, Government Worker, IT Management, Prison Officer, Quality Controller.",
-        "about_you": "You are a quiet, reflective, and highly perfectionistic individual. You approach tasks with intense focus on detail, accuracy, and logic, often seeking clear facts before reaching any conclusion.",
-        "what_this_means": "Your dominant Conscientious (C) style means you excel in environments requiring structure, analytical rigor, and precision. You bring tremendous quality and thoroughness to teams, thriving when given clear guidelines and time to analyze.",
-        "strengths": [
-            "Perfectionistic",
-            "Easygoing & Relaxed",
-            "Detail-Oriented",
-            "Empathetic",
-            "Highly Analytical & Logical",
-            "Detail-Oriented & Exacting"
-        ],
-        "watch_outs": [
-            "Sensitive to Criticism",
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures"
-        ]
+        "id":  1,
+        "code":  "C",
+        "name":  "LOGICAL THINKER",
+        "description":  "Quiet \u0026 Reserved",
+        "characteristics":  [
+                                "Sensitive to Criticism",
+                                "Perfectionistic",
+                                "Easygoing \u0026 Relaxed",
+                                "Detail-Oriented",
+                                "Empathetic"
+                            ],
+        "job_suitability":  "Planner (any function), Engineer (Installation, Technical), Technical/Research (Chemist Technician), Academic, Statistician, Government Worker, IT Management, Prison Officer, Quality Controller.",
+        "about_you":  "You\u0027d rather stay quiet and think something through than speak before you\u0027re sure. Facts matter to you — a conclusion isn\u0027t real until the evidence backs it up, and you\u0027re comfortable taking the time that requires.",
+        "what_this_means":  "This kind of thinking shows up best in work that rewards depth over speed — research, quality control, technical planning, anywhere getting it right matters more than getting it fast. Give this profile clear standards and enough time to think, and the output will consistently be some of the most reliable in the room.",
+        "strengths":  [
+                          "You catch the errors most people scroll past — precision is second nature to you",
+                          "When you say something is right, it usually is, because your judgment is built on real analysis, not guesswork",
+                          "You bring calm, steady thinking into moments where others react on impulse."
+                      ],
+        "watch_outs":  [
+                           "Blunt feedback can sting more than it should, even when you know it\u0027s meant well",
+                           "Sometimes the search for the “right” answer keeps you circling longer than the situation needs",
+                           "You may hold back your own opinion until you\u0027re 100% certain, even when 80% would have been useful sooner."
+                       ],
+        "at_a_glance":  "🧭 The Quiet Analyst — steady, exact, quietly confident once the facts check out\n💪 Strongest at: spotting what others miss, thinking clearly under pressure\n⚠️ Keep an eye on: letting “good enough” be enough, sometimes\n🎯 Thrives in: roles built on structure, accuracy, and time to think"
     },
     {
-        "id": 2,
-        "code": "D",
-        "name": "ESTABLISHER",
-        "description": "Individualistic & Independent",
-        "characteristics": [
-            "Strong-Willed, Less Empathetic",
-            "Quick to Act, Less Deliberate",
-            "Highly Effective",
-            "Highly Motivated",
-            "Energetic & Enthusiastic"
-        ],
-        "job_suitability": "Attorney, Researcher, Sales Representative, Planning Consultant, Transport Personnel, Production (Director, Manager, Supervisor), Technologist, Strategic Planning, Trouble Shooting, Marketing Services, Consultant, Engineering (Director, Manager, Supervisor) and Self-Employment.",
-        "about_you": "You are an individualistic, self-reliant, and highly effective driver. You focus intensely on achieving tangible results and conquering challenges with direct, decisive action.",
-        "what_this_means": "Your dominant Dominance (D) style makes you a natural initiator who thrives in fast-paced, goal-oriented environments. You push boundaries and overcome obstacles, driving projects and teams forward with urgency and confidence.",
-        "strengths": [
-            "Strong-Willed, Less Empathetic",
-            "Quick to Act, Less Deliberate",
-            "Highly Effective",
-            "Highly Motivated",
-            "Energetic & Enthusiastic",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  2,
+        "code":  "D",
+        "name":  "ESTABLISHER",
+        "description":  "Individualistic \u0026 Independent",
+        "characteristics":  [
+                                "Strong-Willed, Less Empathetic",
+                                "Quick to Act, Less Deliberate",
+                                "Highly Effective",
+                                "Highly Motivated",
+                                "Energetic \u0026 Enthusiastic"
+                            ],
+        "job_suitability":  "Attorney, Researcher, Sales Representative, Planning Consultant, Transport Personnel, Production (Director, Manager, Supervisor), Technologist, Strategic Planning, Trouble Shooting, Marketing Services, Consultant, Engineering (Director, Manager, Supervisor) and Self-Employment.",
+        "about_you":  "You don\u0027t wait for permission to move — you see the goal, and you go. Independence isn\u0027t just a preference for you, it\u0027s how you get your best work done.",
+        "what_this_means":  "This drive is built for environments that move fast and reward initiative — sales, entrepreneurship, project leadership, anywhere results speak louder than process. Pair this profile with a clear goal and enough autonomy, and results tend to follow faster than most expect.",
+        "strengths":  [
+                          "You turn decisions into action fast, while others are still debating options",
+                          "Obstacles don\u0027t discourage you — if anything, they sharpen your focus",
+                          "You hold yourself to a high bar and expect the same drive from people around you."
+                      ],
+        "watch_outs":  [
+                           "Your directness can come across sharper than you mean it, especially to people who need more warmth first",
+                           "Routine tasks can feel like a waste of your energy, even when they matter",
+                           "You may take on more than one person can realistically finish well."
+                       ],
+        "at_a_glance":  "🧭 The Independent Driver — decisive, self-reliant, built for momentum\n💪 Strongest at: turning intention into action, pushing through resistance\n⚠️ Keep an eye on: dialing up warmth before delivering hard truths\n🎯 Thrives in: fast-moving, results-first environments with real autonomy"
     },
     {
-        "id": 3,
-        "code": "D / C-D",
-        "name": "DESIGNER",
-        "description": "Sensitive & Intuitive",
-        "characteristics": [
-            "Methodical & Deliberate",
-            "Averse to High Pressure",
-            "Fiercely Independent",
-            "Skeptical & Cautious with Others",
-            "Sensitive to Criticism"
-        ],
-        "job_suitability": "Engineering (Management, Research, Design), Research (R&D), Planning, Chemist, Accountancy, Specialist, Finance, Technician, Quality Control, Production Planning/Management, Design Engineer, Bookkeeper, Chemist Technician, Safety Officer, Librarian.",
-        "about_you": "You are a decisive yet analytical leader who balances intense drive with exact planning. You focus on efficiency and high personal standards, aiming to achieve results while maintaining control over quality.",
-        "what_this_means": "By combining Dominance (D) and Conscientious (C) traits, you excel in technical leadership and strategic problem-solving. You are best suited for environments where direct action is supported by structured data and clear accountability.",
-        "strengths": [
-            "Methodical & Deliberate",
-            "Averse to High Pressure",
-            "Fiercely Independent",
-            "Skeptical & Cautious with Others",
-            "Results-Oriented & Driven",
-            "Direct & Decisive Action"
-        ],
-        "watch_outs": [
-            "Sensitive to Criticism",
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details"
-        ]
+        "id":  3,
+        "code":  "D / C-D",
+        "name":  "DESIGNER",
+        "description":  "Sensitive \u0026 Intuitive",
+        "characteristics":  [
+                                "Methodical \u0026 Deliberate",
+                                "Averse to High Pressure",
+                                "Fiercely Independent",
+                                "Skeptical \u0026 Cautious with Others",
+                                "Sensitive to Criticism"
+                            ],
+        "job_suitability":  "Engineering (Management, Research, Design), Research (R\u0026D), Planning, Chemist, Accountancy, Specialist, Finance, Technician, Quality Control, Production Planning/Management, Design Engineer, Bookkeeper, Chemist Technician, Safety Officer, Librarian.",
+        "about_you":  "You lead with decisiveness, but never at the cost of getting it right — you want speed and precision together, not one instead of the other.",
+        "what_this_means":  "This combination is built for technical leadership — roles where bold decisions need to be backed by real data and clear accountability. You do best where you\u0027re given both the authority to act and the structure to verify you\u0027re right.",
+        "strengths":  [
+                          "You move deliberately, weighing options before committing — but once you commit, you commit fully",
+                          "High pressure doesn\u0027t rattle your standards",
+                          "if anything, you dig in harder on quality",
+                          "You trust your own judgment and don\u0027t need external validation to keep going."
+                      ],
+        "watch_outs":  [
+                           "Feedback that feels careless or unearned can hit you harder than people realize",
+                           "You may keep pushing forward on too many fronts at once, thinning your own focus",
+                           "Cautious by nature, you can be slow to extend trust to new people or ideas."
+                       ],
+        "at_a_glance":  "🧭 The Decisive Analyst — leads with confidence, backed by rigor\n💪 Strongest at: combining fast decisions with real analytical depth\n⚠️ Keep an eye on: how criticism lands, and how much you\u0027re carrying at once\n🎯 Thrives in: technical leadership with room for both action and precision"
     },
     {
-        "id": 4,
-        "code": "D / I-D",
-        "name": "NEGOTIATOR",
-        "description": "Sociable & Outgoing",
-        "characteristics": [
-            "Averse to Monotony",
-            "Highly Active",
-            "Highly Self-Confident",
-            "Assertive & Direct",
-            "Optimistic"
-        ],
-        "job_suitability": "Sales and Marketing (Directing, Manager, Person), Public Relations, Recruitment Consultant, Politician, Director, Self-Employed, Hotelier, Travel Agent, Trainer, Hospitality, Lawyer, Solicitor, Motivators, Team Leader, Politician, Trainer, Lecturer, Theatrical Agent, General Management and Leading People, Attorney.",
-        "about_you": "You are a sociable, outgoing, and assertive individual who easily inspires and influences others. You combine high self-confidence with a proactive drive to take charge and achieve ambitious goals.",
-        "what_this_means": "Your blend of Dominance (D) and Influence (I) makes you a dynamic communicator and catalyst for change. You thrive in collaborative, fast-moving environments where you can lead initiatives, network, and motivate teams to succeed.",
-        "strengths": [
-            "Averse to Monotony",
-            "Highly Active",
-            "Highly Self-Confident",
-            "Assertive & Direct",
-            "Optimistic",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  4,
+        "code":  "D / I-D",
+        "name":  "NEGOTIATOR",
+        "description":  "Sociable \u0026 Outgoing",
+        "characteristics":  [
+                                "Averse to Monotony",
+                                "Highly Active",
+                                "Highly Self-Confident",
+                                "Assertive \u0026 Direct",
+                                "Optimistic"
+                            ],
+        "job_suitability":  "Sales and Marketing (Directing, Manager, Person), Public Relations, Recruitment Consultant, Politician, Director, Self-Employed, Hotelier, Travel Agent, Trainer, Hospitality, Lawyer, Solicitor, Motivators, Team Leader, Politician, Trainer, Lecturer, Theatrical Agent, General Management and Leading People, Attorney.",
+        "about_you":  "People notice you before you say a word — and once you speak, they tend to listen. You lead by pulling people toward a shared goal, not by pushing them.",
+        "what_this_means":  "This profile is built for people-facing leadership — sales, public relations, team leadership, anywhere influence and momentum matter. Give this person a room, a goal, and permission to lead, and they\u0027ll bring the energy the team needed.",
+        "strengths":  [
+                          "You make ambitious goals feel achievable, and you get others genuinely excited to chase them with you",
+                          "Confidence comes naturally to you, and it\u0027s contagious in a room",
+                          "You keep moving even when the picture is incomplete — waiting for certainty isn\u0027t your style."
+                      ],
+        "watch_outs":  [
+                           "Your energy can overwhelm quieter voices before they get a chance to speak up",
+                           "Routine work drains you fast, and it shows",
+                           "You may commit to more initiatives than you have hours to give each one properly."
+                       ],
+        "at_a_glance":  "🧭 The Natural Motivator — magnetic, driven, impossible to ignore in a room\n💪 Strongest at: inspiring people to act, keeping energy high under pressure\n⚠️ Keep an eye on: making space for quieter voices to be heard\n🎯 Thrives in: fast-paced, people-facing leadership roles"
     },
     {
-        "id": 5,
-        "code": "D / I-D-C",
-        "name": "CONFIDENT & DETERMINED",
-        "description": "Astute Judge of Character",
-        "characteristics": [
-            "Natural Leader",
-            "Strong Interpersonal Skills",
-            "Dominant & Commanding",
-            "Assertive & Direct",
-            "Perfectionistic"
-        ],
-        "job_suitability": "Specialist/Technical Selling (Computer, Finance, Engineer and others, Chef, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Computer Hardware Sales, Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Insurance, Mortgage and Finance Sales, Teacher, Travel Agent, Personnel and Marketing Services.",
-        "about_you": "You are an astute judge of character with strong analytical and leadership capabilities. You balance decisive action with interpersonal charm and structured thinking to solve complex challenges.",
-        "what_this_means": "Your multifaceted profile allows you to navigate technical requirements while maintaining strong relationships. You perform exceptionally well in management roles requiring strategic planning, diplomacy, and decisive execution.",
-        "strengths": [
-            "Natural Leader",
-            "Strong Interpersonal Skills",
-            "Dominant & Commanding",
-            "Assertive & Direct",
-            "Perfectionistic",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  5,
+        "code":  "D / I-D-C",
+        "name":  "CONFIDENT \u0026 DETERMINED",
+        "description":  "Astute Judge of Character",
+        "characteristics":  [
+                                "Natural Leader",
+                                "Strong Interpersonal Skills",
+                                "Dominant \u0026 Commanding",
+                                "Assertive \u0026 Direct",
+                                "Perfectionistic"
+                            ],
+        "job_suitability":  "Specialist/Technical Selling (Computer, Finance, Engineer and others, Chef, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Computer Hardware Sales, Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Insurance, Mortgage and Finance Sales, Teacher, Travel Agent, Personnel and Marketing Services.",
+        "about_you":  "You read people quickly and accurately — and you pair that instinct with a genuine drive to lead and get things right.",
+        "what_this_means":  "This multifaceted profile does well in management roles that need strategy, diplomacy, and decisive follow-through in the same breath. You\u0027re at your best where technical judgment and people skills both matter — not one without the other.",
+        "strengths":  [
+                          "You lead naturally, without needing the title to make people listen",
+                          "You build real rapport with people, even while holding firm standards",
+                          "You hold yourself and your work to a high bar, and rarely settle for “fine.”"
+                      ],
+        "watch_outs":  [
+                           "Impatience can creep in when others move slower than your standards demand",
+                           "You may resist tasks that feel repetitive, even when they\u0027re necessary",
+                           "The number of things you\u0027re tracking at once can start to outpace your bandwidth."
+                       ],
+        "at_a_glance":  "🧭 The Strategic Leader — sharp judgment, natural authority, real charm\n💪 Strongest at: reading people accurately while still driving hard results\n⚠️ Keep an eye on: patience when others don\u0027t move at your pace\n🎯 Thrives in: management roles that need both strategy and diplomacy"
     },
     {
-        "id": 6,
-        "code": "D / I-D-S",
-        "name": "REFORMER",
-        "description": "Personable & Approachable",
-        "characteristics": [
-            "Natural Leader",
-            "Self-Aware",
-            "Thrives on Recognition & Praise",
-            "Quick to Trust Others",
-            "Quick to Sympathize & Empathize"
-        ],
-        "job_suitability": "Hotelier, Customer Service, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Computer Software Sales, Lecturer, Engineering and Production (Manager/Supervisor).",
-        "about_you": "You are personable, approachable, and steady, combining natural leadership with genuine empathy for others. You seek to accomplish objectives while maintaining a supportive, cooperative environment.",
-        "what_this_means": "Combining Dominance (D), Influence (I), and Steadiness (S), you are a versatile team player and consensus-builder. You excel where steady execution, relational harmony, and gentle leadership are essential for long-term success.",
-        "strengths": [
-            "Natural Leader",
-            "Self-Aware",
-            "Thrives on Recognition & Praise",
-            "Quick to Trust Others",
-            "Quick to Sympathize & Empathize",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  6,
+        "code":  "D / I-D-S",
+        "name":  "REFORMER",
+        "description":  "Personable \u0026 Approachable",
+        "characteristics":  [
+                                "Natural Leader",
+                                "Self-Aware",
+                                "Thrives on Recognition \u0026 Praise",
+                                "Quick to Trust Others",
+                                "Quick to Sympathize \u0026 Empathize"
+                            ],
+        "job_suitability":  "Hotelier, Customer Service, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Computer Software Sales, Lecturer, Engineering and Production (Manager/Supervisor).",
+        "about_you":  "You lead people, not just projects — your goals matter to you, but so does how the people around you feel getting there.",
+        "what_this_means":  "This blend suits versatile team-facing leadership — roles where consensus-building and steady execution both matter. You do best where you\u0027re trusted to lead people, not just push a plan through.",
+        "strengths":  [
+                          "You build trust quickly, and people genuinely want to follow your lead",
+                          "You notice how others are doing, and you factor that into how you lead",
+                          "You keep pushing toward results without losing the human side of the work."
+                      ],
+        "watch_outs":  [
+                           "You can move fast enough that quieter teammates feel left behind",
+                           "Repetitive process work tests your patience more than it should",
+                           "You may take on too much yourself instead of delegating early enough."
+                       ],
+        "at_a_glance":  "🧭 The People-First Leader — warm authority, results without the ego\n💪 Strongest at: building genuine trust while still driving outcomes\n⚠️ Keep an eye on: pace — not everyone moves as fast as you\n🎯 Thrives in: team leadership roles that value both results and relationships"
     },
     {
-        "id": 7,
-        "code": "D / I-S-D",
-        "name": "MOTIVATOR",
-        "description": "Small Group Leader",
-        "characteristics": [
-            "Supportive Team Player",
-            "Strong Socialization Skills",
-            "Requires Clear Direction",
-            "Thrives on Recognition & Praise",
-            "Broader Picture over Detail"
-        ],
-        "job_suitability": "Hotelier, Community Counseling, Customer Service, Complaints Manager, Community Work, Recruitment Consultant, Hospitality, Teacher, Telemarketing, Production Manager, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Call Centre Manager, Lecturer, Engineering and Production (Manager/Supervisor).",
-        "about_you": "You are a natural small-group leader who leads by example with high self-control and loyalty. You maintain a warm, collaborative approach while ensuring practical goals are met systematically.",
-        "what_this_means": "Your profile indicates a balanced approach between driving outcomes and supporting team members. You thrive in tight-knit operational environments where mutual trust, clear communication, and steady progress are valued.",
-        "strengths": [
-            "Supportive Team Player",
-            "Strong Socialization Skills",
-            "Requires Clear Direction",
-            "Thrives on Recognition & Praise",
-            "Broader Picture over Detail",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  7,
+        "code":  "D / I-S-D",
+        "name":  "MOTIVATOR",
+        "description":  "Small Group Leader",
+        "characteristics":  [
+                                "Supportive Team Player",
+                                "Strong Socialization Skills",
+                                "Requires Clear Direction",
+                                "Thrives on Recognition \u0026 Praise",
+                                "Broader Picture over Detail"
+                            ],
+        "job_suitability":  "Hotelier, Community Counseling, Customer Service, Complaints Manager, Community Work, Recruitment Consultant, Hospitality, Teacher, Telemarketing, Production Manager, Complaints Manager, Recruiting Agent, Sales (Manager/Person), Marketing Services, Public Relations, Politician, Call Centre Manager, Lecturer, Engineering and Production (Manager/Supervisor).",
+        "about_you":  "You lead best up close — in a small, tight-knit group where people trust you because you\u0027ve earned it, not because of a title.",
+        "what_this_means":  "This profile thrives in close operational teams — where mutual trust and clear communication matter more than scale. Give this person a team they know well and clear direction, and steady, dependable progress follows.",
+        "strengths":  [
+                          "You lead by example, and people notice the consistency",
+                          "You build loyalty in a team because you show up for them first",
+                          "You keep sight of practical goals even while supporting people day to day."
+                      ],
+        "watch_outs":  [
+                           "You may need more explicit direction than you\u0027d like to admit before diving in",
+                           "Recognition matters more to you than you might say out loud — its absence can quietly demotivate you",
+                           "You can lose sight of small details while focused on the bigger picture."
+                       ],
+        "at_a_glance":  "🧭 The Trusted Team Lead — leads by example, earns loyalty the honest way\n💪 Strongest at: building trust and keeping a small team moving together\n⚠️ Keep an eye on: needing recognition you may not ask for directly\n🎯 Thrives in: tight-knit teams with clear, practical goals"
     },
     {
-        "id": 8,
-        "code": "D / S-D-C / S-C-D",
-        "name": "INQUIRER",
-        "description": "High Self-Control",
-        "characteristics": [
-            "Patient & Composed",
-            "Deliberate & Considerate",
-            "Strong Interpersonal Skills",
-            "Selective & Discerning",
-            "Slow to Adapt to Sudden Change"
-        ],
-        "job_suitability": "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Research Manager, Scientific Work, Accountant, Administration, Project Engineer, Draughtsman, Designer, Analyst, Finance, Chemist, Technical Service Support, Flight Attendant, Technician, Service Engineer, Service Manager, Security Specialist.",
-        "about_you": "You are a diligent, driven, and dependable organizer who exercises excellent self-control. You approach complex tasks systematically, balancing practical determination with high attention to detail.",
-        "what_this_means": "Your strong combination of Steadiness (S), Conscientious (C), and Dominance (D) makes you an exceptionally reliable operator. You thrive in structured settings requiring meticulous planning, steady workflows, and resolute problem-solving.",
-        "strengths": [
-            "Patient & Composed",
-            "Deliberate & Considerate",
-            "Strong Interpersonal Skills",
-            "Selective & Discerning",
-            "Results-Oriented & Driven",
-            "Direct & Decisive Action"
-        ],
-        "watch_outs": [
-            "Slow to Adapt to Sudden Change",
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details"
-        ]
+        "id":  8,
+        "code":  "D / S-D-C / S-C-D",
+        "name":  "INQUIRER",
+        "description":  "High Self-Control",
+        "characteristics":  [
+                                "Patient \u0026 Composed",
+                                "Deliberate \u0026 Considerate",
+                                "Strong Interpersonal Skills",
+                                "Selective \u0026 Discerning",
+                                "Slow to Adapt to Sudden Change"
+                            ],
+        "job_suitability":  "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Research Manager, Scientific Work, Accountant, Administration, Project Engineer, Draughtsman, Designer, Analyst, Finance, Chemist, Technical Service Support, Flight Attendant, Technician, Service Engineer, Service Manager, Security Specialist.",
+        "about_you":  "You bring discipline to everything — not the rigid kind, but the kind that comes from genuinely wanting to do things right and see them through.",
+        "what_this_means":  "This combination fits structured, high-accountability roles — anywhere meticulous planning and resolute execution both matter. You\u0027re the person a team leans on when something needs to actually get finished, correctly.",
+        "strengths":  [
+                          "You stay composed under pressure when others start to unravel",
+                          "You weigh decisions carefully, but you still follow through with real determination",
+                          "You build trust through consistency — people know what to expect from you."
+                      ],
+        "watch_outs":  [
+                           "Sudden changes in plan can throw off your rhythm more than you\u0027d like",
+                           "Impatience can surface when process gets in the way of results",
+                           "You may quietly take on more responsibilities than you\u0027ve agreed to."
+                       ],
+        "at_a_glance":  "🧭 The Steady Operator — composed, disciplined, quietly relentless\n💪 Strongest at: staying calm and consistent under real pressure\n⚠️ Keep an eye on: how you handle sudden shifts in plan\n🎯 Thrives in: structured roles that reward reliability and follow-through"
     },
     {
-        "id": 9,
-        "code": "D-I",
-        "name": "PENGAMBIL KEPUTUSAN",
-        "description": "Diligent & Driven",
-        "characteristics": [
-            "Natural Leader",
-            "Wide Range of Interests",
-            "Task-Oriented & Reserved",
-            "Introverted Socially",
-            "Expressive & Impulsive Emotionally"
-        ],
-        "job_suitability": "General Management (Directing/Managing/Supervising, Public Relations, Business Management, Conflict Resolution, Industrial Relations, Business Consultant, Trouble Shooting, Sales and Sales Management, Marketing, Promoting, Production (Director, Manager, Supervisor), Consultancy, Publishing, Sales Executive, Promotional Work, Brokers, Self-Employment, Advertising, Lecturing, Dealing/Broking.",
-        "about_you": "You are a dynamic, highly motivated, and enthusiastic initiator who quickly turns ideas into action. You communicate with confidence and leverage your social energy to overcome obstacles.",
-        "what_this_means": "With strong Dominance (D) and Influence (I), you are most effective in roles involving negotiation, business development, and team leadership. You excel when given autonomy to drive fast results and inspire those around you.",
-        "strengths": [
-            "Natural Leader",
-            "Wide Range of Interests",
-            "Task-Oriented & Reserved",
-            "Introverted Socially",
-            "Expressive & Impulsive Emotionally",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  9,
+        "code":  "D-I",
+        "name":  "PENGAMBIL KEPUTUSAN",
+        "description":  "Diligent \u0026 Driven",
+        "characteristics":  [
+                                "Natural Leader",
+                                "Wide Range of Interests",
+                                "Task-Oriented \u0026 Reserved",
+                                "Introverted Socially",
+                                "Expressive \u0026 Impulsive Emotionally"
+                            ],
+        "job_suitability":  "General Management (Directing/Managing/Supervising, Public Relations, Business Management, Conflict Resolution, Industrial Relations, Business Consultant, Trouble Shooting, Sales and Sales Management, Marketing, Promoting, Production (Director, Manager, Supervisor), Consultancy, Publishing, Sales Executive, Promotional Work, Brokers, Self-Employment, Advertising, Lecturing, Dealing/Broking.",
+        "about_you":  "Ideas don\u0027t stay ideas long around you — you move fast from thought to action, and you bring the energy to convince others to move with you.",
+        "what_this_means":  "This profile is built for negotiation, business development, and team leadership — roles that reward speed, confidence, and social energy in equal measure. Give this person autonomy and a clear target, and results tend to follow fast.",
+        "strengths":  [
+                          "You act on opportunities while others are still analyzing them",
+                          "Your confidence in conversation makes people trust your direction",
+                          "You genuinely enjoy the challenge of turning obstacles into wins."
+                      ],
+        "watch_outs":  [
+                           "Patience for slower-moving people or processes can wear thin fast",
+                           "Routine, repetitive work drains your motivation quickly",
+                           "Your emotions can show up in the moment before you\u0027ve fully processed them."
+                       ],
+        "at_a_glance":  "🧭 The Fast Mover — decisive, persuasive, energized by momentum\n💪 Strongest at: turning ideas into action and rallying people behind them\n⚠️ Keep an eye on: patience with slower pace or process\n🎯 Thrives in: roles with autonomy, negotiation, and fast results"
     },
     {
-        "id": 10,
-        "code": "D-I-S",
-        "name": "DIRECTOR",
-        "description": "Strategic Organizer",
-        "characteristics": [
-            "Energetic",
-            "Broader Picture over Detail",
-            "Easily Bored with Routine",
-            "Assertive & Direct",
-            "Strong-Minded & Self-Assured"
-        ],
-        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Office Management, Account Manager, Customer Service, Retail Manager, IT, Lecturer, Logistics, Manager-General, National Accounts Manager, Teacher, Projects Manager.",
-        "about_you": "You are a strategic organizer who combines analytical thinking with a warm, engaging interpersonal style. You approach objectives methodically while keeping team morale and collaboration high.",
-        "what_this_means": "Your balance across D, I, and S styles allows you to manage both people and processes smoothly. You thrive in environments requiring organizational coordination, structured communication, and steady leadership.",
-        "strengths": [
-            "Energetic",
-            "Broader Picture over Detail",
-            "Easily Bored with Routine",
-            "Assertive & Direct",
-            "Strong-Minded & Self-Assured",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  10,
+        "code":  "D-I-S",
+        "name":  "DIRECTOR",
+        "description":  "Strategic Organizer",
+        "characteristics":  [
+                                "Energetic",
+                                "Broader Picture over Detail",
+                                "Easily Bored with Routine",
+                                "Assertive \u0026 Direct",
+                                "Strong-Minded \u0026 Self-Assured"
+                            ],
+        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Office Management, Account Manager, Customer Service, Retail Manager, IT, Lecturer, Logistics, Manager-General, National Accounts Manager, Teacher, Projects Manager.",
+        "about_you":  "You think in systems, but you lead with warmth — you want the plan to work and the people executing it to feel good about it.",
+        "what_this_means":  "This blend suits organizational leadership — roles that need both structured coordination and genuine people skills. You do best managing both process and morale, not choosing one over the other.",
+        "strengths":  [
+                          "You keep both the big picture and team morale in view at the same time",
+                          "People trust your direction because you communicate it clearly",
+                          "You bring steady energy that helps a team stay engaged, not just on-task."
+                      ],
+        "watch_outs":  [
+                           "Boredom sets in fast with routine — you need enough variety to stay sharp",
+                           "Directness can come off stronger than intended in the moment",
+                           "You may stretch yourself across more initiatives than is sustainable."
+                       ],
+        "at_a_glance":  "🧭 The Strategic Organizer — structured mind, people-first leadership\n💪 Strongest at: balancing process with morale, plans with people\n⚠️ Keep an eye on: avoiding burnout from routine tasks\n🎯 Thrives in: roles needing organizational coordination and team leadership"
     },
     {
-        "id": 11,
-        "code": "D-S ",
-        "name": "SELF-MOTIVATED",
-        "description": "Objective & Analytical",
-        "characteristics": [
-            "Independent",
-            "Skilled Planner",
-            "Committed to Targets",
-            "Conflict-Averse"
-        ],
-        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Project Management, Researcher, Chemist (R&D), Planner, Engineering (R&D), Systems Analyst, Commercial Planner, Computer Engineer, Programmer, IT, Other computer-related disciplines, Technical Trouble Shooting and Directing, Lawyer, Solicitor, Development Engineer, Work Study, Barrister, Attorney.",
-        "about_you": "You are an objective, analytical, and persistent doer who pursues goals with quiet determination. You work independently and methodically, maintaining high focus until the task is completely finished.",
-        "what_this_means": "Combining Dominance (D) and Steadiness (S), you are a resolute and dependable producer. You perform best in structured, task-focused roles where independent planning, perseverance, and practical efficiency drive success.",
-        "strengths": [
-            "Independent",
-            "Skilled Planner",
-            "Committed to Targets",
-            "Results-Oriented & Driven",
-            "Direct & Decisive Action",
-            "Innovative Problem Solver"
-        ],
-        "watch_outs": [
-            "Conflict-Averse",
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details"
-        ]
+        "id":  11,
+        "code":  "D-S",
+        "name":  "SELF-MOTIVATED",
+        "description":  "Objective \u0026 Analytical",
+        "characteristics":  [
+                                "Independent",
+                                "Skilled Planner",
+                                "Committed to Targets",
+                                "Conflict-Averse"
+                            ],
+        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Project Management, Researcher, Chemist (R\u0026D), Planner, Engineering (R\u0026D), Systems Analyst, Commercial Planner, Computer Engineer, Programmer, IT, Other computer-related disciplines, Technical Trouble Shooting and Directing, Lawyer, Solicitor, Development Engineer, Work Study, Barrister, Attorney.",
+        "about_you":  "You don\u0027t need an audience to stay motivated — you set the target, and you work toward it with quiet, methodical persistence.",
+        "what_this_means":  "This profile fits structured, independent, task-focused work — research, technical execution, project ownership. Give this person a clear goal and room to work solo, and steady, dependable results follow.",
+        "strengths":  [
+                          "You finish what you start, even when no one\u0027s watching",
+                          "You plan well and stick to the plan, adjusting only when the facts demand it",
+                          "You solve problems independently instead of waiting for direction."
+                      ],
+        "watch_outs":  [
+                           "You may avoid necessary conflict rather than raise it directly",
+                           "Slower-moving colleagues can test your patience more than you show",
+                           "You might take on more than one person can realistically finish alone."
+                       ],
+        "at_a_glance":  "🧭 The Quiet Achiever — self-driven, methodical, gets it done without noise\n💪 Strongest at: independent follow-through and steady planning\n⚠️ Keep an eye on: raising conflict directly instead of avoiding it\n🎯 Thrives in: structured, independent, results-focused roles"
     },
     {
-        "id": 12,
-        "code": "I / C-I-S",
-        "name": "MEDIATOR",
-        "description": "Loyal & Dedicated",
-        "characteristics": [
-            "Strictly Scheduled",
-            "Inquisitive & Curious",
-            "Sensitive",
-            "Excellent Communication Skills",
-            "Strong Analytical Thinking"
-        ],
-        "job_suitability": "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist, Lab. Technician), Trainer, Finance (Supervisor, Accountant, Advisor), Public Relations, Administration, Office Administrator, Market Analyst, System Analyst, Programmer, Selling (Technical/Service).",
-        "about_you": "You are loyal, dedicated, and thoughtful, blending strong communicative warmth with analytical care. You seek harmony in relationships while maintaining structured, quality-oriented workflows.",
-        "what_this_means": "Your profile highlights a thoughtful balance between social connection and accuracy. You excel in advisory, customer success, or administrative leadership roles where empathy, organization, and clear communication are key.",
-        "strengths": [
-            "Strictly Scheduled",
-            "Inquisitive & Curious",
-            "Sensitive",
-            "Excellent Communication Skills",
-            "Strong Analytical Thinking",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  12,
+        "code":  "I / C-I-S",
+        "name":  "MEDIATOR",
+        "description":  "Loyal \u0026 Dedicated",
+        "characteristics":  [
+                                "Strictly Scheduled",
+                                "Inquisitive \u0026 Curious",
+                                "Sensitive",
+                                "Excellent Communication Skills",
+                                "Strong Analytical Thinking"
+                            ],
+        "job_suitability":  "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist, Lab. Technician), Trainer, Finance (Supervisor, Accountant, Advisor), Public Relations, Administration, Office Administrator, Market Analyst, System Analyst, Programmer, Selling (Technical/Service).",
+        "about_you":  "You care about getting along and getting it right — you bring warmth to a room, but you never let that warmth replace real structure and accuracy.",
+        "what_this_means":  "This mix suits advisory and customer-facing roles that also require structure — HR, account management, coordination work. You\u0027re at your best where empathy and organization need to work together, not compete.",
+        "strengths":  [
+                          "You build genuine rapport while still delivering organized, quality work",
+                          "Your curiosity keeps you asking the right questions before jumping to conclusions",
+                          "You\u0027re a natural bridge between people who think differently."
+                      ],
+        "watch_outs":  [
+                           "Keeping the peace can sometimes matter more to you than raising a hard truth",
+                           "Small analytical details can slip past you while you\u0027re focused on the people side",
+                           "External recognition matters to you more than you might admit."
+                       ],
+        "at_a_glance":  "🧭 The Warm Coordinator — thoughtful, structured, genuinely likable\n💪 Strongest at: blending people skills with real organizational care\n⚠️ Keep an eye on: raising hard truths, not just keeping harmony\n🎯 Thrives in: advisory or coordination roles blending empathy and structure"
     },
     {
-        "id": 13,
-        "code": "I / C-S-I",
-        "name": "PRACTITIONER",
-        "description": "Perfectionistic & Quality-Driven",
-        "characteristics": [
-            "Quality-Oriented",
-            "Structured & Scheduled",
-            "Dislikes Sudden Surprises",
-            "Strong Interpersonal Skills",
-            "Highly Exacting & Meticulous"
-        ],
-        "job_suitability": "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist), Trainer, Finance (Manager, Supervisor, Accountant, Advisor), Public Relations-Administration, Purchasing, Chemist Research, Office Administrator, Computer Programmer, Market Analyst, System Analyst, Programmer, Research and Development Supervisor, Laboratory Technician, Legal, Selling (Technical/Service).",
-        "about_you": "You are perfectionistic, quality-driven, and supportive, naturally looking out for the well-being of your team. You combine high personal standards with a patient, encouraging approach to collaboration.",
-        "what_this_means": "Your combination of Influence (I), Steadiness (S), and Conscientious (C) makes you an invaluable team advocate. You thrive in collaborative settings that prioritize ethical standards, mutual support, and precision.",
-        "strengths": [
-            "Quality-Oriented",
-            "Structured & Scheduled",
-            "Dislikes Sudden Surprises",
-            "Strong Interpersonal Skills",
-            "Highly Exacting & Meticulous",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  13,
+        "code":  "I / C-S-I",
+        "name":  "PRACTITIONER",
+        "description":  "Perfectionistic \u0026 Quality-Driven",
+        "characteristics":  [
+                                "Quality-Oriented",
+                                "Structured \u0026 Scheduled",
+                                "Dislikes Sudden Surprises",
+                                "Strong Interpersonal Skills",
+                                "Highly Exacting \u0026 Meticulous"
+                            ],
+        "job_suitability":  "Engineering and Production (Supervisor, Installer, Technician, Service and Design), Research (Supervisor, Chemist), Trainer, Finance (Manager, Supervisor, Accountant, Advisor), Public Relations-Administration, Purchasing, Chemist Research, Office Administrator, Computer Programmer, Market Analyst, System Analyst, Programmer, Research and Development Supervisor, Laboratory Technician, Legal, Selling (Technical/Service).",
+        "about_you":  "You hold yourself to a high standard, but you never lose the people side of the work — you want quality and you want your team to feel supported getting there.",
+        "what_this_means":  "This blend fits collaborative, quality-driven environments — team advocacy, training, quality assurance with a human touch. You do best where high standards and genuine support for people are equally valued.",
+        "strengths":  [
+                          "You raise the bar on quality without making people feel micromanaged",
+                          "You bring genuine encouragement, not just criteria, to collaborative work",
+                          "Surprises rattle you less than most — you plan ahead so there are fewer of them."
+                      ],
+        "watch_outs":  [
+                           "You may avoid direct confrontation in favor of keeping things smooth",
+                           "In the pursuit of harmony, small analytical details can get missed",
+                           "Recognition matters to you more than you\u0027d say out loud."
+                       ],
+        "at_a_glance":  "🧭 The Encouraging Perfectionist — high standards, delivered with warmth\n💪 Strongest at: raising quality while keeping people supported\n⚠️ Keep an eye on: addressing tension directly instead of smoothing over\n🎯 Thrives in: collaborative roles that value both precision and care"
     },
     {
-        "id": 14,
-        "code": "I-S-C / I-C-S",
-        "name": "RESPONSIVE & THOUGHTFUL",
-        "description": "High Energy & Dynamic",
-        "characteristics": [
-            "Excellent Communication Skills",
-            "Direct & To The Point",
-            "Sensitive",
-            "Talkative & Expressive",
-            "Thrives on Recognition"
-        ],
-        "job_suitability": "Actors, Chef, Personnel, Welfare, Broadcasting, Training, Attorney, Teaching, Accounting, Technical Instructor, Accounting-General, Accounts Supervisor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Florist/Floral Designer, Engineering (Sales, Service, Project, Draughtsman, Designer), Graphic Designer, Specialist (Soft/Services), Selling, Purchasing, Singers, Technical Instructor, Personnel Management, Politician, Supervising (Engineering, Production, Accounts), Administration Work, Sales Engineer, Secretarial, Industrial Relations Specialist.",
-        "about_you": "You are high-energy, dynamic, and expressive, yet you maintain a structured, considerate approach to your duties. You connect easily with others while ensuring details and procedures are respected.",
-        "what_this_means": "With a balanced mix of I, S, and C styles, you are highly adaptable across interpersonal and technical responsibilities. You excel in environments requiring engaging communication alongside careful organizational execution.",
-        "strengths": [
-            "Excellent Communication Skills",
-            "Direct & To The Point",
-            "Sensitive",
-            "Talkative & Expressive",
-            "Thrives on Recognition",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  14,
+        "code":  "I-S-C / I-C-S",
+        "name":  "RESPONSIVE \u0026 THOUGHTFUL",
+        "description":  "High Energy \u0026 Dynamic",
+        "characteristics":  [
+                                "Excellent Communication Skills",
+                                "Direct \u0026 To The Point",
+                                "Sensitive",
+                                "Talkative \u0026 Expressive",
+                                "Thrives on Recognition"
+                            ],
+        "job_suitability":  "Actors, Chef, Personnel, Welfare, Broadcasting, Training, Attorney, Teaching, Accounting, Technical Instructor, Accounting-General, Accounts Supervisor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Florist/Floral Designer, Engineering (Sales, Service, Project, Draughtsman, Designer), Graphic Designer, Specialist (Soft/Services), Selling, Purchasing, Singers, Technical Instructor, Personnel Management, Politician, Supervising (Engineering, Production, Accounts), Administration Work, Sales Engineer, Secretarial, Industrial Relations Specialist.",
+        "about_you":  "You bring energy into every room, but you don\u0027t leave the details behind — you want the connection and the follow-through.",
+        "what_this_means":  "This combination suits roles needing both engaging communication and organized execution — client-facing technical work, coordination, service leadership. You\u0027re strongest where energy and structure need to coexist.",
+        "strengths":  [
+                          "You communicate clearly and directly, without losing your warmth",
+                          "People feel comfortable opening up to you quickly",
+                          "You keep procedures in mind even while your energy runs high."
+                      ],
+        "watch_outs":  [
+                           "Keeping social harmony can take priority over flagging a real problem",
+                           "Fast-moving conversations can mean small details get missed",
+                           "You may crave recognition more than the situation calls for."
+                       ],
+        "at_a_glance":  "🧭 The Dynamic Communicator — expressive, structured, easy to connect with\n💪 Strongest at: combining warm communication with real follow-through\n⚠️ Keep an eye on: slowing down enough to catch the small stuff\n🎯 Thrives in: client-facing roles that reward both energy and structure"
     },
     {
-        "id": 15,
-        "code": "S",
-        "name": "SPECIALIST",
-        "description": "Stable & Consistent",
-        "characteristics": [
-            "Self-Controlled & Composed",
-            "Comfortable Behind the Scenes",
-            "Patient & Composed",
-            "Loyal & Reliable",
-            "Slow to Adapt to Sudden Change"
-        ],
-        "job_suitability": "Administrative Work, Engineering and Production areas (Sales, Services, Project, Painter, Plumber, Draughtsman, Designer, Operative), Chef, Accounting, Telemarketing/Tele-Sales, Research and Development, Administrator, Florist/Floral Designer, Retail-General, Sales-General, Accounting-General, Service-General, Landscape Gardener.",
-        "about_you": "You are stable, consistent, and exceptionally reliable, placing high value on harmony and mutual respect. You listen attentively, support your peers loyally, and approach tasks with calm, steady focus.",
-        "what_this_means": "Your dominant Steadiness (S) style makes you the anchor of any team. You thrive in predictable, collaborative environments where loyalty, long-term relationships, and methodical execution are recognized and appreciated.",
-        "strengths": [
-            "Self-Controlled & Composed",
-            "Comfortable Behind the Scenes",
-            "Patient & Composed",
-            "Loyal & Reliable",
-            "Reliable & Dependable",
-            "Loyal & Cooperative Team Player"
-        ],
-        "watch_outs": [
-            "Slow to Adapt to Sudden Change",
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment"
-        ]
+        "id":  15,
+        "code":  "S",
+        "name":  "SPECIALIST",
+        "description":  "Stable \u0026 Consistent",
+        "characteristics":  [
+                                "Self-Controlled \u0026 Composed",
+                                "Comfortable Behind the Scenes",
+                                "Patient \u0026 Composed",
+                                "Loyal \u0026 Reliable",
+                                "Slow to Adapt to Sudden Change"
+                            ],
+        "job_suitability":  "Administrative Work, Engineering and Production areas (Sales, Services, Project, Painter, Plumber, Draughtsman, Designer, Operative), Chef, Accounting, Telemarketing/Tele-Sales, Research and Development, Administrator, Florist/Floral Designer, Retail-General, Sales-General, Accounting-General, Service-General, Landscape Gardener.",
+        "about_you":  "You\u0027re the person a team can count on without asking twice — steady, calm, and genuinely there for the people around you.",
+        "what_this_means":  "This profile is built to be the anchor of a team — predictable, collaborative environments where loyalty and long-term relationships are valued over constant disruption. Give this person stability, and they\u0027ll give the team consistency in return.",
+        "strengths":  [
+                          "You bring calm, composed focus into moments that others find stressful",
+                          "Loyalty isn\u0027t a talking point for you — it\u0027s how you actually operate",
+                          "You\u0027re comfortable doing the essential work without needing the spotlight."
+                      ],
+        "watch_outs":  [
+                           "Sudden change can throw off your rhythm more than it should",
+                           "You may avoid confrontation even when it needs to happen",
+                           "Old grievances can sit with you longer than they need to."
+                       ],
+        "at_a_glance":  "🧭 The Reliable Anchor — steady, loyal, quietly essential\n💪 Strongest at: staying calm and dependable when things get stressful\n⚠️ Keep an eye on: raising issues instead of sitting with them\n🎯 Thrives in: stable, collaborative, relationship-driven environments"
     },
     {
-        "id": 16,
-        "code": "S / C-S",
-        "name": "PERFECTIONIST",
-        "description": "Detailed & Meticulous",
-        "characteristics": [
-            "Requires a Stable Environment",
-            "Systematic & Procedural",
-            "Conflict-Averse",
-            "Sensitive to Criticism",
-            "Deliberate Decision-Maker"
-        ],
-        "job_suitability": "Researcher (Technician, Chemist, Quality Control), Engineer (Project, Draughtsman, Armed Forces, Designer), Statistician, Surveyor, Optician, Medical Specialist, Health Care, IT Management, Planner, Technical Writing, Production, Dentist, Quality Control, Planning, Dental Technician, Accounting, Computer Programmer, Psychologist, Surgeon, Architect, Medical Specialist.",
-        "about_you": "You are detailed, meticulous, and thoughtful, naturally preferring structured environments and well-defined procedures. Rather than rushing decisions, you carefully evaluate situations to deliver accurate and reliable results.",
-        "what_this_means": "Your results indicate a dominant Steady (S) personality supported by Conscientious (C) traits. You are most likely to thrive in environments that value structure, teamwork, consistency, and accuracy. You build trust through reliability, careful planning, and delivering high-quality work.",
-        "strengths": [
-            "Requires a Stable Environment",
-            "Systematic & Procedural",
-            "Deliberate Decision-Maker",
-            "Reliable & Dependable",
-            "Patient & Composed",
-            "Loyal & Cooperative Team Player"
-        ],
-        "watch_outs": [
-            "Requires a Stable Environment",
-            "Conflict-Averse",
-            "Sensitive to Criticism",
-            "Deliberate Decision-Maker",
-            "Averse to sudden or unannounced changes"
-        ]
+        "id":  16,
+        "code":  "S / C-S",
+        "name":  "PERFECTIONIST",
+        "description":  "Detailed \u0026 Meticulous",
+        "characteristics":  [
+                                "Requires a Stable Environment",
+                                "Systematic \u0026 Procedural",
+                                "Conflict-Averse",
+                                "Sensitive to Criticism",
+                                "Deliberate Decision-Maker"
+                            ],
+        "job_suitability":  "Researcher (Technician, Chemist, Quality Control), Engineer (Project, Draughtsman, Armed Forces, Designer), Statistician, Surveyor, Optician, Medical Specialist, Health Care, IT Management, Planner, Technical Writing, Production, Dentist, Quality Control, Planning, Dental Technician, Accounting, Computer Programmer, Psychologist, Surgeon, Architect, Medical Specialist.",
+        "about_you":  "You\u0027d rather get it right the first time than fast and wrong — structure and clear procedure aren\u0027t constraints for you, they\u0027re what lets you do your best work.",
+        "what_this_means":  "This profile does best in structured, team-oriented environments that reward consistency and precision over improvisation. Trust here gets built the slow way — through reliability — and it holds.",
+        "strengths":  [
+                          "You evaluate carefully before deciding, which means fewer costly mistakes later",
+                          "You deliver consistently reliable, high-quality work",
+                          "You build trust through follow-through, not promises."
+                      ],
+        "watch_outs":  [
+                           "Sudden, unannounced change can genuinely unsettle your process",
+                           "Criticism can land harder than intended, even when it\u0027s constructive",
+                           "You may need longer than others to commit to a decision."
+                       ],
+        "at_a_glance":  "🧭 The Meticulous Planner — careful, dependable, quietly excellent\n💪 Strongest at: careful evaluation and consistent, high-quality output\n⚠️ Keep an eye on: staying steady when plans change suddenly\n🎯 Thrives in: structured, team-based roles valuing accuracy over speed"
     },
     {
-        "id": 17,
-        "code": "S-C",
-        "name": "PEACEMAKER, RESPECTFULL & ACCURATE",
-        "description": "Reluctant to Adapt",
-        "characteristics": [
-            "Sensitive to Criticism",
-            "Remembers Past Grievances",
-            "Resistant to Sudden Change",
-            "Detail-Oriented",
-            "Empathetic"
-        ],
-        "job_suitability": "Office (Manager, Supervisor, Person), Chief Clerk, General Administrator, Production Supervisor, Planner, Accountant, Research and Development, Flight Attendant, Engineering (Project Manager, Supervisor, Technician), Computer Programmer, Draughtsman, Soft/Service Selling, Doctor, Cashier, Receptionist, Data Entry, Planner, Word Processing, Property Manager, Database Administrator, Health Care, Statistician, Nursing-Administration, Company Secretary, System Analyst, Programmer, Statistician, Accounting-General, Security Specialist.",
-        "about_you": "You are a deliberate, thorough, and highly accurate peacemaker who values stability and precision. You approach every task with deep care, seeking to maintain harmony while adhering to proven standards.",
-        "what_this_means": "By combining Steadiness (S) and Conscientious (C), you provide steady, high-quality output while fostering a peaceful work atmosphere. You excel in structured, detail-focused roles where patience and exactness are paramount.",
-        "strengths": [
-            "Detail-Oriented",
-            "Empathetic",
-            "Reliable & Dependable",
-            "Patient & Composed",
-            "Loyal & Cooperative Team Player",
-            "Attentive Listener"
-        ],
-        "watch_outs": [
-            "Sensitive to Criticism",
-            "Remembers Past Grievances",
-            "Resistant to Sudden Change",
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation"
-        ]
+        "id":  17,
+        "code":  "S-C",
+        "name":  "PEACEMAKER, RESPECTFULL \u0026 ACCURATE",
+        "description":  "Reluctant to Adapt",
+        "characteristics":  [
+                                "Sensitive to Criticism",
+                                "Remembers Past Grievances",
+                                "Resistant to Sudden Change",
+                                "Detail-Oriented",
+                                "Empathetic"
+                            ],
+        "job_suitability":  "Office (Manager, Supervisor, Person), Chief Clerk, General Administrator, Production Supervisor, Planner, Accountant, Research and Development, Flight Attendant, Engineering (Project Manager, Supervisor, Technician), Computer Programmer, Draughtsman, Soft/Service Selling, Doctor, Cashier, Receptionist, Data Entry, Planner, Word Processing, Property Manager, Database Administrator, Health Care, Statistician, Nursing-Administration, Company Secretary, System Analyst, Programmer, Statistician, Accounting-General, Security Specialist.",
+        "about_you":  "You care about getting it right and keeping the peace while you do it — precision and harmony aren\u0027t separate goals for you, they\u0027re both non-negotiable.",
+        "what_this_means":  "This combination suits structured, detail-focused roles where patience and precision both matter — planning, administration, quality-focused technical work. You do best where accuracy is valued and disruption is kept to a minimum.",
+        "strengths":  [
+                          "You catch details others miss, without losing sight of the people involved",
+                          "You\u0027re a genuinely attentive listener, and people notice",
+                          "You bring reliable, steady output to everything you commit to."
+                      ],
+        "watch_outs":  [
+                           "Criticism can stick with you longer than it should",
+                           "You may avoid necessary confrontation to keep the peace",
+                           "Sudden change can be harder for you to adjust to than for most."
+                       ],
+        "at_a_glance":  "🧭 The Careful Peacemaker — precise, patient, quietly protective of harmony\n💪 Strongest at: careful attention to detail without losing empathy\n⚠️ Keep an eye on: addressing conflict instead of absorbing it\n🎯 Thrives in: structured roles that reward patience and exactness"
     },
     {
-        "id": 18,
-        "code": "D-C",
-        "name": "CHALLENGER",
-        "description": "Persistent & Tenacious",
-        "characteristics": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder"
-        ],
-        "job_suitability": "Engineering (Management, Research, Design), Actuaries, Research (R&D), Planning, Chemist, Hospital Supervisor, Industrial Marketing, Investment Banking, Medical Administrator, Mortgage Brokers, Accountancy, Fund Management, Specialist Finance, Quality Control and Specialist work in any area where knowledge and experience is available, Production, Financial Services, Technical Management, Project Leader, Matron, Strategic Planning, Industrial Marketing.",
-        "about_you": "You are persistent, tenacious, and fiercely independent, attacking problems with logical rigor and firm determination. You set high standards for yourself and others, focusing intently on objective results.",
-        "what_this_means": "Your Dominance (D) and Conscientious (C) blend makes you a formidable problem solver and quality controller. You thrive in challenging, objective environments where analytical precision and forceful execution are required to overcome obstacles.",
-        "strengths": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  18,
+        "code":  "D-C",
+        "name":  "CHALLENGER",
+        "description":  "Persistent \u0026 Tenacious",
+        "characteristics":  [
+                                "Sensitive to Emerging Problems",
+                                "Firm \u0026 Decisive in Judgment",
+                                "Creative Problem Solver",
+                                "Quick-Reacting \u0026 Alert",
+                                "Skilled Solution Finder"
+                            ],
+        "job_suitability":  "Engineering (Management, Research, Design), Actuaries, Research (R\u0026D), Planning, Chemist, Hospital Supervisor, Industrial Marketing, Investment Banking, Medical Administrator, Mortgage Brokers, Accountancy, Fund Management, Specialist Finance, Quality Control and Specialist work in any area where knowledge and experience is available, Production, Financial Services, Technical Management, Project Leader, Matron, Strategic Planning, Industrial Marketing.",
+        "about_you":  "You go after problems, not around them — logic and sheer persistence are your default tools, and you rarely back down before you\u0027ve found the answer.",
+        "what_this_means":  "This blend fits challenging, high-stakes technical or analytical work — quality control, engineering, financial problem-solving. You\u0027re at your best where the problem is genuinely hard and the standards are genuinely high.",
+        "strengths":  [
+                          "You spot emerging problems before most people notice them",
+                          "Your judgment is firm — once you\u0027ve decided, you commit",
+                          "You find creative solutions where others see dead ends."
+                      ],
+        "watch_outs":  [
+                           "Impatience shows when others move slower than the problem demands",
+                           "Routine tasks can feel like they\u0027re beneath the real work",
+                           "You may take on more problems than you can solve well at once."
+                       ],
+        "at_a_glance":  "🧭 The Relentless Problem-Solver — sharp, firm, doesn\u0027t quit early\n💪 Strongest at: spotting problems early and finding real solutions\n⚠️ Keep an eye on: patience with slower pace around you\n🎯 Thrives in: high-stakes technical or analytical challenges"
     },
     {
-        "id": 19,
-        "code": "D-I-C",
-        "name": "CHANCELLOR",
-        "description": "Naturally Warm & Affable",
-        "characteristics": [
-            "Combines Enjoyment with Work",
-            "Enjoys Interpersonal Connections",
-            "Thrives on Social Interaction",
-            "Capable of Handling Detailed Tasks",
-            "Strives for Accuracy and Precision"
-        ],
-        "job_suitability": "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Fund Management, Computer Hardware/Software Sales, IT, Business Consultant, Banking, Logistics, Lecturing, Work Study, Film Director, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager.",
-        "about_you": "You are naturally warm, affable, and socially perceptive, while possessing sharp analytical and leadership instincts. You communicate persuasively and structure your plans carefully to drive organizational goals.",
-        "what_this_means": "With D, I, and C strengths, you navigate complex leadership challenges by blending strategic analysis with engaging communication. You perform best in dynamic management roles that demand both interpersonal tact and high-level strategy.",
-        "strengths": [
-            "Combines Enjoyment with Work",
-            "Enjoys Interpersonal Connections",
-            "Thrives on Social Interaction",
-            "Capable of Handling Detailed Tasks",
-            "Strives for Accuracy and Precision",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  19,
+        "code":  "D-I-C",
+        "name":  "CHANCELLOR",
+        "description":  "Naturally Warm \u0026 Affable",
+        "characteristics":  [
+                                "Combines Enjoyment with Work",
+                                "Enjoys Interpersonal Connections",
+                                "Thrives on Social Interaction",
+                                "Capable of Handling Detailed Tasks",
+                                "Strives for Accuracy and Precision"
+                            ],
+        "job_suitability":  "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Fund Management, Computer Hardware/Software Sales, IT, Business Consultant, Banking, Logistics, Lecturing, Work Study, Film Director, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager.",
+        "about_you":  "You lead with both charm and precision — people enjoy being around you, and they also trust you to get the details right.",
+        "what_this_means":  "This combination suits dynamic management roles that need both interpersonal tact and real strategic depth. You do best where you\u0027re trusted to lead with both charisma and precision, not just one.",
+        "strengths":  [
+                          "You genuinely enjoy your work, and it shows in how you engage others",
+                          "You handle detailed tasks without losing your natural social ease",
+                          "You communicate persuasively while still backing it up with real accuracy."
+                      ],
+        "watch_outs":  [
+                           "Impatience can surface when things move slower than you\u0027d like",
+                           "You may resist repetitive tasks that feel beneath your capability",
+                           "You might overcommit across too many fronts at once."
+                       ],
+        "at_a_glance":  "🧭 The Warm Strategist — affable, sharp, trusted with the details\n💪 Strongest at: blending genuine warmth with real analytical accuracy\n⚠️ Keep an eye on: patience and pacing when things slow down\n🎯 Thrives in: dynamic leadership roles needing both tact and strategy"
     },
     {
-        "id": 20,
-        "code": "D-S-I",
-        "name": "DIRECTOR",
-        "description": "Objective & Analytical Thinker",
-        "characteristics": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections"
-        ],
-        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator.",
-        "about_you": "You are an objective and analytical thinker who leads with calm confidence and practical support. You balance your goal-oriented drive with a genuine willingness to assist and empower team members.",
-        "what_this_means": "Your blend of Dominance (D), Steadiness (S), and Influence (I) allows you to lead operations smoothly. You excel in collaborative leadership positions where consistent progress, clear guidance, and supportive teamwork are essential.",
-        "strengths": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  20,
+        "code":  "D-S-I",
+        "name":  "DIRECTOR",
+        "description":  "Objective \u0026 Analytical Thinker",
+        "characteristics":  [
+                                "Eager to be Involved",
+                                "Eager to Provide Support \u0026 Help",
+                                "Motivated by Personal Targets",
+                                "Dedicated \u0026 Work-Oriented",
+                                "Enjoys Interpersonal Connections"
+                            ],
+        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator.",
+        "about_you":  "You lead with a clear head and a genuine willingness to help — you want the operation to run smoothly and the people in it to feel supported.",
+        "what_this_means":  "This blend fits collaborative leadership — roles where consistent progress, clear guidance, and real support for the team all matter together. You do best leading operations where you can stay close to the work, not removed from it.",
+        "strengths":  [
+                          "You stay involved and hands-on, not just directing from a distance",
+                          "You\u0027re motivated by real, personal targets — not vague ambition",
+                          "You build genuine interpersonal connection while staying results-focused."
+                      ],
+        "watch_outs":  [
+                           "Impatience can surface when progress feels too slow",
+                           "Repetitive process work can wear on your motivation",
+                           "You may take on too many responsibilities to prove your commitment."
+                       ],
+        "at_a_glance":  "🧭 The Hands-On Leader — analytical, supportive, deeply involved\n💪 Strongest at: staying close to the work while driving real results\n⚠️ Keep an eye on: pacing yourself against how much you take on\n🎯 Thrives in: collaborative leadership with steady, visible progress"
     },
     {
-        "id": 21,
-        "code": "D-S-C",
-        "name": "Director",
-        "description": "Objective & Analytical Thinker",
-        "characteristics": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections"
-        ],
-        "job_suitability": "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator.",
-        "about_you": "You are an objective, structured, and highly disciplined thinker who pursues goals with systematic perseverance. You value clarity, practical execution, and steady progress over impulsive actions.",
-        "what_this_means": "Combining D, S, and C styles, you are an exceptional operational executioner. You thrive in structured environments requiring methodical planning, steady operational discipline, and objective problem-solving.",
-        "strengths": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  21,
+        "code":  "D-S-C",
+        "name":  "Director",
+        "description":  "Objective \u0026 Analytical Thinker",
+        "characteristics":  [
+                                "Eager to be Involved",
+                                "Eager to Provide Support \u0026 Help",
+                                "Motivated by Personal Targets",
+                                "Dedicated \u0026 Work-Oriented",
+                                "Enjoys Interpersonal Connections"
+                            ],
+        "job_suitability":  "Engineering and Production (Directing, Managing, Supervising), Sales, Sales Management, Service Manager, Distribution, Public Relations, Creative Designer, Office Management, Chief Engineer, Business Consultant, Chief Financial Officer, Customer Service, National Accounts Manager, Chief Accountant, Lecturer, Projects Manager, Research Planning, Human Resources, Scientific Work, Security Specialist, Solicitor, Planner, Production Administrator.",
+        "about_you":  "You\u0027d rather move steadily in the right direction than sprint in the wrong one — clarity and discipline matter more to you than speed for its own sake.",
+        "what_this_means":  "This combination is built for operational execution — roles needing methodical planning and steady discipline more than improvisation. You\u0027re at your best running structured operations where progress is visible and consistent.",
+        "strengths":  [
+                          "You bring real structure to execution, not just ideas",
+                          "You stay motivated by targets you\u0027ve set for yourself, not just external pressure",
+                          "You build genuine working relationships while staying focused on results."
+                      ],
+        "watch_outs":  [
+                           "Impatience can surface when process slows down progress you can already see",
+                           "Routine can wear on you faster than you\u0027d expect",
+                           "You may quietly take on more than is sustainable."
+                       ],
+        "at_a_glance":  "🧭 The Disciplined Executor — structured, steady, quietly driven\n💪 Strongest at: turning plans into consistent, visible progress\n⚠️ Keep an eye on: your tolerance for repetitive process work\n🎯 Thrives in: structured operational roles with clear, steady goals"
     },
     {
-        "id": 22,
-        "code": "D-C-I",
-        "name": "CHALLENGER",
-        "description": "Persistent & Tenacious",
-        "characteristics": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder"
-        ],
-        "job_suitability": "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Lecturing, Work Study, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager.",
-        "about_you": "You are persistent, tenacious, and sharp-minded, quick to identify solutions and assertively implement them. You combine analytical depth with persuasive energy to overcome organizational challenges.",
-        "what_this_means": "Your combination of Dominance (D), Conscientious (C), and Influence (I) makes you a strategic catalyst. You excel in trouble-shooting, project engineering, or technical management roles where bold solutions must be communicated clearly.",
-        "strengths": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  22,
+        "code":  "D-C-I",
+        "name":  "CHALLENGER",
+        "description":  "Persistent \u0026 Tenacious",
+        "characteristics":  [
+                                "Sensitive to Emerging Problems",
+                                "Firm \u0026 Decisive in Judgment",
+                                "Creative Problem Solver",
+                                "Quick-Reacting \u0026 Alert",
+                                "Skilled Solution Finder"
+                            ],
+        "job_suitability":  "Technical/Scientific (Directing, Management, Supervision), Engineering, Finance, Production Planning, Personnel Disciplines, Self-Employment, Credit Manager, Planner, Lecturing, Work Study, Transport, Consultancy, Industrial Relations and Computers (Selling, Software, Systems Analyst) and General Manager.",
+        "about_you":  "You find the fix fast, then you get people on board with it — analytical depth and persuasive energy work together for you, not separately.",
+        "what_this_means":  "This combination fits trouble-shooting and technical leadership roles where bold, well-argued solutions need to move an organization forward. You do best where your ideas get both authority and an audience.",
+        "strengths":  [
+                          "You catch emerging problems early, before they become bigger ones",
+                          "You commit to your judgment and act on it decisively",
+                          "You communicate your solutions persuasively enough that people actually follow through."
+                      ],
+        "watch_outs":  [
+                           "Impatience shows when your solution is clear but others still need convincing",
+                           "Repetitive process work tests your patience quickly",
+                           "You may spread yourself across more problems than you can solve well."
+                       ],
+        "at_a_glance":  "🧭 The Persuasive Problem-Solver — sharp thinking, real influence\n💪 Strongest at: finding solutions fast and getting buy-in for them\n⚠️ Keep an eye on: patience while others catch up to your thinking\n🎯 Thrives in: trouble-shooting and technical leadership roles"
     },
     {
-        "id": 23,
-        "code": "D-C-S",
-        "name": "CHALLENGER",
-        "description": "Persistent & Tenacious",
-        "characteristics": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder"
-        ],
-        "job_suitability": "Engineering, Production and Finance (Directing, Administrating, Managing and Managing Specialist Work), Scientific, Research Planning, Personnel, Trouble Shooting, Credit Control, Chief Accountant, Accountant, Chief Engineer, Work Study, Consultancy, Designer, Draughtsman, Project Work, Security Specialist, Doctor, Attorney.",
-        "about_you": "You are persistent, systematic, and resolute, focusing deeply on solving complex technical or operational problems. You approach challenges with firm judgment, high standards, and calm determination.",
-        "what_this_means": "With strong D, C, and S traits, you are an authoritative specialist who delivers lasting solutions. You thrive in technical, financial, or research leadership where strict accuracy and determined execution go hand in hand.",
-        "strengths": [
-            "Sensitive to Emerging Problems",
-            "Firm & Decisive in Judgment",
-            "Creative Problem Solver",
-            "Quick-Reacting & Alert",
-            "Skilled Solution Finder",
-            "Results-Oriented & Driven"
-        ],
-        "watch_outs": [
-            "May appear impatient or overly direct",
-            "Can resist routine or repetitive tasks",
-            "Tends to take on too many tasks at once",
-            "May overlook minor procedural details",
-            "Needs to practice active listening"
-        ]
+        "id":  23,
+        "code":  "D-C-S",
+        "name":  "CHALLENGER",
+        "description":  "Persistent \u0026 Tenacious",
+        "characteristics":  [
+                                "Sensitive to Emerging Problems",
+                                "Firm \u0026 Decisive in Judgment",
+                                "Creative Problem Solver",
+                                "Quick-Reacting \u0026 Alert",
+                                "Skilled Solution Finder"
+                            ],
+        "job_suitability":  "Engineering, Production and Finance (Directing, Administrating, Managing and Managing Specialist Work), Scientific, Research Planning, Personnel, Trouble Shooting, Credit Control, Chief Accountant, Accountant, Chief Engineer, Work Study, Consultancy, Designer, Draughtsman, Project Work, Security Specialist, Doctor, Attorney.",
+        "about_you":  "You take the long, careful road to a solution — systematic, calm, and resolute, even when the problem is genuinely hard.",
+        "what_this_means":  "This blend suits technical, financial, or research leadership where accuracy and determined execution need to go hand in hand. You\u0027re at your best delivering lasting solutions, not quick patches.",
+        "strengths":  [
+                          "You notice emerging problems early and take them seriously",
+                          "Your judgment is firm, and you don\u0027t waver once you\u0027ve decided",
+                          "You stay calm and determined even under real technical pressure."
+                      ],
+        "watch_outs":  [
+                           "Impatience can surface when process slows down obvious progress",
+                           "Repetitive tasks can wear down your engagement",
+                           "You may take on more technical problems at once than is sustainable."
+                       ],
+        "at_a_glance":  "🧭 The Calm Technical Leader — systematic, resolute, built for hard problems\n💪 Strongest at: delivering lasting solutions through calm determination\n⚠️ Keep an eye on: your patience with routine or slow process\n🎯 Thrives in: technical or research leadership roles"
     },
     {
-        "id": 24,
-        "code": "I",
-        "name": "COMMUNICATOR",
-        "description": "Enthusiastic & Spirited",
-        "characteristics": [
-            "Trusting & Open",
-            "Optimistic",
-            "Persuasive & Engaging",
-            "Active & Articulate Speaker",
-            "Spontaneous & Impulsive"
-        ],
-        "job_suitability": "Promoting, Demonstrating, Canvassing, Marketing Services, Public Relations, Lecturing, Advertising, Publican, Publishing, Hospitality, Retail-General, Human Resources, Journalist, Singers, Technical Writing, Tour Guide, Promotional Work, Hotelier, Dancers, Host, Actors, Travel Agent, Politician, and very soft selling.",
-        "about_you": "You are enthusiastic, spirited, and highly persuasive, radiating optimism and positive energy wherever you go. You connect effortlessly with people, thriving on open dialogue, recognition, and dynamic interaction.",
-        "what_this_means": "Your dominant Influence (I) style makes you a master communicator and relationship builder. You excel in people-centric roles such as public relations, marketing, or training, where your enthusiasm can inspire and engage others.",
-        "strengths": [
-            "Trusting & Open",
-            "Optimistic",
-            "Persuasive & Engaging",
-            "Active & Articulate Speaker",
-            "Spontaneous & Impulsive",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  24,
+        "code":  "I",
+        "name":  "COMMUNICATOR",
+        "description":  "Enthusiastic \u0026 Spirited",
+        "characteristics":  [
+                                "Trusting \u0026 Open",
+                                "Optimistic",
+                                "Persuasive \u0026 Engaging",
+                                "Active \u0026 Articulate Speaker",
+                                "Spontaneous \u0026 Impulsive"
+                            ],
+        "job_suitability":  "Promoting, Demonstrating, Canvassing, Marketing Services, Public Relations, Lecturing, Advertising, Publican, Publishing, Hospitality, Retail-General, Human Resources, Journalist, Singers, Technical Writing, Tour Guide, Promotional Work, Hotelier, Dancers, Host, Actors, Travel Agent, Politician, and very soft selling.",
+        "about_you":  "You bring energy into a room before you even say anything — and once you start talking, people want to keep listening.",
+        "what_this_means":  "This profile is built for people-centric work — public relations, marketing, training, anywhere enthusiasm and communication drive results. Give this person an audience and a message, and they\u0027ll make it land.",
+        "strengths":  [
+                          "You build trust and rapport almost instantly",
+                          "Your optimism is contagious, and it shifts the energy of a room",
+                          "You speak persuasively and think on your feet."
+                      ],
+        "watch_outs":  [
+                           "Keeping things pleasant can matter more to you than raising something uncomfortable",
+                           "Fine analytical details can slip past you when you\u0027re focused on the bigger picture",
+                           "You may decide spontaneously before fully weighing the options."
+                       ],
+        "at_a_glance":  "🧭 The Natural Communicator — magnetic, optimistic, effortlessly engaging\n💪 Strongest at: building rapport fast and speaking persuasively\n⚠️ Keep an eye on: slowing down before big spontaneous decisions\n🎯 Thrives in: people-centric roles built on communication and energy"
     },
     {
-        "id": 25,
-        "code": "I-S",
-        "name": "ADVISOR",
-        "description": "Warm & Empathetic",
-        "characteristics": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions"
-        ],
-        "job_suitability": "Personnel, Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Upmarket/Speciality Sales, Soft/Service Selling, Beauty Therapist, Psychologist, Nursing, Human Resources, Retail-Specialist, Veterinarian, Social Work, Personal Assistant, Personnel-HR, Coach, Mentor.",
-        "about_you": "You are warm, empathetic, and an exceptionally attentive listener who creates a safe, welcoming space for others. You combine social charm with genuine compassion, guiding teams with patience and tact.",
-        "what_this_means": "Your blend of Influence (I) and Steadiness (S) makes you an ideal advisor, mentor, or human resources specialist. You thrive in collaborative, service-oriented environments where building trust and supporting others are primary goals.",
-        "strengths": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  25,
+        "code":  "I-S",
+        "name":  "ADVISOR",
+        "description":  "Warm \u0026 Empathetic",
+        "characteristics":  [
+                                "Sympathetic \u0026 Understanding",
+                                "Poised \u0026 Calm in Social Settings",
+                                "Attentive Listener",
+                                "Demonstrative \u0026 Expressive",
+                                "Respectful of Others\u0027 Opinions"
+                            ],
+        "job_suitability":  "Personnel, Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Upmarket/Speciality Sales, Soft/Service Selling, Beauty Therapist, Psychologist, Nursing, Human Resources, Retail-Specialist, Veterinarian, Social Work, Personal Assistant, Personnel-HR, Coach, Mentor.",
+        "about_you":  "People feel safe telling you things — you listen without judgment, and you lead with patience instead of pressure.",
+        "what_this_means":  "This blend suits advisory, mentoring, and HR-style roles — collaborative, service-oriented work built around trust. You do best where building genuine relationships is the actual job, not a side effect of it.",
+        "strengths":  [
+                          "You create a space where people feel genuinely heard",
+                          "You stay calm and socially poised, even in tense moments",
+                          "You respect other people\u0027s opinions, even when they differ from yours."
+                      ],
+        "watch_outs":  [
+                           "You may prioritize harmony over raising a needed but uncomfortable point",
+                           "Fine analytical detail isn\u0027t always where your attention naturally goes",
+                           "You may decide more spontaneously than the situation calls for."
+                       ],
+        "at_a_glance":  "🧭 The Trusted Listener — warm, patient, genuinely present\n💪 Strongest at: creating safety and trust in every conversation\n⚠️ Keep an eye on: raising hard truths, not just holding space\n🎯 Thrives in: advisory, mentoring, or HR-style roles"
     },
     {
-        "id": 26,
-        "code": "I-C",
-        "name": "ASSESSOR",
-        "description": "Friendly & Cordial",
-        "characteristics": [
-            "Friendly & Sociable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control",
-            "Highly Social"
-        ],
-        "job_suitability": "Teaching, Training, Inventing, Specialist Selling (Engineering, Finance or any area involving capital equipment), Project Engineer, Finance, Service Engineer or Supervising within a Technical/Specialist Area, Public Relations, Environmentalist, Marketing, Conference Organiser, Estate Agent.",
-        "about_you": "You are friendly, cordial, and highly discerning, able to build strong relationships while maintaining a keen eye for detail. You approach social interactions with poise and express your ideas with clarity and evidence.",
-        "what_this_means": "By combining Influence (I) and Conscientious (C), you excel at bridging technical concepts with human communication. You perform exceptionally well in specialist sales, training, or consulting where credibility and rapport are vital.",
-        "strengths": [
-            "Friendly & Sociable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control",
-            "Highly Social",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  26,
+        "code":  "I-C",
+        "name":  "ASSESSOR",
+        "description":  "Friendly \u0026 Cordial",
+        "characteristics":  [
+                                "Friendly \u0026 Sociable",
+                                "At Ease with Strangers",
+                                "Quick to Build New Relationships",
+                                "Exhibits Strong Self-Control",
+                                "Highly Social"
+                            ],
+        "job_suitability":  "Teaching, Training, Inventing, Specialist Selling (Engineering, Finance or any area involving capital equipment), Project Engineer, Finance, Service Engineer or Supervising within a Technical/Specialist Area, Public Relations, Environmentalist, Marketing, Conference Organiser, Estate Agent.",
+        "about_you":  "You build relationships easily, but you don\u0027t let charm replace substance — you back up what you say with real detail.",
+        "what_this_means":  "This combination fits specialist sales, training, or consulting roles where credibility and rapport both matter. You\u0027re strongest where you can bridge technical substance and real human connection.",
+        "strengths":  [
+                          "You\u0027re at ease with strangers and build rapport quickly",
+                          "You express your ideas clearly, backed with evidence",
+                          "You keep strong self-control even in socially demanding situations."
+                      ],
+        "watch_outs":  [
+                           "Keeping things comfortable socially can take priority over flagging a real issue",
+                           "Fine analytical detail can slip past your radar",
+                           "You may make a call spontaneously rather than deliberating fully."
+                       ],
+        "at_a_glance":  "🧭 The Credible Connector — sociable, articulate, backed by substance\n💪 Strongest at: building fast rapport that\u0027s actually earned, not just charm\n⚠️ Keep an eye on: raising uncomfortable issues instead of smoothing past them\n🎯 Thrives in: specialist sales, training, or consulting roles"
     },
     {
-        "id": 27,
-        "code": "I-C-D",
-        "name": "ASSESSOR",
-        "description": "Analytical & Discerning",
-        "characteristics": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control"
-        ],
-        "job_suitability": "Specialist/Technical Selling (Computer, Finance, Engineer and others, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Travel Agent, Personnel and Marketing Services.",
-        "about_you": "You are analytical, discerning, and strategic, combining careful evaluation with approachable, persuasive communication. You adapt quickly to new contacts while maintaining strong self-control and objective standards.",
-        "what_this_means": "Your multifaceted I, C, and D profile makes you an effective technical negotiator and strategic consultant. You thrive in environments that require presenting complex, data-backed solutions to diverse stakeholders with confidence.",
-        "strengths": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  27,
+        "code":  "I-C-D",
+        "name":  "ASSESSOR",
+        "description":  "Analytical \u0026 Discerning",
+        "characteristics":  [
+                                "Cautious \u0026 Prudent",
+                                "Cordial When Comfortable",
+                                "At Ease with Strangers",
+                                "Quick to Build New Relationships",
+                                "Exhibits Strong Self-Control"
+                            ],
+        "job_suitability":  "Specialist/Technical Selling (Computer, Finance, Engineer and others, Technical/Capital Equipment Selling), Financial (Manager, Specialist), Engineering (Manager, Designer, Buyer, Draughtsman), Project Engineer, Sales Engineer, Consultant, Trainer, Lecturer, Hotelier, Travel Agent, Personnel and Marketing Services.",
+        "about_you":  "You evaluate things carefully, but you don\u0027t come across cold about it — people find you approachable even while you\u0027re holding a high analytical bar.",
+        "what_this_means":  "This multifaceted profile fits technical negotiation and strategic consulting — roles that need complex, data-backed solutions presented with real confidence. You\u0027re at your best translating analysis into something people actually trust.",
+        "strengths":  [
+                          "You adapt quickly to new people without losing your objective standards",
+                          "You communicate persuasively, backed by real evaluation, not just charisma",
+                          "You keep composed self-control, even under social or professional pressure."
+                      ],
+        "watch_outs":  [
+                           "Keeping things smooth socially can take priority over a needed hard conversation",
+                           "Fine details can slip by while you\u0027re focused on the bigger read",
+                           "You may commit spontaneously rather than fully weighing it out."
+                       ],
+        "at_a_glance":  "🧭 The Strategic Persuader — analytical, adaptable, genuinely convincing\n💪 Strongest at: presenting complex ideas with real credibility\n⚠️ Keep an eye on: not letting social ease skip past hard conversations\n🎯 Thrives in: technical negotiation and strategic consulting roles"
     },
     {
-        "id": 28,
-        "code": "I-C-S",
-        "name": "RESPONSIVE & THOUGHTFUL",
-        "description": "High Energy & Dynamic",
-        "characteristics": [
-            "Excellent Communication Skills",
-            "Direct & To The Point",
-            "Sensitive",
-            "Talkative & Expressive",
-            "Thrives on Recognition"
-        ],
-        "job_suitability": "Personnel, Welfare, Training, Attorney, Teaching, Accounting, Technical Instructor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Engineering (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Services), Selling, Purchasing, Supervising (Engineering, Production, Accounts), Administration Work, Secretarial, Industrial Relations Specialist.",
-        "about_you": "You are high-energy, dynamic, and communicative, while possessing a sensitive, detail-conscious approach to your work. You express yourself clearly and directly, always striving to deliver recognized quality.",
-        "what_this_means": "Combining I, C, and S styles, you bring both communicative flair and structured diligence to your projects. You excel in customer-facing technical roles, coordination, or advisory positions where responsiveness and accuracy meet.",
-        "strengths": [
-            "Excellent Communication Skills",
-            "Direct & To The Point",
-            "Sensitive",
-            "Talkative & Expressive",
-            "Thrives on Recognition",
-            "Enthusiastic & Engaging"
-        ],
-        "watch_outs": [
-            "May focus heavily on social harmony",
-            "Can overlook minute analytical details",
-            "May make spontaneous decisions",
-            "Thrives on external recognition",
-            "Can get bored by monotonous tasks"
-        ]
+        "id":  28,
+        "code":  "I-C-S",
+        "name":  "RESPONSIVE \u0026 THOUGHTFUL",
+        "description":  "High Energy \u0026 Dynamic",
+        "characteristics":  [
+                                "Excellent Communication Skills",
+                                "Direct \u0026 To The Point",
+                                "Sensitive",
+                                "Talkative \u0026 Expressive",
+                                "Thrives on Recognition"
+                            ],
+        "job_suitability":  "Personnel, Welfare, Training, Attorney, Teaching, Accounting, Technical Instructor, Customer Services, Public Relations, Artist, Hotelier, Demonstrator, Engineering (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Services), Selling, Purchasing, Supervising (Engineering, Production, Accounts), Administration Work, Secretarial, Industrial Relations Specialist.",
+        "about_you":  "You bring real energy to a room, but you never let that energy replace the quality of the actual work.",
+        "what_this_means":  "This combination suits customer-facing technical roles — coordination, advisory, service work where responsiveness and accuracy both matter. You\u0027re strongest where energy and structure need to work side by side.",
+        "strengths":  [
+                          "You communicate clearly and directly, without losing your warmth",
+                          "You stay sensitive to how your work — and your words — land on others",
+                          "You care about doing recognized, quality work, not just being liked."
+                      ],
+        "watch_outs":  [
+                           "Keeping harmony can outweigh flagging a real issue in the moment",
+                           "Fast pace can mean small analytical details slip through",
+                           "You may crave recognition more than you\u0027d openly admit."
+                       ],
+        "at_a_glance":  "🧭 The Responsive Communicator — energetic, expressive, quality-conscious\n💪 Strongest at: clear, direct communication that still lands warmly\n⚠️ Keep an eye on: slowing your pace enough to catch the details\n🎯 Thrives in: customer-facing roles blending responsiveness and accuracy"
     },
     {
-        "id": 29,
-        "code": "S-D",
-        "name": "SELF-MOTIVATED",
-        "description": "Objective & Analytical",
-        "characteristics": [
-            "Independent",
-            "Skilled Planner",
-            "Committed to Targets",
-            "Conflict-Averse",
-            "Eager to be Involved"
-        ],
-        "job_suitability": "Investigator, Researcher, Accountant, Engineering, Production/Engineering Supervisor, Computer Specialist, Architect, Transport/Warehouse Supervisor, Credit Controller, DP Supervisor, Computer Specialist, Research and Development, Private Investigator, Quality Controller, Engineering (Designer, Draughtsman, Project Engineer), Sales and Service Engineer, Property Manager, Attorney, Administration Manager",
-        "about_you": "You are an objective, analytical, and independent planner who pursues personal and organizational targets with quiet determination. You prefer resolving issues practically without creating unnecessary interpersonal friction.",
-        "what_this_means": "Your Steadiness (S) and Dominance (D) blend makes you a highly dependable, self-driven specialist. You thrive in independent research, technical supervision, or project management where self-motivation and steady follow-through are key.",
-        "strengths": [
-            "Independent",
-            "Skilled Planner",
-            "Committed to Targets",
-            "Eager to be Involved",
-            "Reliable & Dependable",
-            "Patient & Composed"
-        ],
-        "watch_outs": [
-            "Conflict-Averse",
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment"
-        ]
+        "id":  29,
+        "code":  "S-D",
+        "name":  "SELF-MOTIVATED",
+        "description":  "Objective \u0026 Analytical",
+        "characteristics":  [
+                                "Independent",
+                                "Skilled Planner",
+                                "Committed to Targets",
+                                "Conflict-Averse",
+                                "Eager to be Involved"
+                            ],
+        "job_suitability":  "Investigator, Researcher, Accountant, Engineering, Production/Engineering Supervisor, Computer Specialist, Architect, Transport/Warehouse Supervisor, Credit Controller, DP Supervisor, Computer Specialist, Research and Development, Private Investigator, Quality Controller, Engineering (Designer, Draughtsman, Project Engineer), Sales and Service Engineer, Property Manager, Attorney, Administration Manager",
+        "about_you":  "You plan quietly, work steadily, and solve problems practically — without needing conflict or noise to get there.",
+        "what_this_means":  "This blend fits independent research, technical supervision, or project management — work that rewards quiet self-motivation and steady follow-through. You\u0027re at your best where you\u0027re trusted to plan and execute without needing to fight for it.",
+        "strengths":  [
+                          "You plan carefully and stay committed to the target you\u0027ve set",
+                          "You stay involved and hands-on, not just observing from a distance",
+                          "You bring calm, composed patience to problems that would frustrate others."
+                      ],
+        "watch_outs":  [
+                           "You may avoid a necessary confrontation rather than raise it directly",
+                           "Sudden or unannounced changes can be genuinely unsettling for you",
+                           "Old tension can linger with you longer than it needs to."
+                       ],
+        "at_a_glance":  "🧭 The Quiet Planner — determined, practical, conflict-avoidant by choice\n💪 Strongest at: steady follow-through without unnecessary friction\n⚠️ Keep an eye on: raising issues directly instead of sitting with them\n🎯 Thrives in: independent research or project management roles"
     },
     {
-        "id": 30,
-        "code": "S-I",
-        "name": "ADVISOR",
-        "description": "Warm & Empathetic",
-        "characteristics": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions"
-        ],
-        "job_suitability": "Personnel Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Child Care, Charitable Organizations, Soft or Service Selling, Psychologist, Therapist, Nurse, Personal Assistant, Hospitality Manager, Social Work, Student Services, Upmarket/Speciality Sales.",
-        "about_you": "You are warm, empathetic, and approachable, possessing a natural ability to calm and encourage those around you. You listen deeply, offer genuine sympathy, and foster harmony across all your social circles.",
-        "what_this_means": "With strong Steadiness (S) and Influence (I), you are a natural caretaker, counselor, and team facilitator. You perform best in supportive, people-focused environments where compassion, patience, and collaborative spirit drive success.",
-        "strengths": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions",
-            "Reliable & Dependable"
-        ],
-        "watch_outs": [
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment",
-            "Takes time before finalizing major changes"
-        ]
+        "id":  30,
+        "code":  "S-I",
+        "name":  "ADVISOR",
+        "description":  "Warm \u0026 Empathetic",
+        "characteristics":  [
+                                "Sympathetic \u0026 Understanding",
+                                "Poised \u0026 Calm in Social Settings",
+                                "Attentive Listener",
+                                "Demonstrative \u0026 Expressive",
+                                "Respectful of Others\u0027 Opinions"
+                            ],
+        "job_suitability":  "Personnel Welfare, Training, Hotelier, Promoting, Travel Agent, Lecturing, Child Care, Charitable Organizations, Soft or Service Selling, Psychologist, Therapist, Nurse, Personal Assistant, Hospitality Manager, Social Work, Student Services, Upmarket/Speciality Sales.",
+        "about_you":  "You have a calming effect on people — you listen deeply, and you genuinely mean the sympathy you offer.",
+        "what_this_means":  "This blend fits caretaking, counseling, and team-facilitation roles — supportive, people-focused environments where patience and compassion drive real results. You do best where stability and genuine care for others are part of the job, not a distraction from it.",
+        "strengths":  [
+                          "You listen in a way that makes people feel truly understood",
+                          "You stay poised and calm, even in emotionally charged settings",
+                          "You respect other people\u0027s views, even when they differ from your own."
+                      ],
+        "watch_outs":  [
+                           "Sudden or unannounced change can genuinely unsettle you",
+                           "You may avoid confrontation even when it\u0027s necessary",
+                           "Old grievances can stay with you longer than they need to."
+                       ],
+        "at_a_glance":  "🧭 The Genuine Caretaker — calm, compassionate, deeply patient\n💪 Strongest at: making people feel truly heard and supported\n⚠️ Keep an eye on: raising conflict instead of absorbing it quietly\n🎯 Thrives in: supportive, people-focused, stable environments"
     },
     {
-        "id": 31,
-        "code": "S-D-I",
-        "name": "DIRECTOR",
-        "description": "Objective & Analytical Thinker",
-        "characteristics": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections"
-        ],
-        "job_suitability": "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision/Manager, Office Management, Customer Service, System Analyst, Radio Announcer, Technical Writing, Telemarketing, TV Presenter, Project Engineer, Film Producer, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer.",
-        "about_you": "You are an objective and analytical thinker who loves getting involved in practical operations while providing genuine support to peers. You are deeply motivated by personal milestones and collaborative teamwork.",
-        "what_this_means": "Your balance of S, D, and I traits makes you a balanced, hands-on director. You excel in operational supervision, customer service management, or technical coordination where steady guidance and clear targets empower the team.",
-        "strengths": [
-            "Eager to be Involved",
-            "Eager to Provide Support & Help",
-            "Motivated by Personal Targets",
-            "Dedicated & Work-Oriented",
-            "Enjoys Interpersonal Connections",
-            "Reliable & Dependable"
-        ],
-        "watch_outs": [
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment",
-            "Takes time before finalizing major changes"
-        ]
+        "id":  31,
+        "code":  "S-D-I",
+        "name":  "DIRECTOR",
+        "description":  "Objective \u0026 Analytical Thinker",
+        "characteristics":  [
+                                "Eager to be Involved",
+                                "Eager to Provide Support \u0026 Help",
+                                "Motivated by Personal Targets",
+                                "Dedicated \u0026 Work-Oriented",
+                                "Enjoys Interpersonal Connections"
+                            ],
+        "job_suitability":  "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision/Manager, Office Management, Customer Service, System Analyst, Radio Announcer, Technical Writing, Telemarketing, TV Presenter, Project Engineer, Film Producer, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer.",
+        "about_you":  "You like being in the middle of the actual work, not managing it from a distance — and you genuinely want your team to succeed alongside you.",
+        "what_this_means":  "This blend fits operational supervision and technical coordination — roles where steady guidance and hands-on involvement matter more than distant management. You\u0027re at your best staying close to the actual work while still empowering the team.",
+        "strengths":  [
+                          "You stay hands-on and involved, not removed from the daily work",
+                          "You\u0027re motivated by real milestones, not vague, abstract goals",
+                          "You build genuine connection with the people you work alongside."
+                      ],
+        "watch_outs":  [
+                           "Sudden change to the plan can be harder for you to adjust to",
+                           "You may avoid confrontation rather than address it head-on",
+                           "Big decisions may take you longer to finalize than others expect."
+                       ],
+        "at_a_glance":  "🧭 The Hands-On Coordinator — practical, supportive, milestone-driven\n💪 Strongest at: staying genuinely involved while empowering your team\n⚠️ Keep an eye on: adjusting faster when plans suddenly change\n🎯 Thrives in: operational supervision and technical coordination roles"
     },
     {
-        "id": 32,
-        "code": "S-I-D",
-        "name": "ADVISOR",
-        "description": "Warm & Empathetic",
-        "characteristics": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions"
-        ],
-        "job_suitability": "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision, Office Management, Customer Service, System Analyst, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer.",
-        "about_you": "You are warm, empathetic, and poised, balancing your natural compassionate listening skills with a practical desire to get things done. You support your team loyally while keeping operational objectives clearly in sight.",
-        "what_this_means": "Combining S, I, and D strengths, you are a versatile coordinator and team leader. You thrive in roles requiring strong interpersonal harmony alongside steady, organized execution of projects and daily operations.",
-        "strengths": [
-            "Sympathetic & Understanding",
-            "Poised & Calm in Social Settings",
-            "Attentive Listener",
-            "Demonstrative & Expressive",
-            "Respectful of Others' Opinions",
-            "Reliable & Dependable"
-        ],
-        "watch_outs": [
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment",
-            "Takes time before finalizing major changes"
-        ]
+        "id":  32,
+        "code":  "S-I-D",
+        "name":  "ADVISOR",
+        "description":  "Warm \u0026 Empathetic",
+        "characteristics":  [
+                                "Sympathetic \u0026 Understanding",
+                                "Poised \u0026 Calm in Social Settings",
+                                "Attentive Listener",
+                                "Demonstrative \u0026 Expressive",
+                                "Respectful of Others\u0027 Opinions"
+                            ],
+        "job_suitability":  "Engineering and Production (Supervision), Service Selling, Distribution and Warehouse Supervision, Office Management, Customer Service, System Analyst, Programmer, Sales/Service Engineer, Accounting, Draughtsman, Project Engineer.",
+        "about_you":  "You listen with real compassion, but you never lose sight of what actually needs to get done.",
+        "what_this_means":  "This blend suits versatile coordination and team leadership — roles that need interpersonal harmony and organized execution together. You\u0027re at your best where you\u0027re trusted to lead with both heart and follow-through.",
+        "strengths":  [
+                          "You stay poised and composed, even in emotionally demanding settings",
+                          "You listen attentively, and people feel that difference",
+                          "You keep operational goals clearly in view while supporting your team."
+                      ],
+        "watch_outs":  [
+                           "Sudden, unannounced changes can genuinely unsettle your rhythm",
+                           "You may avoid confrontation rather than address it directly",
+                           "Big decisions can take you longer to finalize than others expect."
+                       ],
+        "at_a_glance":  "🧭 The Compassionate Coordinator — warm, poised, quietly effective\n💪 Strongest at: balancing genuine care with real operational follow-through\n⚠️ Keep an eye on: adapting faster to sudden shifts in plan\n🎯 Thrives in: coordination and team-leadership roles"
     },
     {
-        "id": 33,
-        "code": "S-I-C",
-        "name": "ADVOCATE",
-        "description": "Steadfast & Reliable",
-        "characteristics": [
-            "Friendly & Approachable",
-            "Detailed When Required",
-            "Tendency Towards Individualism",
-            "Firm & Steadfast in Beliefs",
-            "Enjoys Interpersonal Connections"
-        ],
-        "job_suitability": "Personnel Welfare, Training, Teaching, Attorney, Accounting, Technical Instructor, Customer Service, Public Relations, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Supervising (Engineering, Production, Accounts) Administrative Work, Secretarial.",
-        "about_you": "You are steadfast, reliable, and friendly, able to focus intently on details whenever the situation demands. You value lasting interpersonal connections while maintaining a steady, structured approach to your responsibilities.",
-        "what_this_means": "Your Steadiness (S), Influence (I), and Conscientious (C) mix makes you a dedicated organizational advocate. You excel in administration, training, or technical support where consistency, friendly service, and accuracy are highly valued.",
-        "strengths": [
-            "Friendly & Approachable",
-            "Detailed When Required",
-            "Tendency Towards Individualism",
-            "Firm & Steadfast in Beliefs",
-            "Enjoys Interpersonal Connections",
-            "Reliable & Dependable"
-        ],
-        "watch_outs": [
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment",
-            "Takes time before finalizing major changes"
-        ]
+        "id":  33,
+        "code":  "S-I-C",
+        "name":  "ADVOCATE",
+        "description":  "Steadfast \u0026 Reliable",
+        "characteristics":  [
+                                "Friendly \u0026 Approachable",
+                                "Detailed When Required",
+                                "Tendency Towards Individualism",
+                                "Firm \u0026 Steadfast in Beliefs",
+                                "Enjoys Interpersonal Connections"
+                            ],
+        "job_suitability":  "Personnel Welfare, Training, Teaching, Attorney, Accounting, Technical Instructor, Customer Service, Public Relations, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Supervising (Engineering, Production, Accounts) Administrative Work, Secretarial.",
+        "about_you":  "You\u0027re reliable in a way people count on without asking — friendly, but with real structure behind how you work.",
+        "what_this_means":  "This mix suits administration, training, and technical support — roles where consistency, friendly service, and real accuracy are all valued together. You\u0027re at your best where dependability is the actual differentiator, not an afterthought.",
+        "strengths":  [
+                          "You focus intently on detail whenever the situation actually needs it",
+                          "You build lasting interpersonal connections that hold up over time",
+                          "You stay firm in your beliefs, even under social pressure to bend."
+                      ],
+        "watch_outs":  [
+                           "Sudden or unannounced change can be genuinely unsettling",
+                           "You may avoid confrontation even when it\u0027s clearly needed",
+                           "Old grievances can linger with you longer than they should."
+                       ],
+        "at_a_glance":  "🧭 The Dependable Advocate — friendly, structured, quietly steadfast\n💪 Strongest at: lasting reliability people can genuinely count on\n⚠️ Keep an eye on: raising conflict instead of sitting with it\n🎯 Thrives in: administration, training, or technical support roles"
     },
     {
-        "id": 34,
-        "code": "S-C-D",
-        "name": "INQUIRER",
-        "description": "Kind & Considerate",
-        "characteristics": [
-            "Highly Detail-Oriented",
-            "Thorough in Task Completion",
-            "Highly Cautious & Vigilant",
-            "Deliberate & Considerate",
-            "Slow to Adapt to Sudden Change"
-        ],
-        "job_suitability": "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Accountant, Project Engineer, Draughtsman, Designer, Analyst, Chemist, Technician, Service Engineer, Manager, Security Specialist.",
-        "about_you": "You are kind, considerate, and highly detail-oriented, approaching your tasks with vigilance, thoroughness, and careful deliberation. You take pride in systematic workflows and high-quality, proven results.",
-        "what_this_means": "With strong S, C, and D traits, you are an exact and reliable inquirer and quality analyst. You thrive in technical supervision, accounting, or research where careful investigation, structure, and methodical execution are critical.",
-        "strengths": [
-            "Highly Detail-Oriented",
-            "Thorough in Task Completion",
-            "Highly Cautious & Vigilant",
-            "Deliberate & Considerate",
-            "Reliable & Dependable",
-            "Patient & Composed"
-        ],
-        "watch_outs": [
-            "Slow to Adapt to Sudden Change",
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment"
-        ]
+        "id":  34,
+        "code":  "S-C-D",
+        "name":  "INQUIRER",
+        "description":  "Kind \u0026 Considerate",
+        "characteristics":  [
+                                "Highly Detail-Oriented",
+                                "Thorough in Task Completion",
+                                "Highly Cautious \u0026 Vigilant",
+                                "Deliberate \u0026 Considerate",
+                                "Slow to Adapt to Sudden Change"
+                            ],
+        "job_suitability":  "Directing, Managing or Supervising (in Engineering, Accountancy, Research and Development and Computing disciplines), Accountant, Project Engineer, Draughtsman, Designer, Analyst, Chemist, Technician, Service Engineer, Manager, Security Specialist.",
+        "about_you":  "You take your time to get it right, and you take real care doing it — vigilance and kindness aren\u0027t in tension for you, they work together.",
+        "what_this_means":  "This combination fits technical supervision, accounting, and research — work that rewards careful investigation and methodical execution over speed. You\u0027re at your best where thoroughness is actually the point, not a nice-to-have.",
+        "strengths":  [
+                          "You\u0027re thorough in a way that actually prevents problems downstream",
+                          "You stay cautious and vigilant, catching what others rush past",
+                          "You bring calm, composed patience to detailed, careful work."
+                      ],
+        "watch_outs":  [
+                           "Sudden change can be harder for you to adjust to than for most",
+                           "You may avoid confrontation rather than address it directly",
+                           "Old tension can sit with you longer than it needs to."
+                       ],
+        "at_a_glance":  "🧭 The Careful Investigator — thorough, kind, quietly exacting\n💪 Strongest at: catching what others miss through real thoroughness\n⚠️ Keep an eye on: adapting faster when plans shift suddenly\n🎯 Thrives in: technical supervision, accounting, or research roles"
     },
     {
-        "id": 35,
-        "code": "S-C-I",
-        "name": "ADVOCATE",
-        "description": "Steadfast & Reliable",
-        "characteristics": [
-            "Friendly & Approachable",
-            "Detailed When Required",
-            "Tendency Towards Individualism",
-            "Firm & Steadfast in Beliefs",
-            "Enjoys Interpersonal Connections"
-        ],
-        "job_suitability": "Personnel Welfare, Administrator, Advisers, Training, Teaching, Attorney, Accounting, Counseling, Technical Instructor, Customer Service, Accounting-General, Public Relations, Accounts Supervisor, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Sales Engineer, Legal, Negotiator, Student Service, Photographer, Physiotherapist, Project Engineer, Vocational Education, Supervising (Engineering, Production, Accounts) Administrative Work, Demonstrator, Secretarial, Hospitality Manager.",
-        "about_you": "You are steadfast, reliable, and warm, balancing individualistic determination with a strong dedication to friendly teamwork. You handle intricate details with ease while ensuring positive relationships with colleagues and clients.",
-        "what_this_means": "Your blend of S, C, and I styles allows you to excel in specialized advisory and administrative roles. You thrive when providing structured, accurate guidance within a supportive, stable, and team-oriented work environment.",
-        "strengths": [
-            "Friendly & Approachable",
-            "Detailed When Required",
-            "Tendency Towards Individualism",
-            "Firm & Steadfast in Beliefs",
-            "Enjoys Interpersonal Connections",
-            "Reliable & Dependable"
-        ],
-        "watch_outs": [
-            "Averse to sudden or unannounced changes",
-            "Tends to avoid interpersonal confrontation",
-            "Remembers past grievances long-term",
-            "Requires a stable & predictable environment",
-            "Takes time before finalizing major changes"
-        ]
+        "id":  35,
+        "code":  "S-C-I",
+        "name":  "ADVOCATE",
+        "description":  "Steadfast \u0026 Reliable",
+        "characteristics":  [
+                                "Friendly \u0026 Approachable",
+                                "Detailed When Required",
+                                "Tendency Towards Individualism",
+                                "Firm \u0026 Steadfast in Beliefs",
+                                "Enjoys Interpersonal Connections"
+                            ],
+        "job_suitability":  "Personnel Welfare, Administrator, Advisers, Training, Teaching, Attorney, Accounting, Counseling, Technical Instructor, Customer Service, Accounting-General, Public Relations, Accounts Supervisor, Artist, Hotelier, Demonstrator, Engineer (Sales, Service, Project, Draughtsman, Designer), Specialist (Soft/Service), Selling, Purchasing, Sales Engineer, Legal, Negotiator, Student Service, Photographer, Physiotherapist, Project Engineer, Vocational Education, Supervising (Engineering, Production, Accounts) Administrative Work, Demonstrator, Secretarial, Hospitality Manager.",
+        "about_you":  "You\u0027re determined in your own quiet way, but you never let that independence get in the way of being a genuinely good teammate.",
+        "what_this_means":  "This blend suits specialized advisory and administrative roles — work that rewards structured accuracy within a supportive, stable team. You\u0027re at your best where reliability and warmth are equally part of the job.",
+        "strengths":  [
+                          "You handle intricate details with real ease, not just tolerance",
+                          "You maintain positive relationships with colleagues and clients alike",
+                          "You stay firm in your beliefs while still being a team player."
+                      ],
+        "watch_outs":  [
+                           "Sudden or unannounced change can genuinely unsettle you",
+                           "You may avoid confrontation rather than address it head-on",
+                           "Big decisions can take you longer to finalize than others expect."
+                       ],
+        "at_a_glance":  "🧭 The Steady Team Player — determined, detail-capable, genuinely warm\n💪 Strongest at: handling detail while keeping relationships strong\n⚠️ Keep an eye on: adjusting pace when plans shift suddenly\n🎯 Thrives in: advisory or administrative roles in a stable team"
     },
     {
-        "id": 36,
-        "code": "C-I",
-        "name": "ASSESSOR",
-        "description": "Analytical & Discerning",
-        "characteristics": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control"
-        ],
-        "job_suitability": "Sales (Technical/Specialist), Public Relations, Lecturer, Academic, Personnel Administration, Purchasing, Travel Agent, Training, Teaching, Real Estate Agent, Hospitality Administration, Sales-Technical, Hotelier, Project Engineer, Service Engineer.",
-        "about_you": "You are analytical, discerning, and cautious by nature, yet you become warm and cordial once you feel comfortable. You exercise admirable self-control and communicate your expert insights with clarity and grace.",
-        "what_this_means": "By combining Conscientious (C) and Influence (I) styles, you are an authoritative assessor and specialist communicator. You perform best in technical sales, academic lecturing, or professional consulting where expert knowledge meets client engagement.",
-        "strengths": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control",
-            "Highly Analytical & Logical"
-        ],
-        "watch_outs": [
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures",
-            "Can be reserved in expressing feelings"
-        ]
+        "id":  36,
+        "code":  "C-I",
+        "name":  "ASSESSOR",
+        "description":  "Analytical \u0026 Discerning",
+        "characteristics":  [
+                                "Cautious \u0026 Prudent",
+                                "Cordial When Comfortable",
+                                "At Ease with Strangers",
+                                "Quick to Build New Relationships",
+                                "Exhibits Strong Self-Control"
+                            ],
+        "job_suitability":  "Sales (Technical/Specialist), Public Relations, Lecturer, Academic, Personnel Administration, Purchasing, Travel Agent, Training, Teaching, Real Estate Agent, Hospitality Administration, Sales-Technical, Hotelier, Project Engineer, Service Engineer.",
+        "about_you":  "You\u0027re cautious at first, but once you\u0027re comfortable, real warmth comes through — and you always back your insight with clarity.",
+        "what_this_means":  "This combination fits technical sales, academic work, or professional consulting — roles where expert knowledge needs to meet real client engagement. You\u0027re at your best where analytical depth is trusted enough to be shared, not just held.",
+        "strengths":  [
+                          "You\u0027re prudent and careful before committing to a position",
+                          "You build new relationships quickly once you feel at ease",
+                          "You communicate expert insight with real clarity and grace."
+                      ],
+        "watch_outs":  [
+                           "You may overthink a decision longer than the situation needs",
+                           "Strong criticism can hit harder than you let on",
+                           "You can be reserved about expressing feelings, even when it would help to."
+                       ],
+        "at_a_glance":  "🧭 The Careful Expert — cautious at first, genuinely insightful once warmed up\n💪 Strongest at: communicating expert insight with real clarity\n⚠️ Keep an eye on: not overthinking decisions past the point of usefulness\n🎯 Thrives in: technical sales, consulting, or academic roles"
     },
     {
-        "id": 37,
-        "code": "C-D-I",
-        "name": "CHALLENGER",
-        "description": "Highly Task-Oriented",
-        "characteristics": [
-            "Sensitive to Emerging Problems",
-            "Prioritizes Tasks Over Social Formalities",
-            "Resolute & Firm",
-            "Reserved & Matter-of-Fact",
-            "Strictly Logical & Unemotional"
-        ],
-        "job_suitability": "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/ Specialist), Logistic Support, Systems Analyst, Lecturer, Company Secretary, Negotiator and Purchasing.",
-        "about_you": "You are highly task-oriented, analytical, and resolute, focusing intently on solving complex problems with strict objectivity. You prioritize tangible task completion and logical precision above emotional considerations.",
-        "what_this_means": "Your Dominance (D) and Conscientious (C) dominance makes you an uncompromising technical leader. You thrive in research direction, engineering, or financial management where rigorous standards and decisive problem-solving are paramount.",
-        "strengths": [
-            "Sensitive to Emerging Problems",
-            "Prioritizes Tasks Over Social Formalities",
-            "Resolute & Firm",
-            "Reserved & Matter-of-Fact",
-            "Strictly Logical & Unemotional",
-            "Highly Analytical & Logical"
-        ],
-        "watch_outs": [
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures",
-            "Can be reserved in expressing feelings"
-        ]
+        "id":  37,
+        "code":  "C-D-I",
+        "name":  "CHALLENGER",
+        "description":  "Highly Task-Oriented",
+        "characteristics":  [
+                                "Sensitive to Emerging Problems",
+                                "Prioritizes Tasks Over Social Formalities",
+                                "Resolute \u0026 Firm",
+                                "Reserved \u0026 Matter-of-Fact",
+                                "Strictly Logical \u0026 Unemotional"
+                            ],
+        "job_suitability":  "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/ Specialist), Logistic Support, Systems Analyst, Lecturer, Company Secretary, Negotiator and Purchasing.",
+        "about_you":  "You focus on the problem, not the politics — objectivity and precision matter more to you than how something feels in the moment.",
+        "what_this_means":  "This blend suits research direction, engineering, or financial management — roles that reward rigorous standards and decisive, objective problem-solving. You\u0027re at your best where the standard is high and the reasoning has to hold up.",
+        "strengths":  [
+                          "You catch emerging problems before they escalate",
+                          "You prioritize actual task completion over social formality",
+                          "You stay resolute and firm once you\u0027ve reached a conclusion."
+                      ],
+        "watch_outs":  [
+                           "You may overthink a decision longer than the situation actually needs",
+                           "Strong criticism can land harder than you show",
+                           "You can come across more reserved or matter-of-fact than you intend."
+                       ],
+        "at_a_glance":  "🧭 The Objective Challenger — precise, resolute, unmoved by politics\n💪 Strongest at: solving hard problems with rigorous, objective standards\n⚠️ Keep an eye on: expressing feelings, not just facts, when it matters\n🎯 Thrives in: research, engineering, or financial leadership roles"
     },
     {
-        "id": 38,
-        "code": "C-D-S",
-        "name": "CONTEMPLATOR",
-        "description": "Detail & Accuracy Oriented",
-        "characteristics": [
-            "Maintains High Personal Standards",
-            "Logical & Analytical",
-            "Strives for Excellence",
-            "Continuous Improvement Mindset",
-            "Competitive & Driven"
-        ],
-        "job_suitability": "Engineering, Research, Production and Finance (Director, Manager atau Supervisor), Work Study, Accountant, Administrator, Quality Controller, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Security Manager, Loss Control.",
-        "about_you": "You are detail- and accuracy-oriented, maintaining exceptionally high personal standards and a continuous improvement mindset. You approach challenges with logical analysis, organized planning, and competitive drive.",
-        "what_this_means": "Combining C, D, and S styles, you are a meticulous contemplator and quality specialist. You excel in quality control, technical planning, or financial analysis where systematic analysis and uncompromising standards ensure operational excellence.",
-        "strengths": [
-            "Maintains High Personal Standards",
-            "Logical & Analytical",
-            "Strives for Excellence",
-            "Continuous Improvement Mindset",
-            "Competitive & Driven",
-            "Highly Analytical & Logical"
-        ],
-        "watch_outs": [
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures",
-            "Can be reserved in expressing feelings"
-        ]
+        "id":  38,
+        "code":  "C-D-S",
+        "name":  "CONTEMPLATOR",
+        "description":  "Detail \u0026 Accuracy Oriented",
+        "characteristics":  [
+                                "Maintains High Personal Standards",
+                                "Logical \u0026 Analytical",
+                                "Strives for Excellence",
+                                "Continuous Improvement Mindset",
+                                "Competitive \u0026 Driven"
+                            ],
+        "job_suitability":  "Engineering, Research, Production and Finance (Director, Manager atau Supervisor), Work Study, Accountant, Administrator, Quality Controller, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Security Manager, Loss Control.",
+        "about_you":  "You hold yourself to a standard most people wouldn\u0027t set for themselves — and you keep raising it, quietly, over time.",
+        "what_this_means":  "This combination fits quality control, technical planning, and financial analysis — work that rewards systematic rigor and uncompromising standards. You\u0027re at your best where excellence is genuinely the goal, not just a phrase.",
+        "strengths":  [
+                          "You maintain exceptionally high personal standards without needing to be told to",
+                          "You bring real logical rigor to every problem you take on",
+                          "You\u0027re driven by continuous improvement, not just meeting a bar."
+                      ],
+        "watch_outs":  [
+                           "You may overthink decisions longer than the situation calls for",
+                           "Strong criticism can land harder than you let on",
+                           "You can come across reserved when expressing how you actually feel."
+                       ],
+        "at_a_glance":  "🧭 The Quiet Perfectionist — meticulous, driven, always raising the bar\n💪 Strongest at: sustained, systematic pursuit of real excellence\n⚠️ Keep an eye on: knowing when a decision has had enough analysis\n🎯 Thrives in: quality control, technical planning, or financial analysis roles"
     },
     {
-        "id": 39,
-        "code": "C-I-D",
-        "name": "ASSESSOR",
-        "description": "Analytical & Discerning",
-        "characteristics": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control"
-        ],
-        "job_suitability": "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/Specialist), Lecturer, Company Secretary, Negotiator and Purchasing.",
-        "about_you": "You are analytical, discerning, and composed, adept at evaluating complex scenarios with prudence and structured care. You connect professionally with stakeholders while keeping objective standards at the forefront.",
-        "what_this_means": "With a strong C, I, and D blend, you are a credible and persuasive specialist. You thrive in technical negotiation, corporate governance, or specialized management where analytical depth must be presented with authority and poise.",
-        "strengths": [
-            "Cautious & Prudent",
-            "Cordial When Comfortable",
-            "At Ease with Strangers",
-            "Quick to Build New Relationships",
-            "Exhibits Strong Self-Control",
-            "Highly Analytical & Logical"
-        ],
-        "watch_outs": [
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures",
-            "Can be reserved in expressing feelings"
-        ]
+        "id":  39,
+        "code":  "C-I-D",
+        "name":  "ASSESSOR",
+        "description":  "Analytical \u0026 Discerning",
+        "characteristics":  [
+                                "Cautious \u0026 Prudent",
+                                "Cordial When Comfortable",
+                                "At Ease with Strangers",
+                                "Quick to Build New Relationships",
+                                "Exhibits Strong Self-Control"
+                            ],
+        "job_suitability":  "Directing, Managing or Supervising (Engineering, Research, Finance, Planning), Designer, Work Study, Sales (Technical/Specialist), Lecturer, Company Secretary, Negotiator and Purchasing.",
+        "about_you":  "You evaluate complex situations with real care, and you stay composed doing it — even under pressure to rush a call.",
+        "what_this_means":  "This blend fits technical negotiation, corporate governance, or specialized management — roles where analytical depth has to be delivered with real authority. You\u0027re at your best where credibility depends on both substance and poise.",
+        "strengths":  [
+                          "You evaluate complex scenarios with genuine prudence and structure",
+                          "You connect professionally with stakeholders without losing objectivity",
+                          "You build new relationships quickly once you\u0027re comfortable."
+                      ],
+        "watch_outs":  [
+                           "You may overthink a decision past the point it\u0027s useful",
+                           "Strong criticism can land harder than you show",
+                           "You can come across reserved when it comes to expressing feelings."
+                       ],
+        "at_a_glance":  "🧭 The Composed Evaluator — analytical, professional, quietly authoritative\n💪 Strongest at: evaluating complexity with real prudence and poise\n⚠️ Keep an eye on: not letting analysis run longer than it needs to\n🎯 Thrives in: technical negotiation or corporate governance roles"
     },
     {
-        "id": 40,
-        "code": "C-S-D",
-        "name": "PRECISIONIST",
-        "description": "Systematic & Procedural",
-        "characteristics": [
-            "Organized & Well-Planned",
-            "Meticulous & Exacting",
-            "Focuses Heavily on Details",
-            "Tactful & Wise",
-            "Diplomatic & Considerate"
-        ],
-        "job_suitability": "Engineering, Research Director, Production and Finance (Director, Manager, Supervisor), Work Study, Accountant, Administrator, Quality Controller, Financial Services Manager, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Electrician, Security Manager, Financial Researcher, Planner, Printer, Production Controller, Production Manager, Personnel Management, Loss Control.",
-        "about_you": "You are systematic, procedural, and exceptionally meticulous, approaching every assignment with organized planning and tactful wisdom. You focus heavily on exact details and strive for perfection in all your output.",
-        "what_this_means": "Your combination of Conscientious (C), Steadiness (S), and Dominance (D) makes you the ultimate precisionist. You perform exceptionally well in engineering, financial research, or quality assurance where methodical accuracy and flawless execution are mandatory.",
-        "strengths": [
-            "Organized & Well-Planned",
-            "Meticulous & Exacting",
-            "Focuses Heavily on Details",
-            "Tactful & Wise",
-            "Diplomatic & Considerate",
-            "Highly Analytical & Logical"
-        ],
-        "watch_outs": [
-            "May overthink complex decisions",
-            "Sensitive to strong criticism",
-            "Tends to get caught up in minor details",
-            "Requires clear boundaries & procedures",
-            "Can be reserved in expressing feelings"
-        ]
+        "id":  40,
+        "code":  "C-S-D",
+        "name":  "PRECISIONIST",
+        "description":  "Systematic \u0026 Procedural",
+        "characteristics":  [
+                                "Organized \u0026 Well-Planned",
+                                "Meticulous \u0026 Exacting",
+                                "Focuses Heavily on Details",
+                                "Tactful \u0026 Wise",
+                                "Diplomatic \u0026 Considerate"
+                            ],
+        "job_suitability":  "Engineering, Research Director, Production and Finance (Director, Manager, Supervisor), Work Study, Accountant, Administrator, Quality Controller, Financial Services Manager, Safety Officer, Market Analyst, Planner and Personnel (Director, Manager, Administrator), MIS Manager, Electrician, Security Manager, Financial Researcher, Planner, Printer, Production Controller, Production Manager, Personnel Management, Loss Control.",
+        "about_you":  "You approach everything with a plan and an eye for exact detail — “good enough” isn\u0027t really part of your vocabulary.",
+        "what_this_means":  "This combination fits engineering, financial research, and quality assurance — work that rewards methodical accuracy and flawless execution above all else. You\u0027re at your best where precision is genuinely mission-critical, not optional.",
+        "strengths":  [
+                          "You stay organized and well-planned, even under real pressure",
+                          "You\u0027re meticulous in a way that consistently prevents costly mistakes",
+                          "You bring tact and diplomacy to work that could otherwise feel cold."
+                      ],
+        "watch_outs":  [
+                           "You may overthink a decision longer than the situation calls for",
+                           "Strong criticism can land harder than you let on",
+                           "You can come across more reserved than you intend when expressing feelings."
+                       ],
+        "at_a_glance":  "🧭 The Ultimate Precisionist — methodical, exacting, quietly diplomatic\n💪 Strongest at: flawless, methodical execution under real scrutiny\n⚠️ Keep an eye on: knowing when enough analysis is enough\n🎯 Thrives in: engineering, financial research, or quality assurance roles"
     }
 ]

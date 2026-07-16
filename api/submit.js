@@ -59,7 +59,7 @@ function getMatchIndex(D, I, S, C) {
 }
 
 function getProfileInfo(idx) {
-  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
+  if (idx <= 0) return { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
   const profile = discProfiles.find(p => p.id === idx);
   return profile ? {
     name: profile.name,
@@ -69,8 +69,9 @@ function getProfileInfo(idx) {
     about_you: profile.about_you || '',
     strengths: profile.strengths || [],
     watch_outs: profile.watch_outs || [],
-    what_this_means: profile.what_this_means || ''
-  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
+    what_this_means: profile.what_this_means || '',
+    at_a_glance: profile.at_a_glance || ''
+  } : { name: 'UNKNOWN', code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
 }
 
 /**
@@ -329,7 +330,8 @@ module.exports = async (req, res) => {
         core_self_about: scoring.profiles.graph3_info.about_you || '',
         core_self_strengths: scoring.profiles.graph3_info.strengths || [],
         core_self_watch_outs: scoring.profiles.graph3_info.watch_outs || [],
-        core_self_what_this_means: scoring.profiles.graph3_info.what_this_means || ''
+        core_self_what_this_means: scoring.profiles.graph3_info.what_this_means || '',
+        core_self_at_a_glance: scoring.profiles.graph3_info.at_a_glance || ''
       },
       disc_scores: {
         D: scoring.raw.most.D,

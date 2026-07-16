@@ -95,7 +95,7 @@ module.exports = async (req, res) => {
     const coreSelf = matchRow[39] || '—';
 
     function findProfileByName(profName) {
-      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
+      if (!profName || profName === '—') return { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
       const found = discProfiles.find(p => p.name.trim().toUpperCase() === profName.trim().toUpperCase());
       return found ? {
         code: found.code,
@@ -104,8 +104,9 @@ module.exports = async (req, res) => {
         about_you: found.about_you || '',
         strengths: found.strengths || [],
         watch_outs: found.watch_outs || [],
-        what_this_means: found.what_this_means || ''
-      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '' };
+        what_this_means: found.what_this_means || '',
+        at_a_glance: found.at_a_glance || ''
+      } : { code: '—', description: '', characteristics: [], about_you: '', strengths: [], watch_outs: [], what_this_means: '', at_a_glance: '' };
     }
 
     const pubInfo = findProfileByName(publicSelf);
@@ -134,7 +135,8 @@ module.exports = async (req, res) => {
         core_self_about: coreInfo.about_you || '',
         core_self_strengths: coreInfo.strengths || [],
         core_self_watch_outs: coreInfo.watch_outs || [],
-        core_self_what_this_means: coreInfo.what_this_means || ''
+        core_self_what_this_means: coreInfo.what_this_means || '',
+        core_self_at_a_glance: coreInfo.at_a_glance || ''
       },
       disc_scores: {
         D: dVal,

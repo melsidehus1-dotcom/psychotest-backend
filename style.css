@@ -2179,6 +2179,111 @@ body::after {
 }
 
 /* ══════════════════════════════════════════════════════════════
+   LIGHT MODE OVERRIDES FOR VIEW-RESULT (HIGH CONTRAST)
+   ══════════════════════════════════════════════════════════════ */
+[data-theme="light"] #view-result .result-status-bar {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] #view-result .cand-id-pill {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+[data-theme="light"] #view-result .disc-hero-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] #view-result .hero-meta-bar {
+  border-bottom-color: #f3f4f6;
+}
+
+[data-theme="light"] #view-result .hero-divider {
+  background: #e5e7eb;
+}
+
+[data-theme="light"] #view-result .meta-val,
+[data-theme="light"] #view-result .hero-name,
+[data-theme="light"] #view-result .section-title,
+[data-theme="light"] #view-result .profile-card-code,
+[data-theme="light"] #view-result .meter-title {
+  color: #111827 !important;
+}
+
+[data-theme="light"] #view-result .meta-label,
+[data-theme="light"] #view-result .profile-card-label,
+[data-theme="light"] #view-result .section-subtitle,
+[data-theme="light"] #view-result .hero-about,
+[data-theme="light"] #view-result .profile-card-desc,
+[data-theme="light"] #view-result .editorial-reading-box {
+  color: #4b5563 !important;
+}
+
+[data-theme="light"] #view-result .profile-card-name {
+  color: #1f2937;
+}
+
+[data-theme="light"] #view-result .profile-card,
+[data-theme="light"] #view-result .scores-meter-container {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] #view-result .profile-card:hover {
+  border-color: #c084fc;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] #view-result .trait-chip {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+[data-theme="light"] #view-result .meter-track {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+}
+
+[data-theme="light"] #view-result .editorial-reading-box {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] #view-result .strengths-grid .insight-chip {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+[data-theme="light"] #view-result .watch-outs-grid .insight-chip {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+[data-theme="light"] #view-result .report-footer-actions {
+  border-top-color: #e5e7eb;
+}
+
+[data-theme="light"] #view-result .btn-finish {
+  background: #ffffff;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+[data-theme="light"] #view-result .btn-finish:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ══════════════════════════════════════════════════════════════
    PRINT MEDIA STYLES (CLEAN PDF REPORT GENERATION)
    ══════════════════════════════════════════════════════════════ */
 @media print {

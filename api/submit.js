@@ -353,6 +353,12 @@ module.exports = async (req, res) => {
         I: scoring.raw.most.I,
         S: scoring.raw.most.S,
         C: scoring.raw.most.C
+      },
+      disc_norm_scores: {
+        D: scoring.norm.change.D,
+        I: scoring.norm.change.I,
+        S: scoring.norm.change.S,
+        C: scoring.norm.change.C
       }
     });
 

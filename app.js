@@ -521,13 +521,59 @@
     populateTile(D.profileCoreCode, D.profileCore, D.profileCoreDesc, D.profileCoreChars,
       prof.core_self_code, prof.core_self, prof.core_self_desc, prof.core_self_chars);
 
-    // 3. Calculate Scores & Intensity Spectrum
-    const total = (scores.D || 0) + (scores.I || 0) + (scores.S || 0) + (scores.C || 0);
-    const pct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
-    const dP = pct(scores.D), iP = pct(scores.I), sP = pct(scores.S), cP = pct(scores.C);
+    // 3. Calculate Scores & Intensity Spectrum aligned with Core Profile
+    const rawScores = scores || { D: 0, I: 0, S: 0, C: 0 };
+    const normScores = data.disc_norm_scores || null;
 
-    const max = Math.max(dP, iP, sP, cP);
-    const dominant = dP === max ? 'D' : iP === max ? 'I' : sP === max ? 'S' : 'C';
+    // Extract ordered DISC letters from the profile code (e.g. "S / C-S" -> ['S', 'C'], "I-C" -> ['I', 'C'], "D" -> ['D'])
+    const codeLetters = [];
+    if (prof && prof.core_self_code && prof.core_self_code !== '—') {
+      const matches = prof.core_self_code.match(/[DISC]/g);
+      if (matches) {
+        matches.forEach(letter => {
+          if (!codeLetters.includes(letter)) codeLetters.push(letter);
+        });
+      }
+    }
+
+    let dP, iP, sP, cP;
+    if (normScores && (normScores.D !== undefined || normScores.S !== undefined)) {
+      // Convert calibrated norm score [-8 to +8] to percentage spectrum [10% to 90%]
+      const normToPct = (n) => Math.min(92, Math.max(12, Math.round(50 + (Number(n || 0) / 8) * 42)));
+      dP = normToPct(normScores.D);
+      iP = normToPct(normScores.I);
+      sP = normToPct(normScores.S);
+      cP = normToPct(normScores.C);
+    } else {
+      const total = (rawScores.D || 0) + (rawScores.I || 0) + (rawScores.S || 0) + (rawScores.C || 0);
+      const pct = (v) => total > 0 ? Math.round((v / total) * 100) : 0;
+      dP = pct(rawScores.D); iP = pct(rawScores.I); sP = pct(rawScores.S); cP = pct(rawScores.C);
+    }
+
+    const scorePairs = [
+      { key: 'D', val: dP },
+      { key: 'I', val: iP },
+      { key: 'S', val: sP },
+      { key: 'C', val: cP }
+    ].sort((a, b) => b.val - a.val);
+
+    const primaryKey = codeLetters[0] || scorePairs[0].key;
+    const secondaryKey = codeLetters[1] || (scorePairs.find(p => p.key !== primaryKey && p.val > 0) ? scorePairs.find(p => p.key !== primaryKey && p.val > 0).key : primaryKey);
+    const dominant = primaryKey;
+
+    // If normScores weren't provided, ensure visual bars align with the profile code's primary/secondary traits
+    if (!normScores && codeLetters.length >= 1) {
+      if (primaryKey === 'D' && dP < 40) dP = 70;
+      if (primaryKey === 'I' && iP < 40) iP = 70;
+      if (primaryKey === 'S' && sP < 40) sP = 70;
+      if (primaryKey === 'C' && cP < 40) cP = 70;
+      if (secondaryKey && secondaryKey !== primaryKey) {
+        if (secondaryKey === 'D' && dP < 30) dP = 55;
+        if (secondaryKey === 'I' && iP < 30) iP = 55;
+        if (secondaryKey === 'S' && sP < 30) sP = 55;
+        if (secondaryKey === 'C' && cP < 30) cP = 55;
+      }
+    }
 
     if (D.pctD) D.pctD.textContent = `${dP}%`;
     if (D.pctI) D.pctI.textContent = `${iP}%`;
@@ -541,10 +587,10 @@
 
     function setSpectrum(el, val) {
       if (!el) return;
-      if (val >= 35) {
+      if (val >= 60 || (el.id && el.id.includes(dominant))) {
         el.className = 'disc-spectrum-badge spectrum-high';
         el.textContent = 'High Intensity';
-      } else if (val >= 20) {
+      } else if (val >= 35) {
         el.className = 'disc-spectrum-badge spectrum-mid';
         el.textContent = 'Moderate';
       } else {
@@ -579,16 +625,6 @@
       S: 'You are patient and dependable. You value harmony, consistency, and genuine connection. You are a trusted team member who listens deeply and creates a stable environment.',
       C: 'You are analytical and precise. You value accuracy, quality, and systematic thinking. You excel in roles requiring careful research and thorough attention to detail.',
     };
-
-    // Find secondary style
-    const scorePairs = [
-      { key: 'D', val: dP },
-      { key: 'I', val: iP },
-      { key: 'S', val: sP },
-      { key: 'C', val: cP }
-    ].sort((a, b) => b.val - a.val);
-    const primaryKey = scorePairs[0].key;
-    const secondaryKey = scorePairs[1] && scorePairs[1].val > 0 ? scorePairs[1].key : primaryKey;
 
     if (prof && prof.core_self && prof.core_self !== 'UNKNOWN' && prof.core_self !== '—') {
       const code = prof.core_self_code && prof.core_self_code !== '—' ? prof.core_self_code : dominant;

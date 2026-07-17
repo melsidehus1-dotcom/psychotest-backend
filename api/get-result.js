@@ -90,6 +90,10 @@ module.exports = async (req, res) => {
     const iVal = Number(matchRow[12] || 0);
     const sVal = Number(matchRow[13] || 0);
     const cVal = Number(matchRow[14] || 0);
+    const nDVal = Number(matchRow[33] || 0);
+    const nIVal = Number(matchRow[34] || 0);
+    const nSVal = Number(matchRow[35] || 0);
+    const nCVal = Number(matchRow[36] || 0);
     const publicSelf = matchRow[37] || '—';
     const privateSelf = matchRow[38] || '—';
     const coreSelf = matchRow[39] || '—';
@@ -161,6 +165,12 @@ module.exports = async (req, res) => {
         I: iVal,
         S: sVal,
         C: cVal
+      },
+      disc_norm_scores: {
+        D: nDVal,
+        I: nIVal,
+        S: nSVal,
+        C: nCVal
       }
     });
 

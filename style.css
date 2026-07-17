@@ -1422,6 +1422,107 @@ body::after {
   margin-left: 6px;
 }
 
+/* ============================================
+   BUTTON STYLES (Modern, Premium, WOW-Factor)
+   ============================================ */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-primary);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 50%, var(--accent-secondary) 100%);
+  background-size: 200% 200%;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 18px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background-position: 100% 0;
+  box-shadow: 0 8px 25px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--surface-border);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-ghost:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-hero {
+  padding: 16px 38px;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 6px 24px var(--accent-glow), 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+
+.btn-hero:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 32px var(--accent-glow), 0 0 0 6px rgba(139, 92, 246, 0.25);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+[data-theme="light"] .btn-ghost {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--text-primary);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .btn-ghost:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
 /* Nav buttons */
 .test-nav {
   display: flex;
@@ -1441,6 +1542,71 @@ body::after {
 
 .nav-status.complete {
   color: var(--success-light);
+}
+
+/* ============================================
+   SLIDE & CARD ANIMATIONS
+   ============================================ */
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.question-card.slide-out-left {
+  animation: slideOutLeft 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+  pointer-events: none !important;
+}
+
+.question-card.slide-in-right {
+  animation: slideInRight 0.25s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+.question-card.slide-out-right {
+  animation: slideOutRight 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+  pointer-events: none !important;
+}
+
+.question-card.slide-in-left {
+  animation: slideInLeft 0.25s cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
 /* ============================================

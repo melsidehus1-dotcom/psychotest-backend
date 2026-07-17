@@ -232,12 +232,16 @@
     const total    = state.questions.length;
     const pct      = Math.round(((idx + 1) / total) * 100);
 
-    // Update chrome
-    D.qNum.textContent          = idx + 1;
-    D.progressFill.style.width  = `${(idx + 1) / total * 100}%`;
-    D.qPercent.textContent      = `${pct}%`;
+    const updateChrome = () => {
+      D.qNum.textContent          = idx + 1;
+      D.progressFill.style.width  = `${(idx + 1) / total * 100}%`;
+      D.qPercent.textContent      = `${pct}%`;
+    };
 
-    const doRender = () => buildRows(q, idx, selMost, selLeast);
+    const doRender = () => {
+      updateChrome();
+      buildRows(q, idx, selMost, selLeast);
+    };
 
     if (dir === 'none') {
       doRender();
@@ -249,20 +253,32 @@
     const outClass = dir === 'next' ? 'slide-out-left' : 'slide-out-right';
     const inClass  = dir === 'next' ? 'slide-in-right' : 'slide-in-left';
 
+    D.questionCard.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left');
     D.questionCard.classList.add(outClass);
 
+    let ended = false;
     const onEnd = () => {
+      if (ended) return;
+      ended = true;
       D.questionCard.removeEventListener('animationend', onEnd);
       D.questionCard.classList.remove(outClass);
       doRender();
       updateNav();
       D.questionCard.classList.add(inClass);
-      D.questionCard.addEventListener('animationend', () => {
+      
+      let inEnded = false;
+      const onInEnd = () => {
+        if (inEnded) return;
+        inEnded = true;
+        D.questionCard.removeEventListener('animationend', onInEnd);
         D.questionCard.classList.remove(inClass);
-      }, { once: true });
+      };
+      D.questionCard.addEventListener('animationend', onInEnd, { once: true });
+      setTimeout(onInEnd, 300);
     };
 
     D.questionCard.addEventListener('animationend', onEnd, { once: true });
+    setTimeout(onEnd, 220);
   }
 
   /* ── Build table rows ──────────────────────── */

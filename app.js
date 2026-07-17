@@ -1003,6 +1003,14 @@
     setupFormListeners();
     bindEvents();
     await loadQuestions();   // pre-fetch questions in background
+
+    // Auto-check URL parameter for direct result lookup (e.g. from HR Admin Dashboard)
+    const urlParams = new URLSearchParams(window.location.search);
+    const resultParamId = urlParams.get('id') || urlParams.get('result');
+    if (resultParamId && D.inputSearchId && D.btnDoSearch) {
+      D.inputSearchId.value = resultParamId.trim();
+      setTimeout(() => D.btnDoSearch.click(), 100);
+    }
   }
 
   if (document.readyState === 'loading') {

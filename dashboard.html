@@ -167,15 +167,17 @@
                 <th>Email</th>
                 <th>Position</th>
                 <th>Files</th>
+                <th>Result Page</th>
                 <th>Public Self</th>
                 <th>Private Self</th>
                 <th>Core Self</th>
                 <th>Date</th>
                 <th>Status</th>
+                <th>Notes</th>
               </tr>
             </thead>
             <tbody id="candidatesTbody">
-              <tr><td colspan="10" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
+              <tr><td colspan="12" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
             </tbody>
           </table>
 
@@ -226,6 +228,43 @@
         </div>
       </div>
 
+      <!-- ══════════════════════════════════════════
+           HR EVALUATION ACTIONS (STATUS & NOTES)
+           ══════════════════════════════════════════ -->
+      <div class="drawer-section glass-card" style="padding:20px;border:1px solid rgba(139,92,246,0.3);background:rgba(139,92,246,0.06);border-radius:var(--radius-lg);">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <h3 style="margin:0;font-size:1.05rem;display:flex;align-items:center;gap:8px;color:var(--text-primary);">
+            <span>🛡️</span> Evaluation Actions
+          </h3>
+          <span id="drawerSaveIndicator" style="font-size:0.75rem;color:#34d399;font-weight:650;display:none;">✔️ Saved locally & synced</span>
+        </div>
+        
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <label for="drawerStatusSelect" style="display:block;font-size:0.78rem;font-weight:650;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">
+              Status Evaluasi (Update Status)
+            </label>
+            <select id="drawerStatusSelect" class="filter-select" style="width:100%;font-weight:650;padding:10px 14px;border:1px solid var(--surface-border);border-radius:8px;background:var(--bg-primary);color:var(--text-primary);">
+              <option value="Pending">⏳ Pending (Menunggu Review)</option>
+              <option value="Reviewed">🔍 Reviewed (Sudah Diperiksa)</option>
+              <option value="Hired">🎉 Shortlisted / Hired (Diterima)</option>
+              <option value="Rejected">❌ Rejected (Tidak Lolos)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="drawerNoteInput" style="display:block;font-size:0.78rem;font-weight:650;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;">
+              Catatan Evaluasi / HR Notes
+            </label>
+            <textarea id="drawerNoteInput" rows="3" placeholder="Tulis catatan evaluasi HR untuk kandidat ini (misal: Komunikasi sangat baik, disarankan lanjut interview user)..." style="width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--surface-border);background:var(--bg-primary);color:var(--text-primary);font-size:0.88rem;font-family:inherit;resize:vertical;"></textarea>
+          </div>
+
+          <button id="btnSaveEvaluation" type="button" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;font-weight:700;box-shadow:0 4px 14px rgba(139,92,246,0.4);border:none;cursor:pointer;">
+            💾 Simpan Status & Catatan Evaluasi
+          </button>
+        </div>
+      </div>
+
       <!-- Links/Files Section -->
       <div class="drawer-section">
         <h3>📄 Documents</h3>
@@ -236,6 +275,19 @@
           <a id="drawerPortLink" href="#" target="_blank" class="btn btn-ghost file-btn">
             <span class="btn-icon">💼</span> View Portfolio
           </a>
+        </div>
+      </div>
+
+      <!-- Full Result Report Action -->
+      <div class="drawer-section">
+        <h3>🚀 Full Assessment Report</h3>
+        <div class="drawer-links-row" style="flex-direction:column;gap:8px;">
+          <a id="drawerResultLink" href="#" target="_blank" class="btn btn-primary file-btn" style="width:100%;justify-content:center;font-weight:650;padding:12px;background:linear-gradient(135deg,var(--accent),var(--accent-secondary));color:#fff;border:none;box-shadow:var(--shadow-md);text-decoration:none;">
+            <span class="btn-icon">📊</span> View Full Candidate Result Page →
+          </a>
+          <button id="btnShowResultModal" type="button" class="btn btn-ghost" style="width:100%;font-size:0.85rem;padding:8px;">
+            🔍 Preview Result in Dashboard Modal
+          </button>
         </div>
       </div>
 
@@ -299,6 +351,31 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       RESULT PREVIEW MODAL (FULL SCREEN IFRAME)
+       ══════════════════════════════════════════ -->
+  <div id="resultModalBackdrop" class="drawer-backdrop hidden" style="z-index:9500;"></div>
+  <div id="resultModal" class="result-modal hidden">
+    <div class="result-modal-header">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="font-size:1.3rem;">📊</span>
+        <div>
+          <h3 id="resultModalTitle" style="margin:0;font-size:1.1rem;font-weight:750;color:var(--text-primary);">Candidate Assessment Result</h3>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin:2px 0 0 0;">Full SaaS Premium Profile Report</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a id="btnModalOpenTab" href="#" target="_blank" class="btn btn-ghost btn-sm" style="text-decoration:none;font-size:0.82rem;padding:6px 14px;border-radius:6px;border:1px solid var(--surface-border);">
+          ↗ Open in New Tab
+        </a>
+        <button id="btnResultModalClose" class="btn-drawer-close" style="position:static;width:34px;height:34px;margin:0;" aria-label="Close modal">✕</button>
+      </div>
+    </div>
+    <div class="result-modal-body">
+      <iframe id="resultIframe" src="" title="Candidate Result View" frameborder="0"></iframe>
     </div>
   </div>
 

@@ -84,6 +84,20 @@
     scoreIChange:    qs('scoreIChange'),
     scoreSChange:    qs('scoreSChange'),
     scoreCChange:    qs('scoreCChange'),
+    // result report & modal elements
+    drawerResultLink: qs('drawerResultLink'),
+    btnShowResultModal: qs('btnShowResultModal'),
+    resultModalBackdrop: qs('resultModalBackdrop'),
+    resultModal:     qs('resultModal'),
+    resultModalTitle: qs('resultModalTitle'),
+    btnModalOpenTab: qs('btnModalOpenTab'),
+    btnResultModalClose: qs('btnResultModalClose'),
+    resultIframe:    qs('resultIframe'),
+    // evaluation actions & notes
+    drawerStatusSelect: qs('drawerStatusSelect'),
+    drawerNoteInput:    qs('drawerNoteInput'),
+    btnSaveEvaluation:  qs('btnSaveEvaluation'),
+    drawerSaveIndicator: qs('drawerSaveIndicator'),
   };
 
   /* ══════════════════════════════════════════════
@@ -158,6 +172,7 @@
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const csv = await res.text();
       state.allRows = parseCSV(csv);
+      applyLocalOverrides(state.allRows);
       D.lastRefresh.textContent = `Last refreshed: ${new Date().toLocaleTimeString()}`;
       renderAll();
     } catch (err) {
@@ -227,6 +242,7 @@
     iChange:  'I_Change',
     sChange:  'S_Change',
     cChange:  'C_Change',
+    note:     'Catatan_HR',
   };
 
   /* ══════════════════════════════════════════════
@@ -369,11 +385,19 @@
           <td>${escHtml(r[COL.email] ?? '—')}</td>
           <td>${escHtml(r[COL.position] ?? '—')}</td>
           <td>${filesHtml}</td>
+          <td>
+            <a href="/?result=${encodeURIComponent(r[COL.id] ?? '')}" target="_blank" class="btn-show-result-sm" data-stop-propagation="true" title="Open Full Result Page in New Tab">
+              <span>📊</span> Result
+            </a>
+          </td>
           <td style="font-size:0.82rem">${escHtml(r[COL.pub]  ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.priv] ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.core] ?? '—')}</td>
           <td style="font-size:0.82rem;color:var(--text-muted)">${date}</td>
           <td><span class="badge ${statusClass}">${escHtml(r[COL.status] ?? 'Pending')}</span></td>
+          <td style="font-size:0.82rem;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text-secondary)" title="${escHtml(r[COL.note] || r._hrNote || '')}">
+            ${(r[COL.note] || r._hrNote) ? '📝 ' + escHtml(r[COL.note] || r._hrNote) : '<span style="color:var(--text-muted)">—</span>'}
+          </td>
         </tr>`;
     }).join('');
 
@@ -481,15 +505,19 @@
     D.drawerPosition.textContent = r[COL.position] ?? '—';
     D.drawerDate.textContent     = r[COL.time] ? new Date(r[COL.time]).toLocaleString() : '—';
     
-    // Status Badge
-    const status = r[COL.status] ?? 'Pending';
-    D.drawerStatus.textContent   = status;
-    D.drawerStatus.className     = 'badge ' + ({
-      'Pending':  'badge-pending',
+    // Status
+    const status = r[COL.status] || 'Pending';
+    D.drawerStatus.textContent = status;
+    D.drawerStatus.className = 'badge ' + ({
+      'Pending': 'badge-pending',
       'Reviewed': 'badge-reviewed',
-      'Hired':    'badge-hired',
+      'Hired': 'badge-hired',
       'Rejected': 'badge-rejected',
     }[status] ?? 'badge-pending');
+
+    if (D.drawerStatusSelect) D.drawerStatusSelect.value = status;
+    if (D.drawerNoteInput) D.drawerNoteInput.value = r[COL.note] || r._hrNote || '';
+    if (D.btnSaveEvaluation) D.btnSaveEvaluation.dataset.candId = r[COL.id] || '';
 
     // CV & Portfolio buttons
     const cv = r[COL.cv];
@@ -508,6 +536,15 @@
     } else {
       D.drawerPortLink.removeAttribute('href');
       D.drawerPortLink.classList.add('disabled');
+    }
+
+    // Result Report Links
+    const resultUrl = `/?result=${encodeURIComponent(r[COL.id] ?? '')}`;
+    if (D.drawerResultLink) {
+      D.drawerResultLink.href = resultUrl;
+    }
+    if (D.btnShowResultModal) {
+      D.btnShowResultModal.onclick = () => openResultModal(r[COL.id], r[COL.name]);
     }
 
     // DISC profiles
@@ -547,6 +584,7 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closeDrawer();
+      closeResultModal();
     }
   });
 
@@ -560,6 +598,124 @@
 
   if (D.themeToggle) D.themeToggle.addEventListener('click', toggleTheme);
   if (D.themeToggleDash) D.themeToggleDash.addEventListener('click', toggleTheme);
+
+  /* ══════════════════════════════════════════════
+     EVALUATION OVERRIDES & CLOUD SYNC LOGIC
+     ══════════════════════════════════════════════ */
+  function applyLocalOverrides(rows) {
+    const overrides = JSON.parse(localStorage.getItem('hr_candidate_overrides') || '{}');
+    rows.forEach(r => {
+      const cid = r[COL.id];
+      if (cid && overrides[cid]) {
+        if (overrides[cid].status) r[COL.status] = overrides[cid].status;
+        if (overrides[cid].note !== undefined) {
+          r[COL.note] = overrides[cid].note;
+          r._hrNote = overrides[cid].note;
+        }
+      }
+    });
+  }
+
+  if (D.btnSaveEvaluation) {
+    D.btnSaveEvaluation.addEventListener('click', async () => {
+      const candId = D.btnSaveEvaluation.dataset.candId;
+      if (!candId) return;
+
+      const newStatus = D.drawerStatusSelect ? D.drawerStatusSelect.value : 'Pending';
+      const newNote   = D.drawerNoteInput ? D.drawerNoteInput.value.trim() : '';
+
+      // 1. Save locally immediately (Zero latency persistence)
+      const overrides = JSON.parse(localStorage.getItem('hr_candidate_overrides') || '{}');
+      overrides[candId] = {
+        status: newStatus,
+        note: newNote,
+        updatedAt: new Date().toISOString()
+      };
+      localStorage.setItem('hr_candidate_overrides', JSON.stringify(overrides));
+
+      // 2. Update current in-memory row
+      const targetRow = state.allRows.find(r => r[COL.id] === candId);
+      if (targetRow) {
+        targetRow[COL.status] = newStatus;
+        targetRow[COL.note] = newNote;
+        targetRow._hrNote = newNote;
+      }
+
+      // 3. Update UI badges immediately
+      if (D.drawerStatus) {
+        D.drawerStatus.textContent = newStatus;
+        D.drawerStatus.className = 'badge ' + ({
+          'Pending': 'badge-pending',
+          'Reviewed': 'badge-reviewed',
+          'Hired': 'badge-hired',
+          'Rejected': 'badge-rejected',
+        }[newStatus] || 'badge-pending');
+      }
+
+      renderAll(); // Re-render table, badges, note column, and stats instantly!
+
+      if (D.drawerSaveIndicator) {
+        D.drawerSaveIndicator.style.display = 'inline';
+        D.drawerSaveIndicator.style.color = '#fbbf24';
+        D.drawerSaveIndicator.textContent = '⏳ Saving status & note...';
+      }
+
+      // 4. Sync to API backend (/api/update-status)
+      try {
+        const res = await fetch('/api/update-status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            candidate_id: candId,
+            status: newStatus,
+            note: newNote
+          })
+        });
+        const data = await res.json();
+        if (D.drawerSaveIndicator) {
+          if (res.ok && data.status === 'success') {
+            D.drawerSaveIndicator.style.color = '#34d399';
+            D.drawerSaveIndicator.textContent = '✔️ Saved & Synced to Google Sheets!';
+          } else {
+            D.drawerSaveIndicator.style.color = '#60a5fa';
+            D.drawerSaveIndicator.textContent = '✔️ Saved Locally (Cloud standby)';
+          }
+        }
+      } catch (err) {
+        console.warn('Cloud sync error (saved locally):', err);
+        if (D.drawerSaveIndicator) {
+          D.drawerSaveIndicator.style.color = '#60a5fa';
+          D.drawerSaveIndicator.textContent = '✔️ Saved Locally';
+        }
+      }
+
+      setTimeout(() => {
+        if (D.drawerSaveIndicator) D.drawerSaveIndicator.style.display = 'none';
+      }, 4000);
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     RESULT PREVIEW MODAL LOGIC
+     ══════════════════════════════════════════════ */
+  function openResultModal(candId, candName) {
+    if (!candId) return;
+    const resultUrl = `/?result=${encodeURIComponent(candId)}`;
+    if (D.resultModalTitle) D.resultModalTitle.textContent = `Result Report: ${candName || candId} (${candId})`;
+    if (D.btnModalOpenTab) D.btnModalOpenTab.href = resultUrl;
+    if (D.resultIframe) D.resultIframe.src = resultUrl;
+    if (D.resultModalBackdrop) D.resultModalBackdrop.classList.remove('hidden');
+    if (D.resultModal) D.resultModal.classList.remove('hidden');
+  }
+
+  function closeResultModal() {
+    if (D.resultModalBackdrop) D.resultModalBackdrop.classList.add('hidden');
+    if (D.resultModal) D.resultModal.classList.add('hidden');
+    if (D.resultIframe) D.resultIframe.src = '';
+  }
+
+  if (D.btnResultModalClose) D.btnResultModalClose.addEventListener('click', closeResultModal);
+  if (D.resultModalBackdrop) D.resultModalBackdrop.addEventListener('click', closeResultModal);
 
   /* ══════════════════════════════════════════════
      AUTO-UNLOCK SESSION CHECK

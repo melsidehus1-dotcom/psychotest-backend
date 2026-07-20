@@ -436,10 +436,17 @@
         btn.disabled = true;
 
         try {
-          await uploadCandidatePdf(candId);
-          // On success, we should refresh the data so it shows the "View PDF" button
-          showError('PDF uploaded successfully! Refreshing data...', false);
-          setTimeout(loadData, 2000);
+          const uploadData = await uploadCandidatePdf(candId);
+          // Manually update the row data in memory so the button changes instantly
+          const row = state.allRows.find(r => r[COL.id] === candId);
+          if (row && uploadData.fileLink) {
+            row[COL.pdf] = uploadData.fileLink;
+          }
+          // Re-render to show the View button immediately
+          renderCandidates();
+          showError('PDF uploaded successfully!', false);
+          // Optionally reload in background
+          setTimeout(loadData, 3000);
         } catch (err) {
           console.error(err);
           showError(`Failed to upload PDF: ${err.message}`);
@@ -489,13 +496,6 @@
               if (btnFinish) btnFinish.style.display = 'none';
               if (btnCopy) btnCopy.style.display = 'none';
 
-              // Force desktop width for neat layout
-              element.style.width = '1024px';
-              element.style.maxWidth = '1024px';
-              element.style.margin = '0 auto';
-              element.style.padding = '20px';
-              element.style.backgroundColor = '#ffffff';
-
               const opt = {
                 margin:       [10, 0, 10, 0],
                 filename:     `DISC_Result_${candidateId}.pdf`,
@@ -530,21 +530,8 @@
                   throw new Error(uploadData.message || 'Failed to upload PDF');
                 }
                 
-                // Restore styles
-                element.style.width = '';
-                element.style.maxWidth = '';
-                element.style.margin = '';
-                element.style.padding = '';
-                element.style.backgroundColor = '';
-
                 resolve(uploadData);
               } catch (err) {
-                // Restore styles on error too
-                element.style.width = '';
-                element.style.maxWidth = '';
-                element.style.margin = '';
-                element.style.padding = '';
-                element.style.backgroundColor = '';
                 reject(err);
               }
             } else if (attempts > 20) {

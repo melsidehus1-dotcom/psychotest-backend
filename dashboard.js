@@ -489,12 +489,20 @@
               if (btnFinish) btnFinish.style.display = 'none';
               if (btnCopy) btnCopy.style.display = 'none';
 
+              // Force desktop width for neat layout
+              element.style.width = '1024px';
+              element.style.maxWidth = '1024px';
+              element.style.margin = '0 auto';
+              element.style.padding = '20px';
+              element.style.backgroundColor = '#ffffff';
+
               const opt = {
                 margin:       [10, 0, 10, 0],
                 filename:     `DISC_Result_${candidateId}.pdf`,
-                image:        { type: 'jpeg', quality: 0.8 },
-                html2canvas:  { scale: 1.5, useCORS: true, logging: false },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                image:        { type: 'jpeg', quality: 0.85 },
+                html2canvas:  { scale: 1.5, useCORS: true, logging: false, windowWidth: 1024 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['css', 'legacy'], avoid: ['.stat-card', '.chart-wrapper', '.trait-card', 'table'] }
               };
 
               try {
@@ -523,8 +531,21 @@
                   throw new Error(uploadData.message || 'Failed to upload PDF');
                 }
                 
+                // Restore styles
+                element.style.width = '';
+                element.style.maxWidth = '';
+                element.style.margin = '';
+                element.style.padding = '';
+                element.style.backgroundColor = '';
+
                 resolve(uploadData);
               } catch (err) {
+                // Restore styles on error too
+                element.style.width = '';
+                element.style.maxWidth = '';
+                element.style.margin = '';
+                element.style.padding = '';
+                element.style.backgroundColor = '';
                 reject(err);
               }
             } else if (attempts > 20) {

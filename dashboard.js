@@ -511,7 +511,14 @@
                   })
                 });
 
-                const uploadData = await uploadRes.json();
+                const rawText = await uploadRes.text();
+                let uploadData;
+                try {
+                  uploadData = JSON.parse(rawText);
+                } catch (e) {
+                  throw new Error(`Server returned ${uploadRes.status}: ${rawText.substring(0, 100)}...`);
+                }
+
                 if (!uploadRes.ok || uploadData.status !== 'success') {
                   throw new Error(uploadData.message || 'Failed to upload PDF');
                 }

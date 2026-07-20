@@ -1,6 +1,15 @@
 const { google } = require('googleapis');
 const stream = require('stream');
 
+// Increase Vercel Serverless Function body payload limit to 4.5MB (Max limit)
+module.exports.config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '4mb',
+    },
+  },
+};
+
 function getPrivateKey() {
   const rawKey = process.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
   if (!rawKey) return null;

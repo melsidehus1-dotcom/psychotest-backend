@@ -472,7 +472,7 @@
             element = iframeDoc.getElementById('view-result');
             
             // Wait until the candidate ID is actually rendered inside the view
-            const idEl = iframeDoc.getElementById('result-cand-id');
+            const idEl = iframeDoc.getElementById('resultId');
             const isPopulated = idEl && idEl.textContent.trim() === candidateId;
 
             if (element && isPopulated) {

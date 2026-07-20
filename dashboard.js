@@ -243,6 +243,7 @@
     sChange:  'S_Change',
     cChange:  'C_Change',
     note:     'Catatan_HR',
+    pdf:      'Link_PDF',
   };
 
   /* ══════════════════════════════════════════════
@@ -343,7 +344,7 @@
         ? 'No candidates match the current filters.'
         : 'No candidate data found.';
       D.candidatesTbody.innerHTML = `
-        <tr><td colspan="10">
+        <tr><td colspan="11">
           <div class="empty-state">
             <div class="empty-icon">🔍</div>
             <h4>${msg}</h4>
@@ -378,6 +379,20 @@
       }
       filesHtml += '</div>';
 
+      let pdfHtml = '';
+      const pdfLink = r[COL.pdf];
+      if (pdfLink && pdfLink.startsWith('http')) {
+        pdfHtml = `
+          <a href="${escHtml(pdfLink)}" target="_blank" class="btn-ghost btn-sm" style="color:var(--accent);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:4px;" data-stop-propagation="true" title="View PDF on Google Drive">
+            <span>📄</span> View PDF
+          </a>`;
+      } else {
+        pdfHtml = `
+          <button class="btn-primary btn-sm btn-upload-pdf" data-cand-id="${escHtml(r[COL.id])}" data-stop-propagation="true" title="Generate PDF & Upload to Drive" style="display:inline-flex;align-items:center;gap:4px;">
+            <span>⬆️</span> Upload PDF
+          </button>`;
+      }
+
       return `
         <tr data-cand-id="${escHtml(r[COL.id] ?? '')}">
           <td style="font-family:monospace;font-size:0.78rem;color:var(--accent-light)">${escHtml(r[COL.id] ?? '—')}</td>
@@ -390,6 +405,7 @@
               <span>📊</span> Result
             </a>
           </td>
+          <td>${pdfHtml}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.pub]  ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.priv] ?? '—')}</td>
           <td style="font-size:0.82rem">${escHtml(r[COL.core] ?? '—')}</td>
@@ -402,6 +418,119 @@
     }).join('');
 
     renderPagination(filtered.length);
+    bindPdfUploadEvents();
+  }
+
+  /* ── Bind PDF Upload Events ─────────────────── */
+  function bindPdfUploadEvents() {
+    const buttons = D.candidatesTbody.querySelectorAll('.btn-upload-pdf');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const candId = btn.dataset.candId;
+        if (!candId) return;
+
+        // Visual feedback
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '<span>⏳</span> Uploading...';
+        btn.disabled = true;
+
+        try {
+          await uploadCandidatePdf(candId);
+          // On success, we should refresh the data so it shows the "View PDF" button
+          showError('PDF uploaded successfully! Refreshing data...', false);
+          setTimeout(loadData, 2000);
+        } catch (err) {
+          console.error(err);
+          showError(`Failed to upload PDF: ${err.message}`);
+          btn.innerHTML = originalHtml;
+          btn.disabled = false;
+        }
+      });
+    });
+  }
+
+  /* ── Cross-Iframe PDF Upload ───────────────── */
+  async function uploadCandidatePdf(candidateId) {
+    return new Promise((resolve, reject) => {
+      const iframe = document.getElementById('hiddenPdfIframe');
+      if (!iframe) return reject(new Error('Iframe not found'));
+
+      // 1. Load the candidate's result page
+      iframe.src = `/?result=${encodeURIComponent(candidateId)}`;
+
+      iframe.onload = async () => {
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          
+          // Wait for the specific element to be populated
+          let attempts = 0;
+          let element = null;
+          
+          const waitForRender = setInterval(async () => {
+            attempts++;
+            element = iframeDoc.getElementById('view-result');
+            
+            // Wait until the candidate ID is actually rendered inside the view
+            const idEl = iframeDoc.getElementById('result-cand-id');
+            const isPopulated = idEl && idEl.textContent.trim() === candidateId;
+
+            if (element && isPopulated) {
+              clearInterval(waitForRender);
+              
+              // Wait an extra second for chart animations
+              await new Promise(r => setTimeout(r, 1000));
+              
+              // Temporarily hide buttons
+              const btnPrint = iframeDoc.getElementById('btnPrintReport');
+              const btnFinish = iframeDoc.getElementById('btnFinishTest');
+              const btnCopy = iframeDoc.getElementById('btnCopyId');
+              if (btnPrint) btnPrint.style.display = 'none';
+              if (btnFinish) btnFinish.style.display = 'none';
+              if (btnCopy) btnCopy.style.display = 'none';
+
+              const opt = {
+                margin:       [10, 0, 10, 0],
+                filename:     `DISC_Result_${candidateId}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true, logging: false },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+              };
+
+              try {
+                // Execute html2pdf
+                const pdfBase64 = await html2pdf().set(opt).from(element).output('datauristring');
+                
+                // Upload
+                const uploadRes = await fetch('/api/upload-pdf', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ 
+                    candidateId: candidateId,
+                    pdfData: pdfBase64 
+                  })
+                });
+
+                const uploadData = await uploadRes.json();
+                if (!uploadRes.ok || uploadData.status !== 'success') {
+                  throw new Error(uploadData.message || 'Failed to upload PDF');
+                }
+                
+                resolve(uploadData);
+              } catch (err) {
+                reject(err);
+              }
+            } else if (attempts > 20) {
+              clearInterval(waitForRender);
+              reject(new Error('Timeout waiting for result page to render'));
+            }
+          }, 500); // Check every 500ms
+          
+        } catch (err) {
+          reject(err);
+        }
+      };
+    });
   }
 
   /* ── Pagination ────────────────────────────── */
@@ -469,10 +598,11 @@
     D.profileTbody.innerHTML    = '<tr><td colspan="4" style="text-align:center;padding:2rem;color:var(--text-muted)">⏳ Loading…</td></tr>';
   }
 
-  function showError(msg) {
+  function showError(msg, isError = true) {
     const el = document.createElement('div');
-    el.style.cssText = 'position:fixed;top:1rem;right:1rem;background:var(--bg-tertiary);border:1px solid var(--error);border-radius:12px;padding:1rem 1.25rem;color:var(--error);font-size:0.85rem;max-width:380px;z-index:9000;box-shadow:var(--shadow-lg)';
-    el.innerHTML = `⚠️ ${msg}`;
+    const color = isError ? 'var(--error)' : '#34d399';
+    el.style.cssText = `position:fixed;top:1rem;right:1rem;background:var(--bg-tertiary);border:1px solid ${color};border-radius:12px;padding:1rem 1.25rem;color:${color};font-size:0.85rem;max-width:380px;z-index:9000;box-shadow:var(--shadow-lg)`;
+    el.innerHTML = `${isError ? '⚠️' : '✅'} ${msg}`;
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 8000);
   }

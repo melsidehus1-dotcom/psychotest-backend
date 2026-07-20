@@ -119,6 +119,7 @@
     // UI
     toastStack:      qs('toastStack'),
     loadingVeil:     qs('loadingVeil'),
+    loadingText:     qs('loadingText'),
   };
 
   /* ══════════════════════════════════════════════
@@ -156,7 +157,8 @@
   /* ══════════════════════════════════════════════
      LOADING VEIL
      ══════════════════════════════════════════════ */
-  function setLoading(on) {
+  function setLoading(on, text = 'Submitting your assessment…') {
+    if (D.loadingText) D.loadingText.textContent = text;
     D.loadingVeil.classList.toggle('active', on);
   }
 
@@ -474,7 +476,6 @@
       console.error('Submit failed:', err);
       toast(`Submission failed: ${err.message}`, 'error', 6000);
       state.submitting = false;
-    } finally {
       setLoading(false);
     }
   }
@@ -986,7 +987,7 @@
           console.error('Search failed:', err);
           toast(err.message || 'Retrieval failed — please verify User ID.', 'error', 5000);
         } finally {
-          setLoading(false);
+          setLoading(false, 'Submitting your assessment…');
         }
       });
     }

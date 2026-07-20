@@ -7,6 +7,7 @@
   <title>DISC Personality Assessment</title>
   <link rel="stylesheet" href="/style.css?v=20260717_fix">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
   <!-- Loading Veil -->
   <div class="loading-veil" id="loadingVeil" role="status" aria-label="Submitting assessment">
     <div class="load-ring"></div>
-    <div class="load-text">Submitting your assessment…</div>
+    <div class="load-text" id="loadingText">Submitting your assessment…</div>
   </div>
 
   <div id="app">

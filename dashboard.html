@@ -7,6 +7,7 @@
   <title>HR Dashboard — DISC Assessment</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
@@ -168,6 +169,7 @@
                 <th>Position</th>
                 <th>Files</th>
                 <th>Result Page</th>
+                <th>PDF Drive</th>
                 <th>Public Self</th>
                 <th>Private Self</th>
                 <th>Core Self</th>
@@ -177,7 +179,7 @@
               </tr>
             </thead>
             <tbody id="candidatesTbody">
-              <tr><td colspan="12" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
+              <tr><td colspan="13" style="text-align:center;padding:2rem;color:var(--text-muted)">Loading…</td></tr>
             </tbody>
           </table>
 
@@ -378,6 +380,11 @@
       <iframe id="resultIframe" src="" title="Candidate Result View" frameborder="0"></iframe>
     </div>
   </div>
+
+  <!-- ══════════════════════════════════════════
+       HIDDEN IFRAME FOR PDF GENERATION
+       ══════════════════════════════════════════ -->
+  <iframe id="hiddenPdfIframe" style="position:fixed; top:0; left:-9999px; width:1200px; height:1800px; opacity:0; pointer-events:none;" aria-hidden="true"></iframe>
 
   <script src="/dashboard.js"></script>
 </body>

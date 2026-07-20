@@ -105,7 +105,19 @@ module.exports = async (req, res) => {
     if (rowIndex !== -1) {
       const rowNum = rowIndex + 1;
       
-      // Get the full row data to append the link at the end
+      // Get headers to find the correct column index for Link_PDF
+      const headersRes = await sheets.spreadsheets.values.get({
+        spreadsheetId: sheetId,
+        range: 'Candidates!A1:ZZ1',
+      });
+      const headers = headersRes.data.values ? headersRes.data.values[0] : [];
+      let pdfColIndex = headers.indexOf('Link_PDF');
+      if (pdfColIndex === -1) {
+        // Fallback if the user hasn't added the header yet
+        pdfColIndex = 41; 
+      }
+
+      // Get the full row data to append the link at the correct index
       const rowDataRes = await sheets.spreadsheets.values.get({
         spreadsheetId: sheetId,
         range: `Candidates!A${rowNum}:ZZ${rowNum}`,
@@ -113,12 +125,11 @@ module.exports = async (req, res) => {
       
       const rowData = rowDataRes.data.values ? rowDataRes.data.values[0] : [];
       
-      // We know index 40 is 'Pending' from submit.js, so we can place it at index 41. 
-      // If the row has fewer elements, we pad it.
-      while(rowData.length <= 40) {
+      // Ensure the row has enough elements to reach the column index
+      while (rowData.length <= pdfColIndex) {
         rowData.push('');
       }
-      rowData[41] = fileLink; // Add the link at column AP (index 41)
+      rowData[pdfColIndex] = fileLink;
 
       await sheets.spreadsheets.values.update({
         spreadsheetId: sheetId,

@@ -500,9 +500,8 @@
                 margin:       [10, 0, 10, 0],
                 filename:     `DISC_Result_${candidateId}.pdf`,
                 image:        { type: 'jpeg', quality: 0.85 },
-                html2canvas:  { scale: 1.5, useCORS: true, logging: false, windowWidth: 1024 },
-                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                pagebreak:    { mode: ['css', 'legacy'], avoid: ['.stat-card', '.chart-wrapper', '.trait-card', 'table'] }
+                html2canvas:  { scale: 1.5, useCORS: true, logging: false },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
               };
 
               try {

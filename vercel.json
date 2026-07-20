@@ -3,6 +3,7 @@
   "builds": [
     { "src": "api/submit.js",       "use": "@vercel/node" },
     { "src": "api/get-result.js",   "use": "@vercel/node" },
+    { "src": "api/upload-pdf.js",   "use": "@vercel/node" },
     { "src": "index.html",          "use": "@vercel/static" },
     { "src": "dashboard.html",      "use": "@vercel/static" },
     { "src": "style.css",           "use": "@vercel/static" },
@@ -16,6 +17,15 @@
     {
       "src": "/api/submit",
       "dest": "api/submit.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    },
+    {
+      "src": "/api/upload-pdf",
+      "dest": "api/upload-pdf.js",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",

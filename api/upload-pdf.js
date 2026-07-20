@@ -53,51 +53,36 @@ module.exports = async (req, res) => {
       throw new Error('GOOGLE_SHEET_ID environment variable is missing');
     }
 
-    // 1. Process base64 PDF
-    const base64Data = pdfData.replace(/^data:application\/pdf;filename=.*?;base64,/, "").replace(/^data:application\/pdf;base64,/, "");
-    const buffer = Buffer.from(base64Data, 'base64');
-    const bufferStream = new stream.PassThrough();
-    bufferStream.end(buffer);
-
-    // 2. Auth for Drive and Sheets
+    // 2. Auth for Sheets
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
         private_key: getPrivateKey(),
       },
       scopes: [
-        'https://www.googleapis.com/auth/drive.file',
         'https://www.googleapis.com/auth/spreadsheets'
       ],
     });
 
-    const drive = google.drive({ version: 'v3', auth });
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // 3. Upload to Google Drive
-    const fileMetadata = {
-      name: `DISC_Result_${candidateId}.pdf`,
-      parents: [folderId]
-    };
-    const media = {
-      mimeType: 'application/pdf',
-      body: bufferStream
-    };
-
-    const driveRes = await drive.files.create({
-      resource: fileMetadata,
-      media: media,
-      fields: 'id, webViewLink'
+    // 3. Upload to Google Drive via Apps Script Web App
+    const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxfnckPi_QRF1sNikiTYbCPYCQQkPpMuB5bBUvTOYttGlbr7VhuEYZPiM51OwJ8bT5WLA/exec';
+    
+    const appsScriptRes = await fetch(appsScriptUrl, {
+      method: 'POST',
+      body: JSON.stringify({
+        filename: `DISC_Result_${candidateId}.pdf`,
+        pdfData: pdfData
+      })
     });
-
-    const fileId = driveRes.data.id;
-    const fileLink = driveRes.data.webViewLink;
-
-    // Optional: Make the file accessible to anyone with the link (uncomment if needed)
-    // await drive.permissions.create({
-    //   fileId: fileId,
-    //   requestBody: { role: 'reader', type: 'anyone' }
-    // });
+    
+    const appsScriptData = await appsScriptRes.json();
+    if (appsScriptData.status !== 'success') {
+      throw new Error('Apps Script Error: ' + appsScriptData.message);
+    }
+    
+    const fileLink = appsScriptData.fileLink;
 
     // 4. Update Google Sheets
     // Find the row with the candidateId
